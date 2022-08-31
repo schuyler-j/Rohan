@@ -14,11 +14,11 @@
         <div class="nav">
             <h1>S E N I O R</h1>
             <ul class="main_menu">
-                <li><a href="#"><span class="media_text">Home</span></a></li>
+                <li><a href="#"><span class="media_text">Homeless</span></a></li>
                 <li><a href="#"><span class="media_text">Community</span></a></li>
                 <li><a href="#"><span class="media_text">Marketplace</span></a></li>
                 <li><a href="#"><span class="media_text">Register</span></a></li>
-                <li><a href="#"><span class="media_text">Login</span></a></li>
+                <li><a href="#"><span class="media_text">Not Login</span></a></li>
             </ul>
         </div>
     </div>
