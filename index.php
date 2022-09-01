@@ -13,10 +13,6 @@
     <img id="hb" src="images/home_banner_large.png">
 </div>
 <div class="top_third">
-        <div class="title">
-            <span>SHOPPING</span> <span id="alt">AND</span> <span>EXCHANGE</span> <span id="alt">FOR</span> 
-            <span>GREY</span> <span id="alt">NOMADS</span> <span>INTERESTED</span> <span id="alt">IN</span> <span>OUTDOOR</span> <span id="alt">RECREATION</span>
-        </div>
     <div class="menu_container">
         <h1 id="menu_title_s">SENIOR</h1>
         <div class="nav">
@@ -46,13 +42,20 @@
 
     </div>
     <div class="home_body">
+        <div class="title">
+            <span>SHOPPING</span> <span id="alt">AND</span> <span>EXCHANGE</span> <span id="alt">FOR</span> 
+            <span>GREY</span> <span id="alt">NOMADS</span> <span>INTERESTED</span> <span id="alt">IN</span> <span>OUTDOOR</span> <span id="alt">RECREATION</span>
+        </div>
+        <div class="home_body_text">
+            <span>Ipsum elit ad sint anim. </span>
+            <span>Velit sint qui ipsum amet ex cupidatat minim non sunt esse enim. </span>
+            <span>Tempor fugiat voluptate eiusmod dolore eu irure elit.</span> 
+        </div>
         <div class="grid">
             <div class="block_1">
                 <img src="images/greeting_2.png">
+                <input type="submit" value="JOIN NOW" id="button"></input>
             </div>
-        </div>
-        <div class="home_body_text">
-            <input type="submit" value="JOIN NOW" id="button"></input>
         </div>
     </div>
 </div>
