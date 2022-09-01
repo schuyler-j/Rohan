@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Home</title>
+<title>Community</title>
 <meta charset="UTF-8" />
 <meta name="author" content="Team_Rohan" />
 <link rel="stylesheet" href="styles/style.css" />
+<link rel="icon" href="images/favicon.png">
 <script src="scripts/script.js" defer></script>
 </head>
 
