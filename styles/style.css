@@ -19,6 +19,9 @@ h1{
 .top_third{
     min-height: fit-content;
     justify-content: center;
+    max-width: 858px;
+    justify-content: center;
+    margin: auto;
 }
 
 #alt{
@@ -49,11 +52,12 @@ h1{
 }
 
 .menu_container{
-    background-color: rgb(95, 95, 95);
+    background-color: #5c6e58;
     margin: auto;
     min-height: 60px;
     padding-top: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 1px;
+    border-bottom: 2px solid black;
 
 }
 
@@ -72,10 +76,11 @@ h1{
 
 #menu_title_s{
     color: #fff;
-    max-width: fit-content;
-    justify-content: center;
+    max-width: 100%;
+    text-align: center;
     margin: auto;
     text-shadow: 4px 4px black;
+    border-bottom: 4px solid black;
 }
 
 .list{
@@ -91,7 +96,7 @@ h1{
 }
 
 .main_menu li:hover {
-    background-color:antiquewhite;
+    background-color: #f2d349;
 }
 
 .media_text{
@@ -103,6 +108,7 @@ h1{
     display: flex;
     margin-top: 20px;
     min-height: fit-content;
+    min-height: 100%;
 
 }
 
@@ -125,6 +131,7 @@ h1{
     margin: auto;
     max-width: fit-content;
     top: 0px;
+    background-color: #f2d349;
 }
 .img_container img{
     text-align: center;
@@ -155,9 +162,31 @@ h1{
     padding-left: 25px;
     font-size: 40px;
     border: 1px solid black;
-    background-color: #fff;
+    background-color: #8aa899;
 }
 
 #button:hover{
-    background-color: rgb(250, 219, 179);
+    background-color: #f2d349;
+}
+
+
+.side_navbar{
+    display: none;
+    right: 0;
+    margin: auto;
+    position: absolute;
+    margin-right: 120px;
+    padding-left: 10px;
+    min-height: 100%;
+    min-width: 480px;
+    border-left: 1px solid black;
+    background-color: #fff;
+}
+
+.link_box{
+    margin-top: 6px;
+    display: block;
+    padding: 12px;
+    border: 1px solid #5c6e58;
+    min-width: max-content;
 }

@@ -10,7 +10,7 @@
 
 <body>
 <div class="img_container">
-    <img id="hb" src="images/home_banner.png">
+    <img id="hb" src="images/home_banner_large.png">
 </div>
 <div class="top_third">
         <div class="title">
@@ -32,6 +32,19 @@
 </div>
 
 <div class="page_wrapper">
+    <div class="side_navbar">
+        <div class="nav_title"><h2>Recent News</h2></div>
+        <div class="link_box">
+            <a href="#">Item 1</a>
+        </div>
+        <div class="link_box">
+            <a href="#">Item 1</a>
+        </div>
+        <div class="link_box">
+            <a href="#">Item 1</a>
+        </div>
+
+    </div>
     <div class="home_body">
         <div class="grid">
             <div class="block_1">
