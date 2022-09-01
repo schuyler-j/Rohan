@@ -21,7 +21,7 @@
             <ul class="main_menu">
                 <li class="list"><a href="#" id="selected"><span class="media_text">Home</span></a></li>
                 <li class="list"><a href="community.php"><span class="media_text">Community Marketplace</span></a></li>
-                <li class="list"><a href="#"><span class="media_text">Shop</span></a></li>
+                <li class="list"><a href="#"><span class="media_text">Shopping</span></a></li>
                 <li class="list"><a href="#"><span class="media_text">About</span></a></li>
             </ul>
         </div>
