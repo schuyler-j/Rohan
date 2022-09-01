@@ -19,10 +19,9 @@
         <div class="nav">
             <ul class="main_menu">
                 <li class="list"><a href="index.php"><span class="media_text">Home</span></a></li>
-                <li class="list"><a href="#" id="selected"><span class="media_text">Community</span></a></li>
-                <li class="list"><a href="#"><span class="media_text">Marketplace</span></a></li>
+                <li class="list"><a href="#" id="selected"><span class="media_text">Community Marketplace</span></a></li>
+                <li class="list"><a href="#"><span class="media_text">Shop</span></a></li>
                 <li class="list"><a href="#"><span class="media_text">About</span></a></li>
-                <li class="list"><a href="#"><span class="media_text">Login</span></a></li>
             </ul>
         </div>
     </div>
