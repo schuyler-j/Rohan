@@ -5,8 +5,7 @@
 
 **web systems html/js/php**
 
-        **TUJ**  
-Thomas Hobbs | Udall Liao | Jay Schuyler 
+        Thomas Hobbs | Udall Liao | Jay Schuyler 
 
 
 
