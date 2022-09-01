@@ -107,9 +107,10 @@ h1{
 .page_wrapper{
     display: flex;
     margin-top: 20px;
-    min-height: fit-content;
     min-height: 100%;
-
+    max-width: 858px;
+    margin: auto;
+    justify-content: center;
 }
 
 .home_body{
@@ -118,8 +119,10 @@ h1{
     margin: auto;
 }
 
+.grid{
+    background-color: #8aa899;
+}
 .home_body_text{
-    padding-top: 80px;
     margin: auto;
     max-width: fit-content;
     justify-content: center;
@@ -137,6 +140,7 @@ h1{
     text-align: center;
     justify-content: center;
     margin: auto;
+    background-color: #5c6e58;
 }
 
 #hb{
@@ -162,11 +166,13 @@ h1{
     padding-left: 25px;
     font-size: 40px;
     border: 1px solid black;
-    background-color: #8aa899;
+    background-color: #5c6e58;
+    color: #fff;
 }
 
 #button:hover{
     background-color: #f2d349;
+    color: #000;
 }
 
 

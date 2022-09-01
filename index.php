@@ -48,9 +48,6 @@
     <div class="home_body">
         <div class="grid">
             <div class="block_1">
-                <img src="images/greeting_1.png">
-            </div>
-            <div class="block_1">
                 <img src="images/greeting_2.png">
             </div>
         </div>
