@@ -12,13 +12,8 @@ a{
     color: rgb(19, 19, 19);
 }
 
-
 h1{
-    font-size: 30px;
-}
-
-#alt{
-    color:rgb(255, 246, 234);
+    font-size: 60px;
 }
 
 .top_third{
@@ -28,17 +23,24 @@ h1{
     justify-content: center;
 }
 
+#alt{
+    color:rgb(95, 95, 95);
+}
+
 .title{
     position: absolute;
-    top: 200px;
-    width: 400px;
+    top: -100px;
+    width: 812px;
     margin: auto;
     right: 0px;
     text-align: right;
     justify-content: right;
     background-color: rgb(255, 255, 255);
-    box-shadow: -20px -10px 20px black;
-    padding: 10px;
+    /*box-shadow: -20px -10px 20px black;*/
+    padding: 120px;
+    z-index: -900;
+    font-size: 60px;
+    font-weight: bold;
 }
 
 .menu_container{
@@ -104,4 +106,5 @@ h1{
     /*transform: matrix(-1, 0, 0, 1, 0, 0);*/
     width: 100%;
     top: 0px;
+    z-index: -1000;
 }

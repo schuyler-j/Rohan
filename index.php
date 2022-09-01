@@ -9,12 +9,13 @@
 </head>
 
 <body>
-<div class="top_third">
     <div class="img_container">
         <img id="hb" src="images/home_banner.png">
     </div>
+<div class="top_third">
         <div class="title">
-            <h1>SHOPPING AND EXCHANGE FOR GREY NOMADS INTERESTED IN OUTDOOR RECREATION</h1>
+            <span>SHOPPING</span> <span id="alt">AND</span> <span>EXCHANGE</span> <span id="alt">FOR</span> 
+            <span>GREY</span> <span id="alt">NOMADS</span> <span>INTERESTED</span> <span id="alt">IN</span> <span>OUTDOOR</span> <span id="alt">RECREATION</span>
         </div>
     <div class="menu_container">
         <div class="nav">
