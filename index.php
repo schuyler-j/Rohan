@@ -9,9 +9,9 @@
 </head>
 
 <body>
-    <div class="img_container">
-        <img id="hb" src="images/home_banner.png">
-    </div>
+<div class="img_container">
+    <img id="hb" src="images/home_banner.png">
+</div>
 <div class="top_third">
         <div class="title">
             <span>SHOPPING</span> <span id="alt">AND</span> <span>EXCHANGE</span> <span id="alt">FOR</span> 
@@ -31,16 +31,11 @@
 </div>
 
 <div class="page_wrapper">
-
     <div class="home_body">
         <div class="home_body_text">
             <span>Join the Community Today!</span>
         </div>
-
     </div>
-
 </div>
-
 </body>
-
 </html>

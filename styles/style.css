@@ -17,8 +17,6 @@ h1{
 }
 
 .top_third{
-    margin-top: 400px;
-    padding: 10px;
     min-height: fit-content;
     justify-content: center;
 }
@@ -36,9 +34,10 @@ h1{
     text-align: right;
     justify-content: right;
     background-color: rgb(255, 255, 255);
-    /*box-shadow: -20px -10px 20px black;*/
+    box-shadow: -20px 10px 20px black;
     padding: 120px;
-    z-index: -900;
+    padding-bottom: 20px;
+    z-index: 0;
     font-size: 60px;
     font-weight: bold;
 }
@@ -48,7 +47,8 @@ h1{
     justify-content: center;
     margin: auto;
     min-height: 60px;
-    padding-top: 2px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 
 }
 
@@ -102,9 +102,8 @@ h1{
 
 
 .img_container{
-    position: absolute;
     /*transform: matrix(-1, 0, 0, 1, 0, 0);*/
+    margin: auto;
     width: 100%;
     top: 0px;
-    z-index: -1000;
 }
