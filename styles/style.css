@@ -109,6 +109,13 @@ h1{
     background-color: #fff;
 }
 
+.page_wrapper_c{
+    min-height: 100%;
+    height: 1000px;
+    background-color: #fff;
+
+}
+
 .home_body{
     background-color: #fff;
     justify-content: center;
@@ -175,6 +182,14 @@ h1{
 #button:hover{
     background-color: #f2d349;
     color: #000;
+}
+
+#cursor{
+    position: relative;
+    margin: auto;
+    pointer-events: none;
+    bottom: 26px;
+    left: 326px;
 }
 
 
