@@ -4,7 +4,7 @@
 }
 
 body{
-    background-color: rgb(162, 219, 255);
+    background-color: rgb(255, 255, 255);
 }
 
 a{
@@ -12,13 +12,20 @@ a{
     color: rgb(19, 19, 19);
 }
 
+
 h1{
     font-size: 30px;
 }
 
-.top_third{
-    padding: 10px;
+#alt{
+    color:rgb(255, 246, 234);
+}
 
+.top_third{
+    margin-top: 400px;
+    padding: 10px;
+    min-height: fit-content;
+    justify-content: center;
 }
 
 .title{
@@ -26,43 +33,46 @@ h1{
     top: 200px;
     width: 400px;
     margin: auto;
-    right: 40px;
+    right: 0px;
     text-align: right;
     justify-content: right;
-    background-color: #fff;
+    background-color: rgb(255, 255, 255);
+    box-shadow: -20px -10px 20px black;
     padding: 10px;
 }
 
 .menu_container{
-    position: absolute;
+    background-color: rgb(95, 95, 95);
+    justify-content: center;
     margin: auto;
-    top: 400px;
-    background-color: antiquewhite;
-    width: 100%;
-    min-height: auto;
-    left: 0;
+    min-height: 60px;
+    padding-top: 2px;
+
 }
 
 .nav{
-
-    justify-content: center;
+    vertical-align: middle;
     text-align: center;
     height: max-content;
 
 }
 
 .main_menu{
-    vertical-align: middle;
     list-style-type: none;
-    justify-content: center;
-    margin: 0;
     padding: 0;
+    height: 26px;
+}
+
+.list{
+    padding: 15px;
 }
 
 .main_menu li{
     display: inline;
     font-size: 20px;
-    background-color:rgb(255, 246, 234);
+    vertical-align: middle;
+    background-color:rgb(255, 255, 255);
+    min-height: 300px;
 }
 
 .main_menu li:hover {
@@ -72,13 +82,12 @@ h1{
 .media_text{
     position: relative;
     padding: 30px;
-    height: 200px;
 }
 
 .page_wrapper{
-    padding-top: 80px;
-    min-height: 200px;
-    margin-top: 100px;
+    display: flex;
+    margin-top: 200px;
+    min-height: fit-content;
 
 }
 
@@ -86,17 +95,13 @@ h1{
     background-color: #fff;
     justify-content: center;
     margin: auto;
-    width: 800px;
-    height: 800px;
 
 }
 
 
 .img_container{
-    box-sizing: border-box;
     position: absolute;
     /*transform: matrix(-1, 0, 0, 1, 0, 0);*/
     width: 100%;
-    left: 0px;
     top: 0px;
 }

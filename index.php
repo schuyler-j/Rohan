@@ -19,11 +19,11 @@
     <div class="menu_container">
         <div class="nav">
             <ul class="main_menu">
-                <li><a href="#"><span class="media_text">Home</span></a></li>
-                <li><a href="#"><span class="media_text">Community</span></a></li>
-                <li><a href="#"><span class="media_text">Marketplace</span></a></li>
-                <li><a href="#"><span class="media_text">Register</span></a></li>
-                <li><a href="#"><span class="media_text">Login</span></a></li>
+                <li class="list"><a href="#" id="home"><span class="media_text">Home</span></a></li>
+                <li class="list"><a href="#"><span class="media_text">Community</span></a></li>
+                <li class="list"><a href="#"><span class="media_text">Marketplace</span></a></li>
+                <li class="list"><a href="#"><span class="media_text">Register</span></a></li>
+                <li class="list"><a href="#"><span class="media_text">Login</span></a></li>
             </ul>
         </div>
     </div>
@@ -32,6 +32,9 @@
 <div class="page_wrapper">
 
     <div class="home_body">
+        <div class="home_body_text">
+            <span>Join the Community Today!</span>
+        </div>
 
     </div>
 
