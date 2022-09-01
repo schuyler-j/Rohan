@@ -3,8 +3,9 @@
 <head>
 <title>Home</title>
 <meta charset="UTF-8" />
-<meta name="author" content="Team_Rohan" />
+<meta name="author" content="TUJ_Rohan" />
 <link rel="stylesheet" href="styles/style.css" />
+<link rel="stylesheet" href="styles/footer.css" />
 <link rel="icon" href="images/favicon.png">
 <script src="scripts/script.js" defer></script>
 </head>
@@ -59,6 +60,11 @@
                 <img id="cursor" src="images/cursor.png">
         </div>
     </div>
+    <div class="footer">
+        <h4>Thomas Hobbs | Udall Liao | Jay Schuyler</h4>
+    </div>
+        <input type="submit" value="LOGIN" id="button_f"></input>
 </div>
+
 </body>
 </html>

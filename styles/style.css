@@ -213,3 +213,14 @@ h1{
     border: 1px solid #5c6e58;
     min-width: max-content;
 }
+
+
+
+.footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #5c6e58;
+    text-align: center;
+}
