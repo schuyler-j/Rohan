@@ -29,19 +29,6 @@
 </div>
 
 <div class="page_wrapper">
-    <div class="side_navbar">
-        <div class="nav_title"><h2>Recent News</h2></div>
-        <div class="link_box">
-            <a href="#">Item 1</a>
-        </div>
-        <div class="link_box">
-            <a href="#">Item 1</a>
-        </div>
-        <div class="link_box">
-            <a href="#">Item 1</a>
-        </div>
-
-    </div>
     <div class="home_body">
         <div class="title">
             <span>SHOPPING</span> <span id="alt">AND</span> <span>EXCHANGE</span> <span id="alt">FOR</span> 
