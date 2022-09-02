@@ -124,11 +124,14 @@ h4{
     padding-bottom: 4px;
 }
 
+/* main navigation button style */
+
 .main_menu li{
     display: inline;
     font-size: 24px;
     vertical-align: middle;
-    background-color:beige;
+
+    background-color: beige;
     /*border-radius: 10px;*/
 
     background-image: linear-gradient(to bottom, rgba(255,255,255,0.5), rgba(255,255,255,0.2) 64%, rgba(0,0,0,0.15) 66%, rgba(0,0,0,0.05));
@@ -141,10 +144,8 @@ h4{
 
 .media_text{
     position: relative;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 80px;
+    padding-right: 80px;
 }
 
 .page_wrapper{
@@ -212,7 +213,7 @@ h4{
     background-repeat: repeat-x;
 }
 
-#button:hover{
+.button:hover{
     background-color: #f2d349;
     color: #000;
 }
@@ -253,7 +254,7 @@ h4{
 
 #nav_bottom{
     margin-top: 24px;
-    background-color: #f2d349;
+    background-color: beige;
     text-align: right;
 }
 
@@ -264,7 +265,6 @@ h4{
 .nav_links{
     margin-right: 12px;
 }
-
 
 a:hover{
     color: #000;
