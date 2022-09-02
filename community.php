@@ -11,24 +11,43 @@
 </head>
 
 <body>
-<div class="img_container">
-    <img id="hb" src="images/home_banner_large.png">
-</div>
 <div class="top_third">
     <div class="menu_container">
-        <h1 id="menu_title_s">SENIOR</h1>
-        <div class="nav">
+        <h1 class="menu_title_s">SENIOR</h1>
+        <div class="nav" id="nav_bottom">
+            <div class="nav_list">
+                <a class="nav_links" href="#">Watchlist</a>
+                <a class="nav_links" href="#">My Cart</a>
+                <a class="nav_links" href="#">Checkout</a>
+                <a class="nav_links" href="#">Login</a>
+            </div>
+        </div>
+        <div class="nav" id="nav_top">
             <ul class="main_menu">
                 <li class="list"><a href="index.php"><span class="media_text">Home</span></a></li>
                 <li class="list"><a href="#" id="selected"><span class="media_text">Community Marketplace</span></a></li>
                 <li class="list"><a href="#"><span class="media_text">Shopping</span></a></li>
                 <li class="list"><a href="#"><span class="media_text">About</span></a></li>
+                <li class="list"><a href="#"><span class="media_text">Contact</span></a></li>
             </ul>
         </div>
     </div>
 </div>
 
-<div class="page_wrapper_c">
+<div class="page_wrapper">
+    <div class="side_navbar">
+        <div class="nav_title"><h2>Recent News</h2></div>
+        <div class="link_box">
+            <a href="#">Item 1</a>
+        </div>
+        <div class="link_box">
+            <a href="#">Item 1</a>
+        </div>
+        <div class="link_box">
+            <a href="#">Item 1</a>
+        </div>
+
+    </div>
     <div class="side_navbar">
         <div class="nav_title"><h2>Recent News</h2></div>
         <div class="link_box">
