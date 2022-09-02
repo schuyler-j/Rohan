@@ -25,9 +25,13 @@
         -->
         <div class="nav" id="nav_bottom">
             <div class="nav_list">
+                <img src="images/watchlist.png">
                 <a class="nav_links" href="#">Watchlist</a>
+                <img src="images/cart.png">
                 <a class="nav_links" href="#">My Cart</a>
+                <img src="images/checkout.png">
                 <a class="nav_links" href="#">Checkout</a>
+                <img src="images/login.png">
                 <a class="nav_links" href="#">Login</a>
             </div>
         </div>

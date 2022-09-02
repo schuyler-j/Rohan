@@ -254,18 +254,25 @@ h4{
 
 #nav_bottom{
     margin-top: 24px;
-    background-color: beige;
+    background-color: #f2d349;
+    background-image: linear-gradient(to bottom, rgba(255,255,255,0.5), rgba(255,255,255,0.2) 64%, rgba(0,0,0,0.15) 66%, rgba(0,0,0,0.05));
     text-align: right;
 }
 
 .nav_list{
     margin: auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 .nav_links{
     margin-right: 12px;
+    margin-left: 6px;
+    color: #5c6e58;
 }
 
-a:hover{
-    color: #000;
+a:hover.nav_links{
+    text-shadow:1px -2px 2px #000;
+    color: #fff;
 }
