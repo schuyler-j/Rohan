@@ -11,12 +11,14 @@
 </head>
 
 <body>
-<div class="img_container">
-    <img id="hb" src="images/home_banner.png">
-</div>
 <div class="top_third">
     <div class="menu_container">
-        <h1 class="menu_title_s">SENIOR</h1>
+        <div class="menu_title_s">
+            <h1 class="menu_title_s">SENIOR</h1>
+        </div>
+        <div class="menu_title_s" id="logo">
+            <img src="images/home_banner.png" width="40%">
+        </div>
         <!--test for logo-->
 
         <!--<a class="menu_title_s" id="title_img">

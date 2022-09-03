@@ -10,3 +10,12 @@
     border-left: 1px solid black;
     background-color: #fff;
 }
+
+
+.link_box{
+    margin-top: 6px;
+    display: block;
+    padding: 12px;
+    border: 1px solid #5c6e58;
+    min-width: max-content;
+}
