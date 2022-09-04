@@ -25,6 +25,7 @@
             <img src="images/logo.png" width=20% height=20%>
         </a>
         -->
+    </div>
         <div class="nav" id="nav_bottom">
             <div class="nav_list">
                 <img src="images/watchlist.png">
@@ -46,7 +47,6 @@
                 <li class="list"><a href="#"><span class="media_text">Contact</span></a></li>
             </ul>
         </div>
-    </div>
 </div>
 
 <div class="page_wrapper">
