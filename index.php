@@ -51,7 +51,7 @@
 
 <div class="page_wrapper">
     <div class="home_body">
-        <div class="title">
+        <div class="title" id="shopping">
             <span>SHOPPING</span> <span id="alt">AND</span> <span>EXCHANGE</span> <span id="alt">FOR</span> 
             <span>GREY</span> <span id="alt">NOMADS</span> <span>INTERESTED</span> <span id="alt">IN</span> <span>OUTDOOR</span> <span id="alt">RECREATION</span>
         </div>
@@ -73,17 +73,12 @@
             </div>
         </div>
     </div>
-    <div class="home_body">
-        <div class="title">
-            <span>PLACEHOLDER</span>
+    <div class="home_body" id="news">
+        <div class="sub_heading">
+            <h2>NEWS & EVENTS</h2>
         </div>
     </div>
 
-    <div class="home_body">
-        <div class="title">
-            <span>PLACEHOLDER</span>
-        </div>
-    </div>
 </div>
     <div class="footer">
         <h4>Thomas Hobbs | Udall Liao | Jay Schuyler</h4>

@@ -158,18 +158,31 @@ h4{
     max-width: 1630px;
     margin: auto;
     justify-content: left;
-    background-color: #fff;
+    background-color: #465343;
+    box-shadow: 0px 1px 8px 0px #222;
 }
 
 
 .home_body{
-    display: none;
-    background-color: #fff;
-    margin-top: 0;
+    margin-top: 20px;
     justify-content: left;
-    padding-left: 49px;
-    padding-right:49px;
+    margin-left: 48px;
+    margin-right: 48px;
+    padding: 80px;
+    border-radius: 8px;
+    background-color:#e4f3e1;
+    
+    box-shadow: 2px 2px 2px #222;
 
+}
+
+#news{
+    width: 800px;
+    margin-left: 0;
+}
+
+#shopping{
+    margin-top: -68px;
 }
 
 .home_body_text{
