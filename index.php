@@ -16,12 +16,12 @@
         <div class="menu_title_s">
             <h1 class="menu_title_s">SENIOR</h1>
         </div>
-        <div class="menu_title_s" id="logo">
+        <!--test for logo-->
+        <!--<div class="menu_title_s" id="logo">
             <img src="images/home_banner.png" width="40%">
         </div>
-        <!--test for logo-->
 
-        <!--<a class="menu_title_s" id="title_img">
+        <a class="menu_title_s" id="title_img">
             <img src="images/logo.png" width=20% height=20%>
         </a>
         -->
@@ -84,10 +84,9 @@
             <span>PLACEHOLDER</span>
         </div>
     </div>
+</div>
     <div class="footer">
         <h4>Thomas Hobbs | Udall Liao | Jay Schuyler</h4>
     </div>
-</div>
-
 </body>
 </html>

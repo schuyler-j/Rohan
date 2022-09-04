@@ -14,6 +14,11 @@
 <div class="top_third">
     <div class="menu_container">
         <h1 class="menu_title_s">SENIOR</h1>
+        <!--
+        <div class="menu_title_s" id="logo">
+            <img src="images/home_banner.png" width="40%">
+        </div>
+        -->
         <div class="nav" id="nav_bottom">
             <div class="nav_list">
                 <img src="images/watchlist.png">

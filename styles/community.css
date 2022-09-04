@@ -9,6 +9,8 @@
     min-width: 480px;
     border-left: 1px solid black;
     background-color: #fff;
+
+    display: none;
 }
 
 
