@@ -50,7 +50,7 @@
 </div>
 
 <div class="page_wrapper">
-    <div class="home_body">
+    <div class="home_body" id="join">
         <div class="title" id="shopping">
             <span>SHOPPING</span> <span id="alt">AND</span> <span>EXCHANGE</span> <span id="alt">FOR</span> 
             <span>GREY</span> <span id="alt">NOMADS</span> <span>INTERESTED</span> <span id="alt">IN</span> <span>OUTDOOR</span> <span id="alt">RECREATION</span>
