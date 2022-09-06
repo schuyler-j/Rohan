@@ -74,7 +74,6 @@ h4{
     margin: auto;
     padding-top: 80px;
     padding-bottom: 2px;
-    background-image: url("../images/home_banner.png");
     background-color: #465343;
     box-shadow: 0px 1px 8px 0px #222;
     display: inline-flex;
@@ -85,6 +84,7 @@ h4{
     max-width: 100%;
     height: auto;
     width: 100%;
+    background-image: url("../images/home_banner.png");
 
 }
 
@@ -120,7 +120,8 @@ h4{
     padding: 0;
     margin: 0px;
     border-bottom: solid 4px #71856d;
-    background-color: #465343;
+    background-color: #353d33;
+    background-image: linear-gradient(to bottom, rgba(255,255,255,0.5), rgba(255,255,255,0.2) 64%, rgba(0,0,0,0.15) 66%, rgba(0,0,0,0.05));
 }
 
 /* main navigation button style */
@@ -146,6 +147,8 @@ h4{
     background-color: #5c6e58;
     text-shadow:1px -2px 2px #222;
     color: beige;
+    border-left: 1px solid #f2d349;
+    transition: 0.3s;
 }
 
 
@@ -208,7 +211,7 @@ h4{
 }
 
 #about_us_home{
-    max-width: 50%;
+    max-width: 100%;
     margin-right: 0px;
 
 }
@@ -271,6 +274,8 @@ h4{
     background-image: linear-gradient(to bottom, rgba(255,255,255,0.5), rgba(255,255,255,0.2) 64%, rgba(0,0,0,0.15) 66%, rgba(0,0,0,0.05));
     text-align: right;
     font-size: 18px;
+    padding-top: 6px;
+    padding-bottom: 6px;
 }
 
 
@@ -289,4 +294,3 @@ h4{
 a:hover.nav_links{
     text-shadow:1px -2px 2px #000;
 }
-
