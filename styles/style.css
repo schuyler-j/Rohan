@@ -48,9 +48,9 @@ h4{
     justify-content: right;
     text-align: center;
     padding: 12px;
-    padding-bottom: 20px;
+    padding-bottom: 40px;
     z-index: 0;
-    font-size: 28px;
+    font-size: 32px;
     font-weight: bold;
     border-radius: 8px;
 }
@@ -167,7 +167,7 @@ h4{
     justify-content: left;
     margin-left: 48px;
     margin-right: 48px;
-    padding: 80px;
+    padding: 20px;
     border-radius: 8px;
     background-color:#e4f3e1;
     box-shadow: 2px 2px 2px #222;
@@ -176,10 +176,11 @@ h4{
 #news{
     width: 800px;
     margin-left: 0;
+    padding-right: 60px;
 }
 
 #shopping{
-    margin-top: -68px;
+    margin-top: -6px;
 }
 
 .home_body_text{
@@ -211,8 +212,12 @@ h4{
 }
 
 #about_us_home{
-    max-width: 100%;
-    margin-right: 0px;
+    max-width: 80%;
+    text-align: justify;
+    justify-content: center;
+    margin: auto;
+    margin-top: 16px;
+    margin-bottom: 140px;
 
 }
 
