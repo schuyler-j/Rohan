@@ -42,7 +42,7 @@ h4{
 }
 
 .title{
-    width: 412px;
+    width: auto;
     margin: auto;
     right: 0px;
     justify-content: right;
@@ -82,7 +82,10 @@ h4{
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    width: 1630px;
+    max-width: 100%;
+    height: auto;
+    width: 100%;
+
 }
 
 .menu_title_s{
@@ -187,6 +190,7 @@ h4{
 
 .grid{
     margin-top: 40px;
+    text-align: center;
 }
 
 .block_1{
@@ -195,8 +199,19 @@ h4{
 .block_1 img{
     margin-bottom: 40px;
     border-radius: 8px;
+    margin-left: auto;
     width: 420px;
-    height: 300px;
+    height: auto;
+}
+
+.about{
+    max-width: fit-content;
+}
+
+#about_us_home{
+    max-width: 50%;
+    margin-right: 0px;
+
 }
 
 .button{
@@ -228,7 +243,7 @@ h4{
     margin: auto;
     pointer-events: none;
     bottom: 26px;
-    left: 326px;
+    left: 126px;
 }
 
 .sub_heading{

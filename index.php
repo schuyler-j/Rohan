@@ -71,6 +71,21 @@
             <div class="sub_heading">
                 <h2 id="about">ABOUT US</h2>
             </div>
+            <p id="about_us_home">
+                <span>Ipsum elit ad sint anim. </span>
+                <span>Velit sint qui ipsum amet ex cupidatat minim non sunt esse enim. </span>
+                <span>Tempor fugiat voluptate eiusmod dolore eu irure elit.</span> 
+                <span>Nostrud adipisicing nulla adipisicing sunt eiusmod occaecat. </span>
+                <span>Consectetur excepteur velit culpa deserunt sit. </span>
+                <span>Reprehenderit ea cillum sit aute fugiat sit minim labore tempor magna amet reprehenderit. </span>
+                <span>Mollit nisi laborum velit pariatur quis aliquip nostrud consectetur pariatur anim amet ipsum sit sit. </span>
+                <span>In eiusmod reprehenderit ipsum fugiat. </span>
+                <span>Laboris elit ut et ullamco esse et voluptate esse eu. </span>
+                <span>Adipisicing deserunt eu id voluptate sint aliqua reprehenderit aliquip aute culpa. </span>
+                <span>Ea aliqua adipisicing aute esse nulla esse cupidatat nostrud pariatur qui ex. </span>
+                <span>Proident sunt dolore non id voluptate. </span>
+                <span>Cillum do in tempor veniam reprehenderit excepteur ipsum pariatur excepteur. </span>
+            </p>
         </div>
     </div>
     <div class="home_body" id="news">
