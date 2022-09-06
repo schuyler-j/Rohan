@@ -10,8 +10,11 @@ body{
 a{
     text-decoration: none;
     color: #5c6e58;
-    text-shadow:1px 1px 1px beige;
     font-weight: bold;
+}
+
+a:hover{
+    color: beige;
 }
 
 h1{
@@ -106,48 +109,42 @@ h4{
 .nav{
     box-shadow: 0px 1px 8px 0px #222;
     text-align: center;
-    background-color: #465343;
-    background-color: #5c6e58;
-    padding-top: 2px;
-    padding-bottom: 2px;
 }
 
 
 .main_menu{
-    margin: 20px;
     list-style-type: none;
     padding: 0;
+    margin: 0px;
+    border-bottom: solid 4px #71856d;
+    background-color: #465343;
 }
-
-
 
 /* main navigation button style */
 
 .main_menu li{
-    display: inline;
+    display: inline-flex;
     font-size: 28px;
-    vertical-align: middle;
+}
 
-    background-color: beige;
-    /*border-radius: 10px;*/
-
+.main_menu a{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #f2d349;
+    text-shadow: 1px -2px 2px #333633;
+    background-color: #353d33;
     background-image: linear-gradient(to bottom, rgba(255,255,255,0.5), rgba(255,255,255,0.2) 64%, rgba(0,0,0,0.15) 66%, rgba(0,0,0,0.05));
     background-repeat: repeat-x;
 }
 
-.main_menu li:hover {
-    background-color: #f2d349;
+.main_menu a:hover {
+    background-color: #5c6e58;
+    text-shadow:1px -2px 2px #222;
+    color: beige;
 }
 
-.media_text{
-    position: relative;
-    padding-left: 60px;
-    padding-right: 60px;
-}
-
-.list, .list a{
-    margin: 4px;
-}
 
 .page_wrapper{
     display: flex;
@@ -253,6 +250,8 @@ h4{
 
 }
 
+/*this is where the watchlist/my cart/checkout etc is located */
+
 #nav_bottom{
     background-color: #f2d349;
     background-image: linear-gradient(to bottom, rgba(255,255,255,0.5), rgba(255,255,255,0.2) 64%, rgba(0,0,0,0.15) 66%, rgba(0,0,0,0.05));
@@ -271,11 +270,9 @@ h4{
 .nav_links{
     margin-right: 12px;
     margin-left: 6px;
-    color: #5c6e58;
 }
 
 a:hover.nav_links{
     text-shadow:1px -2px 2px #000;
-    color: #fff;
 }
 
