@@ -10,8 +10,8 @@ body{
 a{
     text-decoration: none;
     color: #5c6e58;
-    text-shadow:1px 1px 1px beige;
     font-weight: bold;
+    color: #f2d349;
 }
 
 h1{
@@ -114,7 +114,6 @@ h4{
 
 
 .main_menu{
-    margin: 20px;
     list-style-type: none;
     padding: 0;
 }
@@ -122,35 +121,37 @@ h4{
 
 /* main navigation button style */
 
+
 .main_menu li{
-    display: inline;
+    display: inline-flex;
+    font-size: 28px;
 }
 
-/*
-.main_menu li{
-    display: inline;
-    font-size: 28px;
-    vertical-align: middle;
-
-    background-color: beige;
-
+.main_menu a{
     background-image: linear-gradient(to bottom, rgba(255,255,255,0.5), rgba(255,255,255,0.2) 64%, rgba(0,0,0,0.15) 66%, rgba(0,0,0,0.05));
     background-repeat: repeat-x;
-}
-
-.main_menu li:hover {
     background-color: #f2d349;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 8px;
+    color: #465343;
 }
 
-.media_text{
-    position: relative;
-    padding-left: 60px;
-    padding-right: 60px;
+.main_menu a:hover {
+    text-shadow:1px -2px 2px #222;
+    color: #fff;
 }
-*/
+
+
 .list, .list a{
-    margin: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 4px;
+    margin-bottom: 10px;
+    margin-right: 20px;
+    margin-left: 20px;
 }
+
 
 .page_wrapper{
     display: flex;
@@ -257,7 +258,7 @@ h4{
 }
 
 #nav_bottom{
-    background-color: #f2d349;
+    background-color: #54704e;
     background-image: linear-gradient(to bottom, rgba(255,255,255,0.5), rgba(255,255,255,0.2) 64%, rgba(0,0,0,0.15) 66%, rgba(0,0,0,0.05));
     text-align: right;
     font-size: 18px;
@@ -274,7 +275,6 @@ h4{
 .nav_links{
     margin-right: 12px;
     margin-left: 6px;
-    color: #5c6e58;
 }
 
 a:hover.nav_links{
