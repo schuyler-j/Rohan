@@ -109,10 +109,6 @@ h4{
 .nav{
     box-shadow: 0px 1px 8px 0px #222;
     text-align: center;
-    background-color: #465343;
-    background-color: #5c6e58;
-    padding-top: 2px;
-    padding-bottom: 2px;
 }
 
 
@@ -120,6 +116,8 @@ h4{
     list-style-type: none;
     padding: 0;
     margin: 0px;
+    border-bottom: solid 4px #71856d;
+    background-color: #465343;
 }
 
 /* main navigation button style */
@@ -130,25 +128,21 @@ h4{
 }
 
 .main_menu a{
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
     padding-top: 20px;
     padding-bottom: 20px;
     color: #f2d349;
+    text-shadow: 1px -2px 2px #333633;
+    background-color: #353d33;
+    background-image: linear-gradient(to bottom, rgba(255,255,255,0.5), rgba(255,255,255,0.2) 64%, rgba(0,0,0,0.15) 66%, rgba(0,0,0,0.05));
+    background-repeat: repeat-x;
 }
 
 .main_menu a:hover {
-    background-image: linear-gradient(to bottom, rgba(255,255,255,0.5), rgba(255,255,255,0.2) 64%, rgba(0,0,0,0.15) 66%, rgba(0,0,0,0.05));
-    background-repeat: repeat-x;
-    background-color: #465343;
+    background-color: #5c6e58;
     text-shadow:1px -2px 2px #222;
     color: beige;
-}
-
-
-.list, .list a{
-    margin-top: 4px;
-    margin-bottom: 10px;
 }
 
 
