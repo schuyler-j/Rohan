@@ -294,3 +294,41 @@ h4{
 a:hover.nav_links{
     text-shadow:1px -2px 2px #000;
 }
+
+.item_list ul{
+    margin-left: auto;
+    padding: 12px;
+}
+
+.item_list li{
+    list-style-type: none;
+    padding-bottom: 12px;
+}
+
+.item_list_wrapper p{
+    padding-right: 80px;
+    width: fit-content;
+}
+
+.item_list_wrapper{
+    background-color: beige;
+    display: inline-flex;
+    padding: 18px;
+    min-width: 100%;
+    border: 1px solid #71856d;
+}
+
+.item_list_wrapper:hover{
+    box-shadow: 2px 2px 2px 2px #465343;
+}
+
+.item_list_wrapper a:hover{
+    color: #465343;
+    text-decoration: underline;
+}
+
+.item_list_wrapper img{
+    width: auto;
+    height: 120px;
+
+}
