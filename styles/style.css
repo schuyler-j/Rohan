@@ -151,7 +151,6 @@ h4{
 
 .page_wrapper{
     display: flex;
-    min-height: 3000px;
     max-width: 1630px;
     margin: auto;
     justify-content: left;
