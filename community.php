@@ -45,7 +45,23 @@
 
 <div class="page_wrapper">
     <div class="side_navbar">
-        <div class="nav_title"><h2>Recent News</h2></div>
+        <div class="nav_title"><h2>Community Items</h2></div>
+        <div class="link_box">
+            <a href="#">
+                <div class="sub_heading">
+                    Item 1
+                </div>
+            </a>
+            <div class="home_body">
+                total
+            </div>
+        </div>
+        <div class="link_box">
+            <a href="#">Item 1</a>
+        </div>
+        <div class="link_box">
+            <a href="#">Item 1</a>
+        </div>
         <div class="link_box">
             <a href="#">Item 1</a>
         </div>
@@ -55,10 +71,6 @@
         <div class="link_box">
             <a href="#">Item 1</a>
         </div>
-
-    </div>
-    <div class="side_navbar">
-        <div class="nav_title"><h2>Recent News</h2></div>
         <div class="link_box">
             <a href="#">Item 1</a>
         </div>
@@ -68,7 +80,9 @@
         <div class="link_box">
             <a href="#">Item 1</a>
         </div>
-
+        <div class="link_box">
+            <a href="#">Item 1</a>
+        </div>
     </div>
 </div>
 </body>
