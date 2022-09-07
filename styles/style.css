@@ -39,6 +39,9 @@ h4{
 
 #selected{
     text-decoration: underline;
+    background-color: #5c6e58;
+    text-shadow:1px -2px 2px #222;
+    color: beige;
 }
 
 .title{
