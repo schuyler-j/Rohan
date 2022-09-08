@@ -158,11 +158,15 @@ h4{
 
 .page_wrapper{
     display: flex;
-    max-width: 1630px;
     margin: auto;
-    justify-content: left;
+    justify-content: center;
     background-color: #465343;
     box-shadow: 0px 1px 8px 0px #222;
+
+    align-items: stretch;
+    align-content: center;
+    /*make this wrap if mobile */
+    flex-wrap: nowrap;
 }
 
 
@@ -177,14 +181,17 @@ h4{
     box-shadow: 2px 2px 2px #222;
 }
 
+#join{
+    width: 900px;
+}
+
 #news{
     width: 800px;
-    margin-left: 0;
     padding-right: 60px;
 }
 
 #shopping{
-    margin-top: -6px;
+    margin-top: 0px;
 }
 
 .home_body_text{
