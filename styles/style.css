@@ -29,6 +29,16 @@ h4{
     color:#f2d349
 }
 
+h5{
+    font-size: 16px;
+    margin-top: 0px;
+}
+
+.date{
+    padding-left: 12px;
+    font-size: 15px;
+}
+
 .top_third{
     min-height: fit-content;
     max-width: 1630px;
@@ -67,12 +77,12 @@ h4{
     background-color: #465343;
     padding-top: 10px;
     text-align: center;
-    justify-content: center;
 }
 .img_container img{
     margin: auto;
     background-color: #5c6e58;
-    width: 320px;
+    max-width: 18rem;
+    height: auto;
 }
 
 
@@ -251,6 +261,7 @@ h4{
     justify-content: center;
     margin: auto;
     cursor: pointer;
+    text-align: center;
 
     background-image: linear-gradient(to bottom, rgba(255,255,255,0.5), rgba(255,255,255,0.2) 64%, rgba(0,0,0,0.15) 66%, rgba(0,0,0,0.05));
     background-repeat: repeat-x;
@@ -317,6 +328,11 @@ a:hover.nav_links{
     text-shadow:1px -2px 2px #000;
 }
 
+.item_list_title{
+    color:#222;
+    text-transform: uppercase;
+}
+
 .item_list ul{
     margin-left: auto;
     padding: 12px;
@@ -328,17 +344,19 @@ a:hover.nav_links{
 }
 
 .item_list_wrapper p{
-    padding-right: 80px;
+    margin-top: 0px;
+    padding-right: 2rem;
+    padding-left: 12px;
     width: fit-content;
     color: #222;
 }
 
 .item_list_wrapper{
     background-color: beige;
-    display: inline-flex;
     padding: 18px;
     border: 10px solid #71856d;
     max-width: max-content;
+    justify-content: center;
 
 }
 
@@ -365,14 +383,21 @@ a:hover.nav_links{
 #subtext_total{
     color: #333633;
     padding: 30px;
+    display: inline-flex;
 }
 
 
 #item_description{
     width: 17em;
+    padding-top: 12px;
 }
 
 #atc{
     font-size: 12px;
     background-color: #f2d349;
+}
+
+
+.content{
+    display: inline-flex;
 }

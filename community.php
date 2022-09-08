@@ -57,8 +57,13 @@
                 <div id="item_description">
                     <span class="desc">Amet laborum veniam commodo sunt quis veniam proident veniam irure qui adipisicing id elit aliqua. </span>
                 </div>
-                <div class="button" id="atc">
-                    <a href="#">Add To Cart</a>
+                <div class="button_wrapper">
+                    <div class="button" id="atc">
+                        <a href="#">Add To Cart</a>
+                    </div><br>
+                    <div class="button" id="atc">
+                        <a href="#">Add To Wishlist</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -68,13 +73,18 @@
                     Item 1
                 </div>
             </div>
-            <div class="img_container"><a href="#"><img src="/images/gear1.png"></a></div>
+            <div class="img_container"><a href="#"><img src="/images/foam1.png"></a></div>
             <div class="item_list_wrapper" id="subtext_total">
                 <div id="item_description">
                     <span class="desc">Amet laborum veniam commodo sunt quis veniam proident veniam irure qui adipisicing id elit aliqua. </span>
                 </div>
-                <div class="button" id="atc">
-                    <a href="#">Add To Cart</a>
+                <div class="button_wrapper">
+                    <div class="button" id="atc">
+                        <a href="#">Add To Cart</a>
+                    </div><br>
+                    <div class="button" id="atc">
+                        <a href="#">Add To Wishlist</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -87,13 +97,18 @@
                     Item 1
                 </div>
             </div>
-            <div class="img_container"><a href="#"><img src="/images/gear1.png"></a></div>
+            <div class="img_container"><a href="#"><img src="/images/tent1.png"></a></div>
             <div class="item_list_wrapper" id="subtext_total">
                 <div id="item_description">
                     <span class="desc">Amet laborum veniam commodo sunt quis veniam proident veniam irure qui adipisicing id elit aliqua. </span>
                 </div>
-                <div class="button" id="atc">
-                    <a href="#">Add To Cart</a>
+                <div class="button_wrapper">
+                    <div class="button" id="atc">
+                        <a href="#">Add To Cart</a>
+                    </div><br>
+                    <div class="button" id="atc">
+                        <a href="#">Add To Wishlist</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -103,13 +118,18 @@
                     Item 1
                 </div>
             </div>
-            <div class="img_container"><a href="#"><img src="/images/gear1.png"></a></div>
+            <div class="img_container"><a href="#"><img src="/images/chair1.png"></a></div>
             <div class="item_list_wrapper" id="subtext_total">
                 <div id="item_description">
                     <span class="desc">Amet laborum veniam commodo sunt quis veniam proident veniam irure qui adipisicing id elit aliqua. </span>
                 </div>
-                <div class="button" id="atc">
-                    <a href="#">Add To Cart</a>
+                <div class="button_wrapper">
+                    <div class="button" id="atc">
+                        <a href="#">Add To Cart</a>
+                    </div><br>
+                    <div class="button" id="atc">
+                        <a href="#">Add To Wishlist</a>
+                    </div>
                 </div>
             </div>
         </div>
