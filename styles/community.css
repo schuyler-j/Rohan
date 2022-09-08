@@ -26,3 +26,7 @@
     padding: 12px;
     min-width: max-content;
 }
+
+.page_wrapper{
+    background-color: #dcddbb;
+}
