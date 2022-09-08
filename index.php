@@ -105,7 +105,9 @@
                         <h3 class="item_list_title">lorem</h3>
                         <div class="item_list_wrapper">
                             <a href="#"><p>Occaecat deserunt amet Lorem nulla ipsum ipsum est duis amet ea enim.</p></a>
-                            <img src="images/d1.png">
+                            <a href="#"><p>Occaecat deserunt amet Lorem nulla ipsum ipsum est duis amet ea enim.</p></a>
+                            <a href="#"><p>Occaecat deserunt amet Lorem nulla ipsum ipsum est duis amet ea enim.</p></a>
+                            <img src="images/gear1.png">
                         </div>
                     </li>
                     <li class="list">

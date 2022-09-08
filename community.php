@@ -47,41 +47,71 @@
     <div class="side_navbar">
         <div class="nav_title"><h2>Community Items</h2></div>
         <div class="link_box">
-            <a href="#">
+            <div>
                 <div class="sub_heading">
                     Item 1
                 </div>
-            </a>
-            <div class="home_body">
-                total
+            </div>
+            <div class="img_container"><a href="#"><img src="/images/gear1.png"></a></div>
+            <div class="item_list_wrapper" id="subtext_total">
+                <div id="item_description">
+                    <span class="desc">Amet laborum veniam commodo sunt quis veniam proident veniam irure qui adipisicing id elit aliqua. </span>
+                </div>
+                <div class="button" id="atc">
+                    <a href="#">Add To Cart</a>
+                </div>
             </div>
         </div>
         <div class="link_box">
-            <a href="#">Item 1</a>
+            <div>
+                <div class="sub_heading">
+                    Item 1
+                </div>
+            </div>
+            <div class="img_container"><a href="#"><img src="/images/gear1.png"></a></div>
+            <div class="item_list_wrapper" id="subtext_total">
+                <div id="item_description">
+                    <span class="desc">Amet laborum veniam commodo sunt quis veniam proident veniam irure qui adipisicing id elit aliqua. </span>
+                </div>
+                <div class="button" id="atc">
+                    <a href="#">Add To Cart</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="side_navbar">
+        <div class="nav_title"><h2>On Sale Now</h2></div>
+        <div class="link_box">
+            <div>
+                <div class="sub_heading">
+                    Item 1
+                </div>
+            </div>
+            <div class="img_container"><a href="#"><img src="/images/gear1.png"></a></div>
+            <div class="item_list_wrapper" id="subtext_total">
+                <div id="item_description">
+                    <span class="desc">Amet laborum veniam commodo sunt quis veniam proident veniam irure qui adipisicing id elit aliqua. </span>
+                </div>
+                <div class="button" id="atc">
+                    <a href="#">Add To Cart</a>
+                </div>
+            </div>
         </div>
         <div class="link_box">
-            <a href="#">Item 1</a>
-        </div>
-        <div class="link_box">
-            <a href="#">Item 1</a>
-        </div>
-        <div class="link_box">
-            <a href="#">Item 1</a>
-        </div>
-        <div class="link_box">
-            <a href="#">Item 1</a>
-        </div>
-        <div class="link_box">
-            <a href="#">Item 1</a>
-        </div>
-        <div class="link_box">
-            <a href="#">Item 1</a>
-        </div>
-        <div class="link_box">
-            <a href="#">Item 1</a>
-        </div>
-        <div class="link_box">
-            <a href="#">Item 1</a>
+            <div>
+                <div class="sub_heading">
+                    Item 1
+                </div>
+            </div>
+            <div class="img_container"><a href="#"><img src="/images/gear1.png"></a></div>
+            <div class="item_list_wrapper" id="subtext_total">
+                <div id="item_description">
+                    <span class="desc">Amet laborum veniam commodo sunt quis veniam proident veniam irure qui adipisicing id elit aliqua. </span>
+                </div>
+                <div class="button" id="atc">
+                    <a href="#">Add To Cart</a>
+                </div>
+            </div>
         </div>
     </div>
 </div>
