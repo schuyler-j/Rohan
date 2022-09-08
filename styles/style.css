@@ -80,13 +80,18 @@ h5{
     text-align: center;
     height: 200px;
     border: 1px solid #71856d;
+    border-radius: 0px 0px 6px 6px;
+    margin-bottom: 4px;
 }
 .img_container img{
     margin: auto;
     height: 200px;
 }
 
-
+.img_container:hover{
+    border: 1px solid #f2d349;
+    border-radius: 0px 0px 6px 6px;
+}
 
 .menu_container{
     margin: auto;
@@ -359,7 +364,7 @@ a:hover.nav_links{
     border: 6px solid #71856d;
     max-width: max-content;
     justify-content: center;
-
+    border-radius: 4px;
 }
 
 .item_list_wrapper:hover{
@@ -368,7 +373,6 @@ a:hover.nav_links{
 
 .item_list_wrapper a:hover{
     color: #465343;
-    text-decoration: underline;
 }
 
 .item_list_wrapper img{
@@ -379,11 +383,12 @@ a:hover.nav_links{
 
 .desc{
     color: #222;
+    font-size: 12px;
+    font-weight: bold;
 }
 
 #subtext_total{
     color: #333633;
-    padding: 30px;
     display: inline-flex;
 }
 #subtext_total:hover{
@@ -406,6 +411,3 @@ a:hover.nav_links{
     display: inline-flex;
 }
 
-.img_container:hover{
-    border: 1px solid #f2d349;
-}
