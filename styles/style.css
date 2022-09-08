@@ -432,3 +432,7 @@ a:hover.nav_links{
 .page_wrapper{
     flex-wrap: nowrap;
 }}
+
+.nav_title{
+    background-color: #71856d;
+}
