@@ -425,8 +425,8 @@ a:hover.nav_links{
 }
 
 
-@media only screen and (min-width: 1009px) {.h_spacer{
-    min-width: 80px;
+@media only screen and (min-width: 1500px) {.h_spacer{
+    min-width: 30px;
 }
 
 .page_wrapper{
