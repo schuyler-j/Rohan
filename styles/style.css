@@ -116,7 +116,7 @@ h5{
     max-width: 100%;
     text-align: center;
     margin: auto;
-    text-shadow: 4px 4px black;
+    text-shadow: 4px 2px 1px black;
     /*border-bottom: 4px solid black;*/
     font-family: Anton, serif;
     letter-spacing: 0.4em;
@@ -272,6 +272,14 @@ h5{
 
     background-image: linear-gradient(to bottom, rgba(255,255,255,0.5), rgba(255,255,255,0.2) 64%, rgba(0,0,0,0.15) 66%, rgba(0,0,0,0.05));
     background-repeat: repeat-x;
+}
+
+#atc.button{
+    color: #5c6e58;
+}
+#atc.button:hover{
+    text-decoration: underline;
+    color: #353d33;
 }
 
 .button:hover{

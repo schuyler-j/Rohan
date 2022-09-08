@@ -63,7 +63,7 @@
             <div class="grid">
                 <div class="block_1">
                     <img src="images/greeting_2.png">
-                    <a class="button" type="submit"  href="login.php">JOIN NOW</a>
+                    <a class="button" type="submit"  href="login.php" style="width: 220px">JOIN NOW</a>
                 </div>
                     <img id="cursor" src="images/cursor.png">
             </div>

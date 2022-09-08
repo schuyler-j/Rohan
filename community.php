@@ -63,12 +63,16 @@
                     </div>
                 </a>
                 <div class="button_wrapper">
-                    <div class="button" id="atc">
-                        <a href="#">Add To Cart</a>
-                    </div><br>
-                    <div class="button" id="atc">
-                        <a href="#">Add To Wishlist</a>
-                    </div>
+                    <a href="#">
+                        <div class="button" id="atc">
+                            Add To Cart
+                        </div><br>
+                    </a>
+                    <a href="#">
+                        <div class="button" id="atc">
+                            Add To Wishlist
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -89,12 +93,16 @@
                     </div>
                 </a>
                 <div class="button_wrapper">
-                    <div class="button" id="atc">
-                        <a href="#">Add To Cart</a>
-                    </div><br>
-                    <div class="button" id="atc">
-                        <a href="#">Add To Wishlist</a>
-                    </div>
+                    <a href="#">
+                        <div class="button" id="atc">
+                            Add To Cart
+                        </div><br>
+                    </a>
+                    <a href="#">
+                        <div class="button" id="atc">
+                            Add To Wishlist
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -118,12 +126,16 @@
                     </div>
                 </a>
                 <div class="button_wrapper">
-                    <div class="button" id="atc">
-                        <a href="#">Add To Cart</a>
-                    </div><br>
-                    <div class="button" id="atc">
-                        <a href="#">Add To Wishlist</a>
-                    </div>
+                    <a href="#">
+                        <div class="button" id="atc">
+                            Add To Cart
+                        </div><br>
+                    </a>
+                    <a href="#">
+                        <div class="button" id="atc">
+                            Add To Wishlist
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -144,12 +156,16 @@
                     </div>
                 </a>
                 <div class="button_wrapper">
-                    <div class="button" id="atc">
-                        <a href="#">Add To Cart</a>
-                    </div><br>
-                    <div class="button" id="atc">
-                        <a href="#">Add To Wishlist</a>
-                    </div>
+                    <a href="#">
+                        <div class="button" id="atc">
+                            Add To Cart
+                        </div><br>
+                    </a>
+                    <a href="#">
+                        <div class="button" id="atc">
+                            Add To Wishlist
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
