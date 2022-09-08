@@ -2,6 +2,9 @@
 *{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    /*for dark theme
+    color: #fff;
+    */
 }
 
 body{
@@ -178,6 +181,9 @@ h4{
     padding: 20px;
     border-radius: 8px;
     background-color:#e4f3e1;
+    /*for dark theme
+    background-color:#1c1f1c;
+    */
     box-shadow: 2px 2px 2px #222;
 }
 
@@ -324,6 +330,7 @@ a:hover.nav_links{
 .item_list_wrapper p{
     padding-right: 80px;
     width: fit-content;
+    color: #222;
 }
 
 .item_list_wrapper{
@@ -350,6 +357,10 @@ a:hover.nav_links{
 
 }
 
+
+.desc{
+    color: #222;
+}
 
 #subtext_total{
     color: #333633;
