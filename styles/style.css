@@ -5,6 +5,7 @@
     /*for dark theme
     color: #fff;
     */
+
 }
 
 body{
@@ -23,6 +24,10 @@ a:hover{
 
 h1{
     font-size: 60px;
+}
+
+h2{
+    color: #333633;
 }
 
 h4{
@@ -427,7 +432,3 @@ a:hover.nav_links{
 .page_wrapper{
     flex-wrap: nowrap;
 }}
-
-.content:hover{
-    padding-bottom: 300px;
-}
