@@ -186,7 +186,7 @@ h5{
     align-items: stretch;
     align-content: center;
     /*make this wrap if mobile */
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
 }
 
 
@@ -197,7 +197,7 @@ h5{
     margin-right: 28px;
     padding: 20px;
     border-radius: 8px;
-    background-color:#e4f3e1;
+    background-color:#fffbe9;
     /*for dark theme
     background-color:#1c1f1c;
     */
@@ -419,3 +419,15 @@ a:hover.nav_links{
     display: inline-flex;
 }
 
+
+@media only screen and (min-width: 1009px) {.h_spacer{
+    min-width: 80px;
+}
+
+.page_wrapper{
+    flex-wrap: nowrap;
+}}
+
+.content:hover{
+    padding-bottom: 300px;
+}

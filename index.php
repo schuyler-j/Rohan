@@ -69,7 +69,7 @@
             </div>
             <div class="about">
                 <div class="sub_heading">
-                    <h2 id="about">ABOUT US</h2>
+                    <h2 id="about">TERMS & CONDITIONS</h2>
                 </div>
                 <p id="about_us_home">
                     <span>Ipsum elit ad sint anim. </span>
@@ -94,6 +94,19 @@
             </div>
             <div class="item_list">
                 <ul>
+                    <li class="list">
+                        <h3 class="item_list_title">lorem</h3>
+                        <div class="item_list_wrapper">
+                            <a href="#"><h5>Occaecat deserunt amet Lorem nulla ipsum ipsum est duis amet ea enim.</h5></a>
+                            <div class="content">
+                                <img src="images/d1.png">
+                                <div class="block1">
+                                    <p>Qui laboris nulla incididunt voluptate quis in do proident ullamco exercitation eiusmod velit. </p>
+                                    <div class="date">date</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
                     <li class="list">
                         <h3 class="item_list_title">lorem</h3>
                         <div class="item_list_wrapper">

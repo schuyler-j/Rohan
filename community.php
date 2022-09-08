@@ -107,6 +107,7 @@
             </div>
         </div>
     </div>
+    <div class="h_spacer"></div>
     <div class="side_navbar">
         <div class="nav_title"><h2>On Sale Now</h2></div>
         <div class="link_box">
