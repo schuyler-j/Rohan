@@ -73,7 +73,7 @@
                     Item 1
                 </div>
             </div>
-            <div class="img_container"><a href="#"><img src="/images/foam1.png"></a></div>
+            <div class="img_container"><a href="#"><img src="/images/foam1.png"><div class="hidden"></div></a></div>
             <div class="item_list_wrapper" id="subtext_total">
                 <div id="item_description">
                     <span class="desc">Amet laborum veniam commodo sunt quis veniam proident veniam irure qui adipisicing id elit aliqua. </span>
