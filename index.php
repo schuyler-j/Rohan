@@ -35,7 +35,7 @@
                 <img src="images/checkout.png">
                 <a class="nav_links" href="#">Checkout</a>
                 <img src="images/login.png">
-                <a class="nav_links" href="#">Login</a>
+                <a class="nav_links" href="login.php">Login</a>
             </div>
         </div>
         <div class="nav" id="nav_top">
@@ -63,7 +63,7 @@
             <div class="grid">
                 <div class="block_1">
                     <img src="images/greeting_2.png">
-                    <input class="button" type="submit" value="JOIN NOW" ></input>
+                    <a class="button" type="submit"  href="login.php">JOIN NOW</a>
                 </div>
                     <img id="cursor" src="images/cursor.png">
             </div>
