@@ -36,7 +36,7 @@
             <ul class="main_menu">
                 <li class="list"><a href="index.php"><span class="media_text">Home</span></a></li>
                 <li class="list"><a href="#"><span class="media_text">Community Marketplace</span></a></li>
-                <li class="list"><a href="#" id="selected"><span class="media_text">Shopping</span></a></li>
+                <li class="list"><a href="shopping.php" id="selected"><span class="media_text">Shopping</span></a></li>
                 <li class="list"><a href="#"><span class="media_text">About</span></a></li>
                 <li class="list"><a href="#"><span class="media_text">Contact</span></a></li>
             </ul>
@@ -45,7 +45,7 @@
 
 <div class="page_wrapper">
     <div class="side_navbar">
-        <div class="nav_title"><h2>Community Items</h2></div>
+        <div class="nav_title"><h2>Most Searched Items</h2></div>
         <div class="link_box">
             <div>
                 <div class="sub_heading">
