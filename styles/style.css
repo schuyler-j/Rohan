@@ -436,3 +436,7 @@ a:hover.nav_links{
 .nav_title{
     background-color: #71856d;
 }
+
+::selection{
+    background: #000;
+}
