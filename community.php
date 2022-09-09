@@ -52,7 +52,7 @@
                     Item 1
                 </div>
             </div>
-            <div class="img_container"><a href="#"><img src="/images/gear1.png"></a></div>
+            <div class="img_container"><a href="#"><img src="images/gear1.png"></a></div>
             <div class="item_list_wrapper" id="subtext_total">
                 <a href="#">
                     <div id="item_description">
@@ -82,71 +82,7 @@
                     Item 1
                 </div>
             </div>
-            <div class="img_container"><a href="#"><img src="/images/foam1.png"><div class="hidden"></div></a></div>
-            <div class="item_list_wrapper" id="subtext_total">
-                <a href="#">
-                    <div id="item_description">
-                        <span class="desc">
-                            Cupidatat ad ea consequat et ullamco laboris ipsum proident consequat nostrud proident in consectetur.
-                        </span>
-                        <h3 id="price">$$$</h3>
-                    </div>
-                </a>
-                <div class="button_wrapper">
-                    <a href="#">
-                        <div class="button" id="atc">
-                            Add To Cart
-                        </div><br>
-                    </a>
-                    <a href="#">
-                        <div class="button" id="atc">
-                            Add To Wishlist
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="h_spacer"></div>
-    <div class="side_navbar">
-        <div class="nav_title"><h2>On Sale Now</h2></div>
-        <div class="link_box">
-            <div>
-                <div class="sub_heading">
-                    Item 1
-                </div>
-            </div>
-            <div class="img_container"><a href="#"><img src="/images/tent1.png"></a></div>
-            <div class="item_list_wrapper" id="subtext_total">
-                <a href="#">
-                    <div id="item_description">
-                        <span class="desc">
-                            Cupidatat ad ea consequat et ullamco laboris ipsum proident consequat nostrud proident in consectetur.
-                        </span>
-                        <h3 id="price">$$$</h3>
-                    </div>
-                </a>
-                <div class="button_wrapper">
-                    <a href="#">
-                        <div class="button" id="atc">
-                            Add To Cart
-                        </div><br>
-                    </a>
-                    <a href="#">
-                        <div class="button" id="atc">
-                            Add To Wishlist
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="link_box">
-            <div>
-                <div class="sub_heading">
-                    Item 1
-                </div>
-            </div>
-            <div class="img_container"><a href="#"><img src="/images/chair1.png"></a></div>
+            <div class="img_container"><a href="#"><img src="images/foam1.png"><div class="hidden"></div></a></div>
             <div class="item_list_wrapper" id="subtext_total">
                 <a href="#">
                     <div id="item_description">
@@ -180,7 +116,7 @@
                     Item 1
                 </div>
             </div>
-            <div class="img_container"><a href="#"><img src="/images/tent1.png"></a></div>
+            <div class="img_container"><a href="#"><img src="images/tent1.png"></a></div>
             <div class="item_list_wrapper" id="subtext_total">
                 <a href="#">
                     <div id="item_description">
@@ -210,7 +146,71 @@
                     Item 1
                 </div>
             </div>
-            <div class="img_container"><a href="#"><img src="/images/chair1.png"></a></div>
+            <div class="img_container"><a href="#"><img src="images/chair1.png"></a></div>
+            <div class="item_list_wrapper" id="subtext_total">
+                <a href="#">
+                    <div id="item_description">
+                        <span class="desc">
+                            Cupidatat ad ea consequat et ullamco laboris ipsum proident consequat nostrud proident in consectetur.
+                        </span>
+                        <h3 id="price">$$$</h3>
+                    </div>
+                </a>
+                <div class="button_wrapper">
+                    <a href="#">
+                        <div class="button" id="atc">
+                            Add To Cart
+                        </div><br>
+                    </a>
+                    <a href="#">
+                        <div class="button" id="atc">
+                            Add To Wishlist
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="h_spacer"></div>
+    <div class="side_navbar">
+        <div class="nav_title"><h2>On Sale Now</h2></div>
+        <div class="link_box">
+            <div>
+                <div class="sub_heading">
+                    Item 1
+                </div>
+            </div>
+            <div class="img_container"><a href="#"><img src="images/tent1.png"></a></div>
+            <div class="item_list_wrapper" id="subtext_total">
+                <a href="#">
+                    <div id="item_description">
+                        <span class="desc">
+                            Cupidatat ad ea consequat et ullamco laboris ipsum proident consequat nostrud proident in consectetur.
+                        </span>
+                        <h3 id="price">$$$</h3>
+                    </div>
+                </a>
+                <div class="button_wrapper">
+                    <a href="#">
+                        <div class="button" id="atc">
+                            Add To Cart
+                        </div><br>
+                    </a>
+                    <a href="#">
+                        <div class="button" id="atc">
+                            Add To Wishlist
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="link_box">
+            <div>
+                <div class="sub_heading">
+                    Item 1
+                </div>
+            </div>
+            <div class="img_container"><a href="#"><img src="images/chair1.png"></a></div>
             <div class="item_list_wrapper" id="subtext_total">
                 <a href="#">
                     <div id="item_description">
