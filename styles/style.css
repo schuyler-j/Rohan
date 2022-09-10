@@ -275,3 +275,96 @@ h4{
 a:hover.nav_links{
     text-shadow:1px -2px 2px #000;
 }
+.item_list_title{
+    color:#222;
+    text-transform: uppercase;
+}
+
+.item_list ul{
+    margin-left: auto;
+    padding: 12px;
+}
+
+.item_list li{
+    list-style-type: none;
+    padding-bottom: 12px;
+}
+
+.item_list_wrapper p{
+    margin-top: 0px;
+    padding-right: 2rem;
+    padding-left: 12px;
+    width: fit-content;
+    color: #222;
+}
+
+.item_list_wrapper{
+    background-color: beige;
+    padding: 18px;
+    border: 6px solid #71856d;
+    max-width: max-content;
+    justify-content: center;
+    border-radius: 4px;
+}
+
+.item_list_wrapper:hover{
+    box-shadow: 2px 2px 2px 2px #465343;
+}
+
+.item_list_wrapper a:hover{
+    color: #465343;
+}
+
+.item_list_wrapper img{
+    width: auto;
+    height: 120px;
+
+}
+
+.desc{
+    color: #222;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+#subtext_total{
+    color: #333633;
+    display: inline-flex;
+}
+#subtext_total:hover{
+    box-shadow: none;
+}
+
+#item_description{
+    width: 17em;
+    padding-top: 12px;
+    margin-right: 12px;
+    border-bottom: 1px solid #5c6e58;
+}
+
+#atc{
+    font-size: 12px;
+    background-color: #f2d349;
+}
+
+.content{
+    display: inline-flex;
+}
+
+
+@media only screen and (min-width: 1500px) {.h_spacer{
+    min-width: 30px;
+}
+
+.page_wrapper{
+    flex-wrap: nowrap;
+}}
+
+.nav_title{
+    background-color: #71856d;
+}
+
+::selection{
+    background: #000;
+    color: #f2d349;
+}
