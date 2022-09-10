@@ -54,6 +54,23 @@
 
 
 
+    <div class="page_wrapper">
+        <div class="form_wrapper">
+            <form>
+                <ul class="item_list" id="login_form">
+                    <li><div class="sub_heading" style="font-size:32px">Login</div></li>
+                    <li>username</li>
+                    <li><input type="text" placeholder="" id="uname"></input></li>
+                    <li>password</li>
+                    <li><input type="password" placeholder="" id="pword"></input></li>
+                    <br><br>
+                    <li><input type="submit" class="button" value="LOGIN"></input></li>
+                </ul>
+            </form>
+        </div>
+
+
+    </div>
 
 
 

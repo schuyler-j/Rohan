@@ -20,29 +20,28 @@
         </div>
         -->
     </div>
-        <div class="nav" id="nav_bottom">
-            <div class="nav_list">
-                <img src="images/watchlist.png">
-                <a class="nav_links" href="#">Watchlist</a>
-                <img src="images/cart.png">
-                <a class="nav_links" href="#">My Cart</a>
-                <img src="images/checkout.png">
-                <a class="nav_links" href="#">Checkout</a>
-                <img src="images/login.png">
-                <a class="nav_links" href="login.php">Login</a>
-            </div>
+    <div class="nav" id="nav_bottom">
+        <div class="nav_list">
+            <img src="images/watchlist.png">
+            <a class="nav_links" href="#">Watchlist</a>
+            <img src="images/cart.png">
+            <a class="nav_links" href="#">My Cart</a>
+            <img src="images/checkout.png">
+            <a class="nav_links" href="#">Checkout</a>
+            <img src="images/login.png">
+            <a class="nav_links" href="login.php">Login</a>
         </div>
-        <div class="nav" id="nav_top">
-            <ul class="main_menu">
-                <li class="list"><a href="index.php"><span class="media_text">Home</span></a></li>
-                <li class="list"><a href="#" id="selected"><span class="media_text">Community Marketplace</span></a></li>
-                <li class="list"><a href="#"><span class="media_text">Shopping</span></a></li>
-                <li class="list"><a href="#"><span class="media_text">About</span></a></li>
-                <li class="list"><a href="#"><span class="media_text">Contact</span></a></li>
-            </ul>
-        </div>
+    </div>
+    <div class="nav" id="nav_top">
+        <ul class="main_menu">
+            <li class="list"><a href="index.php"><span class="media_text">Home</span></a></li>
+            <li class="list"><a href="#" id="selected"><span class="media_text">Community Marketplace</span></a></li>
+            <li class="list"><a href="#"><span class="media_text">Shopping</span></a></li>
+            <li class="list"><a href="#"><span class="media_text">About</span></a></li>
+            <li class="list"><a href="#"><span class="media_text">Contact</span></a></li>
+        </ul>
+    </div>
 </div>
-
 <div class="page_wrapper">
     <div class="side_navbar">
         <div class="nav_title"><h2>Community Items</h2></div>
