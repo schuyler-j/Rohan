@@ -43,8 +43,20 @@
         </div>
 </div>
 <div class="shopping_filters">
-    <div class="side_navbar">
-    <h1> search </h1> 
+<form action="shopping.php" method="get">
+        <b>Ready to find your next item? Start searching here</b>
+        <div>
+            <label>Search: </label>
+            <input type="text" name="name" placeholder="What would you like to look for?"/>
+
+            <label>How old are you?</label>
+            <input type="number" name="age" min="10" max="100" required/><br>
+
+            <label>What is your email address?</label><br>
+            <input type="email" name="email" required/><br>
+        </div>
+        <input type="submit" value="Begin" /><br>
+      </form>
 
 <div class="page_wrapper">
     <div class="side_navbar">
