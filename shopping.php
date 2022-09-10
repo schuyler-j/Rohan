@@ -42,6 +42,9 @@
             </ul>
         </div>
 </div>
+<div class="shopping_filters">
+    <div class="side_navbar">
+    <h1> search </h1> 
 
 <div class="page_wrapper">
     <div class="side_navbar">
@@ -82,7 +85,7 @@
                     Item 1
                 </div>
             </div>
-            <div class="img_container"><a href="#"><img src="/images/foam1.png"><div class="hidden"></div></a></div>
+            <div class="img_container"><a href="#"><img src="/images/greeting_1.png"><div class="hidden"></div></a></div>
             <div class="item_list_wrapper" id="subtext_total">
                 <a href="#">
                     <div id="item_description">
