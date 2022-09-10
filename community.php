@@ -20,6 +20,18 @@
         </div>
         -->
     </div>
+
+    <div class="nav" id="nav_bottom">
+        <div class="nav_list">
+            <img src="images/watchlist.png">
+            <a class="nav_links" href="#">Watchlist</a>
+            <img src="images/cart.png">
+            <a class="nav_links" href="#">My Cart</a>
+            <img src="images/checkout.png">
+            <a class="nav_links" href="#">Checkout</a>
+            <img src="images/login.png">
+            <a class="nav_links" href="login.php">Login</a>
+
         <div class="nav" id="nav_bottom">
             <div class="nav_list">
                 <img src="images/watchlist.png">
@@ -40,9 +52,19 @@
                 <li class="list"><a href="#"><span class="media_text">About</span></a></li>
                 <li class="list"><a href="#"><span class="media_text">Contact</span></a></li>
             </ul>
-        </div>
-</div>
 
+        </div>
+    </div>
+    <div class="nav" id="nav_top">
+        <ul class="main_menu">
+            <li class="list"><a href="index.php"><span class="media_text">Home</span></a></li>
+            <li class="list"><a href="#" id="selected"><span class="media_text">Community Marketplace</span></a></li>
+            <li class="list"><a href="#"><span class="media_text">Shopping</span></a></li>
+            <li class="list"><a href="#"><span class="media_text">About</span></a></li>
+            <li class="list"><a href="#"><span class="media_text">Contact</span></a></li>
+        </ul>
+    </div>
+</div>
 <div class="page_wrapper">
     <div class="side_navbar">
         <div class="nav_title"><h2>Community Items</h2></div>
@@ -52,7 +74,7 @@
                     Item 1
                 </div>
             </div>
-            <div class="img_container"><a href="#"><img src="/images/gear1.png"></a></div>
+            <div class="img_container"><a href="#"><img src="images/gear1.png"></a></div>
             <div class="item_list_wrapper" id="subtext_total">
                 <a href="#">
                     <div id="item_description">
@@ -82,71 +104,7 @@
                     Item 1
                 </div>
             </div>
-            <div class="img_container"><a href="#"><img src="/images/foam1.png"><div class="hidden"></div></a></div>
-            <div class="item_list_wrapper" id="subtext_total">
-                <a href="#">
-                    <div id="item_description">
-                        <span class="desc">
-                            Cupidatat ad ea consequat et ullamco laboris ipsum proident consequat nostrud proident in consectetur.
-                        </span>
-                        <h3 id="price">$$$</h3>
-                    </div>
-                </a>
-                <div class="button_wrapper">
-                    <a href="#">
-                        <div class="button" id="atc">
-                            Add To Cart
-                        </div><br>
-                    </a>
-                    <a href="#">
-                        <div class="button" id="atc">
-                            Add To Wishlist
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="h_spacer"></div>
-    <div class="side_navbar">
-        <div class="nav_title"><h2>On Sale Now</h2></div>
-        <div class="link_box">
-            <div>
-                <div class="sub_heading">
-                    Item 1
-                </div>
-            </div>
-            <div class="img_container"><a href="#"><img src="/images/tent1.png"></a></div>
-            <div class="item_list_wrapper" id="subtext_total">
-                <a href="#">
-                    <div id="item_description">
-                        <span class="desc">
-                            Cupidatat ad ea consequat et ullamco laboris ipsum proident consequat nostrud proident in consectetur.
-                        </span>
-                        <h3 id="price">$$$</h3>
-                    </div>
-                </a>
-                <div class="button_wrapper">
-                    <a href="#">
-                        <div class="button" id="atc">
-                            Add To Cart
-                        </div><br>
-                    </a>
-                    <a href="#">
-                        <div class="button" id="atc">
-                            Add To Wishlist
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="link_box">
-            <div>
-                <div class="sub_heading">
-                    Item 1
-                </div>
-            </div>
-            <div class="img_container"><a href="#"><img src="/images/chair1.png"></a></div>
+            <div class="img_container"><a href="#"><img src="images/foam1.png"><div class="hidden"></div></a></div>
             <div class="item_list_wrapper" id="subtext_total">
                 <a href="#">
                     <div id="item_description">
@@ -180,7 +138,7 @@
                     Item 1
                 </div>
             </div>
-            <div class="img_container"><a href="#"><img src="/images/tent1.png"></a></div>
+            <div class="img_container"><a href="#"><img src="images/tent1.png"></a></div>
             <div class="item_list_wrapper" id="subtext_total">
                 <a href="#">
                     <div id="item_description">
@@ -210,7 +168,71 @@
                     Item 1
                 </div>
             </div>
-            <div class="img_container"><a href="#"><img src="/images/chair1.png"></a></div>
+            <div class="img_container"><a href="#"><img src="images/chair1.png"></a></div>
+            <div class="item_list_wrapper" id="subtext_total">
+                <a href="#">
+                    <div id="item_description">
+                        <span class="desc">
+                            Cupidatat ad ea consequat et ullamco laboris ipsum proident consequat nostrud proident in consectetur.
+                        </span>
+                        <h3 id="price">$$$</h3>
+                    </div>
+                </a>
+                <div class="button_wrapper">
+                    <a href="#">
+                        <div class="button" id="atc">
+                            Add To Cart
+                        </div><br>
+                    </a>
+                    <a href="#">
+                        <div class="button" id="atc">
+                            Add To Wishlist
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="h_spacer"></div>
+    <div class="side_navbar">
+        <div class="nav_title"><h2>On Sale Now</h2></div>
+        <div class="link_box">
+            <div>
+                <div class="sub_heading">
+                    Item 1
+                </div>
+            </div>
+            <div class="img_container"><a href="#"><img src="images/tent1.png"></a></div>
+            <div class="item_list_wrapper" id="subtext_total">
+                <a href="#">
+                    <div id="item_description">
+                        <span class="desc">
+                            Cupidatat ad ea consequat et ullamco laboris ipsum proident consequat nostrud proident in consectetur.
+                        </span>
+                        <h3 id="price">$$$</h3>
+                    </div>
+                </a>
+                <div class="button_wrapper">
+                    <a href="#">
+                        <div class="button" id="atc">
+                            Add To Cart
+                        </div><br>
+                    </a>
+                    <a href="#">
+                        <div class="button" id="atc">
+                            Add To Wishlist
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="link_box">
+            <div>
+                <div class="sub_heading">
+                    Item 1
+                </div>
+            </div>
+            <div class="img_container"><a href="#"><img src="images/chair1.png"></a></div>
             <div class="item_list_wrapper" id="subtext_total">
                 <a href="#">
                     <div id="item_description">
