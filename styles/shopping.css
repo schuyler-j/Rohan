@@ -89,3 +89,33 @@ select[name="categories"] {
 img{
     text-align: center;
 }
+.side_navbar{
+    right: 0;
+    min-height: 100%;
+    min-width: 480px;
+    background-color: #364133;
+    color: #f2d349;
+    text-align: center;
+    border-left: 4px solid #f2d349;
+    border-right: 4px solid #f2d349;
+    border-top: 12px solid #f2d349;
+    margin-top: 12px;
+}
+
+.nav_title h2{
+    color: #f2d349;
+    text-shadow: 2px 2px #364133;
+
+}
+
+
+.link_box{
+    margin-top: 6px;
+    display: block;
+    padding: 12px;
+    min-width: max-content;
+}
+
+.page_wrapper{
+    background-color: #dcddbb;
+}
