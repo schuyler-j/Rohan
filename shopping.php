@@ -35,16 +35,17 @@
         <div class="nav" id="nav_top">
             <ul class="main_menu">
                 <li class="list"><a href="index.php"><span class="media_text">Home</span></a></li>
-                <li class="list"><a href="#"><span class="media_text">Community Marketplace</span></a></li>
+                <li class="list"><a href="community.php"><span class="media_text">Community Marketplace</span></a></li>
                 <li class="list"><a href="shopping.php" id="selected"><span class="media_text">Shopping</span></a></li>
-                <li class="list"><a href="#"><span class="media_text">About</span></a></li>
+                <li class="list"><a href="#about"><span class="media_text">About</span></a></li>
                 <li class="list"><a href="#"><span class="media_text">Contact</span></a></li>
             </ul>
         </div>
 </div>
 <div class="shopping_filters">
 <form action="shopping.php" method="get">
-        <h2><b>Ready to find your next item? Start searching here</b></h2>
+        <h2><b>Ready to find your next item? Start searching here</b></h2>   
+            
         <div>
             <label>Search: </label>
             <input type="text" name="search" placeholder="What would you like to look for?"/>
@@ -72,7 +73,7 @@
             </select>
 
             <label for="categories">Categories:</label>
-            <select name="Categories" id="categories">
+            <select name="categories" id="categories">
             <option
                 value="all">All Categories</option>    
             <option
@@ -93,6 +94,13 @@
                 value="tours-attractions">Tours and Attractions</option>
             </select>
             <input type="submit" value="Search" /><br>
+        <div class ="shopping_links">    
+            <img src="images/shopping-bag.png"><a class="nav_links" href="shopping.php" id="main">Main Shopping Page</a>
+            <img src="images/recently-viewed.png"><a class="nav_links" href="#">Recently Viewed</a>
+            <img src="images/watchlist.png"><a class="nav_links" href="#">Watchlist</a>
+            <img src="images/help.png"><a class="nav_links" href="#">Help</a>
+            <img src="images/clear-search.png"><a class="nav_links" href="shopping.php" id="reset_search">Clear Search</a>
+        </div>    
         </div>
       </form>
 
