@@ -119,3 +119,7 @@ img{
 .page_wrapper{
     background-color: #dcddbb;
 }
+.pages{
+    text-align: center;
+    padding-top: 10px;
+}
