@@ -44,18 +44,56 @@
 </div>
 <div class="shopping_filters">
 <form action="shopping.php" method="get">
-        <b>Ready to find your next item? Start searching here</b>
+        <h2><b>Ready to find your next item? Start searching here</b></h2>
         <div>
             <label>Search: </label>
-            <input type="text" name="name" placeholder="What would you like to look for?"/>
+            <input type="text" name="search" placeholder="What would you like to look for?"/>
 
-            <label>How old are you?</label>
-            <input type="number" name="age" min="10" max="100" required/><br>
+            <label for="location">Location:</label>
+            <select name="location" id="location">
+            <option
+                value="all">All of Australia</option>    
+            <option
+                value="act">Australian Capital Territory</option>
+                <option
+                value="nsw">New South Wales</option>
+                <option
+                value="nt">Northern Territoty</option>
+                <option
+                value="qld">Queensland</option>
+                <option
+                value="sa">South Australia</option>
+                <option
+                value="tas">Tasmania</option>
+                <option
+                value="vic">Victoria</option>
+                <option
+                value="wa">Western Australia</option>
+            </select>
 
-            <label>What is your email address?</label><br>
-            <input type="email" name="email" required/><br>
+            <label for="categories">Categories:</label>
+            <select name="Categories" id="categories">
+            <option
+                value="all">All Categories</option>    
+            <option
+                value="caravans-campervans">Caravans and Campervans</option>
+                <option
+                value="motorhomes">Motorhomes</option>
+                <option
+                value="camping-gear">Camping Gear</option>
+                <option
+                value="vehicles">Vehicles</option>
+                <option
+                value="trailers">Trailers</option>
+                <option
+                value="accommodation">Accomodation</option>
+                <option
+                value="hobby-sports">Hobby/Sporting Equipment</option>
+                <option
+                value="tours-attractions">Tours and Attractions</option>
+            </select>
+            <input type="submit" value="Search" /><br>
         </div>
-        <input type="submit" value="Begin" /><br>
       </form>
 
 <div class="page_wrapper">

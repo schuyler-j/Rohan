@@ -1,6 +1,29 @@
 .shopping_filters{
     background-color: #8AA899;
+    padding: 5px;
+    padding-bottom: 10px;
 }
-b{
-    font-family: 28px;
+input[type="submit"] {
+    font-weight: bold;
+    text-transform: Uppercase;
+    color: #fff;
+    background-color: #f2d349;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width:auto;
+    border: none;
+}
+input[type="submit"]:hover {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #e4d8ac;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width:auto;
+    border: none;
 }
