@@ -352,6 +352,15 @@ a:hover.nav_links{
     text-transform: uppercase;
 }
 
+.item_list h4{
+    color: #6c9277;
+    text-align: center;
+}
+
+.item_list h4:hover{
+    text-decoration: underline;
+}
+
 .item_list ul{
     margin-left: auto;
     padding: 12px;
@@ -524,9 +533,14 @@ a:hover.nav_links{
     min-width: 600px;
 }
 
+#uname_title{
+    margin-top: 16px;
+}
+
 #uname, #pword{
     padding: 10px;
-    min-width: 450px;
+    min-width: 100%;
+    font-size: 28px;
 }
 
 .pages{

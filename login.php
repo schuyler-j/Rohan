@@ -58,12 +58,13 @@
         <div class="form_wrapper">
             <form>
                 <ul class="item_list" id="login_form">
-                    <li><div class="sub_heading" style="font-size:32px">Login</div></li>
-                    <li>username</li>
+                    <li><div class="sub_heading" style="font-size:38px">Login</div></li>
+                    <li id="uname_title"><b>Username</b></li>
                     <li><input type="text" placeholder="" id="uname"></input></li>
-                    <li>password</li>
+                    <li><b>Password</b></li>
                     <li><input type="password" placeholder="" id="pword"></input></li>
-                    <br><br>
+                    <li><a href="registration.php"><h4>Don't have an account? Sign Up Here!</h4></a></li>
+                    <br>
                     <li><input type="submit" class="button" value="LOGIN"></input></li>
                 </ul>
             </form>
