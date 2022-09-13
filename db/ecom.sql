@@ -3,12 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Sep 13, 2022 at 05:59 AM
+-- Generation Time: Sep 13, 2022 at 09:33 AM
 -- Server version: 8.0.30
 -- PHP Version: 7.4.30
-
-DROP DATABASE IF EXISTS ecom;
-CREATE DATABASE ecom;
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -44,6 +41,35 @@ CREATE TABLE `cart` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `creditcard`
+--
+
+CREATE TABLE `creditcard` (
+  `CreditCard` int NOT NULL,
+  `ccName` text COLLATE utf8mb4_general_ci NOT NULL,
+  `expDate` date NOT NULL,
+  `cvc` int NOT NULL,
+  `userID` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `invoice`
+--
+
+CREATE TABLE `invoice` (
+  `invoiceID` int NOT NULL,
+  `userID` int NOT NULL,
+  `sellerID` int NOT NULL,
+  `creationDate` date NOT NULL,
+  `shippingAddr` text COLLATE utf8mb4_general_ci NOT NULL,
+  `total` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `news`
 --
 
@@ -66,6 +92,21 @@ INSERT INTO `news` (`postID`, `title`, `content`, `img`, `postdate`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `orders`
+--
+
+CREATE TABLE `orders` (
+  `orderID` int NOT NULL,
+  `userID` int NOT NULL,
+  `orderDate` date NOT NULL,
+  `cartID` int NOT NULL,
+  `complete` tinyint(1) NOT NULL,
+  `shippingAddr` text COLLATE utf8mb4_general_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `products`
 --
 
@@ -77,8 +118,42 @@ CREATE TABLE `products` (
   `cItem` tinyint(1) NOT NULL,
   `State` text COLLATE utf8mb4_general_ci NOT NULL,
   `Location` text COLLATE utf8mb4_general_ci NOT NULL,
-  `Category` text COLLATE utf8mb4_general_ci NOT NULL
+  `Category` text COLLATE utf8mb4_general_ci NOT NULL,
+  `stockAmt` int NOT NULL,
+  `imgSrc` text COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `products`
+--
+
+INSERT INTO `products` (`ProductID`, `Description`, `pName`, `Price`, `cItem`, `State`, `Location`, `Category`, `stockAmt`, `imgSrc`) VALUES
+(1001, 'Cruisemaster XT Triathalon, 20\" chassis, 8080A Hitch, 18\" Wheels.', 'Cruisemaster Caravan', '83900', 1, 'South Australia', '22 Bridge Road', 'Caravans and Campervans', 3, 'cruiser.png'),
+(1002, 'Compact motorhome, built for the whole family.', 'Sage Motorhome', '120000', 0, 'South Australia', '28 Shine Street', 'Motorhomes', 4, 'sage.png'),
+(1003, 'This swag is a top contender. The be all and end all of swag technology. Constructed from the greatest materials known to man, this swag has it all.', 'XTM 4x4 Twin Double Swag', '299', 0, 'New South Whales', '08 Polly Drive', 'Camping Gear', 23, 'dswag.png'),
+(1004, 'Set includes a 4.5qt oven. Carry bag and 29cm folding pan and griddle.', 'Dawson Cast Iron Set', '119', 0, 'Western Australia', '09 Faun Road', 'Camping Gear', 12, 'iron.png');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `seller`
+--
+
+CREATE TABLE `seller` (
+  `sellerID` int NOT NULL,
+  `userID` int NOT NULL,
+  `itemCount` int NOT NULL,
+  `itemsSold` int NOT NULL,
+  `shippingAddr` text COLLATE utf8mb4_general_ci NOT NULL,
+  `postCode` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `seller`
+--
+
+INSERT INTO `seller` (`sellerID`, `userID`, `itemCount`, `itemsSold`, `shippingAddr`, `postCode`) VALUES
+(10, 10001, 0, 0, '12 Lol Road', 5000);
 
 -- --------------------------------------------------------
 
@@ -92,7 +167,6 @@ CREATE TABLE `users` (
   `LastName` text COLLATE utf8mb4_general_ci NOT NULL,
   `DOB` date NOT NULL,
   `Email` text COLLATE utf8mb4_general_ci NOT NULL,
-  `Buyer` tinyint(1) NOT NULL,
   `Address` text COLLATE utf8mb4_general_ci NOT NULL,
   `CreditCard` int NOT NULL,
   `Username` text COLLATE utf8mb4_general_ci NOT NULL,
@@ -103,8 +177,8 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`UserID`, `FirstName`, `LastName`, `DOB`, `Email`, `Buyer`, `Address`, `CreditCard`, `Username`, `Password`) VALUES
-(10001, 'JOHN', 'ADAM', '1990-09-01', 'j@adam.com', 1, '19 Now Dr', 123456789, 'jadam', '95e05a128d25470a2d040ec342ed6f7fcee721d0');
+INSERT INTO `users` (`UserID`, `FirstName`, `LastName`, `DOB`, `Email`, `Address`, `CreditCard`, `Username`, `Password`) VALUES
+(10001, 'JOHN', 'ADAM', '1990-09-01', 'j@adam.com', '19 Now Dr', 123456789, 'jadam', '95e05a128d25470a2d040ec342ed6f7fcee721d0');
 
 --
 -- Indexes for dumped tables
@@ -117,16 +191,34 @@ ALTER TABLE `cart`
   ADD PRIMARY KEY (`CartID`);
 
 --
+-- Indexes for table `creditcard`
+--
+ALTER TABLE `creditcard`
+  ADD PRIMARY KEY (`CreditCard`);
+
+--
 -- Indexes for table `news`
 --
 ALTER TABLE `news`
   ADD PRIMARY KEY (`postID`);
 
 --
+-- Indexes for table `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`orderID`);
+
+--
 -- Indexes for table `products`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`ProductID`);
+
+--
+-- Indexes for table `seller`
+--
+ALTER TABLE `seller`
+  ADD PRIMARY KEY (`sellerID`);
 
 --
 -- Indexes for table `users`
