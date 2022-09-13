@@ -44,9 +44,9 @@
 </div>
 <div class="shopping_filters">
 <form action="shopping.php" method="get">
-        <h2><b>Ready to find your next item? Start searching here</b></h2>   
+        <div class="nav_title" id="search_title"><h2 class="title">Ready to find your next item? <br> Start searching here</h2></div>  
             
-        <div>
+        <div class="search_container">
             <label>Search: </label>
             <input type="text" name="search" placeholder="What would you like to look for?"/>
 
@@ -112,7 +112,7 @@
                     Item 1
                 </div>
             </div>
-            <div class="img_container"><a href="#"><img src="/images/gear1.png"></a></div>
+            <div class="img_container"><a href="#"><img src="images/gear1.png"></a></div>
             <div class="item_list_wrapper" id="subtext_total">
                 <a href="#">
                     <div id="item_description">
@@ -142,7 +142,7 @@
                     Item 1
                 </div>
             </div>
-            <div class="img_container"><a href="#"><img src="/images/foam1.png"><div class="hidden"></div></a></div>
+            <div class="img_container"><a href="#"><img src="images/foam1.png"><div class="hidden"></div></a></div>
             <div class="item_list_wrapper" id="subtext_total">
                 <a href="#">
                     <div id="item_description">
@@ -176,7 +176,7 @@
                     Item 1
                 </div>
             </div>
-            <div class="img_container"><a href="#"><img src="/images/tent1.png"></a></div>
+            <div class="img_container"><a href="#"><img src="images/tent1.png"></a></div>
             <div class="item_list_wrapper" id="subtext_total">
                 <a href="#">
                     <div id="item_description">
@@ -206,7 +206,7 @@
                     Item 1
                 </div>
             </div>
-            <div class="img_container"><a href="#"><img src="/images/chair1.png"></a></div>
+            <div class="img_container"><a href="#"><img src="images/chair1.png"></a></div>
             <div class="item_list_wrapper" id="subtext_total">
                 <a href="#">
                     <div id="item_description">
@@ -240,7 +240,7 @@
                     Item 1
                 </div>
             </div>
-            <div class="img_container"><a href="#"><img src="/images/tent1.png"></a></div>
+            <div class="img_container"><a href="#"><img src="images/tent1.png"></a></div>
             <div class="item_list_wrapper" id="subtext_total">
                 <a href="#">
                     <div id="item_description">
@@ -270,7 +270,7 @@
                     Item 1
                 </div>
             </div>
-            <div class="img_container"><a href="#"><img src="/images/chair1.png"></a></div>
+            <div class="img_container"><a href="#"><img src="images/chair1.png"></a></div>
             <div class="item_list_wrapper" id="subtext_total">
                 <a href="#">
                     <div id="item_description">
