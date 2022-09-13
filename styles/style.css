@@ -420,7 +420,6 @@ a:hover.nav_links{
 }
 
 
-=======
 .item_list_title{
     color:#222;
     text-transform: uppercase;
@@ -528,4 +527,17 @@ a:hover.nav_links{
 #uname, #pword{
     padding: 10px;
     min-width: 450px;
+}
+
+.pages{
+    justify-content: center;
+}
+
+.pages a{
+    margin: 20px;
+}
+
+
+.pages a:hover{
+    color: #71856d;
 }
