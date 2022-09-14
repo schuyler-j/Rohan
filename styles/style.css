@@ -533,7 +533,7 @@ a:hover.nav_links{
     min-width: 600px;
 }
 
-#uname_title{
+#top_input_title{
     margin-top: 16px;
     color: #5c6e58;
 }
@@ -542,7 +542,7 @@ a:hover.nav_links{
     color: #5c6e58;
 }
 
-#uname, #pword{
+#uname, #pword, #fname{
     padding: 10px;
     min-width: 90%;
     font-size: 28px;
