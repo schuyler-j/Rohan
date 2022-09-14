@@ -68,7 +68,7 @@
                     <li id="pname_title"><b>Create a Password</b></li>
                     <li><div class="password_block">
                             <input type="password" placeholder="" id="pword" required></input>
-                            <button type="button" id="show_password" onclick="ShowPassword()"><img src="images/eye.png"/></img></button>
+                            <button type="button" id="show_password" onclick="ShowPassword()"><img src="images/eye.png"></img></button>
                         </div></li>
                     <li id="pname_title"><b>Confirm Password</b></li>
                     <li><div class="password_block">
