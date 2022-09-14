@@ -60,10 +60,10 @@
                 <ul class="item_list" id="login_form">
                     <li><div class="sub_heading" style="font-size:38px">Login</div></li>
                     <li id="uname_title"><b>Username</b></li>
-                    <li><input type="text" placeholder="" id="uname"></input></li>
+                    <li><input type="text" placeholder="" id="uname" required></input></li>
                     <li id="pname_title"><b>Password</b></li>
                     <li><div class="password_block">
-                            <input type="password" placeholder="" id="pword"></input>
+                            <input type="password" placeholder="" id="pword" required></input>
                             <button type="button" id="show_password" onclick="ShowPassword()"><img src="images/eye.png"></img></button>
                         </div></li>
                     <li><a href="registration.php"><h4>Don't have an account? Sign Up Here!</h4></a></li>
