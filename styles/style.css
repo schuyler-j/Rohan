@@ -535,12 +535,27 @@ a:hover.nav_links{
 
 #uname_title{
     margin-top: 16px;
+    color: #5c6e58;
+}
+
+#pname_title{
+    color: #5c6e58;
 }
 
 #uname, #pword{
     padding: 10px;
-    min-width: 100%;
+    min-width: 90%;
     font-size: 28px;
+    margin-right: 12px;
+}
+
+#show_password{
+    background-color:#fffbe9;
+    border: none;
+}
+
+.password_block{
+    display: flex;
 }
 
 .pages{

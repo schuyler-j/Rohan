@@ -61,16 +61,17 @@
                     <li><div class="sub_heading" style="font-size:38px">Login</div></li>
                     <li id="uname_title"><b>Username</b></li>
                     <li><input type="text" placeholder="" id="uname"></input></li>
-                    <li><b>Password</b></li>
-                    <li><input type="password" placeholder="" id="pword"></input></li>
+                    <li id="pname_title"><b>Password</b></li>
+                    <li><div class="password_block">
+                            <input type="password" placeholder="" id="pword"></input>
+                            <button type="button" id="show_password" onclick="ShowPassword()"><img src="images/eye.png"></img></button>
+                        </div></li>
                     <li><a href="registration.php"><h4>Don't have an account? Sign Up Here!</h4></a></li>
                     <br>
                     <li><input type="submit" class="button" value="LOGIN"></input></li>
                 </ul>
             </form>
         </div>
-
-
     </div>
 
 
