@@ -56,19 +56,28 @@
 
     <div class="page_wrapper">
         <div class="form_wrapper">
-            <form action="index.php" method="GET">
+            <form action="confirm.php" method="GET">
                 <ul class="item_list" id="login_form">
-                    <li><div class="sub_heading" style="font-size:38px">Login</div></li>
-                    <li id="top_input_title"><b>Username</b></li>
+                    <li><div class="sub_heading" style="font-size:38px">Create an Account!</div></li>
+                    <li id="top_input_title"><b>First Name</b></li>
+                    <li><input type="text" placeholder="" id="fname" required></input></li>
+                    <li id="pname_title"><b>Last Name</b></li>
                     <li><input type="text" placeholder="" id="uname" required></input></li>
-                    <li id="pname_title"><b>Password</b></li>
+                    <li id="pname_title"><b>Type in a Username</b></li>
+                    <li><input type="text" placeholder="" id="uname" required></input></li>
+                    <li id="pname_title"><b>Create a Password</b></li>
                     <li><div class="password_block">
                             <input type="password" placeholder="" id="pword" required></input>
                             <button type="button" id="show_password" onclick="ShowPassword()"><img src="images/eye.png"></img></button>
                         </div></li>
-                    <li><a href="registration.php"><h4>Don't have an account? Sign Up Here!</h4></a></li>
+                    <li id="pname_title"><b>Confirm Password</b></li>
+                    <li><div class="password_block">
+                            <input type="password" placeholder="" id="pword" required></input>
+                        </div></li>
+                    <li id="pname_title"><b>E-mail Address</b></li>
+                    <li><input type="text" placeholder="" id="uname" required></input></li>
                     <br>
-                    <li><input type="submit" class="button" value="LOGIN"></input></li>
+                    <li><input type="submit" class="button" value="CREATE"></input></li>
                 </ul>
             </form>
         </div>

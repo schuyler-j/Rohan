@@ -1,5 +1,12 @@
+var b = 0;
 function ShowPassword() {
-
     const password = document.getElementById("pword");
-    password.setAttribute('type', 'text');
+    if(b == 0){
+        password.setAttribute('type', 'text');
+        b = 1;
+    }else{
+        password.setAttribute('type', 'password');
+        b = 0;
+    }
+
 }
