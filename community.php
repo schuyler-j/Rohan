@@ -52,7 +52,7 @@
                     Item 1
                 </div>
             </div>
-            <div class="img_container"><a href="#"><img src="images/gear1.png"></a></div>
+            <div class="img_container"><a href="#"><img src="images/gear1.png"/></a></div>
             <div class="item_list_wrapper" id="subtext_total">
                 <a href="#">
                     <div id="item_description">
@@ -66,7 +66,7 @@
                     <a href="#">
                         <div class="button" id="atc">
                             Add To Cart
-                        </div><br>
+                        </div><br/>
                     </a>
                     <a href="#">
                         <div class="button" id="atc">
