@@ -30,13 +30,13 @@
         </div>
         <div class="nav" id="nav_bottom">
             <div class="nav_list">
-                <img src="images/watchlist.png">
+                <img src="images/watchlist.png"/>
                 <a class="nav_links" href="#">Watchlist</a>
-                <img src="images/cart.png">
+                <img src="images/cart.png"/>
                 <a class="nav_links" href="#">My Cart</a>
-                <img src="images/checkout.png">
+                <img src="images/checkout.png"/>
                 <a class="nav_links" href="#">Checkout</a>
-                <img src="images/login.png">
+                <img src="images/login.png"/>
                 <a class="nav_links" href="#">Login</a>
             </div>
         </div>
@@ -67,7 +67,7 @@
                             <button type="button" id="show_password" onclick="ShowPassword()"><img src="images/eye.png"></img></button>
                         </div></li>
                     <li><a href="registration.php"><h4>Don't have an account? Sign Up Here!</h4></a></li>
-                    <br>
+                    <br/>
                     <li><input type="submit" class="button" value="LOGIN"></input></li>
                 </ul>
             </form>
