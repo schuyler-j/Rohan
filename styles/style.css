@@ -352,6 +352,15 @@ a:hover.nav_links{
     text-transform: uppercase;
 }
 
+.item_list h4{
+    color: #6c9277;
+    text-align: center;
+}
+
+.item_list h4:hover{
+    text-decoration: underline;
+}
+
 .item_list ul{
     margin-left: auto;
     padding: 12px;
@@ -420,7 +429,6 @@ a:hover.nav_links{
 }
 
 
-=======
 .item_list_title{
     color:#222;
     text-transform: uppercase;
@@ -525,7 +533,40 @@ a:hover.nav_links{
     min-width: 600px;
 }
 
+#uname_title{
+    margin-top: 16px;
+    color: #5c6e58;
+}
+
+#pname_title{
+    color: #5c6e58;
+}
+
 #uname, #pword{
     padding: 10px;
-    min-width: 450px;
+    min-width: 90%;
+    font-size: 28px;
+    margin-right: 12px;
+}
+
+#show_password{
+    background-color:#fffbe9;
+    border: none;
+}
+
+.password_block{
+    display: flex;
+}
+
+.pages{
+    justify-content: center;
+}
+
+.pages a{
+    margin: 20px;
+}
+
+
+.pages a:hover{
+    color: #71856d;
 }

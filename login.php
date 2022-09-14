@@ -44,9 +44,9 @@
             <ul class="main_menu">
                 <li class="list"><a href="index.php"><span class="media_text">Home</span></a></li>
                 <li class="list"><a href="community.php"><span class="media_text">Community Marketplace</span></a></li>
-                <li class="list"><a href="#"><span class="media_text">Shopping</span></a></li>
-                <li class="list"><a href="#about"><span class="media_text">About</span></a></li>
-                <li class="list"><a href="#"><span class="media_text">Contact</span></a></li>
+                <li class="list"><a href="shopping.php"><span class="media_text">Shopping</span></a></li>
+                <li class="list"><a href="about.php"><span class="media_text">About</span></a></li>
+                <li class="list"><a href="contact.php"><span class="media_text">Contact</span></a></li>
             </ul>
         </div>
     </div>
@@ -58,18 +58,20 @@
         <div class="form_wrapper">
             <form>
                 <ul class="item_list" id="login_form">
-                    <li><div class="sub_heading" style="font-size:32px">Login</div></li>
-                    <li>username</li>
+                    <li><div class="sub_heading" style="font-size:38px">Login</div></li>
+                    <li id="uname_title"><b>Username</b></li>
                     <li><input type="text" placeholder="" id="uname"></input></li>
-                    <li>password</li>
-                    <li><input type="password" placeholder="" id="pword"></input></li>
-                    <br><br>
+                    <li id="pname_title"><b>Password</b></li>
+                    <li><div class="password_block">
+                            <input type="password" placeholder="" id="pword"></input>
+                            <button type="button" id="show_password" onclick="ShowPassword()"><img src="images/eye.png"></img></button>
+                        </div></li>
+                    <li><a href="registration.php"><h4>Don't have an account? Sign Up Here!</h4></a></li>
+                    <br>
                     <li><input type="submit" class="button" value="LOGIN"></input></li>
                 </ul>
             </form>
         </div>
-
-
     </div>
 
 
