@@ -96,7 +96,7 @@
                     <a href="#">
                         <div class="button" id="atc">
                             Add To Cart
-                        </div><br>
+                        </div><br/>
                     </a>
                     <a href="#">
                         <div class="button" id="atc">
