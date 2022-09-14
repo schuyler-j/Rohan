@@ -30,13 +30,13 @@
         </div>
         <div class="nav" id="nav_bottom">
             <div class="nav_list">
-                <img src="images/watchlist.png">
+                <img src="images/watchlist.png"/>
                 <a class="nav_links" href="#">Watchlist</a>
-                <img src="images/cart.png">
+                <img src="images/cart.png"/>
                 <a class="nav_links" href="#">My Cart</a>
-                <img src="images/checkout.png">
+                <img src="images/checkout.png"/>
                 <a class="nav_links" href="#">Checkout</a>
-                <img src="images/login.png">
+                <img src="images/login.png"/>
                 <a class="nav_links" href="#">Login</a>
             </div>
         </div>
@@ -68,7 +68,7 @@
                     <li id="pname_title"><b>Create a Password</b></li>
                     <li><div class="password_block">
                             <input type="password" placeholder="" id="pword" required></input>
-                            <button type="button" id="show_password" onclick="ShowPassword()"><img src="images/eye.png"></img></button>
+                            <button type="button" id="show_password" onclick="ShowPassword()"><img src="images/eye.png"/></img></button>
                         </div></li>
                     <li id="pname_title"><b>Confirm Password</b></li>
                     <li><div class="password_block">
@@ -76,7 +76,7 @@
                         </div></li>
                     <li id="pname_title"><b>E-mail Address</b></li>
                     <li><input type="text" placeholder="" id="uname" required></input></li>
-                    <br>
+                    <br/>
                     <li><input type="submit" class="button" value="CREATE"></input></li>
                 </ul>
             </form>
