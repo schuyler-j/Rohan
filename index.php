@@ -28,13 +28,13 @@
         </div>
         <div class="nav" id="nav_bottom">
             <div class="nav_list">
-                <img src="images/watchlist.png">
+                <img src="images/watchlist.png"/>
                 <a class="nav_links" href="#">Watchlist</a>
-                <img src="images/cart.png">
+                <img src="images/cart.png"/>
                 <a class="nav_links" href="#">My Cart</a>
-                <img src="images/checkout.png">
+                <img src="images/checkout.png"/>
                 <a class="nav_links" href="#">Checkout</a>
-                <img src="images/login.png">
+                <img src="images/login.png"/>
                 <a class="nav_links" href="login.php">Login</a>
             </div>
         </div>
@@ -65,7 +65,7 @@
                     <img src="images/greeting_2.png">
                     <a class="button" type="submit"  href="registration.php" style="width: 220px">JOIN NOW</a>
                 </div>
-                    <img id="cursor" src="images/cursor.png">
+                    <img id="cursor" src="images/cursor.png"/>
             </div>
             <div class="about">
                 <div class="sub_heading">
@@ -99,7 +99,7 @@
                         <div class="item_list_wrapper">
                             <a href="#"><h5>Occaecat deserunt amet Lorem nulla ipsum ipsum est duis amet ea enim.</h5></a>
                             <div class="content">
-                                <img src="images/d1.png">
+                                <img src="images/d1.png"/>
                                 <div class="block1">
                                     <p>Qui laboris nulla incididunt voluptate quis in do proident ullamco exercitation eiusmod velit. </p>
                                     <div class="date">date</div>
@@ -112,7 +112,7 @@
                         <div class="item_list_wrapper">
                             <a href="#"><h5>Occaecat deserunt amet Lorem nulla ipsum ipsum est duis amet ea enim.</h5></a>
                             <div class="content">
-                                <img src="images/d1.png">
+                                <img src="images/d1.png"/>
                                 <div class="block1">
                                     <p>Qui laboris nulla incididunt voluptate quis in do proident ullamco exercitation eiusmod velit. </p>
                                     <div class="date">date</div>
