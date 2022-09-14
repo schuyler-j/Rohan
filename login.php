@@ -56,7 +56,7 @@
 
     <div class="page_wrapper">
         <div class="form_wrapper">
-            <form>
+            <form action="index.php" method="GET">
                 <ul class="item_list" id="login_form">
                     <li><div class="sub_heading" style="font-size:38px">Login</div></li>
                     <li id="uname_title"><b>Username</b></li>
