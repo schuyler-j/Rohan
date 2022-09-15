@@ -10,7 +10,14 @@
 <script src="scripts/script.js" defer></script>
 </head>
 
+<?php 
+require_once "db/dbconn.inc.php"; 
 
+$sql = "SELECT FirstName FROM `users` WHERE Username = \"scol5\";";
+//scol5 is a temp username, this needs to be a variable in the future
+$sID = "SELECT SessionID FROM `users` WHERE Username = \"scol5\";";
+
+?>
 
 <body>
     <div class="top_third">
@@ -18,15 +25,6 @@
             <div class="menu_title_s">
                 <h1 class="menu_title_s">SENIOR</h1>
             </div>
-            <!--test for logo-->
-            <!--<div class="menu_title_s" id="logo">
-                <img src="images/home_banner.png" width="40%">
-            </div>
-
-            <a class="menu_title_s" id="title_img">
-                <img src="images/logo.png" width=20% height=20%>
-            </a>
-            -->
         </div>
         <div class="nav" id="nav_bottom">
             <div class="nav_list">
@@ -36,8 +34,23 @@
                 <a class="nav_links" href="#">My Cart</a>
                 <img src="images/checkout.png"/>
                 <a class="nav_links" href="#">Checkout</a>
-                <img src="images/login.png"/>
-                <a class="nav_links" href="#">Login</a>
+                <img src='images/login.png'/>
+                <?php 
+                $session_result = $conn->query($sID);
+                $s = mysqli_fetch_assoc($session_result);
+                if($s["SessionID"] == NULL){
+                    echo "
+                    <a class='nav_links' href='#'>Login</a>
+                    ";
+                }else{
+                    $result = $conn->query($sql);
+                    $r = $result->fetch_assoc();
+                    echo "<a class='nav_links'>";
+                    echo "hello, " . $r["FirstName"]
+                    . "</a>";
+                }
+
+                ?>
             </div>
         </div>
         <div class="nav" id="nav_top">
