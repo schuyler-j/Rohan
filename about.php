@@ -45,9 +45,10 @@
 
     <div class = "title">
         <h2>About Us</h2>
-            <p>
-                <span>This is a test paragraph to see how the about page works </span>
-
-            </p>
+            <div>
+                <span>Ipsum elit ad sint anim. </span>
+                <span>Velit sint qui ipsum amet ex cupidatat minim non sunt esse enim. </span>
+                <span>Tempor fugiat voluptate eiusmod dolore eu irure elit.</span> 
+            </div>
 </div>
 </body>
