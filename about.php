@@ -5,7 +5,7 @@
 <meta charset="UTF-8" />
 <meta name="author" content="TUJ_Rohan" />
 <link rel="stylesheet" href="styles/style.css" />
-<link rel="stylesheet" href="styles/about.css" />
+<!-- <link rel="stylesheet" href="styles/about.css" /> -->
 <link rel="icon" href="images/favicon.png">
 <script src="scripts/script.js" defer></script>
 </head>
@@ -35,16 +35,16 @@
         <div class="nav" id="nav_top">
             <ul class="main_menu">
                 <li class="list"><a href="index.php"><span class="media_text">Home</span></a></li>
-                <li class="list"><a href="#" id="selected"><span class="media_text">Community Marketplace</span></a></li>
+                <li class="list"><a href="#"><span class="media_text">Community Marketplace</span></a></li>
                 <li class="list"><a href="#"><span class="media_text">Shopping</span></a></li>
-                <li class="list"><a href="#"><span class="media_text">About</span></a></li>
+                <li class="list"><a href="#" id="selected"><span class="media_text">About</span></a></li>
                 <li class="list"><a href="#"><span class="media_text">Contact</span></a></li>
             </ul>
         </div>
 </div>
 
     <div class = "title">
-        <h1>About Us</h1>
+        <h2>About Us</h2>
             <p>
                 <span>This is a test paragraph to see how the about page works </span>
 
