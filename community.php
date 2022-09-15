@@ -23,13 +23,13 @@
 
     <div class="nav" id="nav_bottom">
         <div class="nav_list">
-            <img src="images/watchlist.png">
+            <img src="images/watchlist.png"/>
             <a class="nav_links" href="#">Watchlist</a>
-            <img src="images/cart.png">
+            <img src="images/cart.png"/>
             <a class="nav_links" href="#">My Cart</a>
-            <img src="images/checkout.png">
+            <img src="images/checkout.png"/>
             <a class="nav_links" href="#">Checkout</a>
-            <img src="images/login.png">
+            <img src="images/login.png"/>
             <a class="nav_links" href="login.php">Login</a>
         </div>
     </div>
@@ -38,8 +38,8 @@
             <li class="list"><a href="index.php"><span class="media_text">Home</span></a></li>
             <li class="list"><a href="#" id="selected"><span class="media_text">Community Marketplace</span></a></li>
             <li class="list"><a href="shopping.php"><span class="media_text">Shopping</span></a></li>
-            <li class="list"><a href="#"><span class="media_text">About</span></a></li>
-            <li class="list"><a href="#"><span class="media_text">Contact</span></a></li>
+            <li class="list"><a href="about.php"><span class="media_text">About</span></a></li>
+            <li class="list"><a href="contact.php"><span class="media_text">Contact</span></a></li>
         </ul>
     </div>
 </div>
@@ -52,7 +52,7 @@
                     Item 1
                 </div>
             </div>
-            <div class="img_container"><a href="#"><img src="images/gear1.png"></a></div>
+            <div class="img_container"><a href="#"><img src="images/gear1.png"/></a></div>
             <div class="item_list_wrapper" id="subtext_total">
                 <a href="#">
                     <div id="item_description">
@@ -66,7 +66,7 @@
                     <a href="#">
                         <div class="button" id="atc">
                             Add To Cart
-                        </div><br>
+                        </div><br/>
                     </a>
                     <a href="#">
                         <div class="button" id="atc">
@@ -96,7 +96,7 @@
                     <a href="#">
                         <div class="button" id="atc">
                             Add To Cart
-                        </div><br>
+                        </div><br/>
                     </a>
                     <a href="#">
                         <div class="button" id="atc">
@@ -116,7 +116,7 @@
                     Item 1
                 </div>
             </div>
-            <div class="img_container"><a href="#"><img src="images/tent1.png"></a></div>
+            <div class="img_container"><a href="#"><img src="images/tent1.png"/></a></div>
             <div class="item_list_wrapper" id="subtext_total">
                 <a href="#">
                     <div id="item_description">
@@ -130,7 +130,7 @@
                     <a href="#">
                         <div class="button" id="atc">
                             Add To Cart
-                        </div><br>
+                        </div><br/>
                     </a>
                     <a href="#">
                         <div class="button" id="atc">
@@ -146,7 +146,7 @@
                     Item 1
                 </div>
             </div>
-            <div class="img_container"><a href="#"><img src="images/chair1.png"></a></div>
+            <div class="img_container"><a href="#"><img src="images/chair1.png"/></a></div>
             <div class="item_list_wrapper" id="subtext_total">
                 <a href="#">
                     <div id="item_description">
@@ -160,7 +160,7 @@
                     <a href="#">
                         <div class="button" id="atc">
                             Add To Cart
-                        </div><br>
+                        </div><br/>
                     </a>
                     <a href="#">
                         <div class="button" id="atc">
@@ -180,7 +180,7 @@
                     Item 1
                 </div>
             </div>
-            <div class="img_container"><a href="#"><img src="images/tent1.png"></a></div>
+            <div class="img_container"><a href="#"><img src="images/tent1.png"/></a></div>
             <div class="item_list_wrapper" id="subtext_total">
                 <a href="#">
                     <div id="item_description">
@@ -194,7 +194,7 @@
                     <a href="#">
                         <div class="button" id="atc">
                             Add To Cart
-                        </div><br>
+                        </div><br/>
                     </a>
                     <a href="#">
                         <div class="button" id="atc">
@@ -210,7 +210,7 @@
                     Item 1
                 </div>
             </div>
-            <div class="img_container"><a href="#"><img src="images/chair1.png"></a></div>
+            <div class="img_container"><a href="#"><img src="images/chair1.png"/></a></div>
             <div class="item_list_wrapper" id="subtext_total">
                 <a href="#">
                     <div id="item_description">
@@ -224,7 +224,7 @@
                     <a href="#">
                         <div class="button" id="atc">
                             Add To Cart
-                        </div><br>
+                        </div><br/>
                     </a>
                     <a href="#">
                         <div class="button" id="atc">
@@ -233,6 +233,11 @@
                     </a>
                 </div>
             </div>
+        </div>
+        <div class="pages" style="display: inline; text-align: center;">
+            <a href="community.php"><< Previous Page <<</a>
+            <a href="community.php">^ Back to Top ^</a>
+            <a href="community.php">>> Next Page >></a>
         </div>
     </div>
 </div>

@@ -28,13 +28,13 @@
         </div>
         <div class="nav" id="nav_bottom">
             <div class="nav_list">
-                <img src="images/watchlist.png">
+                <img src="images/watchlist.png"/>
                 <a class="nav_links" href="#">Watchlist</a>
-                <img src="images/cart.png">
+                <img src="images/cart.png"/>
                 <a class="nav_links" href="#">My Cart</a>
-                <img src="images/checkout.png">
+                <img src="images/checkout.png"/>
                 <a class="nav_links" href="#">Checkout</a>
-                <img src="images/login.png">
+                <img src="images/login.png"/>
                 <a class="nav_links" href="login.php">Login</a>
             </div>
         </div>
@@ -43,8 +43,8 @@
                 <li class="list"><a href="#" id="selected"><span class="media_text">Home</span></a></li>
                 <li class="list"><a href="community.php"><span class="media_text">Community Marketplace</span></a></li>
                 <li class="list"><a href="shopping.php"><span class="media_text">Shopping</span></a></li>
-                <li class="list"><a href="#about"><span class="media_text">About</span></a></li>
-                <li class="list"><a href="#"><span class="media_text">Contact</span></a></li>
+                <li class="list"><a href="about.php"><span class="media_text">About</span></a></li>
+                <li class="list"><a href="contact.php"><span class="media_text">Contact</span></a></li>
             </ul>
         </div>
     </div>
@@ -62,10 +62,10 @@
             </div>
             <div class="grid">
                 <div class="block_1">
-                    <img src="images/greeting_2.png">
-                    <a class="button" type="submit"  href="login.php" style="width: 220px">JOIN NOW</a>
+                    <img src="images/greeting_2.png"/>
+                    <a class="button" type="submit"  href="registration.php" style="width: 220px">JOIN NOW</a>
                 </div>
-                    <img id="cursor" src="images/cursor.png">
+                    <img id="cursor" src="images/cursor.png"/>
             </div>
             <div class="about">
                 <div class="sub_heading">
@@ -99,7 +99,7 @@
                         <div class="item_list_wrapper">
                             <a href="#"><h5>Occaecat deserunt amet Lorem nulla ipsum ipsum est duis amet ea enim.</h5></a>
                             <div class="content">
-                                <img src="images/d1.png">
+                                <img src="images/d1.png"/>
                                 <div class="block1">
                                     <p>Qui laboris nulla incididunt voluptate quis in do proident ullamco exercitation eiusmod velit. </p>
                                     <div class="date">date</div>
@@ -112,7 +112,7 @@
                         <div class="item_list_wrapper">
                             <a href="#"><h5>Occaecat deserunt amet Lorem nulla ipsum ipsum est duis amet ea enim.</h5></a>
                             <div class="content">
-                                <img src="images/d1.png">
+                                <img src="images/d1.png"/>
                                 <div class="block1">
                                     <p>Qui laboris nulla incididunt voluptate quis in do proident ullamco exercitation eiusmod velit. </p>
                                     <div class="date">date</div>
