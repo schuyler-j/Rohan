@@ -5,12 +5,20 @@
 <meta charset="UTF-8" />
 <meta name="author" content="TUJ_Rohan" />
 <link rel="stylesheet" href="styles/style.css" />
-<link rel="stylesheet" href="styles/footer.css" />
+<link rel="stylesheet" href="styles/about.css" />
 <link rel="icon" href="images/favicon.png">
 <script src="scripts/script.js" defer></script>
 </head>
 
 <body>
+<div class="top_third">
+    <div class="menu_container">
+        <h1 class="menu_title_s">SENIOR</h1>
+        <!--
+        <div class="menu_title_s" id="logo">
+            <img src="images/home_banner.png" width="40%">
+        </div>
+        -->
     </div>
         <div class="nav" id="nav_bottom">
             <div class="nav_list">
@@ -35,7 +43,11 @@
         </div>
 </div>
 
-    <div>
-        
+    <div class = "title">
+        <h1>About Us</h1>
+            <p>
+                <span>This is a test paragraph to see how the about page works </span>
+
+            </p>
 </div>
 </body>
