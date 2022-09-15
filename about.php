@@ -37,7 +37,7 @@
                 <li class="list"><a href="index.php"><span class="media_text">Home</span></a></li>
                 <li class="list"><a href="community.php"><span class="media_text">Community Marketplace</span></a></li>
                 <li class="list"><a href="shopping.php"><span class="media_text">Shopping</span></a></li>
-                <li class="list"><a href="#" id="selected"><span class="media_text">About</span></a></li>
+                <li class="list"><a href="about.php" id="selected"><span class="media_text">About</span></a></li>
                 <li class="list"><a href="contact.php"><span class="media_text">Contact</span></a></li>
             </ul>
         </div>
