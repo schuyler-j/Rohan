@@ -20,18 +20,7 @@ session_start();
 <body>
     <div class="top_third">
         <div class="menu_container">
-            <div class="menu_title_s">
-                <h1 class="menu_title_s">SENIOR</h1>
-            </div>
-            <!--test for logo-->
-            <!--<div class="menu_title_s" id="logo">
-                <img src="images/home_banner.png" width="40%">
-            </div>
-
-            <a class="menu_title_s" id="title_img">
-                <img src="images/logo.png" width=20% height=20%>
-            </a>
-            -->
+            <h1 class="menu_title_s">SENIOR</h1>
         </div>
         <div class="nav" id="nav_bottom">
             <div class="nav_list">
@@ -66,7 +55,6 @@ session_start();
         </div>
     </div>
     <div class="footer_wrapper">
-        <br/>
     <div class="page_wrapper">
         <?php if(isset($_SESSION["active"]) && $_SESSION["active"]){
 

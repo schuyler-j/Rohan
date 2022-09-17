@@ -118,14 +118,15 @@ h5{
 }
 
 .menu_title_s{
-    color: #fff;
+    color: beige;
     max-width: 100%;
     text-align: center;
-    margin: auto;
-    text-shadow: 4px 2px 1px black;
+    text-shadow: -9px 3px 4px black;
     /*border-bottom: 4px solid black;*/
     font-family: Anton, serif;
     letter-spacing: 0.4em;
+    background-color: #1f2b2355;
+    min-width: -webkit-fill-available;
 }
 
 
