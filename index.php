@@ -66,40 +66,62 @@ session_start();
         </div>
     </div>
     <div class="page_wrapper">
-        <div class="home_body" id="join">
-            <div class="title" id="shopping">
-                <span>SHOPPING</span> <span id="alt">AND</span> <span>EXCHANGE</span> <span id="alt">FOR</span> 
-                <span>GREY</span> <span id="alt">NOMADS</span> <span>INTERESTED</span> <span id="alt">IN</span> <span>OUTDOOR</span> <span id="alt">RECREATION</span>
-            </div>
-            <div class="home_body_text">
-                <span>The journey of a lifetime awaits you! </span><br/>
-                <span>Our community of grey nomads welcomes you to the greatest ecommerce web application ever created.</span><br/>
-                <span>Don't miss this terrific opportunity to buy, trade and sell an amazing range of good quality products</span> 
-            </div>
-            <div class="grid">
-                <div class="block_1">
-                    <img src="images/greeting_2.png"/>
-                    <a class="button" type="submit"  href="registration.php" style="width: 220px">JOIN NOW</a>
+        <?php if(isset($_SESSION["active"]) && $_SESSION["active"]){
+
+            echo "
+            
+            <div class='home_body' id='home'>
+                <div class='title' id='welcome'>Welcome back," . $_SESSION["username"] . $_SESSION["id"] . "</div>
                 </div>
-                    <img id="cursor" src="images/cursor.png"/>
-            </div>
-            <div class="about">
-                <div class="sub_heading">
-                    <h2 id="about">TERMS & CONDITIONS</h2>
+            
+            
+            
+            
+            
+            ";
+
+        }else{
+            echo "
+            
+            <div class='home_body' id='join'>
+                <div class='title' id='shopping'>
+                    <span>SHOPPING</span> <span id='alt'>AND</span> <span>EXCHANGE</span> <span id='alt'>FOR</span> 
+                    <span>GREY</span> <span id='alt'>NOMADS</span> <span>INTERESTED</span> <span id='alt'>IN</span> <span>OUTDOOR</span> <span id='alt'>RECREATION</span>
                 </div>
-                    <!-- this is now the T&C section -->
-                <ul id="about_us_home">
-                <li><span>When you create an account with us, you guarantee that you are above the age of 18, and that the information you provide us is accurate, complete, and current at all times. Inaccurate, incomplete, or obsolete information may result in the immediate termination of your account on Service.
-                </span></li><br/>
-                <li><span>You are responsible for maintaining the confidentiality of your account and password, including but not limited to the restriction of access to your computer and/or account. You agree to accept responsibility for any and all activities or actions that occur under your account and/or password, whether your password is with our Service or a third-party service. You must notify us immediately upon becoming aware of any breach of security or unauthorized use of your account.
-                </span></li><br/>
-                <li><span>You may not use as a username the name of another person or entity or that is not lawfully available for use, a name or trademark that is subject to any rights of another person or entity other than you, without appropriate authorization. You may not use as a username any name that is offensive, vulgar or obscene.
-                </span></li><br/>
-                <li><span>We reserve the right to refuse service, terminate accounts, remove or edit content, or cancel orders in our sole discretion
-                </span></li><br/>
-                <ul>
+                <div class='home_body_text'>
+                    <span>The journey of a lifetime awaits you! </span><br/>
+                    <span>Our community of grey nomads welcomes you to the greatest ecommerce web application ever created.</span><br/>
+                    <span>Don't miss this terrific opportunity to buy, trade and sell an amazing range of good quality products</span> 
+                </div>
+                <div class='grid'>
+                    <div class='block_1'>
+                        <img src='images/greeting_2.png'/>
+                        <a class='button' type='submit'  href='registration.php' style='width: 220px'>JOIN NOW</a>
+                    </div>
+                        <img id='cursor' src='images/cursor.png'/>
+                </div>
+                <div class='about'>
+                    <div class='sub_heading'>
+                        <h2 id='about'>TERMS & CONDITIONS</h2>
+                    </div>
+                        <!-- this is now the T&C section -->
+                    <ul id='about_us_home'>
+                    <li><span>When you create an account with us, you guarantee that you are above the age of 18, and that the information you provide us is accurate, complete, and current at all times. Inaccurate, incomplete, or obsolete information may result in the immediate termination of your account on Service.
+                    </span></li><br/>
+                    <li><span>You are responsible for maintaining the confidentiality of your account and password, including but not limited to the restriction of access to your computer and/or account. You agree to accept responsibility for any and all activities or actions that occur under your account and/or password, whether your password is with our Service or a third-party service. You must notify us immediately upon becoming aware of any breach of security or unauthorized use of your account.
+                    </span></li><br/>
+                    <li><span>You may not use as a username the name of another person or entity or that is not lawfully available for use, a name or trademark that is subject to any rights of another person or entity other than you, without appropriate authorization. You may not use as a username any name that is offensive, vulgar or obscene.
+                    </span></li><br/>
+                    <li><span>We reserve the right to refuse service, terminate accounts, remove or edit content, or cancel orders in our sole discretion
+                    </span></li><br/>
+                    <ul>
+                </div>
             </div>
-        </div>
+
+            ";
+        }
+
+        ?>
         <div class="home_body" id="news">
             <div class="sub_heading">
                 <h2>NEWS & EVENTS</h2>

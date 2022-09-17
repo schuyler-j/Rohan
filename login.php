@@ -41,9 +41,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     $get_user = "SELECT Username FROM `users` WHERE Username = '$user';";
     $get_pass = "SELECT Password FROM `users` WHERE Password = '$pass';";
+    $get_name = "SELECT * FROM `users` WHERE Username = '$user';";
 
     $ruser = $conn->query($get_user);
     $ruser_ = $ruser->fetch_assoc();
+    $rname = $conn->query($get_name);
+    $rname_ = $rname->fetch_assoc();
 
     $gpass = $conn->query($get_pass);
     $gpass_ = $gpass->fetch_assoc();
@@ -62,8 +65,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         session_start();
 
                         $_SESSION["active"] = true;
-                        $_SESSION["id"] = $UserID;
+                        $_SESSION["id"] = $rname_["UserID"];
                         $_SESSION["username"] = $user;
+                        $_SESSION["name"] = $rname_["FirstName"];
 
                         header("location: index.php");
                     }else{
