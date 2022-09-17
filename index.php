@@ -73,11 +73,6 @@ session_start();
             <div class='home_body' id='home'>
                 <div class='title' id='welcome'>Welcome back," . $_SESSION["username"] . $_SESSION["id"] . "</div>
                 </div>
-            
-            
-            
-            
-            
             ";
 
         }else{
