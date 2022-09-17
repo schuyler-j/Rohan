@@ -37,7 +37,7 @@
                 <img src="images/checkout.png"/>
                 <a class="nav_links" href="#">Checkout</a>
                 <img src="images/login.png"/>
-                <a class="nav_links" href="#">Login</a>
+                <a class="nav_links" href="login.php">Login</a>
             </div>
         </div>
         <div class="nav" id="nav_top">
