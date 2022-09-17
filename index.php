@@ -70,11 +70,11 @@ session_start();
 
             echo "
             
-            <div class='home_body' id='home'>
-                <div class='title' id='welcome'>Welcome back," . $_SESSION["username"] . $_SESSION["id"] . "</div>
+            <div class='block1' id='home'>
                 </div>
             ";
 
+                //<div class='title' id='welcome'><h4>Welcome back," . $_SESSION["username"] . $_SESSION["id"] . "</h4></div>
         }else{
             echo "
             

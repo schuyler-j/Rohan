@@ -211,6 +211,11 @@ h5{
     margin-bottom: 180px;
 }
 
+#home{
+    position: fixed;
+    bottom: 0;
+}
+
 #join{
     width: 900px;
 }
@@ -314,13 +319,11 @@ h5{
 
 
 .footer{
-    position: fixed;
-    left: 0;
-    bottom: 0;
     width: 100%;
+    height: 180px; 
     background-color: #5c6e58;
     text-align: center;
-    border-bottom: 2px solid #465343;
+    border-top: 2px solid #728a6d;
 
 }
 
