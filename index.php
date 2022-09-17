@@ -91,22 +91,17 @@ require_once "session.php";
                 <div class="sub_heading">
                     <h2 id="about">TERMS & CONDITIONS</h2>
                 </div>
-                <p id="about_us_home">
                     <!-- this is now the T&C section -->
-                    <span>Ipsum elit ad sint anim. </span>
-                    <span>Velit sint qui ipsum amet ex cupidatat minim non sunt esse enim. </span>
-                    <span>Tempor fugiat voluptate eiusmod dolore eu irure elit.</span> 
-                    <span>Nostrud adipisicing nulla adipisicing sunt eiusmod occaecat. </span>
-                    <span>Consectetur excepteur velit culpa deserunt sit. </span>
-                    <span>Reprehenderit ea cillum sit aute fugiat sit minim labore tempor magna amet reprehenderit. </span>
-                    <span>Mollit nisi laborum velit pariatur quis aliquip nostrud consectetur pariatur anim amet ipsum sit sit. </span>
-                    <span>In eiusmod reprehenderit ipsum fugiat. </span>
-                    <span>Laboris elit ut et ullamco esse et voluptate esse eu. </span>
-                    <span>Adipisicing deserunt eu id voluptate sint aliqua reprehenderit aliquip aute culpa. </span>
-                    <span>Ea aliqua adipisicing aute esse nulla esse cupidatat nostrud pariatur qui ex. </span>
-                    <span>Proident sunt dolore non id voluptate. </span>
-                    <span>Cillum do in tempor veniam reprehenderit excepteur ipsum pariatur excepteur. </span>
-                </p>
+                <ul class="about_us_home">
+                <li><span>When you create an account with us, you guarantee that you are above the age of 18, and that the information you provide us is accurate, complete, and current at all times. Inaccurate, incomplete, or obsolete information may result in the immediate termination of your account on Service.
+                </span></li>
+                <li><span>You are responsible for maintaining the confidentiality of your account and password, including but not limited to the restriction of access to your computer and/or account. You agree to accept responsibility for any and all activities or actions that occur under your account and/or password, whether your password is with our Service or a third-party service. You must notify us immediately upon becoming aware of any breach of security or unauthorized use of your account.
+                </span></li>
+                <li><span>You may not use as a username the name of another person or entity or that is not lawfully available for use, a name or trademark that is subject to any rights of another person or entity other than you, without appropriate authorization. You may not use as a username any name that is offensive, vulgar or obscene.
+                </span></li>
+                <li><span>We reserve the right to refuse service, terminate accounts, remove or edit content, or cancel orders in our sole discretion
+                </span></li>
+                <ul>
             </div>
         </div>
         <div class="home_body" id="news">
