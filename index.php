@@ -11,12 +11,13 @@
 </head>
 <?php 
 require_once "db/dbconn.inc.php"; 
-require_once "session.php";
+
+
+session_start();
 
 ?>
 
 <body>
-    <?php require_once "db/dbconn.inc.php"; ?>
     <div class="top_third">
         <div class="menu_container">
             <div class="menu_title_s">
@@ -42,20 +43,15 @@ require_once "session.php";
                 <a class="nav_links" href="#">Checkout</a>
                 <img src="images/login.png"/>
                 <?php 
-                $session_result = $conn->query($sID);
-                $s = mysqli_fetch_assoc($session_result);
-                if($s["SessionID"] == NULL){
-                    echo "
-                    <a class='nav_links' href='login.php'>Login</a>
-                    ";
-                }else{
-                    $result = $conn->query($sql);
-                    $r = $result->fetch_assoc();
-                    echo "<a class='nav_links' id='firstname_log'>";
-                    echo "hello, " . $r["FirstName"]
-                    . "</a>";
-                }
+                if(isset($_SESSION["active"]) && $_SESSION["active"] === true){
+                    echo "<a class = 'nav_links' href='logout.php'>Logout</a>";
 
+                }else{
+                    echo 
+                    "<a class = 'nav_links' href='login.php'>Login</a>
+                    ";
+
+                }
                 ?>
             </div>
         </div>

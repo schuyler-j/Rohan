@@ -14,7 +14,73 @@
 require_once "db/dbconn.inc.php"; 
 require_once "session.php";
 
+session_start();
 
+if(isset($_SESSION["active"]) && $_SESSION["active"] === true){
+    header("location: index.php");
+    exit;
+}
+
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+
+    if(empty(trim($_POST["username"]))){
+        header("location: error.php");
+    }else{
+        $user = trim($_POST["username"]);
+    }
+
+    if(empty(trim($_POST["password"]))){
+        header("location: error.php");
+    }else{
+        $pass = SHA1($_POST["password"]);
+    }
+
+
+
+    $sql = "SELECT FirstName FROM `users` WHERE Username = '$user';";
+
+    $get_user = "SELECT Username FROM `users` WHERE Username = '$user';";
+    $get_pass = "SELECT Password FROM `users` WHERE Password = '$pass';";
+
+    $ruser = $conn->query($get_user);
+    $ruser_ = $ruser->fetch_assoc();
+
+    $gpass = $conn->query($get_pass);
+    $gpass_ = $gpass->fetch_assoc();
+
+    if($res = mysqli_prepare($conn, $sql)){
+        mysqli_stmt_bind_param($res, "s", $uname);
+
+
+        if(mysqli_stmt_execute($res)){
+            mysqli_stmt_store_result($res);
+
+            if(mysqli_stmt_num_rows($res) == 1){
+                mysqli_stmt_bind_result($res, $UserID, $user, $password);
+                if(mysqli_stmt_fetch($res)){
+                    if($user == $ruser_["Username"] && $pass == $gpass_["Password"]){
+                        session_start();
+
+                        $_SESSION["active"] = true;
+                        $_SESSION["id"] = $UserID;
+                        $_SESSION["username"] = $user;
+
+                        header("location: index.php");
+                    }else{
+                        header("location: error.php");
+                    }
+                }
+            }else{
+                        header("location: error.php");
+            }
+        }else{
+            echo "error";
+        }
+        mysqli_stmt_close($res);
+    }
+
+    mysqli_close($conn);
+}
 ?>
 
 <body>
@@ -33,22 +99,7 @@ require_once "session.php";
                 <img src="images/checkout.png"/>
                 <a class="nav_links" href="#">Checkout</a>
                 <img src='images/login.png'/>
-                <?php 
-                $session_result = $conn->query($sID);
-                $s = mysqli_fetch_assoc($session_result);
-                if($s["SessionID"] == NULL){
-                    echo "
-                    <a class='nav_links' href='#'>Login</a>
-                    ";
-                }else{
-                    $result = $conn->query($sql);
-                    $r = $result->fetch_assoc();
-                    echo "<a class='nav_links'>";
-                    echo "hello, " . $r["FirstName"]
-                    . "</a>";
-                }
-
-                ?>
+                <a class = 'nav_links' href="login.php">Login</a>
             </div>
         </div>
         <div class="nav" id="nav_top">
@@ -67,7 +118,7 @@ require_once "session.php";
 
     <div class="page_wrapper">
         <div class="form_wrapper">
-            <form action="index.php" method="GET">
+            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
                 <ul class="item_list" id="login_form">
                     <li><div class="sub_heading" style="font-size:38px">Login</div></li>
                     <li id="top_input_title"><b>Username</b></li>
@@ -79,7 +130,7 @@ require_once "session.php";
                         </div></li>
                     <li><a href="registration.php"><h4>Don't have an account? Sign Up Here!</h4></a></li>
                     <br/>
-                    <li><input type="submit" class="button" value="LOGIN"></input></li>
+                    <li><input type="submit" class="button" value="LOGIN" name="login"></input></li>
                 </ul>
             </form>
         </div>
