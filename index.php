@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    <?php require_once "db/dbconn.inc.php"; ?>
     <div class="top_third">
         <div class="menu_container">
             <div class="menu_title_s">
@@ -35,7 +36,22 @@
                 <img src="images/checkout.png"/>
                 <a class="nav_links" href="#">Checkout</a>
                 <img src="images/login.png"/>
-                <a class="nav_links" href="login.php">Login</a>
+                <?php 
+                $session_result = $conn->query($sID);
+                $s = mysqli_fetch_assoc($session_result);
+                if($s["SessionID"] == NULL){
+                    echo "
+                    <a class='nav_links' href='#'>Login</a>
+                    ";
+                }else{
+                    $result = $conn->query($sql);
+                    $r = $result->fetch_assoc();
+                    echo "<a class='nav_links' id='firstname_log'>";
+                    echo "hello, " . $r["FirstName"]
+                    . "</a>";
+                }
+
+                ?>
             </div>
         </div>
         <div class="nav" id="nav_top">
@@ -48,7 +64,6 @@
             </ul>
         </div>
     </div>
-
     <div class="page_wrapper">
         <div class="home_body" id="join">
             <div class="title" id="shopping">
@@ -56,7 +71,7 @@
                 <span>GREY</span> <span id="alt">NOMADS</span> <span>INTERESTED</span> <span id="alt">IN</span> <span>OUTDOOR</span> <span id="alt">RECREATION</span>
             </div>
             <div class="home_body_text">
-                <span>Ipsum elit ad sint anim. </span>
+                <span>The journey of a lifetime awaits you! </span>
                 <span>Velit sint qui ipsum amet ex cupidatat minim non sunt esse enim. </span>
                 <span>Tempor fugiat voluptate eiusmod dolore eu irure elit.</span> 
             </div>
@@ -72,6 +87,7 @@
                     <h2 id="about">TERMS & CONDITIONS</h2>
                 </div>
                 <p id="about_us_home">
+                    <!-- this is now the T&C section -->
                     <span>Ipsum elit ad sint anim. </span>
                     <span>Velit sint qui ipsum amet ex cupidatat minim non sunt esse enim. </span>
                     <span>Tempor fugiat voluptate eiusmod dolore eu irure elit.</span> 
@@ -92,6 +108,10 @@
             <div class="sub_heading">
                 <h2>NEWS & EVENTS</h2>
             </div>
+            <!-- code to handle the display/update of the news list -->
+            <?php 
+
+            ?>
             <div class="item_list">
                 <ul>
                     <li class="list">
@@ -124,6 +144,8 @@
             </div>
         </div>
     </div>
+    <!-- fix footer to be located at the bottom of the page -->
+    <!-- then update on all pages -->
     <div class="footer">
         <h4>Thomas Hobbs | Udall Liao | Jay Schuyler</h4>
     </div>

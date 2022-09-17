@@ -570,3 +570,7 @@ a:hover.nav_links{
 .pages a:hover{
     color: #71856d;
 }
+
+#firstname_l{
+    cursor: auto;
+}
