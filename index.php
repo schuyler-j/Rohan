@@ -9,6 +9,11 @@
 <link rel="icon" href="images/favicon.png">
 <script src="scripts/script.js" defer></script>
 </head>
+<?php 
+require_once "db/dbconn.inc.php"; 
+require_once "session.php";
+
+?>
 
 <body>
     <?php require_once "db/dbconn.inc.php"; ?>
@@ -41,7 +46,7 @@
                 $s = mysqli_fetch_assoc($session_result);
                 if($s["SessionID"] == NULL){
                     echo "
-                    <a class='nav_links' href='#'>Login</a>
+                    <a class='nav_links' href='login.php'>Login</a>
                     ";
                 }else{
                     $result = $conn->query($sql);
@@ -110,38 +115,37 @@
             </div>
             <!-- code to handle the display/update of the news list -->
             <?php 
+            echo "<div class='item_list'>";
+            echo "<ul>";
+            $news_sql = "SELECT * FROM `news` ORDER BY postdate DESC;";
+            if($news_result = mysqli_query($conn, $news_sql)){
+                if(mysqli_num_rows($news_result) > 0){
 
+                    while($row = mysqli_fetch_assoc($news_result)){
+                        $title = $row["title"];
+                        $img = $row["img"];
+                        $content = $row["content"];
+                        $date = $row["postdate"];
+                        echo "<li class='list'>";
+                        echo "<h3 class='item_list_title'>$title</h3>";
+                        echo "<div class='item_list_wrapper'>";
+                        echo "<div class='content'>";
+                        echo "<img src='images/$img'/>";
+                        echo "<div class='block1'>";
+                        echo "<p>$content</p>";
+                        echo "<div class='date'>$date</div>";
+                        echo "</div>";
+                        echo "</div>";
+                        echo "</div>";
+                        echo "</li>";
+                    }
+
+                }
+            }
+
+            echo "</ul";
+            echo "</div>";
             ?>
-            <div class="item_list">
-                <ul>
-                    <li class="list">
-                        <h3 class="item_list_title">lorem</h3>
-                        <div class="item_list_wrapper">
-                            <a href="#"><h5>Occaecat deserunt amet Lorem nulla ipsum ipsum est duis amet ea enim.</h5></a>
-                            <div class="content">
-                                <img src="images/d1.png"/>
-                                <div class="block1">
-                                    <p>Qui laboris nulla incididunt voluptate quis in do proident ullamco exercitation eiusmod velit. </p>
-                                    <div class="date">date</div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="list">
-                        <h3 class="item_list_title">lorem</h3>
-                        <div class="item_list_wrapper">
-                            <a href="#"><h5>Occaecat deserunt amet Lorem nulla ipsum ipsum est duis amet ea enim.</h5></a>
-                            <div class="content">
-                                <img src="images/d1.png"/>
-                                <div class="block1">
-                                    <p>Qui laboris nulla incididunt voluptate quis in do proident ullamco exercitation eiusmod velit. </p>
-                                    <div class="date">date</div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
         </div>
     </div>
     <!-- fix footer to be located at the bottom of the page -->
