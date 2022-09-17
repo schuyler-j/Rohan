@@ -65,6 +65,8 @@ session_start();
             </ul>
         </div>
     </div>
+    <div class="footer_wrapper">
+        <br/>
     <div class="page_wrapper">
         <?php if(isset($_SESSION["active"]) && $_SESSION["active"]){
 
@@ -160,6 +162,10 @@ session_start();
     <!-- then update on all pages -->
     <div class="footer">
         <h4>Thomas Hobbs | Udall Liao | Jay Schuyler</h4>
+    </div>
+
+
+
     </div>
 </body>
 </html>

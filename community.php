@@ -251,12 +251,10 @@ session_start();
                 </div>
             </div>
         </div>
-        <div class="pages" style="display: inline; text-align: center;">
-            <a href="community.php"><< Previous Page <<</a>
-            <a href="community.php">^ Back to Top ^</a>
-            <a href="community.php">>> Next Page >></a>
-        </div>
     </div>
+        <div class="pages" style="display: inline; text-align: center;">
+            <a href="community.php">^ Back to Top ^</a>
+        </div>
 </div>
 </body>
 </html>

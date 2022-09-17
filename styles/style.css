@@ -208,7 +208,6 @@ h5{
     background-color:#1c1f1c;
     */
     box-shadow: 2px 2px 2px #222;
-    margin-bottom: 180px;
 }
 
 #home{
@@ -217,11 +216,12 @@ h5{
 }
 
 #join{
-    width: 900px;
+    width: 800px;
 }
 
 #news{
     width: 800px;
+    margin-bottom: 180px;
 }
 
 #shopping{
@@ -520,7 +520,7 @@ a:hover.nav_links{
 }
 
 .page_wrapper{
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
 }}
 
 .nav_title{
