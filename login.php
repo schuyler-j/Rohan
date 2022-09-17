@@ -71,10 +71,10 @@ require_once "session.php";
                 <ul class="item_list" id="login_form">
                     <li><div class="sub_heading" style="font-size:38px">Login</div></li>
                     <li id="top_input_title"><b>Username</b></li>
-                    <li><input type="text" placeholder="" id="uname" required></input></li>
+                    <li><input type="text" placeholder="" id="uname" name="username" required></input></li>
                     <li id="pname_title"><b>Password</b></li>
                     <li><div class="password_block">
-                            <input type="password" placeholder="" id="pword" required></input>
+                            <input type="password" placeholder="" id="pword" name="password" required></input>
                             <button type="button" id="show_password" onclick="ShowPassword()"><img src="images/eye.png"></img></button>
                         </div></li>
                     <li><a href="registration.php"><h4>Don't have an account? Sign Up Here!</h4></a></li>
