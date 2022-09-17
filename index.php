@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <?php require_once "db/dbconn.inc.php"; ?>
+    <?php //require_once "db/dbconn.inc.php"; ?>
     <div class="top_third">
         <div class="menu_container">
             <div class="menu_title_s">
@@ -36,7 +36,7 @@
                 <img src="images/checkout.png"/>
                 <a class="nav_links" href="#">Checkout</a>
                 <img src="images/login.png"/>
-                <?php 
+                <?php /*
                 $session_result = $conn->query($sID);
                 $s = mysqli_fetch_assoc($session_result);
                 if($s["SessionID"] == NULL){
@@ -51,7 +51,7 @@
                     . "</a>";
                 }
 
-                ?>
+                */ ?>
             </div>
         </div>
         <div class="nav" id="nav_top">
