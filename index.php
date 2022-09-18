@@ -108,6 +108,10 @@ session_start();
 
         ?>
         <div class="home_body" id="news">
+                <?php if(isset($_SESSION["active"]) && $_SESSION["active"]){
+                        echo "<h1 id='welcome_title'>Welcome back, " . $_SESSION["name"] . "</h1>";
+                }
+                ?>
             <div class="sub_heading">
                 <h2>NEWS & EVENTS</h2>
             </div>

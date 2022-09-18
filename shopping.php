@@ -250,7 +250,7 @@ session_start();
     </div>
     <div class="h_spacer"></div>
     <div class="side_navbar">
-        <div class="nav_title"><h2>Recommended for you</h2></div>
+        <div class="nav_title"><h2>Almost Gone!</h2></div>
         <div class="link_box">
             <div>
                 <div class="sub_heading">
