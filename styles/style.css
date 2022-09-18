@@ -227,13 +227,14 @@ h5{
     margin: auto;
     justify-content: center;
     background-color: #465343;
-    box-shadow: 0px 1px 8px 0px #222;
     max-width: 1630px;
 
     align-items: stretch;
     align-content: center;
     /*make this wrap if mobile */
     flex-wrap: wrap;
+
+    box-shadow: inset 0px -20px 20px 20px #203620;
 }
 
 
@@ -582,6 +583,8 @@ a:hover.nav_links{
     margin-right: 12px;
     box-shadow: inset 0px 0px 40px 1px rgba(99, 136, 98, 0.719);
     box-sizing: border-box;
+    color: #f2d349;
+    background-color: #677762;
 }
 
 
@@ -645,9 +648,4 @@ a:hover.nav_links{
 
 #checkbox_span{
     margin-left: 30px;
-}
-
-.item_list input:focus {
-    color: #f2d349;
-    background-color: #353d33;
 }
