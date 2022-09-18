@@ -36,10 +36,16 @@ session_start();
                 if(isset($_SESSION["active"]) && $_SESSION["active"] === true){
                     echo "<a class = 'nav_links' href='logout.php'>Logout</a>";
 
+                    $addcart = 'addcart.php';
+                    $addwish = 'addwish.php';
+
                 }else{
                     echo 
                     "<a class = 'nav_links' href='login.php'>Login</a>
                     ";
+
+                    $addcart = 'login.php';
+                    $addwish = 'login.php';
 
                 }
                 ?>
@@ -71,6 +77,7 @@ session_start();
                         $price = $row["Price"];
 
 
+
                         echo "
                         <div>
                             <div class='sub_heading'>
@@ -81,19 +88,16 @@ session_start();
                         <div class='item_list_wrapper' id='subtext_total'>
                             <a href='landing.php'>
                                 <div id='item_description'>
-                                    <span class='desc'>
-                                    $desc
-                                    </span>
                                     <h3 id='price'>$$price</h3>
                                 </div>
                             </a>
                             <div class='button_wrapper'>
-                                <a action='addcart.php'>
+                                <a href=$addcart>
                                     <div class='button' id='atc'>
                                         Add To Cart
                                     </div><br/>
                                 </a>
-                                <a action='addwish.php'>
+                                <a href='$addwish'>
                                     <div class='button' id='atc'>
                                         Add To Wishlist
                                     </div>
@@ -137,20 +141,22 @@ session_start();
                         <div class='item_list_wrapper' id='subtext_total'>
                             <a href='landing.php'>
                                 <div id='item_description'>
+                                "/*
                                     <span class='desc'>
                                     $desc
                                     </span>
+                                    */ . " 
                                     <h3 id='oldprice'>$$price</h3>
                                     <h3 id='saleprice'>$$salePrice</h3>
                                 </div>
                             </a>
                             <div class='button_wrapper'>
-                                <a action='addcart.php'>
+                                <a href='$addcart'>
                                     <div class='button' id='atc'>
                                         Add To Cart
                                     </div><br/>
                                 </a>
-                                <a action='addwish.php'>
+                                <a href='$addwish'>
                                     <div class='button' id='atc'>
                                         Add To Wishlist
                                     </div>
@@ -195,19 +201,16 @@ session_start();
                         <div class='item_list_wrapper' id='subtext_total'>
                             <a href='landing.php'>
                                 <div id='item_description'>
-                                    <span class='desc'>
-                                    $desc
-                                    </span>
                                     <h3 class='featured_price' id='price'>$$price</h3>
                                 </div>
                             </a>
                             <div class='button_wrapper'>
-                                <a action='addcart.php'>
+                                <a href='$addcart'>
                                     <div class='button' id='atc'>
                                         Add To Cart
                                     </div><br/>
                                 </a>
-                                <a action='addwish.php'>
+                                <a href='$addwish'>
                                     <div class='button' id='atc'>
                                         Add To Wishlist
                                     </div>
@@ -228,6 +231,9 @@ session_start();
 </div>
 <div class="pages" style="text-align: center;">
     <a href="community.php">^ Back to Top ^</a>
+</div>
+<div class="footer">
+    <h4>Thomas Hobbs | Udall Liao | Jay Schuyler</h4>
 </div>
 </body>
 </html>

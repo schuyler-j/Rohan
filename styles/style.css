@@ -2,6 +2,7 @@
 *{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: sans-serif;
     /*for dark theme
     color: #fff;
     */
@@ -458,12 +459,6 @@ a:hover.nav_links{
     box-shadow: none;
 }
 
-#item_description{
-    width: 17em;
-    padding-top: 12px;
-    margin-right: 12px;
-    border-bottom: 1px solid #5c6e58;
-}
 
 #atc{
     font-size: 12px;
@@ -549,6 +544,11 @@ a:hover.nav_links{
 
 .page_wrapper{
     flex-wrap: wrap;
+}
+
+#login_form{
+    padding: 250px !important;
+    padding-top: 42px !important;
 }}
 
 .nav_title{
@@ -567,7 +567,6 @@ a:hover.nav_links{
     font-size: 22px;
     background-color: #fffbe9;
     height: auto;
-    min-width: 600px;
 }
 
 .top_input_title{
@@ -576,7 +575,7 @@ a:hover.nav_links{
 }
 
 
-#uname, #pword, #fname, #lname, #streetaddr, #emailaddr, #postcode{
+#uname, #pword, #fname, #lname, #streetaddr, #emailaddr, #postcode, #dob{
     padding: 10px;
     min-width: 90%;
     font-size: 28px;
@@ -585,6 +584,10 @@ a:hover.nav_links{
     box-sizing: border-box;
     color: #f2d349;
     background-color: #677762;
+}
+
+#dob{
+    min-width: 40%;
 }
 
 
@@ -648,4 +651,9 @@ a:hover.nav_links{
 
 #checkbox_span{
     margin-left: 30px;
+}
+
+input:focus {
+    background-color: #fff !important;
+    color: #353d33 !important;
 }

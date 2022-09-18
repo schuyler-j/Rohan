@@ -15,9 +15,7 @@
 <body>
     <div class="top_third">
         <div class="menu_container">
-            <div class="menu_title_s">
                 <h1 class="menu_title_s">SENIOR</h1>
-            </div>
             <!--test for logo-->
             <!--<div class="menu_title_s" id="logo">
                 <img src="images/home_banner.png" width="40%">
@@ -51,9 +49,6 @@
         </div>
     </div>
 
-
-
-
     <div class="page_wrapper">
         <div class="form_wrapper">
             <form action="confirm.php" method="GET">
@@ -71,14 +66,10 @@
                         </div>
 
 
-
-
-
-
                     </div></li>
 
                     <li class="pname_title"><b>Username</b></li>
-                    <li><div class="desc">create a username people can recognise you by</div></li>
+                    <li><div class="desc">create a username people can recognise you</div></li>
                     <li><input type="text" placeholder="" id="uname" required></input></li>
 
                     <li class="pname_title"><b>Create a Password</b></li>
@@ -94,7 +85,7 @@
 
                     <li class="pname_title"><b>E-mail Address</b></li>
                     <li><div class="desc">this is the e-mail address we will contact you through</div></li>
-                    <li><input type="text" placeholder="" id="emailaddr" required></input></li>
+                    <li><input type="email" placeholder="" id="emailaddr" required></input></li>
 
                     <li><div class="inner_form_section">
 
@@ -108,6 +99,9 @@
                         <input type="text" placeholder="" id="postcode" required></input>
                     </div>
                     </div></li>
+
+                    <li class="pname_title"><b>Date of Birth</b></li>
+                    <li><input type="date" id="dob"></input></li>
 
                     <br/>
 

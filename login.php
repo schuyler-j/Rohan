@@ -19,6 +19,9 @@ session_start();
 if(isset($_SESSION["active"]) && $_SESSION["active"] === true){
     header("location: index.php");
     exit;
+}else{
+    $msg="";
+
 }
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -79,6 +82,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             }
         }else{
             echo "error";
+                    $msg = "oops, please login first.";
         }
         mysqli_stmt_close($res);
     }
@@ -123,6 +127,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <div class="page_wrapper">
         <div class="form_wrapper">
             <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
+            <?php echo $msg ?>
                 <ul class="item_list" id="login_form">
                     <li><div class="sub_heading" style="font-size:38px">Login</div></li>
                     <li id="top_input_title"><b>Username</b></li>

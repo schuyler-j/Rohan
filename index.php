@@ -74,9 +74,13 @@ session_start();
                     <span>GREY</span> <span id='alt'>NOMADS</span> <span>INTERESTED</span> <span id='alt'>IN</span> <span>OUTDOOR</span> <span id='alt'>RECREATION</span>
                 </div>
                 <div class='home_body_text'>
-                    <span>The journey of a lifetime awaits you! </span><br/>
-                    <span>Our community of grey nomads welcomes you to the greatest ecommerce web application ever created.</span><br/>
-                    <span>Don't miss this terrific opportunity to buy, trade and sell an amazing range of good quality products</span> 
+                    <span><b>The journey of a lifetime awaits you!</b></span>
+                    <br/>
+                    <br/>
+                    <span>Our community of grey nomads welcomes you to the greatest ecommerce web application ever created.</span>
+                    <br/>
+                    <br/>
+                    <span>Don't miss this terrific opportunity to buy, trade and sell an amazing range of good quality products.</span> 
                 </div>
                 <div class='grid'>
                     <div class='block_1'>
