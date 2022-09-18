@@ -449,12 +449,6 @@ a:hover.nav_links{
 
 }
 
-.desc{
-    color: #222;
-    font-size: 12px;
-    font-weight: bold;
-}
-
 #subtext_total{
     color: #333633;
     display: inline-flex;
@@ -523,12 +517,6 @@ a:hover.nav_links{
 
 }
 
-.desc{
-    color: #222;
-    font-size: 12px;
-    font-weight: bold;
-}
-
 #subtext_total{
     color: #333633;
     display: inline-flex;
@@ -581,21 +569,21 @@ a:hover.nav_links{
     min-width: 600px;
 }
 
-#top_input_title{
+.top_input_title{
     margin-top: 16px;
     color: #5c6e58;
 }
 
-#pname_title{
-    color: #5c6e58;
-}
 
-#uname, #pword, #fname{
+#uname, #pword, #fname, #lname, #streetaddr, #emailaddr, #postcode{
     padding: 10px;
     min-width: 90%;
     font-size: 28px;
     margin-right: 12px;
+    box-shadow: inset 0px 0px 40px 1px rgba(99, 136, 98, 0.719);
+    box-sizing: border-box;
 }
+
 
 #show_password{
     background-color:#fffbe9;
@@ -622,4 +610,44 @@ a:hover.nav_links{
 
 #firstname_l{
     cursor: auto;
+}
+
+.pname_title{
+    color: #5c6e58;
+}
+
+.desc{
+    color: #222;
+    font-size: 16px;
+}
+
+.inner_form_section{
+    display: flex;
+    color: #5c6e58;
+}
+
+
+#streetaddr{
+    width: 380px;
+}
+
+#postcode{
+    width: 80px;
+}
+
+.tcc{
+    justify-content: center;
+}
+
+.tcc a:hover{
+    color: #333633;
+}
+
+#checkbox_span{
+    margin-left: 30px;
+}
+
+.item_list input:focus {
+    color: #f2d349;
+    background-color: #353d33;
 }
