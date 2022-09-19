@@ -11,6 +11,7 @@
 </head>
 <?php 
 require_once "db/dbconn.inc.php"; 
+require_once "addcart.php";
 
 
 session_start();
@@ -36,8 +37,12 @@ session_start();
                 if(isset($_SESSION["active"]) && $_SESSION["active"] === true){
                     echo "<a class = 'nav_links' href='logout.php'>Logout</a>";
 
-                    $addcart = 'addcart.php';
-                    $addwish = 'addwish.php';
+                    $product_sql = "SELECT * FROM `products` WHERE cItem = 0;";
+                    $psql = mysqli_query($conn, $product_sql);
+                    $row = mysqli_fetch_assoc($psql);
+
+                    $addcart = 'community.php?action=add&id=' . $row["ProductID"];
+                    $addwish = 'community.php?action=add&id=' . $row["ProductID"];
 
                 }else{
                     echo 
@@ -92,16 +97,14 @@ session_start();
                                 </div>
                             </a>
                             <div class='button_wrapper'>
-                                <a href=$addcart>
-                                    <div class='button' id='atc'>
-                                        Add To Cart
-                                    </div><br/>
-                                </a>
-                                <a href='$addwish'>
-                                    <div class='button' id='atc'>
-                                        Add To Wishlist
-                                    </div>
-                                </a>
+                                <form method='POST' action=$addcart>
+                                    <input class='button' value='Add To Cart' id='atc_input' type='submit'>
+                                    </input>
+                                </form>
+                                <form method='POST' action=$addwish>
+                                    <input class='button' value='Add To Wishlist' id='atc' type='submit'>
+                                    </input>
+                                </form>
                             </div>
                         </div>
 
@@ -151,16 +154,10 @@ session_start();
                                 </div>
                             </a>
                             <div class='button_wrapper'>
-                                <a href='$addcart'>
-                                    <div class='button' id='atc'>
-                                        Add To Cart
-                                    </div><br/>
-                                </a>
-                                <a href='$addwish'>
-                                    <div class='button' id='atc'>
-                                        Add To Wishlist
-                                    </div>
-                                </a>
+                                <input class='button' value='Add To Cart' id='atc_input' type='submit'>
+                                </input>
+                                <input class='button' value='Add To Wishlist' id='atc' type='submit'>
+                                </input>
                             </div>
                         </div>
 
@@ -201,20 +198,14 @@ session_start();
                         <div class='item_list_wrapper' id='subtext_total'>
                             <a href='landing.php'>
                                 <div id='item_description'>
-                                    <h3 class='featured_price' id='price'>$$price</h3>
+                                    <h3 class='featured_price' id='fprice'>$$price</h3>
                                 </div>
                             </a>
                             <div class='button_wrapper'>
-                                <a href='$addcart'>
-                                    <div class='button' id='atc'>
-                                        Add To Cart
-                                    </div><br/>
-                                </a>
-                                <a href='$addwish'>
-                                    <div class='button' id='atc'>
-                                        Add To Wishlist
-                                    </div>
-                                </a>
+                                <input class='button' value='Add To Cart' id='atc_input' type='submit'>
+                                </input>
+                                <input class='button' value='Add To Wishlist' id='atc' type='submit'>
+                                </input>
                             </div>
                         </div>
 
