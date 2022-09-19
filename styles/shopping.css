@@ -123,3 +123,31 @@ img{
     text-align: center;
     padding-top: 5px;
 }
+#next{
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+#next:hover{
+    color: beige;
+}
+#back{
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+#back:hover{
+    color: beige;
+}
+a[href="#top"]{
+    padding-left: 50px;
+    padding-right: 50px;
+}
+p{
+    font-weight: bold;
+    font-size: 16px;
+}

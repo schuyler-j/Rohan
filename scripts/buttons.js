@@ -4,10 +4,11 @@ number = document.getElementById("number");
 var i = 1;
 function ready() {
     backButton.disabled = true;
+    opt.classList.add("ready");
   }  
   function next() {
     i++;
-    if (i == 20) {
+    if (i == 30) {
       nextButton.disabled = true;
     }
     backButton.disabled = false;
@@ -20,4 +21,4 @@ function ready() {
     }
     nextButton.disabled = false;
     number.innerHTML = i;
-  } 
+  }
