@@ -146,6 +146,10 @@ img{
 a[href="#top"]{
     padding-left: 50px;
     padding-right: 50px;
+    color: black;
+}
+a[href="#top"]:hover{
+    color: beige;
 }
 p{
     font-weight: bold;
