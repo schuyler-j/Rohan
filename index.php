@@ -188,9 +188,9 @@ session_start();
             </div>
             <div class="col">
                 <h4>DISCLAIMER</h4>
-                <div>
-                    <span>This website has been created for UX eval purposes - </span><br/>
-                    <span>Transactions are not final.</span>
+                <div class="link_box">
+                    <p>This website has been created for UX eval purposes - </p>
+                    <p>Transactions are not final.</p>
                 </div>
             </div>
         </div>

@@ -357,8 +357,14 @@ h5{
     border-bottom:2px solid #5c6e58;
     font-size: 18px;
 }
+
 .sub_heading h2{
     margin-bottom: 0;
+}
+
+.link_box{
+    color: #728a6d;
+    max-width: 55%;
 }
 
 .footer{
@@ -375,17 +381,18 @@ h5{
     margin-bottom: 0px;
     padding-top: 12px;
     padding-bottom: 12px;
-    color: #728a6d;
+    color: #677762;
     border-top: 1px solid #728a6d;
 }
 
 .col{
-    margin: 60px;
+    margin: 4vw;
     margin-top: 0px;
     margin-bottom: 0px;
     min-height: -moz-fit-content;
     min-height: fit-content;
     text-align: left;
+    justify-content: center;
 }
 
 .col h4{
