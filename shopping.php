@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="styles/shopping.css" />
 <link rel="icon" href="images/favicon.png">
 <script src="scripts/script.js" defer></script>
+<script src="scripts/buttons.js" defer></script>
 </head>
 <?php 
 require_once "db/dbconn.inc.php"; 
@@ -17,7 +18,7 @@ session_start();
 
 ?>
 
-<body>
+<body onload="ready()">
 <div class="top_third">
     <div class="menu_container">
         <h1 class="menu_title_s">SENIOR</h1>
@@ -314,7 +315,10 @@ session_start();
     </div>
 </div>
 <div class="pages">
-    <a href="shopping.php">^ Back to Top ^</a>
+    <p id="number">1</p>
+    <button id="back" onclick="back()"><< Back</button>
+    <a href="#top">^ Back to Top ^</a>
+    <button id="next" onclick="next()">Next >></button>    
 </div>
 </body>
 </html>
