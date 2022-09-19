@@ -8,9 +8,10 @@
 <link rel="stylesheet" href="styles/shopping.css" />
 <link rel="icon" href="images/favicon.png">
 <script src="scripts/script.js" defer></script>
+<script src="scripts/buttons.js" defer></script>
 </head>
 
-<body>
+<body onload="ready()">
 <div class="top_third">
     <div class="menu_container">
         <h1 class="menu_title_s">SENIOR</h1>
@@ -296,11 +297,11 @@
         </div>
     </div>
 </div>
-<div class="pages" onload="ready()">
-    <p id="pg_number">1</p>
-      <button id="back" onclick="back()"><< Back</button>
-      <a href="#top">^ Back to Top ^</a>
-      <button id="next" onclick="next()">Next >></button>    
+<div class="pages">
+    <p id="number">1</p>
+    <button id="back" onclick="back()"><< Back</button>
+    <a href="#top">^ Back to Top ^</a>
+    <button id="next" onclick="next()">Next >></button>    
 </div>
 </body>
 </html>
