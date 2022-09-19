@@ -156,12 +156,47 @@ session_start();
     </div>
     <!-- fix footer to be located at the bottom of the page -->
     <!-- then update on all pages -->
-    <div class="footer">
-        <h4>Thomas Hobbs | Udall Liao | Jay Schuyler</h4>
+
+
+
     </div>
-
-
-
+    <div class="footer">
+        <div class="grid" id="footer_grid">
+            <div class="col">
+                <h4>CONTACT</h4>
+                <div><h5>Contact us at the following email.</h5>
+                    <a href="mailto:senior@senior.com.au">senior@senior.com.au</a>
+                </div>
+            </div>
+            <div class="col">
+                <h4>LINKS</h4>
+                <div style="display: grid">
+                    <a href="#">HOME</a>
+                    <br/>
+                    <a href="#">COMMUNITY</a>
+                    <br/>
+                    <a href="#">SHOPPING</a>
+                    <br/>
+                    <a href="#">ABOUT</a>
+                    <br/>
+                    <a href="#">LOGIN</a>
+                </div>
+            </div>
+            <div class="col">
+                <h4>SUPPORT</h4>
+                <div><a href="#">F.A.Q</a></div>
+            </div>
+            <div class="col">
+                <h4>DISCLAIMER</h4>
+                <div>
+                    <span>This website has been created for UX eval purposes - </span><br/>
+                    <span>Transactions are not final.</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer_bt">
+            <h4>Thomas Hobbs | Udall Liao | Jay Schuyler</h4>
+        </div>
     </div>
 </body>
 </html>

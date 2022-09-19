@@ -94,9 +94,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <body>
     <div class="top_third">
         <div class="menu_container">
-            <div class="menu_title_s">
-                <h1 class="menu_title_s">SENIOR</h1>
-            </div>
+            <h1 class="menu_title_s">SENIOR</h1>
         </div>
         <div class="nav" id="nav_bottom">
             <div class="nav_list">
