@@ -105,11 +105,7 @@ session_start();
                 <option
                 value="trailers">Trailers</option>
                 <option
-                value="accommodation">Accomodation</option>
-                <option
                 value="hobby-sports">Hobby/Sporting Equipment</option>
-                <option
-                value="tours-attractions">Tours and Attractions</option>
             </select>
             <input type="submit" value="Search" /><br>
         <div class ="shopping_links">    
