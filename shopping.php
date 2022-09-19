@@ -296,8 +296,11 @@
         </div>
     </div>
 </div>
-<div class="pages">
-    <a href="shopping.php">^ Back to Top ^</a>
+<div class="pages" onload="ready()">
+    <p id="pg_number">1</p>
+      <button id="back" onclick="back()"><< Back</button>
+      <a href="#top">^ Back to Top ^</a>
+      <button id="next" onclick="next()">Next >></button>    
 </div>
 </body>
 </html>
