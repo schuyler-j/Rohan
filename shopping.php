@@ -10,6 +10,13 @@
 <script src="scripts/script.js" defer></script>
 <script src="scripts/buttons.js" defer></script>
 </head>
+<?php 
+require_once "db/dbconn.inc.php"; 
+
+
+session_start();
+
+?>
 
 <body onload="ready()">
 <div class="top_third">
@@ -30,7 +37,17 @@
                 <img src="images/checkout.png">
                 <a class="nav_links" href="#">Checkout</a>
                 <img src="images/login.png">
-                <a class="nav_links" href="login.php">Login</a>
+                <?php 
+                if(isset($_SESSION["active"]) && $_SESSION["active"] === true){
+                    echo "<a class = 'nav_links' href='logout.php'>Logout</a>";
+
+                }else{
+                    echo 
+                    "<a class = 'nav_links' href='login.php'>Login</a>
+                    ";
+
+                }
+                ?>
             </div>
         </div>
         <div class="nav" id="nav_top">
@@ -234,7 +251,7 @@
     </div>
     <div class="h_spacer"></div>
     <div class="side_navbar">
-        <div class="nav_title"><h2>Recommended for you</h2></div>
+        <div class="nav_title"><h2>Almost Gone!</h2></div>
         <div class="link_box">
             <div>
                 <div class="sub_heading">

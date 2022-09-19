@@ -2,6 +2,8 @@
     background-color: #8AA899;
     padding: 5px;
     padding-bottom: 10px;
+    max-width: 1630px;
+    margin: auto;
 }
 input[type="submit"] {
     font-weight: bold;
@@ -85,6 +87,7 @@ select[name="categories"] {
 }
 #main{
     color: beige;
+    text-decoration: underline;
 }
 img{
     text-align: center;
@@ -154,4 +157,23 @@ a[href="#top"]:hover{
 p{
     font-weight: bold;
     font-size: 16px;
+    padding-top: 10px;
+}
+
+#search_title{
+    background-color: #687564;
+}
+
+#search_title h2{
+    padding-bottom: 12px;
+}
+
+.search_container{
+    margin-top: 12px;
+    padding-top: 12px;
+}
+
+.search_container *{
+    margin-top: 4px;
+    margin-bottom: 4px;
 }

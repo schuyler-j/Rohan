@@ -1,12 +1,13 @@
 # Rohan
 
+![logologo](https://user-images.githubusercontent.com/74050386/190419090-d3503f60-ffa7-4e7c-bc74-b3ae0d602bec.png)
 
-<img src="https://user-images.githubusercontent.com/74050386/187883083-ca7e7668-0640-456f-a9c6-0e3c2cf5405f.png" width=20% height=20%>
+## **Web Systems: html/js/php** [^footnote]
+A community based ecommerce web app with a marketplace where users can buy, sell and trade items. 
 
-**web systems html/js/php**
-
+### **Created by:**
         Thomas Hobbs | Udall Liao | Jay Schuyler 
 
 
 
-A community based ecommerce web app with a marketplace where users can buy, sell and trade items. 
+[^footnote]:Flinders University
