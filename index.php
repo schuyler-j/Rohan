@@ -9,23 +9,18 @@
 <link rel="icon" href="images/favicon.png">
 <script src="scripts/script.js" defer></script>
 </head>
+<?php 
+require_once "db/dbconn.inc.php"; 
+
+
+session_start();
+
+?>
 
 <body>
-    <?php //require_once "db/dbconn.inc.php"; ?>
     <div class="top_third">
         <div class="menu_container">
-            <div class="menu_title_s">
-                <h1 class="menu_title_s">SENIOR</h1>
-            </div>
-            <!--test for logo-->
-            <!--<div class="menu_title_s" id="logo">
-                <img src="images/home_banner.png" width="40%">
-            </div>
-
-            <a class="menu_title_s" id="title_img">
-                <img src="images/logo.png" width=20% height=20%>
-            </a>
-            -->
+            <h1 class="menu_title_s">SENIOR</h1>
         </div>
         <div class="nav" id="nav_bottom">
             <div class="nav_list">
@@ -36,22 +31,15 @@
                 <img src="images/checkout.png"/>
                 <a class="nav_links" href="#">Checkout</a>
                 <img src="images/login.png"/>
-                <?php /*
-                $session_result = $conn->query($sID);
-                $s = mysqli_fetch_assoc($session_result);
-                if($s["SessionID"] == NULL){
-                    echo "
-                    <a class='nav_links' href='#'>Login</a>
-                    ";
+                <?php 
+                if(isset($_SESSION["active"]) && $_SESSION["active"] === true){
+                    echo "<a class = 'nav_links' href='logout.php'>Logout</a>";
                 }else{
-                    $result = $conn->query($sql);
-                    $r = $result->fetch_assoc();
-                    echo "<a class='nav_links' id='firstname_log'>";
-                    echo "hello, " . $r["FirstName"]
-                    . "</a>";
+                    echo 
+                    "<a class = 'nav_links' href='login.php'>Login</a>
+                    ";
                 }
-
-                */ ?>
+                ?>
             </div>
         </div>
         <div class="nav" id="nav_top">
@@ -64,90 +52,149 @@
             </ul>
         </div>
     </div>
+    <div class="footer_wrapper">
     <div class="page_wrapper">
-        <div class="home_body" id="join">
-            <div class="title" id="shopping">
-                <span>SHOPPING</span> <span id="alt">AND</span> <span>EXCHANGE</span> <span id="alt">FOR</span> 
-                <span>GREY</span> <span id="alt">NOMADS</span> <span>INTERESTED</span> <span id="alt">IN</span> <span>OUTDOOR</span> <span id="alt">RECREATION</span>
-            </div>
-            <div class="home_body_text">
-                <span>The journey of a lifetime awaits you! </span>
-                <span>Velit sint qui ipsum amet ex cupidatat minim non sunt esse enim. </span>
-                <span>Tempor fugiat voluptate eiusmod dolore eu irure elit.</span> 
-            </div>
-            <div class="grid">
-                <div class="block_1">
-                    <img src="images/greeting_2.png"/>
-                    <a class="button" type="submit"  href="registration.php" style="width: 220px">JOIN NOW</a>
+        <?php if(isset($_SESSION["active"]) && $_SESSION["active"]){
+
+            echo "
+            
+            <div class='block1' id='home'>
                 </div>
-                    <img id="cursor" src="images/cursor.png"/>
-            </div>
-            <div class="about">
-                <div class="sub_heading">
-                    <h2 id="about">TERMS & CONDITIONS</h2>
+            ";
+
+                //<div class='title' id='welcome'><h4>Welcome back," . $_SESSION["username"] . $_SESSION["id"] . "</h4></div>
+        }else{
+            echo "
+            
+            <div class='home_body' id='join'>
+                <div class='title' id='shopping'>
+                    <span>SHOPPING</span> <span id='alt'>AND</span> <span>EXCHANGE</span> <span id='alt'>FOR</span> 
+                    <span>GREY</span> <span id='alt'>NOMADS</span> <span>INTERESTED</span> <span id='alt'>IN</span> <span>OUTDOOR</span> <span id='alt'>RECREATION</span>
                 </div>
-                <p id="about_us_home">
-                    <!-- this is now the T&C section -->
-                    <span>Ipsum elit ad sint anim. </span>
-                    <span>Velit sint qui ipsum amet ex cupidatat minim non sunt esse enim. </span>
-                    <span>Tempor fugiat voluptate eiusmod dolore eu irure elit.</span> 
-                    <span>Nostrud adipisicing nulla adipisicing sunt eiusmod occaecat. </span>
-                    <span>Consectetur excepteur velit culpa deserunt sit. </span>
-                    <span>Reprehenderit ea cillum sit aute fugiat sit minim labore tempor magna amet reprehenderit. </span>
-                    <span>Mollit nisi laborum velit pariatur quis aliquip nostrud consectetur pariatur anim amet ipsum sit sit. </span>
-                    <span>In eiusmod reprehenderit ipsum fugiat. </span>
-                    <span>Laboris elit ut et ullamco esse et voluptate esse eu. </span>
-                    <span>Adipisicing deserunt eu id voluptate sint aliqua reprehenderit aliquip aute culpa. </span>
-                    <span>Ea aliqua adipisicing aute esse nulla esse cupidatat nostrud pariatur qui ex. </span>
-                    <span>Proident sunt dolore non id voluptate. </span>
-                    <span>Cillum do in tempor veniam reprehenderit excepteur ipsum pariatur excepteur. </span>
-                </p>
+                <div class='home_body_text'>
+                    <span><b>The journey of a lifetime awaits you!</b></span>
+                    <br/>
+                    <br/>
+                    <span>Our community of grey nomads welcomes you to the greatest ecommerce web application ever created.</span>
+                    <br/>
+                    <br/>
+                    <span>Don't miss this terrific opportunity to buy, trade and sell an amazing range of good quality products.</span> 
+                </div>
+                <div class='grid'>
+                    <div class='block_1'>
+                        <img src='images/greeting_2.png'/>
+                        <a class='button' type='submit'  href='registration.php' style='width: 220px'>JOIN NOW</a>
+                    </div>
+                        <img id='cursor' src='images/cursor.png'/>
+                </div>
+                <div class='about'>
+                    <div class='sub_heading'>
+                        <h2 id='about'>TERMS & CONDITIONS</h2>
+                    </div>
+                        <!-- this is now the T&C section -->
+                    <ul id='about_us_home'>
+                    <li><span>When you create an account with us, you guarantee that you are above the age of 18, and that the information you provide us is accurate, complete, and current at all times. Inaccurate, incomplete, or obsolete information may result in the immediate termination of your account on Service.
+                    </span></li><br/>
+                    <li><span>You are responsible for maintaining the confidentiality of your account and password, including but not limited to the restriction of access to your computer and/or account. You agree to accept responsibility for any and all activities or actions that occur under your account and/or password, whether your password is with our Service or a third-party service. You must notify us immediately upon becoming aware of any breach of security or unauthorized use of your account.
+                    </span></li><br/>
+                    <li><span>You may not use as a username the name of another person or entity or that is not lawfully available for use, a name or trademark that is subject to any rights of another person or entity other than you, without appropriate authorization. You may not use as a username any name that is offensive, vulgar or obscene.
+                    </span></li><br/>
+                    <li><span>We reserve the right to refuse service, terminate accounts, remove or edit content, or cancel orders in our sole discretion
+                    </span></li><br/>
+                    <ul>
+                </div>
             </div>
-        </div>
+
+            ";
+        }
+
+        ?>
         <div class="home_body" id="news">
+                <?php if(isset($_SESSION["active"]) && $_SESSION["active"]){
+                        echo "<h1 id='welcome_title'>Welcome back, " . $_SESSION["name"] . "</h1>";
+                }
+                ?>
             <div class="sub_heading">
                 <h2>NEWS & EVENTS</h2>
             </div>
             <!-- code to handle the display/update of the news list -->
             <?php 
+            echo "<div class='item_list'>";
+            echo "<ul>";
+            $news_sql = "SELECT * FROM `news` ORDER BY postdate DESC;";
+            if($news_result = mysqli_query($conn, $news_sql)){
+                if(mysqli_num_rows($news_result) > 0){
 
+                    while($row = mysqli_fetch_assoc($news_result)){
+                        $title = $row["title"];
+                        $img = $row["img"];
+                        $content = $row["content"];
+                        $date = $row["postdate"];
+                        echo "<li class='list'>";
+                        echo "<h3 class='item_list_title'>$title</h3>";
+                        echo "<div class='item_list_wrapper'>";
+                        echo "<div class='content'>";
+                        echo "<img src='images/$img'/>";
+                        echo "<div class='block1'>";
+                        echo "<p>$content</p>";
+                        echo "<div class='date'>$date</div>";
+                        echo "</div>";
+                        echo "</div>";
+                        echo "</div>";
+                        echo "</li>";
+                    }
+
+                }
+            }
+
+            echo "</ul";
+            echo "</div>";
             ?>
-            <div class="item_list">
-                <ul>
-                    <li class="list">
-                        <h3 class="item_list_title">lorem</h3>
-                        <div class="item_list_wrapper">
-                            <a href="#"><h5>Occaecat deserunt amet Lorem nulla ipsum ipsum est duis amet ea enim.</h5></a>
-                            <div class="content">
-                                <img src="images/d1.png"/>
-                                <div class="block1">
-                                    <p>Qui laboris nulla incididunt voluptate quis in do proident ullamco exercitation eiusmod velit. </p>
-                                    <div class="date">date</div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="list">
-                        <h3 class="item_list_title">lorem</h3>
-                        <div class="item_list_wrapper">
-                            <a href="#"><h5>Occaecat deserunt amet Lorem nulla ipsum ipsum est duis amet ea enim.</h5></a>
-                            <div class="content">
-                                <img src="images/d1.png"/>
-                                <div class="block1">
-                                    <p>Qui laboris nulla incididunt voluptate quis in do proident ullamco exercitation eiusmod velit. </p>
-                                    <div class="date">date</div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
         </div>
     </div>
     <!-- fix footer to be located at the bottom of the page -->
     <!-- then update on all pages -->
+
+
+
+    </div>
     <div class="footer">
-        <h4>Thomas Hobbs | Udall Liao | Jay Schuyler</h4>
+        <div class="grid" id="footer_grid">
+            <div class="col">
+                <h4>CONTACT</h4>
+                <div><h5>Contact us at the following email.</h5>
+                    <a href="mailto:senior@senior.com.au">senior@senior.com.au</a>
+                </div>
+            </div>
+            <div class="col">
+                <h4>LINKS</h4>
+                <div style="display: grid">
+                    <a href="#">HOME</a>
+                    <br/>
+                    <a href="#">COMMUNITY</a>
+                    <br/>
+                    <a href="#">SHOPPING</a>
+                    <br/>
+                    <a href="#">ABOUT</a>
+                    <br/>
+                    <a href="#">LOGIN</a>
+                </div>
+            </div>
+            <div class="col">
+                <h4>SUPPORT</h4>
+                <div><a href="#">F.A.Q</a></div>
+            </div>
+            <div class="col">
+                <h4>DISCLAIMER</h4>
+                <div class="link_box">
+                    <p>This website has been created for UX eval purposes - </p>
+                    <p>Transactions are not final.</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer_bt">
+            <h4>Thomas Hobbs | Udall Liao | Jay Schuyler</h4>
+        </div>
     </div>
 </body>
 </html>

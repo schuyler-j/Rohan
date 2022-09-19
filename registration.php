@@ -15,9 +15,7 @@
 <body>
     <div class="top_third">
         <div class="menu_container">
-            <div class="menu_title_s">
                 <h1 class="menu_title_s">SENIOR</h1>
-            </div>
             <!--test for logo-->
             <!--<div class="menu_title_s" id="logo">
                 <img src="images/home_banner.png" width="40%">
@@ -37,7 +35,7 @@
                 <img src="images/checkout.png"/>
                 <a class="nav_links" href="#">Checkout</a>
                 <img src="images/login.png"/>
-                <a class="nav_links" href="#">Login</a>
+                <a class="nav_links" href="login.php">Login</a>
             </div>
         </div>
         <div class="nav" id="nav_top">
@@ -51,32 +49,65 @@
         </div>
     </div>
 
-
-
-
     <div class="page_wrapper">
         <div class="form_wrapper">
             <form action="confirm.php" method="GET">
                 <ul class="item_list" id="login_form">
                     <li><div class="sub_heading" style="font-size:38px">Create an Account!</div></li>
-                    <li id="top_input_title"><b>First Name</b></li>
-                    <li><input type="text" placeholder="" id="fname" required></input></li>
-                    <li id="pname_title"><b>Last Name</b></li>
+                    <li><div class="inner_form_section">
+                        <div>
+                            <b>First Name</b>
+                            <input type="text" placeholder="" id="fname" required></input>
+                        </div>
+
+                        <div>
+                            <b>Last Name</b>
+                            <input type="text" placeholder="" id="lname" required></input>
+                        </div>
+
+
+                    </div></li>
+
+                    <li class="pname_title"><b>Username</b></li>
+                    <li><div class="desc">create a username people can recognise you</div></li>
                     <li><input type="text" placeholder="" id="uname" required></input></li>
-                    <li id="pname_title"><b>Type in a Username</b></li>
-                    <li><input type="text" placeholder="" id="uname" required></input></li>
-                    <li id="pname_title"><b>Create a Password</b></li>
+
+                    <li class="pname_title"><b>Create a Password</b></li>
+                    <li><div class="desc">create a strong password to secure your account</div></li>
                     <li><div class="password_block">
                             <input type="password" placeholder="" id="pword" required></input>
                             <button type="button" id="show_password" onclick="ShowPassword()"><img src="images/eye.png"></img></button>
                         </div></li>
-                    <li id="pname_title"><b>Confirm Password</b></li>
+                    <li class="pname_title"><b>Confirm Password</b></li>
                     <li><div class="password_block">
                             <input type="password" placeholder="" id="pword" required></input>
                         </div></li>
-                    <li id="pname_title"><b>E-mail Address</b></li>
-                    <li><input type="text" placeholder="" id="uname" required></input></li>
+
+                    <li class="pname_title"><b>E-mail Address</b></li>
+                    <li><div class="desc">this is the e-mail address we will contact you through</div></li>
+                    <li><input type="email" placeholder="" id="emailaddr" required></input></li>
+
+                    <li><div class="inner_form_section">
+
+                    <div>
+                        <b>Street Address</b>
+                        <input type="text" placeholder="" id="streetaddr" required></input>
+                    </div>
+
+                    <div class="inner_form_section_sub">
+                        <b>Postcode</b>
+                        <input type="text" placeholder="" id="postcode" required></input>
+                    </div>
+                    </div></li>
+
+                    <li class="pname_title"><b>Date of Birth</b></li>
+                    <li><input type="date" id="dob"></input></li>
+
                     <br/>
+
+                    <li class="tcc"><input type="checkbox" id="tccheckbox"><span id="checkbox_span">I accept the</span> <a href="index.php#about">Terms & Conditions</a></input></li>
+                    <br/>
+
                     <li><input type="submit" class="button" value="CREATE"></input></li>
                 </ul>
             </form>
