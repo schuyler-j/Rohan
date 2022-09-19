@@ -410,6 +410,10 @@ h5{
     padding-bottom: 120px;
 }
 
+#ft_grid_last{
+    margin-right: 0px;
+}
+
 /*this is where the watchlist/my cart/checkout etc is located */
 
 #nav_bottom{

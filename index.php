@@ -162,7 +162,7 @@ session_start();
     </div>
     <div class="footer">
         <div class="grid" id="footer_grid">
-            <div class="col">
+            <div class="col" id="ft_grid_first">
                 <h4>CONTACT</h4>
                 <div><h5>Contact us at the following email.</h5>
                     <a href="mailto:senior@senior.com.au">senior@senior.com.au</a>
@@ -186,11 +186,14 @@ session_start();
                 <h4>SUPPORT</h4>
                 <div><a href="#">F.A.Q</a></div>
             </div>
-            <div class="col">
+            <div class="col" id="ft_grid_last">
                 <h4>DISCLAIMER</h4>
                 <div class="link_box">
-                    <p>This website has been created for UX eval purposes - </p>
+                    <p>This website has been created for UX eval purposes.</p>
+                    <p>Products shown are examples. Credit information is stored temporarily.</p>
                     <p>Transactions are not final.</p>
+                    <img style="height:80px" src="images/logologo.png"/>
+                    <p><b>© 2022</b> SENIOR WEB SYS</p>
                 </div>
             </div>
         </div>
