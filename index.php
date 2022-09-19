@@ -34,12 +34,10 @@ session_start();
                 <?php 
                 if(isset($_SESSION["active"]) && $_SESSION["active"] === true){
                     echo "<a class = 'nav_links' href='logout.php'>Logout</a>";
-
                 }else{
                     echo 
                     "<a class = 'nav_links' href='login.php'>Login</a>
                     ";
-
                 }
                 ?>
             </div>
