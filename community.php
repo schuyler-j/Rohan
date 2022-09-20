@@ -86,12 +86,16 @@ session_start();
             if(isset($_GET["action"]) && $_GET["action"] == "ac"){
                 $productid = $_GET["id"];
                 $cart_sql = "INSERT INTO `cart` (`CartID`, `TotalPrice`, `Shipping`, `Payment`, `DoP`, `UserID`, `ProductID`, `CreditCard`) VALUES (CONNECTION_ID(), $total, '$addr', 'credit', CURRENT_DATE(), $userid, $productid, $creditcard);";
+                $update_stock = "UPDATE `products` SET `stockAmt` = (stockAmt - 1) WHERE `products`.`ProductID` = $productid;";
                 $statement = mysqli_stmt_init($conn);
+                $update_st = mysqli_stmt_init($conn);
                 mysqli_stmt_prepare($statement, $cart_sql);
+                mysqli_stmt_prepare($update_st, $update_stock);
                 mysqli_stmt_execute($statement);
+                mysqli_stmt_execute($update_st);
             }
             
-            $product_sql = "SELECT * FROM `products` WHERE cItem = 0;";
+            $product_sql = "SELECT * FROM `products` WHERE cItem = 0 AND stockAmt > 0;";
             if($prod_result = mysqli_query($conn, $product_sql)){
                 if(mysqli_num_rows($prod_result) > 0){
                     while($row = mysqli_fetch_assoc($prod_result)){
@@ -146,7 +150,7 @@ session_start();
         <div class="link_box">
             <?php 
             
-            $product_sql = "SELECT * FROM `products` WHERE cItem = 1 AND onSale = 1;";
+            $product_sql = "SELECT * FROM `products` WHERE cItem = 1 AND onSale = 1 AND stockAmt > 0;";
             if($prod_result = mysqli_query($conn, $product_sql)){
                 if(mysqli_num_rows($prod_result) > 0){
                     while($row = mysqli_fetch_assoc($prod_result)){
@@ -209,7 +213,7 @@ session_start();
         <div class="link_box">
             <?php 
             
-            $product_sql = "SELECT * FROM `products` WHERE cItem = 1 AND featured = 1;";
+            $product_sql = "SELECT * FROM `products` WHERE cItem = 1 AND featured = 1 AND stockAmt > 0;";
             if($prod_result = mysqli_query($conn, $product_sql)){
                 if(mysqli_num_rows($prod_result) > 0){
                     while($row = mysqli_fetch_assoc($prod_result)){
