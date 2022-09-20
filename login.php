@@ -78,11 +78,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     }
                 }
             }else{
-                        header("location: error.php");
+                        header("location: error.php?msg=no%20account%20matches%20those%20credentials.");
             }
         }else{
             echo "error";
-                    $msg = "oops, please login first.";
         }
         mysqli_stmt_close($res);
     }
@@ -125,7 +124,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <div class="page_wrapper">
         <div class="form_wrapper">
             <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
-            <?php echo $msg ?>
                 <ul class="item_list" id="login_form">
                     <li><div class="sub_heading" style="font-size:38px">Login</div></li>
                     <li id="top_input_title"><b>Username</b></li>
@@ -137,7 +135,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         </div></li>
                     <li><a href="registration.php"><h4>Don't have an account? Sign Up Here!</h4></a></li>
                     <br/>
-                    <li><input type="submit" class="button" value="LOGIN" name="login"></input></li>
+                    <li><input type="submit" class="button" value="LOGIN" name="login" id="login_btn"></input></li>
                 </ul>
             </form>
         </div>

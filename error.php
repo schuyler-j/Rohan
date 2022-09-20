@@ -10,15 +10,17 @@
 <script src="scripts/script.js" defer></script>
 </head>
 
+
+
 <body>
     <div class="page_wrapper">
         <div>
             <h2 class="nav_title">
-                Error: Wrong username or password.
+                <?php $msg = $_GET['msg']; echo $msg; ?>
             </h2>
             <div style="text-align: center; background: #71856d;">
                 <img src="images/login.png"/>
-                <a href="login.php">Go back</a>
+                <a href="login.php" style="color:#111">Click Here to Login.</a>
             </div>
             <br/>
             <br/>

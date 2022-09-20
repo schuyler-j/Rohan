@@ -41,16 +41,19 @@ session_start();
                     $psql = mysqli_query($conn, $product_sql);
                     $row = mysqli_fetch_assoc($psql);
 
-                    $addcart = 'community.php?action=add&id=' . $row["ProductID"];
-                    $addwish = 'community.php?action=add&id=' . $row["ProductID"];
+                    $addcart = 'community.php?action=ac&id=' . $row["ProductID"];
+                    $addwish = 'community.php?action=aw&id=' . $row["ProductID"];
+
+                    $msg = "";
 
                 }else{
                     echo 
                     "<a class = 'nav_links' href='login.php'>Login</a>
                     ";
 
-                    $addcart = 'login.php';
+                    $addcart = 'error.php';
                     $addwish = 'login.php';
+                    $msg = "?msg=Please%20login%20or%20create%20an%20account.";
 
                 }
                 ?>
@@ -86,7 +89,7 @@ session_start();
                         echo "
                         <div>
                             <div class='sub_heading'>
-                                <h3>". $title . "</h3>
+                                <h4>". $title . "</h4>
                             </div>
                         </div>
                         <div class='img_container'><a href='landing.php'><img src='images/$img'/></a></div>
@@ -97,11 +100,11 @@ session_start();
                                 </div>
                             </a>
                             <div class='button_wrapper'>
-                                <form method='POST' action=$addcart>
+                                <form method='POST' action=$addcart$msg>
                                     <input class='button' value='Add To Cart' id='atc_input' type='submit'>
                                     </input>
                                 </form>
-                                <form method='POST' action=$addwish>
+                                <form method='POST' action=$addwish$msg>
                                     <input class='button' value='Add To Wishlist' id='atc' type='submit'>
                                     </input>
                                 </form>
@@ -137,7 +140,7 @@ session_start();
                         echo "
                         <div>
                             <div class='sub_heading'>
-                                <h3>". $title . "</h3>
+                                <h4>". $title . "</h4>
                             </div>
                         </div>
                         <div class='img_container'><a href='landing.php'><img src='images/$img'/></a></div>
@@ -154,10 +157,14 @@ session_start();
                                 </div>
                             </a>
                             <div class='button_wrapper'>
-                                <input class='button' value='Add To Cart' id='atc_input' type='submit'>
-                                </input>
-                                <input class='button' value='Add To Wishlist' id='atc' type='submit'>
-                                </input>
+                                <form method='POST' action=$addcart$msg>
+                                    <input class='button' value='Add To Cart' id='atc_input' type='submit'>
+                                    </input>
+                                </form>
+                                <form method='POST' action=$addwish$msg>
+                                    <input class='button' value='Add To Wishlist' id='atc' type='submit'>
+                                    </input>
+                                </form>
                             </div>
                         </div>
 
@@ -191,7 +198,7 @@ session_start();
                         echo "
                         <div>
                             <div class='sub_heading'>
-                                <h3>". $title . "</h3>
+                                <h4>". $title . "</h4>
                             </div>
                         </div>
                         <div class='img_container' id='featured'><a href='landing.php'><img src='images/$img'/></a></div>
@@ -202,10 +209,14 @@ session_start();
                                 </div>
                             </a>
                             <div class='button_wrapper'>
-                                <input class='button' value='Add To Cart' id='atc_input' type='submit'>
-                                </input>
-                                <input class='button' value='Add To Wishlist' id='atc' type='submit'>
-                                </input>
+                                <form method='POST' action=$addcart$msg>
+                                    <input class='button' value='Add To Cart' id='atc_input' type='submit'>
+                                    </input>
+                                </form>
+                                <form method='POST' action=$addwish$msg>
+                                    <input class='button' value='Add To Wishlist' id='atc' type='submit'>
+                                    </input>
+                                </form>
                             </div>
                         </div>
 
