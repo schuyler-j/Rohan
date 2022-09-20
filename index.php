@@ -121,7 +121,7 @@ session_start();
             <?php 
             echo "<div class='item_list'>";
             echo "<ul>";
-            $news_sql = "SELECT * FROM `news` ORDER BY postdate DESC;";
+            $news_sql = "SELECT * FROM `news` WHERE (CURRENT_DATE() - postdate) < 7 ORDER BY postdate DESC;";
             if($news_result = mysqli_query($conn, $news_sql)){
                 if(mysqli_num_rows($news_result) > 0){
 
