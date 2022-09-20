@@ -20,7 +20,7 @@ session_start();
 <body>
     <div class="top_third">
         <div class="menu_container">
-            <h1 class="menu_title_s">SENIOR</h1>
+            <h1 class="menu_title_s"><a href="index.php">SENIOR</a></h1>
         </div>
         <div class="nav" id="nav_bottom">
             <div class="nav_list">
@@ -83,7 +83,7 @@ session_start();
                 <div class='grid'>
                     <div class='block_1'>
                         <img src='images/greeting_2.png'/>
-                        <a class='button' type='submit'  href='registration.php' style='width: 220px'>JOIN NOW</a>
+                        <a class='button' type='submit'  href='registration.php' style='width: 370px'>JOIN NOW</a>
                     </div>
                         <img id='cursor' src='images/cursor.png'/>
                 </div>
@@ -121,7 +121,7 @@ session_start();
             <?php 
             echo "<div class='item_list'>";
             echo "<ul>";
-            $news_sql = "SELECT * FROM `news` ORDER BY postdate DESC;";
+            $news_sql = "SELECT * FROM `news` WHERE (CURRENT_DATE() - postdate) < 7 ORDER BY postdate DESC;";
             if($news_result = mysqli_query($conn, $news_sql)){
                 if(mysqli_num_rows($news_result) > 0){
 

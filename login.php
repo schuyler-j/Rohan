@@ -67,22 +67,24 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     if($user == $ruser_["Username"] && $pass == $gpass_["Password"]){
                         session_start();
 
+                        //set session variables for user
                         $_SESSION["active"] = true;
                         $_SESSION["id"] = $rname_["UserID"];
                         $_SESSION["username"] = $user;
                         $_SESSION["name"] = $rname_["FirstName"];
+                        $_SESSION["creditcard"] = $rname_["CreditCard"];
+                        $_SESSION["addr"] = $rname_["Address"];
 
                         header("location: index.php");
                     }else{
-                        header("location: error.php");
+                        header("location: error.php?msg=Bad%20Password.%20Try%20Again.");
                     }
                 }
             }else{
-                        header("location: error.php");
+                        header("location: error.php?msg=No%20account%20matches%20those%20credentials.");
             }
         }else{
             echo "error";
-                    $msg = "oops, please login first.";
         }
         mysqli_stmt_close($res);
     }
@@ -94,7 +96,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <body>
     <div class="top_third">
         <div class="menu_container">
-            <h1 class="menu_title_s">SENIOR</h1>
+            <h1 class="menu_title_s"><a href="index.php">SENIOR</a></h1>
         </div>
         <div class="nav" id="nav_bottom">
             <div class="nav_list">
@@ -125,7 +127,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <div class="page_wrapper">
         <div class="form_wrapper">
             <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
-            <?php echo $msg ?>
                 <ul class="item_list" id="login_form">
                     <li><div class="sub_heading" style="font-size:38px">Login</div></li>
                     <li id="top_input_title"><b>Username</b></li>
@@ -137,7 +138,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         </div></li>
                     <li><a href="registration.php"><h4>Don't have an account? Sign Up Here!</h4></a></li>
                     <br/>
-                    <li><input type="submit" class="button" value="LOGIN" name="login"></input></li>
+                    <li><input type="submit" class="button" value="LOGIN" name="login" id="login_btn"></input></li>
                 </ul>
             </form>
         </div>
