@@ -41,10 +41,17 @@ session_start();
                     $psql = mysqli_query($conn, $product_sql);
                     $row = mysqli_fetch_assoc($psql);
 
-                    $addcart = 'community.php?action=ac&id=' . $row["ProductID"];
-                    $addwish = 'community.php?action=aw&id=' . $row["ProductID"];
 
                     $msg = "";
+
+
+                    $total = 0;
+                    $creditcard = $_SESSION["creditcard"];
+                    $addr = $_SESSION["addr"];
+                    $userid = $_SESSION["id"];
+
+                    $productid = 0;
+
 
                 }else{
                     echo 
@@ -52,7 +59,7 @@ session_start();
                     ";
 
                     $addcart = 'error.php';
-                    $addwish = 'login.php';
+                    $addwish = 'error.php';
                     $msg = "?msg=Please%20login%20or%20create%20an%20account.";
 
                 }
@@ -74,6 +81,15 @@ session_start();
         <div class="nav_title"><h2>Community Items</h2></div>
         <div class="link_box">
             <?php 
+
+
+            if(isset($_GET["action"]) && $_GET["action"] == "ac"){
+                $productid = $_GET["id"];
+                $cart_sql = "INSERT INTO `cart` (`CartID`, `TotalPrice`, `Shipping`, `Payment`, `DoP`, `UserID`, `ProductID`, `CreditCard`) VALUES (CONNECTION_ID(), $total, '$addr', 'credit', CURRENT_DATE(), $userid, $productid, $creditcard);";
+                $statement = mysqli_stmt_init($conn);
+                mysqli_stmt_prepare($statement, $cart_sql);
+                mysqli_stmt_execute($statement);
+            }
             
             $product_sql = "SELECT * FROM `products` WHERE cItem = 0;";
             if($prod_result = mysqli_query($conn, $product_sql)){
@@ -85,6 +101,10 @@ session_start();
                         $price = $row["Price"];
 
 
+                        if(isset($_SESSION["active"]) && $_SESSION["active"] === true){
+                            $addcart = 'community.php?action=ac&id=' . $row["ProductID"];
+                            $addwish = 'community.php?action=aw&id=' . $row["ProductID"];
+                        }
 
                         echo "
                         <div>

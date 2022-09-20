@@ -67,10 +67,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     if($user == $ruser_["Username"] && $pass == $gpass_["Password"]){
                         session_start();
 
+                        //set session variables for user
                         $_SESSION["active"] = true;
                         $_SESSION["id"] = $rname_["UserID"];
                         $_SESSION["username"] = $user;
                         $_SESSION["name"] = $rname_["FirstName"];
+                        $_SESSION["creditcard"] = $rname_["CreditCard"];
+                        $_SESSION["addr"] = $rname_["Address"];
 
                         header("location: index.php");
                     }else{
