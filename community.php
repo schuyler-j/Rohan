@@ -24,7 +24,6 @@ session_start();
         <div class="menu_container">
             <h1 class="menu_title_s"><a href="index.php">SENIOR</a></h1>
         </div>
-
         <div class="nav" id="nav_bottom">
             <div class="nav_list">
                 <img src="images/watchlist.png" />
@@ -38,7 +37,7 @@ session_start();
                 if (isset($_SESSION["active"]) && $_SESSION["active"] === true) {
                     echo "<a class = 'nav_links' href='logout.php'>Logout</a>";
 
-                    $product_sql = "SELECT * FROM `products` WHERE cItem = 0;";
+                    $product_sql = "SELECT * FROM `products`;";
                     $psql = mysqli_query($conn, $product_sql);
                     $row = mysqli_fetch_assoc($psql);
 
@@ -74,6 +73,7 @@ session_start();
             </ul>
         </div>
     </div>
+    <!--beginning of item grid list-->
     <div class="page_wrapper">
         <div class="side_navbar">
             <div class="nav_title">
@@ -81,8 +81,7 @@ session_start();
             </div>
             <div class="link_box">
                 <?php
-
-
+                //check if user added to cart or wishlist
                 if (isset($_GET["action"]) && $_GET["action"] == "ac") {
                     $productid = $_GET["id"];
                     $cart_sql = "INSERT INTO `cart` (`CartID`, `TotalPrice`, `Shipping`, `Payment`, `DoP`, `UserID`, `ProductID`, `CreditCard`) VALUES (CONNECTION_ID(), $total, '$addr', 'credit', CURRENT_DATE(), $userid, $productid, $creditcard);";
@@ -94,8 +93,17 @@ session_start();
                     mysqli_stmt_execute($statement);
                     mysqli_stmt_execute($update_st);
                 }
+                
+                
+                if(isset($_GET["action"]) && $_GET["action"] == "aw"){
+                    $productid = $_GET["id"];
+                    $w = "INSERT INTO `wish` (`wishID`, `userID`, `productID`) VALUES (CONNECTION_ID(), $userid, $productid);";
+                    $wst = mysqli_stmt_init($conn);
+                    mysqli_stmt_prepare($wst, $w);
+                    mysqli_stmt_execute($wst);
+                }
 
-                $product_sql = "SELECT * FROM `products` WHERE cItem = 0 AND stockAmt > 0;";
+                $product_sql = "SELECT * FROM `products` WHERE cItem = 1 AND stockAmt > 0 AND onSale = 0 AND featured = 0;";
                 if ($prod_result = mysqli_query($conn, $product_sql)) {
                     if (mysqli_num_rows($prod_result) > 0) {
                         while ($row = mysqli_fetch_assoc($prod_result)) {
