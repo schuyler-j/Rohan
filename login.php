@@ -74,11 +74,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
                         header("location: index.php");
                     }else{
-                        header("location: error.php");
+                        header("location: error.php?msg=Bad%20Password.%20Try%20Again.");
                     }
                 }
             }else{
-                        header("location: error.php?msg=no%20account%20matches%20those%20credentials.");
+                        header("location: error.php?msg=No%20account%20matches%20those%20credentials.");
             }
         }else{
             echo "error";
