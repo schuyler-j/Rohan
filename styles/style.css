@@ -164,7 +164,6 @@ h5{
 }
 
 .menu_title_s{
-    color: beige;
     max-width: 100%;
     text-align: center;
     text-shadow: -9px 3px 4px black;
@@ -173,6 +172,11 @@ h5{
     letter-spacing: 0.4em;
     background-color: #1f2b2355;
     min-width: -webkit-fill-available;
+}
+
+.menu_title_s a{
+    font-family: 'Times New Roman', Times, serif;
+    color: beige !important;
 }
 
 
