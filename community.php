@@ -156,6 +156,10 @@ session_start();
                         $price = $row["Price"];
                         $salePrice = $row["salePrice"];
 
+                        if(isset($_SESSION["active"]) && $_SESSION["active"] === true){
+                            $addcart = 'community.php?action=ac&id=' . $row["ProductID"];
+                            $addwish = 'community.php?action=aw&id=' . $row["ProductID"];
+                        }
 
                         echo "
                         <div>
@@ -214,6 +218,10 @@ session_start();
                         $desc = $row["Description"];
                         $price = $row["Price"];
 
+                        if(isset($_SESSION["active"]) && $_SESSION["active"] === true){
+                            $addcart = 'community.php?action=ac&id=' . $row["ProductID"];
+                            $addwish = 'community.php?action=aw&id=' . $row["ProductID"];
+                        }
 
                         echo "
                         <div>
