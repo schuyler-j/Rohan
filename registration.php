@@ -70,11 +70,11 @@
                     </div></li>
 
                     <li class="pname_title"><b>Username</b></li>
-                    <li><div class="desc">create a username people can recognise you</div></li>
+                    <li><div class="desc"><i>Create a username people can recognise you</i></div></li>
                     <li><input type="text" placeholder="" id="uname" required></input></li>
 
                     <li class="pname_title"><b>Create a Password</b></li>
-                    <li><div class="desc">create a strong password to secure your account</div></li>
+                    <li><div class="desc"><i>Create a strong password to secure your account</i></div></li>
                     <li><div class="password_block">
                             <input type="password" placeholder="" id="pword" required></input>
                             <button type="button" id="show_password" onclick="ShowPassword()"><img src="images/eye.png"></img></button>
@@ -85,7 +85,7 @@
                         </div></li>
 
                     <li class="pname_title"><b>E-mail Address</b></li>
-                    <li><div class="desc">this is the e-mail address we will contact you through</div></li>
+                    <li><div class="desc"><i>This is the e-mail address we will contact you through</i></div></li>
                     <li><input type="email" placeholder="" id="emailaddr" required></input></li>
 
                     <li><div class="inner_form_section">

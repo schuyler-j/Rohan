@@ -696,7 +696,7 @@ a:hover.nav_links{
 
 .desc{
     color: #222;
-    font-size: 16px;
+    font-size: 12px;
 }
 
 .inner_form_section{
@@ -711,6 +711,11 @@ a:hover.nav_links{
 
 #postcode{
     width: 80px;
+}
+
+#tccheckbox{
+    width: 40px;
+    height: 20px;
 }
 
 .tcc{
