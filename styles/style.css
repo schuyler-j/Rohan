@@ -21,6 +21,7 @@ a{
 }
 
 a:hover{
+    text-shadow: 1px -2px 4px #222 !important;
     color: beige;
 }
 
@@ -39,6 +40,10 @@ h4{
 h5{
     font-size: 16px;
     margin-top: 0px;
+}
+
+h4:hover{
+    text-shadow: none;
 }
 
 .date{
@@ -138,6 +143,7 @@ h5{
 .img_container img{
     margin: auto;
     height: 200px;
+    border: 1px solid #333;
 }
 
 .img_container:hover{
@@ -502,10 +508,13 @@ a:hover.nav_links{
 
 .item_list_wrapper:hover{
     box-shadow: 2px 2px 2px 2px #465343;
+    background-color: rgb(241, 241, 204);
+    transition: 0.3s;
 }
 
 .item_list_wrapper a:hover{
     color: #465343;
+    text-shadow: none !important;
 }
 
 .item_list_wrapper img{
@@ -521,7 +530,6 @@ a:hover.nav_links{
 #subtext_total:hover{
     box-shadow: none;
 }
-
 
 #atc{
     font-size: 12px;
@@ -553,7 +561,7 @@ a:hover.nav_links{
     width: fit-content;
     color: #222;
 }
-
+/*
 .item_list_wrapper{
     background-color: beige;
     padding: 18px;
@@ -562,7 +570,6 @@ a:hover.nav_links{
     justify-content: center;
     border-radius: 4px;
 }
-
 .item_list_wrapper:hover{
     box-shadow: 2px 2px 2px 2px #465343;
 }
@@ -585,6 +592,7 @@ a:hover.nav_links{
     box-shadow: none;
 }
 
+*/
 #item_description{
     width: 17em;
     padding-top: 12px;
@@ -592,9 +600,8 @@ a:hover.nav_links{
     margin-right: 12px;
 }
 
-#atc{
-    font-size: 12px;
-    background-color: #f2d349;
+#item_description:hover{
+    text-shadow: none;
 }
 
 .content{

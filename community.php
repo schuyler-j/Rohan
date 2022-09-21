@@ -27,7 +27,7 @@ session_start();
         <div class="nav" id="nav_bottom">
             <div class="nav_list">
                 <img src="images/watchlist.png" />
-                <a class="nav_links" href="#">Watchlist</a>
+                <a class="nav_links" href="wishlist.php">Wishlist</a>
                 <img src="images/cart.png" />
                 <a class="nav_links" href="#">My Cart</a>
                 <img src="images/checkout.png" />
@@ -83,7 +83,8 @@ session_start();
                 <?php
                 //check if user added to cart or wishlist
                 if (isset($_GET["action"]) && $_GET["action"] == "ac") {
-                    $productid = $_GET["id"];
+                    $_SESSION["productid"] = $_GET["id"];
+                    $productid = $_SESSION["productid"];
                     $cart_sql = "INSERT INTO `cart` (`CartID`, `TotalPrice`, `Shipping`, `Payment`, `DoP`, `UserID`, `ProductID`, `CreditCard`) VALUES (CONNECTION_ID(), $total, '$addr', 'credit', CURRENT_DATE(), $userid, $productid, $creditcard);";
                     $update_stock = "UPDATE `products` SET `stockAmt` = (stockAmt - 1) WHERE `products`.`ProductID` = $productid;";
                     $statement = mysqli_stmt_init($conn);
@@ -96,8 +97,9 @@ session_start();
                 
                 
                 if(isset($_GET["action"]) && $_GET["action"] == "aw"){
-                    $productid = $_GET["id"];
-                    $w = "INSERT INTO `wish` (`wishID`, `userID`, `productID`) VALUES (CONNECTION_ID(), $userid, $productid);";
+                    $_SESSION["productid"] = $_GET["id"];
+                    $productid = $_SESSION["productid"];
+                    $w = "INSERT INTO `wishlists` (`wishID`, `userID`, `ProductID`) VALUES (CONNECTION_ID(), $userid, $productid);";
                     $wst = mysqli_stmt_init($conn);
                     mysqli_stmt_prepare($wst, $w);
                     mysqli_stmt_execute($wst);

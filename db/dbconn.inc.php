@@ -1,6 +1,6 @@
 <?php
 
-require_once "db/secret.inc.php";
+
 
 define("DB_HOST", "localhost");
 define("DB_NAME", "ecom");
