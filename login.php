@@ -21,8 +21,6 @@ if(isset($_SESSION["active"]) && $_SESSION["active"] === true){
     header("location: index.php");
     exit;
 }else{
-    $msg="";
-
 }
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -126,6 +124,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 
     <div class="page_wrapper">
+        <?php if(isset($_GET["msg"])){
+            echo "<h1>". $_GET["msg"] . "</h1>";
+        }?>
         <div class="form_wrapper">
             <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
                 <ul class="item_list" id="login_form">
