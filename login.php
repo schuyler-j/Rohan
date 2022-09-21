@@ -16,6 +16,7 @@ require_once "session.php";
 
 session_start();
 
+
 if(isset($_SESSION["active"]) && $_SESSION["active"] === true){
     header("location: index.php");
     exit;

@@ -14,10 +14,9 @@
 
 <?php
 session_start();
-
+$total = 0;
 require_once "db/dbconn.inc.php";
-require_once "addcart.php";
-
+$userid = $_SESSION["id"];
 $sql = "SELECT * FROM `wishlists` WHERE userID = $userid;";
 $sqli = $conn->query($sql);
 $row = $sqli->fetch_assoc();

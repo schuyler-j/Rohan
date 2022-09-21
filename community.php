@@ -12,14 +12,24 @@
 </head>
 <?php
 require_once "db/dbconn.inc.php";
-require_once "addcart.php";
-
 
 session_start();
+$_SESSION["wishcount"] = 0;
+$added = 'Add To Wishlist';
+$wishc = "SELECT * FROM `wishlists` WHERE userID = $_SESSION[id];";
+if($w = mysqli_query($conn, $wishc)){
+    if(mysqli_num_rows($w) > 0){
+        while($rw = mysqli_fetch_assoc($w)){
+                $_SESSION["wishcount"] = $_SESSION["wishcount"] + 1;
+        }
+    }
+}else{
+    $_SESSION["wishcount"] = 0;
+}
 
 ?>
 
-<body>
+<body >
     <div class="top_third">
         <div class="menu_container">
             <h1 class="menu_title_s"><a href="index.php">SENIOR</a></h1>
@@ -27,7 +37,7 @@ session_start();
         <div class="nav" id="nav_bottom">
             <div class="nav_list">
                 <img src="images/watchlist.png" />
-                <a class="nav_links" href="wishlist.php">Wishlist</a>
+                <a class="nav_links" href="wishlist.php">Wishlist<?php echo " " . $_SESSION["wishcount"]?></a>
                 <img src="images/cart.png" />
                 <a class="nav_links" href="#">My Cart</a>
                 <img src="images/checkout.png" />
@@ -118,6 +128,7 @@ session_start();
                             if (isset($_SESSION["active"]) && $_SESSION["active"] === true) {
                                 $addcart = 'community.php?action=ac&id=' . $row["ProductID"];
                                 $addwish = 'community.php?action=aw&id=' . $row["ProductID"];
+                                $added = 'Added To Wishlist';
                             }
 
                             echo "
