@@ -1,2 +1,3 @@
 secret.inc.php
 dbconn.inc.php
+db/dbconn.inc.php
