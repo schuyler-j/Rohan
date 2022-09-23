@@ -16,7 +16,7 @@
     <?php session_start(); ?>
     <div class="top_third">
         <div class="menu_container">
-                <h1 class="menu_title_s">SENIOR</h1>
+                <h1 class="menu_title_s"><a href="index.php">SENIOR</a></h1>
             <!--test for logo-->
             <!--<div class="menu_title_s" id="logo">
                 <img src="images/home_banner.png" width="40%">
@@ -106,10 +106,10 @@
 
                     <br/>
 
-                    <li class="tcc"><input type="checkbox" id="tccheckbox"><span id="checkbox_span">I accept the</span> <a href="index.php#about">Terms & Conditions</a></input></li>
+                    <li class="tcc"><input type="checkbox" id="tccheckbox" required><span id="checkbox_span">I accept the</span> <a href="index.php#about" id="tcclink">Terms & Conditions</a></input></li>
                     <br/>
 
-                    <li><input type="submit" class="button" value="CREATE"></input></li>
+                    <li><input type="submit" class="button" id="create_btn" value="CREATE"></input></li>
                 </ul>
             </form>
         </div>

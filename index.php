@@ -68,8 +68,8 @@ session_start();
             
             <div class='home_body' id='join'>
                 <div class='title' id='shopping'>
-                    <span>SHOPPING</span> <span id='alt'>AND</span> <span>EXCHANGE</span> <span id='alt'>FOR</span> 
-                    <span>GREY</span> <span id='alt'>NOMADS</span> <span>INTERESTED</span> <span id='alt'>IN</span> <span>OUTDOOR</span> <span id='alt'>RECREATION</span>
+                    <span>SHOPPING</span> <span class='alt'>AND</span> <span>EXCHANGE</span> <span class='alt'>FOR</span> 
+                    <span>GREY</span> <span class='alt'>NOMADS</span> <span>INTERESTED</span> <span class='alt'>IN</span> <span>OUTDOOR</span> <span class='alt'>RECREATION</span>
                 </div>
                 <div class='home_body_text'>
                     <span><b>The journey of a lifetime awaits you!</b></span>
