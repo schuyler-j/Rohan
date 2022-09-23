@@ -13,7 +13,13 @@
 
 
 <body>
-    <?php session_start(); ?>
+    <?php /*session_start();*/
+    require_once "db/dbconn.inc.php";
+    
+    
+    
+    
+    ?>
     <div class="top_third">
         <div class="menu_container">
                 <h1 class="menu_title_s"><a href="index.php">SENIOR</a></h1>
