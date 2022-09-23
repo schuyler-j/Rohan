@@ -21,7 +21,7 @@ a{
 }
 
 a:hover{
-    text-shadow: 1px -2px 4px #222 !important;
+    text-shadow: 1px -2px 2px #222 !important;
     color: beige;
 }
 
@@ -60,7 +60,7 @@ h4:hover{
     z-index: -9999;
 }
 
-#alt{
+.alt{
     color: #5c6e58;
 }
 
@@ -112,7 +112,7 @@ h4:hover{
     font-size: 24px;
     margin-top: 0;
     margin-bottom: 0;
-    padding-top: 12px;
+    padding-top: 24px;
 }
 
 .featured_price{
@@ -173,7 +173,7 @@ h4:hover{
 .menu_title_s{
     max-width: 100%;
     text-align: center;
-    text-shadow: -9px 3px 4px black;
+    text-shadow: 4px 1px 1px black;
     /*border-bottom: 4px solid black;*/
     letter-spacing: 0.4em;
     background-color: #1f2b2355;
@@ -233,6 +233,7 @@ h4:hover{
     background-color: #353d33;
     background-image: linear-gradient(to bottom, rgba(255,255,255,0.5), rgba(255,255,255,0.2) 64%, rgba(0,0,0,0.15) 66%, rgba(0,0,0,0.05));
     background-repeat: repeat-x;
+    transition: 0.3s;
 }
 
 .main_menu a:hover {
@@ -290,6 +291,10 @@ h4:hover{
 
 #shopping{
     margin-top: 0px;
+    color: #111;
+    background-color: #6777624b;
+    padding-bottom: 4px;
+    margin-bottom: 28px;
 }
 
 .home_body_text{
@@ -349,17 +354,18 @@ button {
     margin: auto;
     cursor: pointer;
     text-align: center;
+    font-weight: bold;
 
     background-image: linear-gradient(to bottom, rgba(255,255,255,0.5), rgba(255,255,255,0.2) 64%, rgba(0,0,0,0.15) 66%, rgba(0,0,0,0.05));
     background-repeat: repeat-x;
 }
 
 #atc{
-    color: #222;
+    color: #5c6e58;
 }
 #atc:hover{
     text-decoration: underline;
-    color: #353d33;
+    color: #222 !important;
 }
 
 .button:hover{
@@ -600,6 +606,10 @@ a:hover.nav_links{
     margin-right: 12px;
 }
 
+#item_description{
+    border-bottom: 1px solid #353d33;
+}
+
 #item_description:hover{
     text-shadow: none;
 }
@@ -630,7 +640,6 @@ a:hover.nav_links{
     background: #000;
     color: #f2d349;
 }
-
 
 #login_form{
     margin: 10px;
@@ -681,7 +690,6 @@ a:hover.nav_links{
     margin: 20px;
 }
 
-
 .pages a:hover{
     color: #71856d;
 }
@@ -696,7 +704,7 @@ a:hover.nav_links{
 
 .desc{
     color: #222;
-    font-size: 16px;
+    font-size: 12px;
 }
 
 .inner_form_section{
@@ -711,6 +719,11 @@ a:hover.nav_links{
 
 #postcode{
     width: 80px;
+}
+
+#tccheckbox{
+    width: 40px;
+    height: 20px;
 }
 
 .tcc{
@@ -785,4 +798,30 @@ input[type = submit]:active, input[type = submit]:focus{
 
 #login_btn:hover{
     text-shadow: -1px 2px 2px #353d33;
+}
+
+#create_btn{
+    color: #222 !important;
+}
+
+#tcclink:hover{
+    text-shadow: none !important;
+}
+
+#comlandgrid{
+    display: flex;
+    margin: 40px;
+}
+
+.card_title h2{
+    color: #677762 !important;
+}
+
+.grid_img{
+    border: 1px solid #222;
+    background-color: #465343;
+}
+
+.box{
+    margin: 2vw 8vw 8vw 8vw;
 }

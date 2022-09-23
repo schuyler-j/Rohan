@@ -1,22 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<title>Wishlist</title>
-<meta charset="UTF-8" />
-<meta name="author" content="TUJ_Rohan" />
-<link rel="stylesheet" href="styles/style.css" />
-<link rel="stylesheet" href="styles/footer.css" />
-<link rel="icon" href="images/favicon.png">
-<script src="scripts/script.js" defer></script>
-</head>
 
-<body>
+<head>
+    <title>Community</title>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Team_Rohan" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/community.css" />
+    <link rel="icon" href="images/favicon.png">
+    <script src="scripts/script.js" defer></script>
+</head>
 <?php
 require_once "db/dbconn.inc.php";
 /*
 session_start();
 */
+$_SESSION["wishcount"] = 0;
+$added = 'Add To Wishlist';
+if(isset($_SESSION["active"]) && $_SESSION["active"]){
+    $userid = $_SESSION["id"];
+}else{
+    $userid = "";
+}
+$wishc = "SELECT * FROM `wishlists` WHERE userID = $userid;";
+if($w = mysqli_query($conn, $wishc)){
+    if(mysqli_num_rows($w) > 0){
+        while($rw = mysqli_fetch_assoc($w)){
+                $_SESSION["wishcount"] = $_SESSION["wishcount"] + 1;
+        }
+    }
+}else{
+    $_SESSION["wishcount"] = 0;
+}
+
 ?>
+
+<body >
     <div class="top_third">
         <div class="menu_container">
             <h1 class="menu_title_s"><a href="index.php">SENIOR</a></h1>
@@ -24,7 +43,7 @@ session_start();
         <div class="nav" id="nav_bottom">
             <div class="nav_list">
                 <img src="images/watchlist.png" />
-                <a class="nav_links" href="wishlist.php"></a>
+                <a class="nav_links" href="wishlist.php">Wishlist<?php echo " (" . $_SESSION["wishcount"] . ")"?></a>
                 <img src="images/cart.png" />
                 <a class="nav_links" href="cart.php">My Cart</a>
                 <img src="images/checkout.png" />
@@ -70,73 +89,17 @@ session_start();
             </ul>
         </div>
     </div>
-
+    <!--beginning of item grid list-->
     <div class="page_wrapper">
 
 
-
-<?php
-$total = 0;
-require_once "db/dbconn.inc.php";
-if(isset($_SESSION["active"]) && $_SESSION["active"] === true){
-    $userid = $_SESSION["id"];
-    $sql = "SELECT * FROM `wishlists` WHERE userID = $userid;";
-    $sqli = $conn->query($sql);
-    $row = $sqli->fetch_assoc();
-
-echo "<div class=box>";
-echo "<div class=item_list_wrapper>";
-echo "<h2><b>Wishlist</b></h2><br/>";
-$msg = "None";
-
-if($wishlist = mysqli_query($conn, $sql)){
-    if(mysqli_num_rows($wishlist)>0){
-        while($row = mysqli_fetch_assoc($wishlist)){
-            $ss = "SELECT * FROM `products` WHERE ProductID = $row[ProductID];";
-            $s = $conn->query($ss);
-            $prod = $s->fetch_assoc();
-            echo "<div class=title>";
-            echo $prod["pName"];
-            echo "</div>";
-            echo " <i>$". $prod["Price"] . "</i>";
-            echo "<br/>";
-                            if (isset($_SESSION["active"]) && $_SESSION["active"] === true) {
-                                $addcart = 'community.php?action=ac&id=' . $row["ProductID"];
-                            }
-            echo "
-
-                                <form method='POST' action=$addcart>
-                                    <input class='button' value='Add To Cart' id='atc_input' type='submit'>
-                                    </input>
-                                </form>";
-
-            echo "<br/>";
-            $total = $total + floatval($prod["Price"]);
-            $msg = "";
-        }
-        echo "<br/>";
-        echo "<b>Total:</b> $" . $total;
-    }
-}
-echo "<i>" .$msg. "</i>";
-echo "<br/>";
-echo "<br/>";
-echo "<a href='index.php'>Home</a>";
-}else{
-    echo "<a href='index.php'>Home</a>";
-}
-
-echo "</div>";
-echo "</div>";
-
-?>
-
-
-
-
-
     </div>
-
+    <div class="pages" style="text-align: center;">
+        <a href="community.php">^ Back to Top ^</a>
+    </div>
+    <div class="footer">
+        <h4>Thomas Hobbs | Udall Liao | Jay Schuyler</h4>
+    </div>
 </body>
-  
+
 </html>

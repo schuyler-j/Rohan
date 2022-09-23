@@ -17,4 +17,23 @@ if (!$conn) {
     exit;
 }
 
+session_start();
+$_SESSION["wishcount"] = 0;
+$added = 'Add To Wishlist';
+if(isset($_SESSION["active"]) && $_SESSION["active"]){
+    $userid = $_SESSION["id"];
+}else{
+    $userid = "";
+}
+$wishc = "SELECT * FROM `wishlists` WHERE userID = $userid;";
+if($w = mysqli_query($conn, $wishc)){
+    if(mysqli_num_rows($w) > 0){
+        while($rw = mysqli_fetch_assoc($w)){
+                $_SESSION["wishcount"] = $_SESSION["wishcount"] + 1;
+        }
+    }
+}else{
+    $_SESSION["wishcount"] = 0;
+}
+
 ?>

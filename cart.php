@@ -104,6 +104,7 @@ session_start();
 </html>
 
 <body>
+    <?php session_start(); ?>
 </body>
   
 </html>
