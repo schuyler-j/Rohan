@@ -705,3 +705,17 @@ input:focus {
 .button_wrapper{
     padding-top: 0px;
 }
+#cart_form{
+    margin: 10px;
+    padding: 50px;
+    font-size: 22px;
+    background-color: #fffbe9;
+    height: auto;
+    border-radius: 4px;
+}
+#estimate{
+    color: #5c6e58;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: underline; 
+}

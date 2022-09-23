@@ -9,27 +9,36 @@
 <link rel="icon" href="images/favicon.png">
 <script src="scripts/script.js" defer></script>
 </head>
+<?php 
+require_once "db/dbconn.inc.php"; 
 
+
+session_start();
+
+?>
 <body>
-<div class="top_third">
-    <div class="menu_container">
-        <h1 class="menu_title_s">SENIOR</h1>
-        <!--
-        <div class="menu_title_s" id="logo">
-            <img src="images/home_banner.png" width="40%">
+    <div class="top_third">
+        <div class="menu_container">
+            <h1 class="menu_title_s">SENIOR</h1>
         </div>
-        -->
-    </div>
         <div class="nav" id="nav_bottom">
             <div class="nav_list">
-                <img src="images/watchlist.png">
+                <img src="images/watchlist.png"/>
                 <a class="nav_links" href="#">Watchlist</a>
-                <img src="images/cart.png">
+                <img src="images/cart.png"/>
                 <a class="nav_links" href="#">My Cart</a>
-                <img src="images/checkout.png">
+                <img src="images/checkout.png"/>
                 <a class="nav_links" href="#">Checkout</a>
-                <img src="images/login.png">
-                <a class="nav_links" href="#">Login</a>
+                <img src='images/login.png'/>                
+                <?php 
+                if(isset($_SESSION["active"]) && $_SESSION["active"] === true){
+                    echo "<a class = 'nav_links' href='logout.php'>Logout</a>";
+                }else{
+                    echo 
+                    "<a class = 'nav_links' href='login.php'>Login</a>
+                    ";
+                }
+                ?>
             </div>
         </div>
         <div class="nav" id="nav_top">
@@ -37,15 +46,95 @@
                 <li class="list"><a href="index.php"><span class="media_text">Home</span></a></li>
                 <li class="list"><a href="community.php"><span class="media_text">Community Marketplace</span></a></li>
                 <li class="list"><a href="shopping.php"><span class="media_text">Shopping</span></a></li>
-                <li class="list"><a href="about.php" id="selected"><span class="media_text">About</span></a></li>
+                <li class="list"><a href="about.php"><span class="media_text">About</span></a></li>
                 <li class="list"><a href="contact.php"><span class="media_text">Contact</span></a></li>
             </ul>
         </div>
-</div>
-    <div class = "title">
-        <h2>My Cart</h2>
-        <div>
+    </div>
+
+    <div class="page_wrapper">
+        <div class="form_wrapper">
+        <div class="top_third">
+        </div>
+        </div>
+        <div class="home_body" id="news">
+                <?php if(isset($_SESSION["active"]) && $_SESSION["active"]){
+                        echo "<h1 id='welcome_title'>Welcome back, " . $_SESSION["name"] . "</h1>";
+                }
+                ?>
+            <div class="sub_heading">
+                <h2>MY CART</h2>
+                <li class='list'>
+                    <h3 class='item_list_title'>Item 1</h3>
+                        <div class='item_list_wrapper'>
+                        <div class='content'>
+                        <img src='images/chair1.png'/>
+                        <div class='block1'>
+                        <p>Cupidatat ad ea consequat et ullamco laboris ipsum proident consequat</p>
+                        <p> $$$ </P>
+                        <a href="#">
+                        <div class="button" id="atc">
+                            Remove
+                        </div><br>
+                    </a>
+                        </div>
+                        </div>
+                        </div>
+                        </li>
+                        <li class='list'>
+                    <h3 class='item_list_title'>Item 2</h3>
+                        <div class='item_list_wrapper'>
+                        <div class='content'>
+                        <img src='images/tent1.png'/>
+                        <div class='block1'>
+                        <p>Cupidatat ad ea consequat et ullamco laboris ipsum proident consequat</p>
+                        <p> $$$ </p>
+                        <a href="#">
+                        <div class="button" id="atc">
+                            Remove
+                        </div><br>
+                    </a>
+                        </div>
+                        </div>
+                        </div>
+                        </li>
+                        <li class='list'>
+                    <h3 class='item_list_title'>Item 3</h3>
+                        <div class='item_list_wrapper'>
+                        <div class='content'>
+                        <img src='images/gear1.png'/>
+                        <div class='block1'>
+                        <p>Cupidatat ad ea consequat et ullamco laboris ipsum proident consequat</p>
+                        <p> $$$ </p>
+                        <div class="button_wrapper">
+                    <a href="#">
+                        <div class="button" id="atc">
+                            Remove
+                        </div><br>
+                    </a>
+                        </div>
+                        </div>
+                        </div>
+                        </li>          
+            </div>
+        </div>
+    </div>    
+                <ul class="item_list" id="cart_form">
+                    <li><div class="sub_heading" style="font-size:38px">Cart Totals</div></li>
+                    <li id="item_total"><b>Total Number of Items: 3</b></li>
+                    <li><div class="list_of_items"> 
+                        Item 1 $$$</br>                     
+                        Item 2 $$$</br>
+                        Item 3 $$$</br>
+            </div>
+            </li>
+                    <li id="total"><b>Estimated Total: $$$$$</b></li>
+                    <li id="estimate">NOTE: This is not the final total, this is an estimate.</li>
+                    <br/>
+                    <li><input type="submit" class="button" value="CHECKOUT" name="checkout"></input></li>
+                </ul>
+            </form>
         </div>
     </div>
-</body>  
+</body>
 </html>
