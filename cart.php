@@ -59,7 +59,6 @@ session_start();
         </div>
         <div class="home_body" id="news">
                 <?php if(isset($_SESSION["active"]) && $_SESSION["active"]){
-                        echo "<h1 id='welcome_title'>Welcome back, " . $_SESSION["name"] . "</h1>";
                 }
                 ?>
             <ul class="item_list" id="cart_form">
@@ -71,10 +70,10 @@ session_start();
                         <img src='images/chair1.png'/>
                         <h3 id="cart_price">$$$</h3>
                         <div class='button_wrapper'>
-                                <a href='#'>
-                                    <input type='submit' class='button' id='atc' value='remove'>
-                                    </input>
-                                </a>
+                            <form>
+                                <input type='submit' class='button' id='atc' value='Remove'>
+                                </input>
+                            </form>
                             </div>
                             </div>
                         </div>
