@@ -84,9 +84,9 @@ if(isset($_SESSION["active"]) && $_SESSION["active"] === true){
     $sqli = $conn->query($sql);
     $row = $sqli->fetch_assoc();
 
-
-
-echo "<b>Wishlist</b><br/>";
+echo "<div class=box>";
+echo "<div class=item_list_wrapper>";
+echo "<h2><b>Wishlist</b></h2><br/>";
 $msg = "None";
 
 if($wishlist = mysqli_query($conn, $sql)){
@@ -95,22 +95,39 @@ if($wishlist = mysqli_query($conn, $sql)){
             $ss = "SELECT * FROM `products` WHERE ProductID = $row[ProductID];";
             $s = $conn->query($ss);
             $prod = $s->fetch_assoc();
+            echo "<div class=title>";
             echo $prod["pName"];
+            echo "</div>";
             echo " <i>$". $prod["Price"] . "</i>";
+            echo "<br/>";
+                            if (isset($_SESSION["active"]) && $_SESSION["active"] === true) {
+                                $addcart = 'community.php?action=ac&id=' . $row["ProductID"];
+                            }
+            echo "
+
+                                <form method='POST' action=$addcart>
+                                    <input class='button' value='Add To Cart' id='atc_input' type='submit'>
+                                    </input>
+                                </form>";
+
             echo "<br/>";
             $total = $total + floatval($prod["Price"]);
             $msg = "";
         }
-        echo "Total: $" . $total;
+        echo "<br/>";
+        echo "<b>Total:</b> $" . $total;
     }
 }
 echo "<i>" .$msg. "</i>";
+echo "<br/>";
 echo "<br/>";
 echo "<a href='index.php'>Home</a>";
 }else{
     echo "<a href='index.php'>Home</a>";
 }
 
+echo "</div>";
+echo "</div>";
 
 ?>
 

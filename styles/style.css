@@ -795,3 +795,7 @@ input[type = submit]:active, input[type = submit]:focus{
     border: 1px solid #222;
     background-color: #465343;
 }
+
+.box{
+    margin: 2vw 8vw 8vw 8vw;
+}
