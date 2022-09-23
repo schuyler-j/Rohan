@@ -21,7 +21,7 @@ session_start();
 <body onload="ready()">
 <div class="top_third">
     <div class="menu_container">
-        <h1 class="menu_title_s">SENIOR</h1>
+        <h1 class="menu_title_s"><a href="index.php">SENIOR</a></h1>
         <!--
         <div class="menu_title_s" id="logo">
             <img src="images/home_banner.png" width="40%">
