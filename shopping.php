@@ -13,9 +13,9 @@
 <?php 
 require_once "db/dbconn.inc.php"; 
 
-
+/*
 session_start();
-
+*/
 ?>
 
 <body onload="ready()">

@@ -12,7 +12,7 @@
 </head>
 <?php
 require_once "db/dbconn.inc.php";
-
+/*
 session_start();
 $_SESSION["wishcount"] = 0;
 $added = 'Add To Wishlist';
@@ -31,7 +31,7 @@ if($w = mysqli_query($conn, $wishc)){
 }else{
     $_SESSION["wishcount"] = 0;
 }
-
+*/
 ?>
 
 <body >

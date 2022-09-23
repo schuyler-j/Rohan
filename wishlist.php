@@ -11,15 +11,78 @@
 </head>
 
 <body>
+<?php
+require_once "db/dbconn.inc.php";
+/*
+session_start();
+*/
+?>
+    <div class="top_third">
+        <div class="menu_container">
+            <h1 class="menu_title_s"><a href="index.php">SENIOR</a></h1>
+        </div>
+        <div class="nav" id="nav_bottom">
+            <div class="nav_list">
+                <img src="images/watchlist.png" />
+                <a class="nav_links" href="wishlist.php"></a>
+                <img src="images/cart.png" />
+                <a class="nav_links" href="cart.php">My Cart</a>
+                <img src="images/checkout.png" />
+                <a class="nav_links" href="checkout.php">Checkout</a>
+                <img src="images/login.png" />
+                <?php
+                if (isset($_SESSION["active"]) && $_SESSION["active"] === true) {
+                    echo "<a class = 'nav_links' href='logout.php'>Logout</a>";
+
+                    $product_sql = "SELECT * FROM `products`;";
+                    $psql = mysqli_query($conn, $product_sql);
+                    $row = mysqli_fetch_assoc($psql);
+
+
+                    $msg = "";
+
+
+                    $total = 0;
+                    $creditcard = $_SESSION["creditcard"];
+                    $addr = $_SESSION["addr"];
+                    $userid = $_SESSION["id"];
+
+                    $productid = 0;
+                } else {
+                    echo
+                    "<a class = 'nav_links' href='login.php'>Login</a>
+                    ";
+
+                    $addcart = 'error.php';
+                    $addwish = 'error.php';
+                    $msg = "?msg=Please%20login%20or%20create%20an%20account.";
+                }
+                ?>
+            </div>
+        </div>
+        <div class="nav" id="nav_top">
+            <ul class="main_menu">
+                <li class="list"><a href="index.php"><span class="media_text">Home</span></a></li>
+                <li class="list"><a href="community-landing.php" id="selected"><span class="media_text">Community Marketplace</span></a></li>
+                <li class="list"><a href="shopping.php"><span class="media_text">Shopping</span></a></li>
+                <li class="list"><a href="about.php"><span class="media_text">About</span></a></li>
+                <li class="list"><a href="contact.php"><span class="media_text">Contact</span></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="page_wrapper">
+
+
 
 <?php
-session_start();
 $total = 0;
 require_once "db/dbconn.inc.php";
-$userid = $_SESSION["id"];
-$sql = "SELECT * FROM `wishlists` WHERE userID = $userid;";
-$sqli = $conn->query($sql);
-$row = $sqli->fetch_assoc();
+if(isset($_SESSION["active"]) && $_SESSION["active"] === true){
+    $userid = $_SESSION["id"];
+    $sql = "SELECT * FROM `wishlists` WHERE userID = $userid;";
+    $sqli = $conn->query($sql);
+    $row = $sqli->fetch_assoc();
 
 
 
@@ -44,8 +107,18 @@ if($wishlist = mysqli_query($conn, $sql)){
 echo "<i>" .$msg. "</i>";
 echo "<br/>";
 echo "<a href='index.php'>Home</a>";
+}else{
+    echo "<a href='index.php'>Home</a>";
+}
+
+
 ?>
 
+
+
+
+
+    </div>
 
 </body>
   

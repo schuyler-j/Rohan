@@ -13,9 +13,9 @@
 <?php 
 require_once "db/dbconn.inc.php"; 
 require_once "session.php";
-
+/*
 session_start();
-
+*/
 
 if(isset($_SESSION["active"]) && $_SESSION["active"] === true){
     header("location: index.php");

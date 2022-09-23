@@ -12,8 +12,9 @@
 </head>
 <?php
 require_once "db/dbconn.inc.php";
-
+/*
 session_start();
+*/
 $_SESSION["wishcount"] = 0;
 $added = 'Add To Wishlist';
 if(isset($_SESSION["active"]) && $_SESSION["active"]){
