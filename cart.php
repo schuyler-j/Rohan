@@ -62,78 +62,42 @@ session_start();
                         echo "<h1 id='welcome_title'>Welcome back, " . $_SESSION["name"] . "</h1>";
                 }
                 ?>
-            <div class="sub_heading">
-                <h2>MY CART</h2>
+            <ul class="item_list" id="cart_form">
+                    <li><div class="sub_heading" style="font-size:38px">My Cart</div></li>
                 <li class='list'>
-                    <h3 class='item_list_title'>Item 1</h3>
-                        <div class='item_list_wrapper'>
+                    <div class='item_list_wrapper'>
+                        <h3 class='item_list_title'>Item 1</h3>
                         <div class='content'>
                         <img src='images/chair1.png'/>
-                        <div class='block1'>
-                        <p>Cupidatat ad ea consequat et ullamco laboris ipsum proident consequat</p>
-                        <p> $$$ </P>
-                        <a href="#">
-                        <div class="button" id="atc">
-                            Remove
-                        </div><br>
-                    </a>
-                        </div>
-                        </div>
-                        </div>
-                        </li>
-                        <li class='list'>
-                    <h3 class='item_list_title'>Item 2</h3>
-                        <div class='item_list_wrapper'>
-                        <div class='content'>
-                        <img src='images/tent1.png'/>
-                        <div class='block1'>
-                        <p>Cupidatat ad ea consequat et ullamco laboris ipsum proident consequat</p>
-                        <p> $$$ </p>
-                        <a href="#">
-                        <div class="button" id="atc">
-                            Remove
-                        </div><br>
-                    </a>
-                        </div>
-                        </div>
+                        <h3 id="cart_price">$$$</h3>
+                        <div class='button_wrapper'>
+                                <a href=$addwish>
+                                    <div class='button' id='atc'>
+                                        Add To Wishlist
+                                    </div><br/>
+                                </a>
+                                <a href='#'>
+                                    <div class='button' id='atc'>
+                                        Remove
+                                    </div>
+                                </a>
+                            </div>
+                            </div>
                         </div>
                         </li>
-                        <li class='list'>
-                    <h3 class='item_list_title'>Item 3</h3>
-                        <div class='item_list_wrapper'>
-                        <div class='content'>
-                        <img src='images/gear1.png'/>
-                        <div class='block1'>
-                        <p>Cupidatat ad ea consequat et ullamco laboris ipsum proident consequat</p>
-                        <p> $$$ </p>
-                        <div class="button_wrapper">
-                    <a href="#">
-                        <div class="button" id="atc">
-                            Remove
-                        </div><br>
-                    </a>
-                        </div>
-                        </div>
-                        </div>
-                        </li>          
-            </div>
-        </div>
-    </div>    
-                <ul class="item_list" id="cart_form">
+            </div>        
+                <ul class="item_list" id="cart_total">
                     <li><div class="sub_heading" style="font-size:38px">Cart Totals</div></li>
-                    <li id="item_total"><b>Total Number of Items: 3</b></li>
+                    <li id="item_total"><b>Total Number of Items: 1</b></li>
                     <li><div class="list_of_items"> 
                         Item 1 $$$</br>                     
-                        Item 2 $$$</br>
-                        Item 3 $$$</br>
             </div>
             </li>
-                    <li id="total"><b>Estimated Total: $$$$$</b></li>
+                    <li id="total"><b>Estimated Total: $$$</b></li>
                     <li id="estimate">NOTE: This is not the final total, this is an estimate.</li>
                     <br/>
-                    <li><input type="submit" class="button" value="CHECKOUT" name="checkout"></input></li>
+                    <li><a href="checkout.php"><div class="button" id="checkout">CHECKOUT</div></li>
                 </ul>
-            </form>
         </div>
     </div>
 </body>

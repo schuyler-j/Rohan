@@ -719,3 +719,16 @@ input:focus {
     font-size: 16px;
     text-decoration: underline; 
 }
+#cart_total{
+    margin: 10px;
+    padding: 50px;
+    font-size: 22px;
+    background-color: #fffbe9;
+    height: auto;
+    border-radius: 4px;
+}
+#cart_price{
+    padding-left: 100px;
+    padding-right: 100px;
+    font-size: 40px;
+}
