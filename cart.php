@@ -19,7 +19,7 @@ session_start();
 <body>
     <div class="top_third">
         <div class="menu_container">
-            <h1 class="menu_title_s">SENIOR</h1>
+            <h1 class="menu_title_s"><a href="index.php">SENIOR</a></h1>
         </div>
         <div class="nav" id="nav_bottom">
             <div class="nav_list">
@@ -44,7 +44,7 @@ session_start();
         <div class="nav" id="nav_top">
             <ul class="main_menu">
                 <li class="list"><a href="index.php"><span class="media_text">Home</span></a></li>
-                <li class="list"><a href="community.php"><span class="media_text">Community Marketplace</span></a></li>
+                <li class="list"><a href="community-landing.php"><span class="media_text">Community Marketplace</span></a></li>
                 <li class="list"><a href="shopping.php"><span class="media_text">Shopping</span></a></li>
                 <li class="list"><a href="about.php"><span class="media_text">About</span></a></li>
                 <li class="list"><a href="contact.php"><span class="media_text">Contact</span></a></li>
@@ -59,7 +59,6 @@ session_start();
         </div>
         <div class="home_body" id="news">
                 <?php if(isset($_SESSION["active"]) && $_SESSION["active"]){
-                        echo "<h1 id='welcome_title'>Welcome back, " . $_SESSION["name"] . "</h1>";
                 }
                 ?>
             <ul class="item_list" id="cart_form">
@@ -71,16 +70,10 @@ session_start();
                         <img src='images/chair1.png'/>
                         <h3 id="cart_price">$$$</h3>
                         <div class='button_wrapper'>
-                                <a href=$addwish>
-                                    <div class='button' id='atc'>
-                                        Add To Wishlist
-                                    </div><br/>
-                                </a>
-                                <a href='#'>
-                                    <div class='button' id='atc'>
-                                        Remove
-                                    </div>
-                                </a>
+                            <form>
+                                <input type='submit' class='button' id='atc' value='Remove'>
+                                </input>
+                            </form>
                             </div>
                             </div>
                         </div>
@@ -103,8 +96,5 @@ session_start();
 </body>
 </html>
 
-<body>
-    <?php session_start(); ?>
-</body>
   
 </html>
