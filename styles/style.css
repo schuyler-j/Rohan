@@ -781,3 +781,17 @@ input[type = submit]:active, input[type = submit]:focus{
 #tcclink:hover{
     text-shadow: none !important;
 }
+
+#comlandgrid{
+    display: flex;
+    margin: 40px;
+}
+
+.card_title h2{
+    color: #677762 !important;
+}
+
+.grid_img{
+    border: 1px solid #222;
+    background-color: #465343;
+}
