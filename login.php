@@ -13,16 +13,14 @@
 <?php 
 require_once "db/dbconn.inc.php"; 
 require_once "session.php";
-
+/*
 session_start();
-
+*/
 
 if(isset($_SESSION["active"]) && $_SESSION["active"] === true){
     header("location: index.php");
     exit;
 }else{
-    $msg="";
-
 }
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -102,11 +100,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <div class="nav" id="nav_bottom">
             <div class="nav_list">
                 <img src="images/watchlist.png"/>
-                <a class="nav_links" href="#">Watchlist</a>
+                <a class="nav_links" href="wishlist.php">Wishlist</a>
                 <img src="images/cart.png"/>
-                <a class="nav_links" href="#">My Cart</a>
+                <a class="nav_links" href="cart.php">My Cart</a>
                 <img src="images/checkout.png"/>
-                <a class="nav_links" href="#">Checkout</a>
+                <a class="nav_links" href="checkout.php">Checkout</a>
                 <img src='images/login.png'/>
                 <a class = 'nav_links' href="login.php">Login</a>
             </div>
@@ -126,6 +124,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 
     <div class="page_wrapper">
+        <?php if(isset($_GET["msg"])){
+            echo "<h1>". $_GET["msg"] . "</h1>";
+        }?>
         <div class="form_wrapper">
             <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
                 <ul class="item_list" id="login_form">

@@ -12,8 +12,9 @@
 <?php 
 require_once "db/dbconn.inc.php"; 
 
-
+/*
 session_start();
+*/
 
 ?>
 
@@ -25,11 +26,11 @@ session_start();
         <div class="nav" id="nav_bottom">
             <div class="nav_list">
                 <img src="images/watchlist.png"/>
-                <a class="nav_links" href="wishlist.php">Wishlist</a>
+                <a class="nav_links" href="wishlist.php">Wishlist<?php echo " (" . $_SESSION["wishcount"] . ")"?></a>
                 <img src="images/cart.png"/>
-                <a class="nav_links" href="#">My Cart</a>
+                <a class="nav_links" href="cart.php">My Cart</a>
                 <img src="images/checkout.png"/>
-                <a class="nav_links" href="#">Checkout</a>
+                <a class="nav_links" href="checkout.php">Checkout</a>
                 <img src="images/login.png"/>
                 <?php 
                 if(isset($_SESSION["active"]) && $_SESSION["active"] === true){
@@ -45,7 +46,7 @@ session_start();
         <div class="nav" id="nav_top">
             <ul class="main_menu">
                 <li class="list"><a href="#" id="selected"><span class="media_text">Home</span></a></li>
-                <li class="list"><a href="community.php"><span class="media_text">Community Marketplace</span></a></li>
+                <li class="list"><a href="community-landing.php"><span class="media_text">Community Marketplace</span></a></li>
                 <li class="list"><a href="shopping.php"><span class="media_text">Shopping</span></a></li>
                 <li class="list"><a href="about.php"><span class="media_text">About</span></a></li>
                 <li class="list"><a href="contact.php"><span class="media_text">Contact</span></a></li>
@@ -68,8 +69,8 @@ session_start();
             
             <div class='home_body' id='join'>
                 <div class='title' id='shopping'>
-                    <span>SHOPPING</span> <span id='alt'>AND</span> <span>EXCHANGE</span> <span id='alt'>FOR</span> 
-                    <span>GREY</span> <span id='alt'>NOMADS</span> <span>INTERESTED</span> <span id='alt'>IN</span> <span>OUTDOOR</span> <span id='alt'>RECREATION</span>
+                    <span>SHOPPING</span> <span class='alt'>AND</span> <span>EXCHANGE</span> <span class='alt'>FOR</span> 
+                    <span>GREY</span> <span class='alt'>NOMADS</span> <span>INTERESTED</span> <span class='alt'>IN</span> <span>OUTDOOR</span> <span class='alt'>RECREATION</span>
                 </div>
                 <div class='home_body_text'>
                     <span><b>The journey of a lifetime awaits you!</b></span>

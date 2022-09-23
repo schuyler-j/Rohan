@@ -13,9 +13,9 @@
 <?php 
 require_once "db/dbconn.inc.php"; 
 
-
+/*
 session_start();
-
+*/
 ?>
 
 <body onload="ready()">
@@ -31,11 +31,11 @@ session_start();
         <div class="nav" id="nav_bottom">
             <div class="nav_list">
                 <img src="images/watchlist.png">
-                <a class="nav_links" href="#">Watchlist</a>
+                <a class="nav_links" href="wishlist.php">Wishlist<?php echo " (" . $_SESSION["wishcount"] . ")"?></a>
                 <img src="images/cart.png">
-                <a class="nav_links" href="#">My Cart</a>
+                <a class="nav_links" href="cart.php">My Cart</a>
                 <img src="images/checkout.png">
-                <a class="nav_links" href="#">Checkout</a>
+                <a class="nav_links" href="checkout.php">Checkout</a>
                 <img src="images/login.png">
                 <?php 
                 if(isset($_SESSION["active"]) && $_SESSION["active"] === true){
