@@ -21,7 +21,7 @@ a{
 }
 
 a:hover{
-    text-shadow: 1px -2px 4px #222 !important;
+    text-shadow: 1px -2px 2px #222 !important;
     color: beige;
 }
 
@@ -173,7 +173,7 @@ h4:hover{
 .menu_title_s{
     max-width: 100%;
     text-align: center;
-    text-shadow: -9px 3px 4px black;
+    text-shadow: 4px 1px 1px black;
     /*border-bottom: 4px solid black;*/
     letter-spacing: 0.4em;
     background-color: #1f2b2355;
@@ -233,6 +233,7 @@ h4:hover{
     background-color: #353d33;
     background-image: linear-gradient(to bottom, rgba(255,255,255,0.5), rgba(255,255,255,0.2) 64%, rgba(0,0,0,0.15) 66%, rgba(0,0,0,0.05));
     background-repeat: repeat-x;
+    transition: 0.3s;
 }
 
 .main_menu a:hover {

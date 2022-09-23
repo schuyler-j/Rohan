@@ -27,9 +27,9 @@ session_start();
                 <img src="images/watchlist.png"/>
                 <a class="nav_links" href="wishlist.php">Wishlist</a>
                 <img src="images/cart.png"/>
-                <a class="nav_links" href="#">My Cart</a>
+                <a class="nav_links" href="cart.php">My Cart</a>
                 <img src="images/checkout.png"/>
-                <a class="nav_links" href="#">Checkout</a>
+                <a class="nav_links" href="checkout.php">Checkout</a>
                 <img src="images/login.png"/>
                 <?php 
                 if(isset($_SESSION["active"]) && $_SESSION["active"] === true){
