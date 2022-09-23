@@ -71,15 +71,9 @@ session_start();
                         <img src='images/chair1.png'/>
                         <h3 id="cart_price">$$$</h3>
                         <div class='button_wrapper'>
-                                <a href=$addwish>
-                                    <div class='button' id='atc'>
-                                        Add To Wishlist
-                                    </div><br/>
-                                </a>
                                 <a href='#'>
-                                    <div class='button' id='atc'>
-                                        Remove
-                                    </div>
+                                    <input type='submit' class='button' id='atc' value='remove'>
+                                    </input>
                                 </a>
                             </div>
                             </div>
