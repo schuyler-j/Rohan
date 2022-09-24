@@ -58,36 +58,77 @@ session_start();
         </div>
         </div>
         <div class="home_body" id="news">
-                <?php if(isset($_SESSION["active"]) && $_SESSION["active"]){
-                }
+                <?php 
+                $count = 0;
+                $total = 0;
 
                 echo "
             <ul class='item_list' id='cart_form'>
-                    <li><div class='sub_heading' style='font-size:38px'>My Cart</div></li>
-                <li class='list'>
-                    <div class='item_list_wrapper'>
-                        <h3 class='item_list_title'>Item 1</h3>
-                        <div class='content'>
-                        <img src='images/chair1.png'/>
-                        <h3 id='cart_price'>$$$</h3>
-                        <div class='button_wrapper'>
-                            <form>
-                                <input type='submit' class='button' id='atc' value='Remove'>
+                    <li><div class='sub_heading' style='font-size:38px'>My Cart</div></li>";
+                    if(isset($_SESSION["active"]) && $_SESSION["active"]){
+                    $sql = "SELECT * FROM `cart` WHERE `UserID` = $_SESSION[id];";
+                    if ($result = mysqli_query($conn, $sql)) {
+                        if (mysqli_num_rows($result) > 0) {
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                $new_sql = "SELECT * FROM `products` WHERE ProductID = $row[ProductID];";
+                                $s = $conn->query($new_sql);
+                                $cart = $s->fetch_assoc();
+                                if($cart["onSale"] == 1){
+                                    $iprice = $cart["salePrice"];
+
+                                }else{
+                                    $iprice = $cart["Price"];
+                                }
+                                echo "<li class=list><div class=item_list_wrapper id=cart_item_list>"; 
+                                echo "<div class=top-right>
+                                <form>
+                                <input type=submit class=button id=atc value='Remove From Cart'>
                                 </input>
-                            </form>
-                            </div>
-                            </div>
-                        </div>
-                        </li>
+                                <form>
+                                </div>";
+                                echo "<div class=><img id=img_cart src=images/$cart[imgSrc] />
+                                
+                                <div class=desc>$cart[Description]</div>
+                                
+                                </div>";
+                                echo "<h3 class=item_list_title>$cart[pName]</h3>";
+                                echo "<div>
+                                <h3 id=cart_price>$iprice</h3>
+                                </div>";
+                                echo "</div>";
+                                echo "</li>";
+
+
+                                $count = $count + 1;
+                                $total = $total + floatval($iprice);
+
+                            }
+                        }
+                    }
+                } 
+                                    
+                                    
+                        echo "
             </div>        
                 <ul class='item_list' id='cart_total'>
                     <li><div class='sub_heading' style='font-size:38px'>Cart Totals</div></li>
-                    <li id='item_total'><b>Total Number of Items: 1</b></li>
-                    <li><div class='list_of_items'> 
-                        Item 1 $$$</br>                     
+                    <li id='item_total'><b>Total Number of Items: $count</b></li>
+                    "; 
+                    $sqld = "SELECT * FROM `cart` WHERE UserID = $_SESSION[id];";
+                    $resultd = mysqli_query($conn, $sqld);
+                    if($resultd){while($rowi = mysqli_fetch_array($resultd)){
+                        $sqli = "SELECT * FROM `products` WHERE ProductID = $rowi[ProductID];";
+                        $ss = $conn->query($sqli);
+                        $pro = $ss->fetch_assoc();
+                        echo "
+                            <li><div class='list_of_items'>$pro[pName]</br>                     
+                        ";
+
+                    }}
+                    echo "
             </div>
             </li>
-                    <li id='total'><b>Estimated Total: $$$</b></li>
+                    <li id='total'><b>Estimated Total: $total</b></li>
                     <li id='estimate'>NOTE: This is not the final total, this is an estimate.</li>
                     <br/>
                     <li><a href='checkout.php'><div class='button' id='checkout'>CHECKOUT</div></li>
