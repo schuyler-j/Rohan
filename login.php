@@ -102,7 +102,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <img src="images/watchlist.png"/>
                 <a class="nav_links" href="wishlist.php">Wishlist</a>
                 <img src="images/cart.png"/>
-                <a class="nav_links" href="cart.php">My Cart</a>
+                <?php
+                if (isset($_SESSION["active"]) && $_SESSION["active"] === true) {
+                    echo "
+                        <a class='nav_links' href='cart.php'>My Cart</a>
+                    ";
+                }else{
+
+                    echo "
+                        <a class='nav_links' href='error.php?msg=please%20login%20to%20view%20cart'>My Cart</a>
+                    ";
+                } ?>
                 <img src="images/checkout.png"/>
                 <a class="nav_links" href="checkout.php">Checkout</a>
                 <img src='images/login.png'/>
@@ -112,7 +122,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <div class="nav" id="nav_top">
             <ul class="main_menu">
                 <li class="list"><a href="index.php"><span class="media_text">Home</span></a></li>
-                <li class="list"><a href="community.php"><span class="media_text">Community Marketplace</span></a></li>
+                <li class="list"><a href="community-landing.php"><span class="media_text">Community Marketplace</span></a></li>
                 <li class="list"><a href="shopping.php"><span class="media_text">Shopping</span></a></li>
                 <li class="list"><a href="about.php"><span class="media_text">About</span></a></li>
                 <li class="list"><a href="contact.php"><span class="media_text">Contact</span></a></li>

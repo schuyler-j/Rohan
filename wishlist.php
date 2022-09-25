@@ -34,7 +34,7 @@ session_start();
                 }else{
 
                     echo "
-                        <a class='nav_links' href='error.php?msg=please%20login'>My Cart</a>
+                        <a class='nav_links' href='error.php?msg=please%20login%20to%20view%20cart'>My Cart</a>
                     ";
                 } ?>
                 <img src="images/checkout.png" />
@@ -131,7 +131,10 @@ echo "<br/>";
 echo "<br/>";
 echo "<a href='index.php'>Home</a>";
 }else{
-    echo "<a href='index.php'>Home</a>";
+    echo "<div style='padding-bottom:80px;'>";
+    echo "<h4>empty</h4>";
+    echo "<a style='color:#fff;' href='index.php'>Home</a>";
+    echo "</div>";
 }
 
 echo "</div>";

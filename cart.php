@@ -26,6 +26,7 @@ session_start();
                 <img src="images/watchlist.png"/>
                 <a class="nav_links" href="wishlist.php">Wishlist</a>
                 <img src="images/cart.png"/>
+                <a class="nav_links" ><div style="text-decoration:underline; color:#222;">My Cart</div></a>
                 <img src="images/checkout.png"/>
                 <a class="nav_links" href="checkout.php">Checkout</a>
                 <img src='images/login.png'/>                

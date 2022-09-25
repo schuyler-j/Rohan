@@ -829,3 +829,14 @@ input[type = submit]:active, input[type = submit]:focus{
     width: 25% !important;
     margin-right: 0px !important;
 }
+
+#sellpng{
+    height: 200px !important;
+    width: 250px !important;
+
+}
+
+#buypng{
+    height: 200px !important;
+    width: 250px !important;
+}
