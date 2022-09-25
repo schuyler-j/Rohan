@@ -18,7 +18,7 @@ session_start();
 */
 ?>
     <div class="top_third">
-        <div class="menu_container">
+        <div id="mc" class="menu_container">
             <h1 class="menu_title_s"><a href="index.php">SENIOR</a></h1>
         </div>
         <div class="nav" id="nav_bottom">

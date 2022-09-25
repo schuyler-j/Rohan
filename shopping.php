@@ -20,7 +20,7 @@ session_start();
 
 <body onload="ready()">
 <div class="top_third">
-    <div class="menu_container">
+    <div id="mc" class="menu_container">
         <h1 class="menu_title_s"><a href="index.php">SENIOR</a></h1>
         <!--
         <div class="menu_title_s" id="logo">
