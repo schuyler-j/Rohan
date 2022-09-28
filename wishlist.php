@@ -18,7 +18,7 @@ session_start();
 */
 ?>
     <div class="top_third">
-        <div class="menu_container">
+        <div id="mc" class="menu_container">
             <h1 class="menu_title_s"><a href="index.php">SENIOR</a></h1>
         </div>
         <div class="nav" id="nav_bottom">
@@ -26,7 +26,17 @@ session_start();
                 <img src="images/watchlist.png" />
                 <a class="nav_links" href="wishlist.php"></a>
                 <img src="images/cart.png" />
-                <a class="nav_links" href="cart.php">My Cart</a>
+                <?php
+                if (isset($_SESSION["active"]) && $_SESSION["active"] === true) {
+                    echo "
+                        <a class='nav_links' href='cart.php'>My Cart</a>
+                    ";
+                }else{
+
+                    echo "
+                        <a class='nav_links' href='error.php?msg=please%20login%20to%20view%20cart'>My Cart</a>
+                    ";
+                } ?>
                 <img src="images/checkout.png" />
                 <a class="nav_links" href="checkout.php">Checkout</a>
                 <img src="images/login.png" />
@@ -89,31 +99,29 @@ echo "<div class=item_list_wrapper>";
 echo "<h2><b>Wishlist</b></h2><br/>";
 $msg = "None";
 
-if($wishlist = mysqli_query($conn, $sql)){
-    if(mysqli_num_rows($wishlist)>0){
-        while($row = mysqli_fetch_assoc($wishlist)){
-            $ss = "SELECT * FROM `products` WHERE ProductID = $row[ProductID];";
-            $s = $conn->query($ss);
-            $prod = $s->fetch_assoc();
-            echo "<div class=title>";
-            echo $prod["pName"];
-            echo "</div>";
-            echo " <i>$". $prod["Price"] . "</i>";
-            echo "<br/>";
-                            if (isset($_SESSION["active"]) && $_SESSION["active"] === true) {
-                                $addcart = 'community.php?action=ac&id=' . $row["ProductID"];
-                            }
-            echo "
-
-                                <form method='POST' action=$addcart>
-                                    <input class='button' value='Add To Cart' id='atc_input' type='submit'>
-                                    </input>
-                                </form>";
-
-            echo "<br/>";
-            $total = $total + floatval($prod["Price"]);
-            $msg = "";
-        }
+    if ($wishlist = mysqli_query($conn, $sql)) {
+        if (mysqli_num_rows($wishlist) > 0) {
+            while ($row = mysqli_fetch_assoc($wishlist)) {
+                $ss = "SELECT * FROM `products` WHERE ProductID = $row[ProductID];";
+                $s = $conn->query($ss);
+                $prod = $s->fetch_assoc();
+                echo "<div class=title>";
+                echo $prod["pName"];
+                echo "</div>";
+                echo " <i>$" . $prod["Price"] . "</i>";
+                echo "<br/>";
+                if (isset($_SESSION["active"]) && $_SESSION["active"] === true) {
+                    $addcart = 'community.php?action=ac&id=' . $row["ProductID"];
+                }
+                echo "
+                <form method='POST' action=$addcart>
+                    <input class='button' value='Add To Cart' id='atc_input' type='submit'>
+                    </input>
+                </form>";
+                echo "<br/>";
+                $total = $total + floatval($prod["Price"]);
+                $msg = "";
+            }
         echo "<br/>";
         echo "<b>Total:</b> $" . $total;
     }
@@ -123,19 +131,17 @@ echo "<br/>";
 echo "<br/>";
 echo "<a href='index.php'>Home</a>";
 }else{
-    echo "<a href='index.php'>Home</a>";
+    echo "<div style='padding-bottom:80px;'>";
+    echo "<h4>empty</h4>";
+    echo "<a style='color:#fff;' href='index.php'>Home</a>";
+    echo "</div>";
 }
 
 echo "</div>";
 echo "</div>";
 
 ?>
-
-
-
-
-
-    </div>
+</div>
 
 </body>
   

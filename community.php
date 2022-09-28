@@ -36,7 +36,7 @@ if($w = mysqli_query($conn, $wishc)){
 
 <body >
     <div class="top_third">
-        <div class="menu_container">
+        <div id="mc" class="menu_container">
             <h1 class="menu_title_s"><a href="index.php">SENIOR</a></h1>
         </div>
         <div class="nav" id="nav_bottom">
@@ -44,7 +44,17 @@ if($w = mysqli_query($conn, $wishc)){
                 <img src="images/watchlist.png" />
                 <a class="nav_links" href="wishlist.php">Wishlist<?php echo " (" . $_SESSION["wishcount"] . ")"?></a>
                 <img src="images/cart.png" />
-                <a class="nav_links" href="cart.php">My Cart</a>
+                <?php
+                if (isset($_SESSION["active"]) && $_SESSION["active"] === true) {
+                    echo "
+                        <a class='nav_links' href='cart.php'>My Cart</a>
+                    ";
+                }else{
+
+                    echo "
+                        <a class='nav_links' href='error.php?msg=please%20login%20to%20view%20cart'>My Cart</a>
+                    ";
+                } ?>
                 <img src="images/checkout.png" />
                 <a class="nav_links" href="checkout.php">Checkout</a>
                 <img src="images/login.png" />

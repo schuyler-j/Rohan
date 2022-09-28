@@ -13,7 +13,7 @@
 <body>
     <?php session_start(); ?>
 <div class="top_third">
-    <div class="menu_container">
+    <div id="mc" class="menu_container">
         <h1 class="menu_title_s">SENIOR</h1>
         <!--
         <div class="menu_title_s" id="logo">

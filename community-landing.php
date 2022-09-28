@@ -37,7 +37,7 @@ if($w = mysqli_query($conn, $wishc)){
 
 <body >
     <div class="top_third">
-        <div class="menu_container">
+        <div id="mc" class="menu_container">
             <h1 class="menu_title_s"><a href="index.php">SENIOR</a></h1>
         </div>
         <div class="nav" id="nav_bottom">
@@ -91,17 +91,19 @@ if($w = mysqli_query($conn, $wishc)){
     </div>
     <!--beginning of item grid list-->
     <div class="page_wrapper">
-
+        <div class="title">Welcome to the Community Marketplace
+        <div class="desc">You can browse the marketplace to find items that community members are selling or you can upload your own items for sale</div>
+        </div>
         <div class="grid" id="comlandgrid">
             <a href="community.php">
             <div class="item_list_wrapper" id="cardA">
-                <div class="grid_img"><img src="images/buy.png"/></div>
+                <div class="grid_img"><img id="buypng" src="images/buy.png"/></div>
                 <div class="card_title"><h2>BUY</h2></div>
             </div></a>
             <div class="h_spacer"></div>
             <a href="community-upload.php">
             <div class="item_list_wrapper" id="cardB">
-                <div class="grid_img"><img src="images/sell.png"/></div>
+                <div class="grid_img"><img id="sellpng" src="images/sell.png"/></div>
                 <div class="card_title"><h2>SELL</h2></div>
             </div></a>
 
