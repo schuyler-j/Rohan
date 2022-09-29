@@ -13,9 +13,16 @@
 
 
 <body>
+    <?php /*session_start();*/
+    require_once "db/dbconn.inc.php";
+    
+    
+    
+    
+    ?>
     <div class="top_third">
         <div class="menu_container">
-                <h1 class="menu_title_s">SENIOR</h1>
+                <h1 class="menu_title_s"><a href="index.php">SENIOR</a></h1>
             <!--test for logo-->
             <!--<div class="menu_title_s" id="logo">
                 <img src="images/home_banner.png" width="40%">
@@ -29,11 +36,11 @@
         <div class="nav" id="nav_bottom">
             <div class="nav_list">
                 <img src="images/watchlist.png"/>
-                <a class="nav_links" href="#">Watchlist</a>
+                <a class="nav_links" href="wishlist.php">Wishlist</a>
                 <img src="images/cart.png"/>
-                <a class="nav_links" href="#">My Cart</a>
+                <a class="nav_links" href="cart.php">My Cart</a>
                 <img src="images/checkout.png"/>
-                <a class="nav_links" href="#">Checkout</a>
+                <a class="nav_links" href="checkout.php">Checkout</a>
                 <img src="images/login.png"/>
                 <a class="nav_links" href="login.php">Login</a>
             </div>
@@ -69,11 +76,11 @@
                     </div></li>
 
                     <li class="pname_title"><b>Username</b></li>
-                    <li><div class="desc">create a username people can recognise you</div></li>
+                    <li><div class="desc"><i>Create a username people can recognise you</i></div></li>
                     <li><input type="text" placeholder="" id="uname" required></input></li>
 
                     <li class="pname_title"><b>Create a Password</b></li>
-                    <li><div class="desc">create a strong password to secure your account</div></li>
+                    <li><div class="desc"><i>Create a strong password to secure your account</i></div></li>
                     <li><div class="password_block">
                             <input type="password" placeholder="" id="pword" required></input>
                             <button type="button" id="show_password" onclick="ShowPassword()"><img src="images/eye.png"></img></button>
@@ -84,7 +91,7 @@
                         </div></li>
 
                     <li class="pname_title"><b>E-mail Address</b></li>
-                    <li><div class="desc">this is the e-mail address we will contact you through</div></li>
+                    <li><div class="desc"><i>This is the e-mail address we will contact you through</i></div></li>
                     <li><input type="email" placeholder="" id="emailaddr" required></input></li>
 
                     <li><div class="inner_form_section">
@@ -105,10 +112,10 @@
 
                     <br/>
 
-                    <li class="tcc"><input type="checkbox" id="tccheckbox"><span id="checkbox_span">I accept the</span> <a href="index.php#about">Terms & Conditions</a></input></li>
+                    <li class="tcc"><input type="checkbox" id="tccheckbox" required><span id="checkbox_span">I accept the</span> <a href="index.php#about" id="tcclink">Terms & Conditions</a></input></li>
                     <br/>
 
-                    <li><input type="submit" class="button" value="CREATE"></input></li>
+                    <li><input type="submit" class="button" id="create_btn" value="CREATE"></input></li>
                 </ul>
             </form>
         </div>

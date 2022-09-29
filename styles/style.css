@@ -21,6 +21,7 @@ a{
 }
 
 a:hover{
+    text-shadow: 1px -2px 2px #222 !important;
     color: beige;
 }
 
@@ -41,6 +42,10 @@ h5{
     margin-top: 0px;
 }
 
+h4:hover{
+    text-shadow: none;
+}
+
 .date{
     padding-left: 12px;
     font-size: 15px;
@@ -55,7 +60,7 @@ h5{
     z-index: -9999;
 }
 
-#alt{
+.alt{
     color: #5c6e58;
 }
 
@@ -103,6 +108,13 @@ h5{
 
 }
 
+#price{
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 24px;
+}
+
 .featured_price{
     margin: auto;
     color: #ffd829;
@@ -124,18 +136,20 @@ h5{
     margin: auto;
     color: #ff4800;
     font-size: 24px;
-    text-shadow: -1px 1px 2px rgb(178, 97, 185);
+    text-shadow: -1px 1px 2px rgb(49, 22, 51);
 
 }
 
 .img_container img{
     margin: auto;
     height: 200px;
+    border: 1px solid #333;
 }
 
 .img_container:hover{
     border: 1px solid #f2d349;
     border-radius: 0px 0px 6px 6px;
+    transition: 0.3s;
 }
 
 .menu_container{
@@ -157,15 +171,18 @@ h5{
 }
 
 .menu_title_s{
-    color: beige;
     max-width: 100%;
     text-align: center;
-    text-shadow: -9px 3px 4px black;
+    text-shadow: 4px 1px 1px black;
     /*border-bottom: 4px solid black;*/
-    font-family: Anton, serif;
     letter-spacing: 0.4em;
     background-color: #1f2b2355;
     min-width: -webkit-fill-available;
+}
+
+.menu_title_s a{
+    font-family: 'Times New Roman', Times, serif;
+    color: beige !important;
 }
 
 
@@ -216,6 +233,7 @@ h5{
     background-color: #353d33;
     background-image: linear-gradient(to bottom, rgba(255,255,255,0.5), rgba(255,255,255,0.2) 64%, rgba(0,0,0,0.15) 66%, rgba(0,0,0,0.05));
     background-repeat: repeat-x;
+    transition: 0.3s;
 }
 
 .main_menu a:hover {
@@ -273,6 +291,10 @@ h5{
 
 #shopping{
     margin-top: 0px;
+    color: #111;
+    background-color: #6777624b;
+    padding-bottom: 4px;
+    margin-bottom: 28px;
 }
 
 .home_body_text{
@@ -312,6 +334,11 @@ h5{
 
 }
 
+button {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+}
+
 .button{
     display: block;
     border: none;
@@ -319,30 +346,32 @@ h5{
     padding-bottom: 10px;
     padding-right: 25px;
     padding-left: 25px;
-    font-size: 40px;
+    font-size: 50px;
     border: 1px solid black;
+    color: beige;
     background-color: #5c6e58;
-    color: #fff;
     justify-content: center;
     margin: auto;
     cursor: pointer;
     text-align: center;
+    font-weight: bold;
 
     background-image: linear-gradient(to bottom, rgba(255,255,255,0.5), rgba(255,255,255,0.2) 64%, rgba(0,0,0,0.15) 66%, rgba(0,0,0,0.05));
     background-repeat: repeat-x;
 }
 
-#atc.button{
+#atc{
     color: #5c6e58;
 }
-#atc.button:hover{
+#atc:hover{
     text-decoration: underline;
-    color: #353d33;
+    color: #222 !important;
 }
 
 .button:hover{
+    color: beige;
+    text-shadow: -1px 2px 2px #222 ;
     background-color: #f2d349;
-    color: #000;
 }
 
 #cursor{
@@ -363,7 +392,7 @@ h5{
 }
 
 .link_box{
-    color: #728a6d;
+    color: beige;
     max-width: 55%;
 }
 
@@ -485,10 +514,13 @@ a:hover.nav_links{
 
 .item_list_wrapper:hover{
     box-shadow: 2px 2px 2px 2px #465343;
+    background-color: rgb(241, 241, 204);
+    transition: 0.3s;
 }
 
 .item_list_wrapper a:hover{
     color: #465343;
+    text-shadow: none !important;
 }
 
 .item_list_wrapper img{
@@ -505,10 +537,10 @@ a:hover.nav_links{
     box-shadow: none;
 }
 
-
 #atc{
     font-size: 12px;
     background-color: #f2d349;
+    width: 100%;
 }
 
 
@@ -535,7 +567,7 @@ a:hover.nav_links{
     width: fit-content;
     color: #222;
 }
-
+/*
 .item_list_wrapper{
     background-color: beige;
     padding: 18px;
@@ -544,7 +576,6 @@ a:hover.nav_links{
     justify-content: center;
     border-radius: 4px;
 }
-
 .item_list_wrapper:hover{
     box-shadow: 2px 2px 2px 2px #465343;
 }
@@ -567,6 +598,7 @@ a:hover.nav_links{
     box-shadow: none;
 }
 
+*/
 #item_description{
     width: 17em;
     padding-top: 12px;
@@ -574,9 +606,12 @@ a:hover.nav_links{
     margin-right: 12px;
 }
 
-#atc{
-    font-size: 12px;
-    background-color: #f2d349;
+#item_description{
+    border-bottom: 1px solid #353d33;
+}
+
+#item_description:hover{
+    text-shadow: none;
 }
 
 .content{
@@ -605,7 +640,6 @@ a:hover.nav_links{
     background: #000;
     color: #f2d349;
 }
-
 
 #login_form{
     margin: 10px;
@@ -656,7 +690,6 @@ a:hover.nav_links{
     margin: 20px;
 }
 
-
 .pages a:hover{
     color: #71856d;
 }
@@ -671,7 +704,7 @@ a:hover.nav_links{
 
 .desc{
     color: #222;
-    font-size: 16px;
+    font-size: 12px;
 }
 
 .inner_form_section{
@@ -688,6 +721,11 @@ a:hover.nav_links{
     width: 80px;
 }
 
+#tccheckbox{
+    width: 40px;
+    height: 20px;
+}
+
 .tcc{
     justify-content: center;
 }
@@ -700,6 +738,16 @@ a:hover.nav_links{
     margin-left: 30px;
 }
 
+#atc_input{
+    font-size: 18px;
+    color: beige;
+}
+
+#atc_input:hover{
+    text-decoration: underline;
+    background-color: #677762;
+}
+
 input:focus {
     background-color: #fff !important;
     color: #353d33 !important;
@@ -708,4 +756,72 @@ input:focus {
 
 .button_wrapper{
     padding-top: 0px;
+}
+#cart_form{
+    margin: 10px;
+    padding: 50px;
+    font-size: 22px;
+    background-color: #fffbe9;
+    height: auto;
+    border-radius: 4px;
+}
+#estimate{
+    color: #5c6e58;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: underline; 
+}
+#cart_total{
+    margin: 10px;
+    padding: 50px;
+    font-size: 22px;
+    background-color: #fffbe9;
+    height: auto;
+    border-radius: 4px;
+}
+#cart_price{
+    padding-left: 100px;
+    padding-right: 100px;
+    font-size: 40px;
+}
+input[type = submit]{
+    color: beige;
+}
+
+input[type = submit]:hover{
+    text-shadow: none;
+}
+
+input[type = submit]:active, input[type = submit]:focus{
+    background-color: #728a6d!important;
+}
+
+#login_btn:hover{
+    text-shadow: -1px 2px 2px #353d33;
+}
+
+#create_btn{
+    color: #222 !important;
+}
+
+#tcclink:hover{
+    text-shadow: none !important;
+}
+
+#comlandgrid{
+    display: flex;
+    margin: 40px;
+}
+
+.card_title h2{
+    color: #677762 !important;
+}
+
+.grid_img{
+    border: 1px solid #222;
+    background-color: #465343;
+}
+
+.box{
+    margin: 2vw 8vw 8vw 8vw;
 }

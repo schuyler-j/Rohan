@@ -13,15 +13,15 @@
 <?php 
 require_once "db/dbconn.inc.php"; 
 
-
+/*
 session_start();
-
+*/
 ?>
 
 <body onload="ready()">
 <div class="top_third">
     <div class="menu_container">
-        <h1 class="menu_title_s">SENIOR</h1>
+        <h1 class="menu_title_s"><a href="index.php">SENIOR</a></h1>
         <!--
         <div class="menu_title_s" id="logo">
             <img src="images/home_banner.png" width="40%">
@@ -31,11 +31,11 @@ session_start();
         <div class="nav" id="nav_bottom">
             <div class="nav_list">
                 <img src="images/watchlist.png">
-                <a class="nav_links" href="#">Watchlist</a>
+                <a class="nav_links" href="wishlist.php">Wishlist<?php echo " (" . $_SESSION["wishcount"] . ")"?></a>
                 <img src="images/cart.png">
-                <a class="nav_links" href="#">My Cart</a>
+                <a class="nav_links" href="cart.php">My Cart</a>
                 <img src="images/checkout.png">
-                <a class="nav_links" href="#">Checkout</a>
+                <a class="nav_links" href="checkout.php">Checkout</a>
                 <img src="images/login.png">
                 <?php 
                 if(isset($_SESSION["active"]) && $_SESSION["active"] === true){
@@ -105,11 +105,7 @@ session_start();
                 <option
                 value="trailers">Trailers</option>
                 <option
-                value="accommodation">Accomodation</option>
-                <option
                 value="hobby-sports">Hobby/Sporting Equipment</option>
-                <option
-                value="tours-attractions">Tours and Attractions</option>
             </select>
             <input type="submit" value="Search" /><br>
         <div class ="shopping_links">    
