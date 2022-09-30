@@ -26,7 +26,6 @@ session_start();
                 <img src="images/watchlist.png"/>
                 <a class="nav_links" href="wishlist.php">Wishlist</a>
                 <img src="images/cart.png"/>
-                <a class="nav_links" ><div style="text-decoration:underline; color:#222;">My Cart</div></a>
                 <img src="images/checkout.png"/>
                 <a class="nav_links" href="checkout.php">Checkout</a>
                 <img src='images/login.png'/>                
@@ -50,4 +49,49 @@ session_start();
                 <li class="list"><a href="contact.php"><span class="media_text">Contact</span></a></li>
             </ul>
         </div>
+        </div>
+        <div class="page_wrapper">
+        <div class="form_wrapper">
+        <div class="top_third">
+        </div>
+        </div>
+        <div class="home_body" id="news">    
+        <ul class="item_list" id="cart_form">
+                    <li><div class="sub_heading" style="font-size:38px">Camp Chair</div></li>
+                <li class='list'>
+                    <div class='landing_main'>
+                        <img src='images/chair1.png'/>
+                        
+            </div>
+                    <div class='item_list_wrapper'>
+                        <div class='content'>
+                        <div class="more_photos"><img src='images/chair1.png'/></div>
+                        <div class="more_photos"><img src='images/chair1.png'/></div>
+                        <div class="more_photos"><img src='images/chair1.png'/></div>
+                        <div class="more_photos"><img src='images/chair1.png'/></div>
+                        <div class="additional_photos">+ 8</div>
+                            </div>
+                        </div>
+                        </li>
+            </div>        
+                <ul class="item_list" id="cart_total">
+                    <li><div class="sub_heading" style="font-size:38px">Cart Totals</div></li>
+                    <li id="item_total"><b>Total Number of Items: 1</b></li>
+                    <li><div class="list_of_items"> 
+                        Item 1 $$$</br>                     
+            </div>
+            </li>
+                    <li id="total"><b>Estimated Total: $$$</b></li>
+                    <li id="estimate">NOTE: This is not the final total, this is an estimate.</li>
+                    <br/>
+                    <li><a href="checkout.php"><div class="button" id="checkout">CHECKOUT</div></li>
+                </ul>
+        </div>
     </div>
+</body>
+</html>
+
+<body>
+</body>
+  
+</html>
