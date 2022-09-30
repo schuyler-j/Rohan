@@ -898,3 +898,7 @@ transition: 0.3s;
 .landing_detail{
     font-size: 18px;
 }
+#back_to{
+    font-size: 14px;
+    padding-bottom: 20px;
+}

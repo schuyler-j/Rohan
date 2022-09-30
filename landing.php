@@ -58,6 +58,7 @@ session_start();
         </div>
         <div class="home_body" id="news">    
         <ul class="item_list" id="cart_form">
+        <a id='back_to' href="community.php"><< Back to Search</a>
                     <li><div class="sub_heading" style="font-size:38px">Camp Chair</div></li>
                 <li class='list'>
                     <div class='main_landing'>
@@ -105,20 +106,24 @@ session_start();
                 <ul class="item_list" id="cart_total">
                     <li><div class="sub_heading" style="font-size:25px">Details</div></li>
                     <li class="seller_profile">
-                        <img src='images/profile.png'/><b>John Citizen</b>
+                        <img src='images/profile.png'/><b>Nick</b>
                     </li>
                     <li id="estimate">SENIOR member since 2022. 10 Ads.</li>
-                    <li style="font-size:18px"><b>Location: </b></li>
-                    <li id="estimate"><img src='images/location.png'/>Adelaide, South Australia, 5000</li>
-                    <li><div class="list_of_items"> 
+                        <li><div class="list_of_items"> 
                         Camp Chair</br>                                            
             </div>
             </li>
-                    <li id="total" style="font-size:35px"><b>$$$</b></li>
+            <li style="font-size:18px"><b>Location: </b></li>
+            <li id="estimate"><img src='images/location.png'/>Adelaide, South Australia, 5000</li>
+                    <li id="total" style="font-size:35px"><b>$$$ Negoitable</b></li>
             </br>
-            
-            <input class='button' value='Add To Cart' id='atc_input' type='submit'>
-            </input>     
+            <li><img src="images/phone.png"/>
+                <a class="nav_links" href="#">Contact Seller</a></li>
+            <li><img src="images/help.png"/>
+                <a class="nav_links" href="help.php">Help / Report an Issue</a></li>
+            <li><input class='button' value='Add To Cart' id='atc_input' type='submit'>
+            </br>
+            </input></li>     
                 </ul>
         </div>
     </div>
