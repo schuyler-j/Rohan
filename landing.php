@@ -26,6 +26,7 @@ session_start();
                 <img src="images/watchlist.png"/>
                 <a class="nav_links" href="wishlist.php">Wishlist</a>
                 <img src="images/cart.png"/>
+                <a class="nav_links" href="cart.php">Cart</a>
                 <img src="images/checkout.png"/>
                 <a class="nav_links" href="checkout.php">Checkout</a>
                 <img src='images/login.png'/>                
@@ -60,28 +61,29 @@ session_start();
                     <li><div class="sub_heading" style="font-size:38px">Camp Chair</div></li>
                 <li class='list'>
                     <div class='main_landing'>
-                        <img src='images/chair1.png'/>
-                        <div class="button_wrapper">
-                    <a href="#">
-                        <div class="button" id="atc">
-                            Add To Wishlist
-                        </div>
-                    </a>
-                </div>           
+                    <div class ='content'>    
+                    <a id='landing_photo' href='images/chair1.png'><img src='images/chair1.png'/></a>
+                    <ul class='landing_detail'>
+                    <li class="no_of_photos">
+                        <img src='images/photos.png'/>14 photos </li>
+                        <li>Date listed: 30/09/2022</li>
+                        <li>Last Edited: 30/09/2002</li>
+                        <li>Condition: New</li>
+                        <input class='button' value='Add To Wishlist' id='atc' type='submit'>
+                        </input>
+                    <ul>    
+            </div>       
             </div>
                     <div class='item_list_wrapper'>
                         <div class='content'>
-                        <div class="more_photos"><img src='images/chair1.png'/></div>
-                        <div class="more_photos"><img src='images/chair1.png'/></div>
-                        <div class="more_photos"><img src='images/chair1.png'/></div>
-                        <div class="more_photos"><img src='images/chair1.png'/></div>
+                        <div class="more_photos"><a href='images/chair1.png'><img src='images/chair1.png'/></a></div>
+                        <div class="more_photos"><a href='images/chair1.png'><img src='images/chair1.png'/></a></div>
+                        <div class="more_photos"><a href='images/chair1.png'><img src='images/chair1.png'/></a></div>
+                        <div class="more_photos"><a href='images/chair1.png'><img src='images/chair1.png'/></a></div>
                         <div class="additional_photos">+ 8</div>
                             </div>
                         </div>
-                        <ul class="landing_menu">
-                        <li class="sub_heading"><a href="#description"><span class="media_text" id='landing_selected'>Description&nbsp;&nbsp;</span></a></li>
-                        <li class="sub_heading"><a href="#specifications"><span class="media_text">&nbsp;&nbsp;Specifications</span></a></li>
-                        </ul>   
+                        <li><div class="sub_heading" style="font-size:25px">Description</div></li>
                         </li>                        
                         <li class='landing_desc'><p>Ipsum elit ad sint anim. </span>
                 <span>Velit sint qui ipsum amet ex cupidatat minim non sunt esse enim. </span>
@@ -102,16 +104,21 @@ session_start();
             </div>        
                 <ul class="item_list" id="cart_total">
                     <li><div class="sub_heading" style="font-size:25px">Details</div></li>
-                    <li id="item_total"><img src='images/profile.jpg'/><b>John Citizen</b></li>
+                    <li class="seller_profile">
+                        <img src='images/profile.png'/><b>John Citizen</b>
+                    </li>
                     <li id="estimate">SENIOR member since 2022. 10 Ads.</li>
+                    <li style="font-size:18px"><b>Location: </b></li>
+                    <li id="estimate"><img src='images/location.png'/>Adelaide, South Australia, 5000</li>
                     <li><div class="list_of_items"> 
-                        Item 1 $$$</br>                     
+                        Camp Chair</br>                                            
             </div>
             </li>
                     <li id="total" style="font-size:35px"><b>$$$</b></li>
-                    <li id="estimate">NOTE: This is not the final total, this is an estimate.</li>
-                    <br/>
-                    <li><a href="checkout.php"><div class="button" id="checkout">CHECKOUT</div></li>
+            </br>
+            
+            <input class='button' value='Add To Cart' id='atc_input' type='submit'>
+            </input>     
                 </ul>
         </div>
     </div>

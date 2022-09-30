@@ -876,13 +876,25 @@ transition: 0.3s;
 .landing_desc{
     font-size: 22px;
 }
-.landing_menu{
-    list-style-type: none;
-    padding: 50px;
-    margin: 0px;
-    font-size: 30px;
-    display: inline-flex;
+#landing_photo:hover{
+    box-shadow: 2px 2px 2px 2px #465343;
+    transition: 0.3s;
 }
 #landing_selected{
     text-decoration: underline;
-} 
+}
+.seller_profile{
+        margin: auto;
+        display: flex;
+        justify-content: flex;
+        align-items: center;
+}
+.no_of_photos{
+    margin: auto;
+    display: flex;
+    justify-content: flex;
+    align-items: center;
+}
+.landing_detail{
+    font-size: 18px;
+}
