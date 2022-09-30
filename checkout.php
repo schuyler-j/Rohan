@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <?php session_start(); ?>
+
 
     <div class="top_third">
         <div class="menu_container">
