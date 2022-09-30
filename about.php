@@ -14,7 +14,7 @@
     <?php session_start(); ?>
 <div class="top_third">
     <div class="menu_container">
-        <h1 class="menu_title_s">SENIOR</h1>
+            <h1 class="menu_title_s"><a href="index.php">SENIOR</a></h1>
         <!--
         <div class="menu_title_s" id="logo">
             <img src="images/home_banner.png" width="40%">
@@ -24,7 +24,7 @@
         <div class="nav" id="nav_bottom">
             <div class="nav_list">
                 <img src="images/watchlist.png">
-                <a class="nav_links" href="wishlist.php">Wishlist</a>
+                <a class="nav_links" href="wishlist.php">Wishlist<?php echo " (" . $_SESSION["wishcount"] . ")"?></a>
                 <img src="images/cart.png">
                 <a class="nav_links" href="cart.php">My Cart</a>
                 <img src="images/checkout.png">
@@ -44,17 +44,21 @@
         </div>
 </div>
 
-    <div class = "title">
-        <h2>About Us</h2>
-        <div>
-            <p>
-                <span>Ipsum elit ad sint anim. </span>
-                <span>Velit sint qui ipsum amet ex cupidatat minim non sunt esse enim. </span>
-                <span>Tempor fugiat voluptate eiusmod dolore eu irure elit.</span> 
-                <span>Nostrud adipisicing nulla adipisicing sunt eiusmod occaecat. </span>
-                <span>Consectetur excepteur velit culpa deserunt sit. </span>
-            </p>
-            <p>
+    <div class="page_wrapper">
+        
+    <div class="home_body" id="news">
+        <div class = "heading">
+            <h2 style="text-align:center; font-size:40px">About Us</h2>
+        </div>       
+        <div class = "sub_heading">
+            <h2 style="text-align:center">WHO WE ARE</h2>
+        </div>
+            <span>SENIOR is an online marketplace dedicated to recreational equipments for seniors.</span>
+
+        <div class = "sub_heading">
+            <h2 style="text-align:center">OUR GOALS</h2>
+        </div>
+        <p>
                 <span>Reprehenderit ea cillum sit aute fugiat sit minim labore tempor magna amet reprehenderit. </span>
                 <span>Mollit nisi laborum velit pariatur quis aliquip nostrud consectetur pariatur anim amet ipsum sit sit. </span>
                 <span>In eiusmod reprehenderit ipsum fugiat. </span>
@@ -63,7 +67,8 @@
                 <span>Ea aliqua adipisicing aute esse nulla esse cupidatat nostrud pariatur qui ex. </span>
                 <span>Proident sunt dolore non id voluptate. </span>
                 <span>Cillum do in tempor veniam reprehenderit excepteur ipsum pariatur excepteur. </span>
-            </p>    
-        </div>
+        </p>    
+
+    </div>
     </div>
 </body>
