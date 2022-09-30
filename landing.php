@@ -115,7 +115,7 @@ session_start();
             </li>
             <li style="font-size:18px"><b>Location: </b></li>
             <li id="estimate"><img src='images/location.png'/>Adelaide, South Australia, 5000</li>
-                    <li id="total" style="font-size:35px"><b>$$$ Negoitable</b></li>
+                    <li id="total" style="font-size:35px"><b>$$$ Negotiable</b></li>
             </br>
             <li><img src="images/phone.png"/>
                 <a class="nav_links" href="#">Contact Seller</a></li>
