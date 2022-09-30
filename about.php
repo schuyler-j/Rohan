@@ -1,30 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<title>About</title>
-<meta charset="UTF-8" />
-<meta name="author" content="TUJ_Rohan" />
-<link rel="stylesheet" href="styles/style.css" />
-<!-- <link rel="stylesheet" href="styles/about.css" /> -->
-<link rel="icon" href="images/favicon.png">
-<script src="scripts/script.js" defer></script>
+    <title>About</title>
+    <meta charset="UTF-8" />
+    <meta name="author" content="TUJ_Rohan" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <!-- <link rel="stylesheet" href="styles/about.css" /> -->
+    <link rel="icon" href="images/favicon.png">
+    <script src="scripts/script.js" defer></script>
+
+    <!-- testing column categories -->
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .row {
+            display: flex;
+        }
+
+
+        .column {
+            flex: 50%;
+            padding: 10px;
+            height: 300px;
+        }
+    </style>
+
+
 </head>
 
 <body>
     <?php session_start(); ?>
-<div class="top_third">
-    <div class="menu_container">
+    <div class="top_third">
+        <div class="menu_container">
             <h1 class="menu_title_s"><a href="index.php">SENIOR</a></h1>
-        <!--
+            <!--
         <div class="menu_title_s" id="logo">
             <img src="images/home_banner.png" width="40%">
         </div>
         -->
-    </div>
+        </div>
         <div class="nav" id="nav_bottom">
             <div class="nav_list">
                 <img src="images/watchlist.png">
-                <a class="nav_links" href="wishlist.php">Wishlist<?php echo " (" . $_SESSION["wishcount"] . ")"?></a>
+                <a class="nav_links" href="wishlist.php">Wishlist<?php echo " (" . $_SESSION["wishcount"] . ")" ?></a>
                 <img src="images/cart.png">
                 <a class="nav_links" href="cart.php">My Cart</a>
                 <img src="images/checkout.png">
@@ -42,33 +63,34 @@
                 <li class="list"><a href="contact.php"><span class="media_text">Contact</span></a></li>
             </ul>
         </div>
-</div>
+    </div>
 
     <div class="page_wrapper">
-        
-    <div class="home_body" id="news">
-        <div class = "heading">
-            <h2 style="text-align:center; font-size:40px">About Us</h2>
-        </div>       
-        <div class = "sub_heading">
-            <h2 style="text-align:center">WHO WE ARE</h2>
-        </div>
-            <span>SENIOR is an online marketplace dedicated to recreational equipments for seniors.</span>
 
-        <div class = "sub_heading">
-            <h2 style="text-align:center">OUR GOALS</h2>
-        </div>
-        <p>
-                <span>Reprehenderit ea cillum sit aute fugiat sit minim labore tempor magna amet reprehenderit. </span>
-                <span>Mollit nisi laborum velit pariatur quis aliquip nostrud consectetur pariatur anim amet ipsum sit sit. </span>
-                <span>In eiusmod reprehenderit ipsum fugiat. </span>
-                <span>Laboris elit ut et ullamco esse et voluptate esse eu. </span>
-                <span>Adipisicing deserunt eu id voluptate sint aliqua reprehenderit aliquip aute culpa. </span>
-                <span>Ea aliqua adipisicing aute esse nulla esse cupidatat nostrud pariatur qui ex. </span>
-                <span>Proident sunt dolore non id voluptate. </span>
-                <span>Cillum do in tempor veniam reprehenderit excepteur ipsum pariatur excepteur. </span>
-        </p>    
+        <div class="home_body" id="news" style="width:1500px">
+            <div class="heading">
+                <h1 style="text-align:center; font-size:55px">About Us</h1>
+            </div>
+            <div class="row">
+                <div class="column">
+                    <div class="sub_heading">
+                        <h2 style="font-size: 40px; text-align:center">WHO WE ARE</h2>
+                    </div>
+                    <p>
+                        <span style="font-size: 20px;">SENIOR is an online marketplace launched in 20XX dedicated to offer recreational equipments to seniors.</span>
+                    </p>
+                </div>
 
-    </div>
+                <div class="column">
+                    <div class="sub_heading">
+                        <h2 style="font-size: 40px; text-align:center">OUR GOALS</h2>
+                    </div>
+                    <p>
+                        <span style="font-size: 20px;">Our goal is to provide a easy method of buying, selling and trading equipments with seniors, acting as the method of encouraging outdoor recreation for grey nomads.</span>
+                    </p>
+                </div>
+
+            </div>
+        </div>
     </div>
 </body>
