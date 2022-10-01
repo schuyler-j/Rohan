@@ -97,7 +97,7 @@
                 </li>
                 <div class='button_wrapper'>
                     <form>
-                        <input type='submit' class='button' id='atc' value='Continue'>
+                        <input type='submit' class='button' id='atc' value='Continue' style="width:30%; float:left">
                         </input>
                     </form>
                 </div>
