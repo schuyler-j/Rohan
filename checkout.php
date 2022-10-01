@@ -12,7 +12,8 @@
 </head>
 
 <body>
-    <?php session_start(); ?>
+<?php require_once "db/dbconn.inc.php" ?>
+
 
     <div class="top_third">
         <div class="menu_container">
