@@ -1,5 +1,5 @@
 :root{
-		--content-size: 1280px;
+		--content-size: 1620px;
 }
 
 *{
@@ -178,7 +178,7 @@ h4:hover{
     text-align: center;
     text-shadow: 4px 1px 1px black;
     /*border-bottom: 4px solid black;*/
-    letter-spacing: 0.4em;
+    letter-spacing: 2rem;
     background-color: #1f2b2355;
     min-width: -webkit-fill-available;
 }
@@ -473,7 +473,7 @@ button {
 }
 
 a:hover.nav_links{
-    text-shadow:1px -2px 2px #000;
+    text-shadow:1px -1px 4px #000 !important;
 }
 .item_list_title{
     color:#222;
@@ -628,6 +628,9 @@ a:hover.nav_links{
     display: inline-flex;
 }
 
+.search_container{
+    display: grid;
+}
 
 @media only screen and (min-width: 1500px) {.h_spacer{
     min-width: 30px;
@@ -637,11 +640,18 @@ a:hover.nav_links{
     flex-wrap: wrap;
 }
 
+.search_container{
+    display: inline;
+}
+
 #login_form{
     padding: 250px !important;
     padding-top: 42px !important;
+}
+:root{
+    --content-size: 1420px
 }}
-
+/*end of media*/
 .nav_title{
     background-color: #71856d;
 }

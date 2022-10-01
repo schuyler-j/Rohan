@@ -176,6 +176,8 @@ p{
 }
 
 .search_container *{
+    padding-top: 8px;
     margin-top: 4px;
+    padding-bottom: 8px;
     margin-bottom: 4px;
 }
