@@ -18,6 +18,8 @@
 
         .row {
             display: flex;
+            padding-top: 50px;
+            padding-bottom: 50px;
         }
 
 
@@ -25,6 +27,24 @@
             flex: 50%;
             padding: 10px;
             height: 300px;
+        }
+
+        .about_menu_container {
+            margin: auto;
+            padding-top: 80px;
+            padding-bottom: 2px;
+            background-color: #465343;
+            box-shadow: 0px 1px 8px 0px #222;
+            /* display: inline-flex; */
+            flex-wrap: wrap;
+            flex-direction: row;
+            align-items: center;
+            /* justify-content: space-around; */
+            max-width: 100%;
+            height: auto;
+            width: 100%;
+            background-image: url("../images/about-us-hiking.jpg");
+
         }
     </style>
 
@@ -67,9 +87,9 @@
 
     <div class="page_wrapper">
 
-        <div class="home_body" id="news" style="width:1500px">
-            <div class="heading">
-                <h1 style="text-align:center; font-size:55px">About Us</h1>
+        <div class="home_body" id="news" style="width:1500px; height:1200px;">
+            <div class="about_menu_container">
+                <h1 style="text-align:center; font-size:55px; color:white">About Us</h1>
             </div>
             <div class="row">
                 <div class="column">
@@ -82,8 +102,30 @@
                 </div>
 
                 <div class="column">
+                    <!-- <div class="sub_heading">
+                        <h2 style="font-size: 40px; text-align:center">IMAGE HERE </h2>
+                    </div> -->
+                    <div class='block_1'>
+                        <img src='images/greeting_2.png' style="display:block; margin-left:auto; margin-right:auto; width:70%; padding-top:60px" />
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="column">
+                    <!-- <div class="sub_heading">
+                        <h2 style="font-size: 40px; text-align:center">IMAGE HERE</h2>
+                    </div> -->
+                    <div class='block_1'>
+                        <img src='images/greeting_2.png' style="display:block; margin-left:auto; margin-right:auto; width:70%; padding-top:100px" />
+                    </div>
+                </div>
+
+                <div class="column">
                     <div class="sub_heading">
-                        <h2 style="font-size: 40px; text-align:center">OUR GOALS</h2>
+                        <h2 style="font-size: 40px; text-align:center; padding-top:30px">OUR GOALS</h2>
                     </div>
                     <p>
                         <span style="font-size: 20px;">Our goal is to provide a easy method of buying, selling and trading equipments with seniors, acting as the method of encouraging outdoor recreation for grey nomads.</span>
@@ -91,6 +133,7 @@
                 </div>
 
             </div>
+
         </div>
     </div>
 </body>

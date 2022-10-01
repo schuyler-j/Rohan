@@ -79,7 +79,7 @@
 
         <div class="home_body" id="news" style="width:1500px; height:650px;">
             <div class="row">
-                <div class="column left" style="text-align:center">
+                <div class="column left" style="text-align:center; padding-top:100px; padding-left:100px">
                     <div class="title">
                         <h2>Contact Us</h2>
                     </div>
@@ -110,7 +110,8 @@
                             <br />
 
                             <li class="pname_title"><b>Message</b></li>
-                            <li><input type="text" placeholder="" id="lname" style="width:95%; height:200px"></input></li>
+                            <li><textarea name="text1" id="lname" cols="40" rows="5" style="width:95%" ></textarea></li>
+                            <!-- <li><input type="text" placeholder="" id="lname" style="width:95%; height:200px"></input></li> -->
 
                             <br />
                             <li><input type="submit" class="button" id="create_btn" value="Submit" style="float:left"></input></li>
