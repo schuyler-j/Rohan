@@ -263,6 +263,12 @@ h4:hover{
     box-shadow: inset 0px -20px 20px 20px #203620;
 }
 
+#pwcl{
+    box-shadow: none;
+    background-color: #465343 !important;
+
+}
+
 
 .home_body{
     margin-top: 20px;
@@ -475,6 +481,7 @@ button {
 a:hover.nav_links{
     text-shadow:1px -1px 4px #000 !important;
 }
+
 .item_list_title{
     color:#222;
     text-transform: uppercase;
@@ -648,9 +655,7 @@ a:hover.nav_links{
     padding: 250px !important;
     padding-top: 42px !important;
 }
-:root{
-    --content-size: 1420px
-}}
+}
 /*end of media*/
 .nav_title{
     background-color: #71856d;
@@ -923,4 +928,12 @@ transition: 0.3s;
     padding-bottom: 20px;
 }
 
+#wtcm{
+    padding-bottom: 8px !important;
+		padding-top: 12px;
+}
+
+#wtcm h4{
+		text-shadow: -1px 2px 2px #222;
+}
 
