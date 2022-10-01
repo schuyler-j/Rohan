@@ -493,6 +493,11 @@ a:hover.nav_links{
     padding-bottom: 12px;
 }
 
+.item_list a:hover{
+		color: #6c9277;
+		text-shadow: none !important;
+}
+
 .item_list_wrapper p{
     margin-top: 0px;
     padding-right: 2rem;
@@ -902,3 +907,5 @@ transition: 0.3s;
     font-size: 14px;
     padding-bottom: 20px;
 }
+
+
