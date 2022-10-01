@@ -12,6 +12,7 @@
 </head>
 
 <body>
+<?php require_once "db/dbconn.inc.php" ?>
 
 
     <div class="top_third">
