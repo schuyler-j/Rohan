@@ -661,7 +661,7 @@ a:hover.nav_links{
 }
 
 
-#uname, #pword, #fname, #lname, #streetaddr, #emailaddr, #postcode, #dob{
+#uname, #pword, #fname, #lname, #streetaddr, #emailaddr, #postcode, #dob, #message{
     padding: 10px;
     min-width: 90%;
     font-size: 28px;
