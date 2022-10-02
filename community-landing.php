@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <title>Community</title>
     <meta charset="UTF-8" />
@@ -56,11 +57,7 @@ if($w = mysqli_query($conn, $wishc)){
                     $product_sql = "SELECT * FROM `products`;";
                     $psql = mysqli_query($conn, $product_sql);
                     $row = mysqli_fetch_assoc($psql);
-
-
                     $msg = "";
-
-
                     $total = 0;
                     $creditcard = $_SESSION["creditcard"];
                     $addr = $_SESSION["addr"];
@@ -69,8 +66,7 @@ if($w = mysqli_query($conn, $wishc)){
                     $productid = 0;
                 } else {
                     echo
-                    "<a class = 'nav_links' href='login.php'>Login</a>
-                    ";
+                    "<a class = 'nav_links' href='login.php'>Login</a>";
 
                     $addcart = 'error.php';
                     $addwish = 'error.php';
@@ -91,11 +87,10 @@ if($w = mysqli_query($conn, $wishc)){
     </div>
     <!--beginning of item grid list-->
     <div class="page_wrapper" id="pwcl">
-<div class="nav_title" style="width: -webkit-fill-available;"> 
+		<div class="nav_title" style="width: -webkit-fill-available;"> 
         <div class="title" id="wtcm"><h4 style="margin: 0px; font-size: 40px;">Welcome to the Community Marketplace</h4>
         <div class="desc" style="font-size: 16px; width: 580px; margin: auto; padding-top: 12px; color: #fffacd">You can browse the marketplace to find items that community members are selling or you can upload your own items for sale</div>
-
-</div>
+		</div>
         </div>
         <div class="grid" id="comlandgrid">
             <a href="community.php">
