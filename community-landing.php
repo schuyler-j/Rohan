@@ -93,7 +93,7 @@ if($w = mysqli_query($conn, $wishc)){
     <div class="page_wrapper" id="pwcl">
 <div class="nav_title" style="width: -webkit-fill-available;"> 
         <div class="title" id="wtcm"><h4 style="margin: 0px; font-size: 40px;">Welcome to the Community Marketplace</h4>
-        <div class="desc" style="font-size: 16px; width: 580px; margin: auto; padding-top: 12px">You can browse the marketplace to find items that community members are selling or you can upload your own items for sale</div>
+        <div class="desc" style="font-size: 16px; width: 580px; margin: auto; padding-top: 12px; color: #fffacd">You can browse the marketplace to find items that community members are selling or you can upload your own items for sale</div>
 
 </div>
         </div>

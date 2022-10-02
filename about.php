@@ -55,7 +55,7 @@
 <?php require_once "db/dbconn.inc.php" ?>
 
     <div class="top_third">
-        <div class="menu_container">
+        <div id="mc" class="menu_container">
             <h1 class="menu_title_s"><a href="index.php">SENIOR</a></h1>
         </div>
         <div class="nav" id="nav_bottom">
@@ -82,7 +82,6 @@
     </div>
 
     <div class="page_wrapper">
-
         <div class="home_body" id="news" style="width:1500px; height:1200px;">
             <div class="about_menu_container">
                 <h1 style="text-align:center; font-size:55px; color:white">About Us</h1>
