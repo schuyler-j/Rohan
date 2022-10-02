@@ -43,15 +43,9 @@
 </head>
 
 <body>
-    <?php session_start(); ?>
     <div class="top_third">
         <div class="menu_container">
             <h1 class="menu_title_s"><a href="index.php">SENIOR</a></h1>
-            <!--
-        <div class="menu_title_s" id="logo">
-            <img src="images/home_banner.png" width="40%">
-        </div>
-        -->
         </div>
         <div class="nav" id="nav_bottom">
             <div class="nav_list">
