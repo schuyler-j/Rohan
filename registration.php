@@ -79,7 +79,7 @@
 ?>
     <div class="page_wrapper">
         <div class="form_wrapper">
-			<form action=confirm.php method="POST">
+            <form action="confirm.php" method="POST">
                 <ul class="item_list" id="login_form">
                     <li><div class="sub_heading" style="font-size:38px">Create an Account!</div></li>
                     <li><div class="inner_form_section">
@@ -104,7 +104,11 @@
                     <li class="pname_title"><b>Create a Password</b></li>
                     <li><div class="desc"><i>Create a strong password to secure your account</i></div></li>
                     <li><div class="password_block">
+<<<<<<< HEAD
                             <input name='password' type="password" placeholder="" id="pword" value="" required></input>
+=======
+                            <input name='password' type="password" placeholder="" id="pword" required></input>
+>>>>>>> fa3b41d2144549e05ec8a42ce6029da50cb3b70a
                             <button type="button" id="show_password" onclick="ShowPassword()"><img src="images/eye.png"></img></button>
                         </div></li>
                     <li class="pname_title"><b>Confirm Password</b></li>

@@ -24,7 +24,7 @@ session_start();
         <div class="nav" id="nav_bottom">
             <div class="nav_list">
                 <img src="images/watchlist.png"/>
-                <a class="nav_links" href="wishlist.php">Wishlist</a>
+                <a class="nav_links" href="wishlist.php">Wishlist<?php echo " (" . $_SESSION["wishcount"] . ")"?></a>
                 <img src="images/cart.png"/>
                 <a class="nav_links" ><div style="text-decoration:underline; color:#222;">My Cart</div></a>
                 <img src="images/checkout.png"/>

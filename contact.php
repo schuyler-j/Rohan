@@ -1,30 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<title>About</title>
-<meta charset="UTF-8" />
-<meta name="author" content="TUJ_Rohan" />
-<link rel="stylesheet" href="styles/style.css" />
-<!-- <link rel="stylesheet" href="styles/about.css" /> -->
-<link rel="icon" href="images/favicon.png">
-<script src="scripts/script.js" defer></script>
+    <title>About</title>
+    <meta charset="UTF-8" />
+    <meta name="author" content="TUJ_Rohan" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <!-- <link rel="stylesheet" href="styles/about.css" /> -->
+    <link rel="icon" href="images/favicon.png">
+    <script src="scripts/script.js" defer></script>
+
+    <!-- testing column categories -->
+    <style>
+		#contact_btn{
+		}
+		#mailtonav{
+		    margin-top: 12px;
+		}
+		.row_contact{
+			display: inline-flex;
+		}
+		.row_contact h2{
+		    margin-bottom: 2px;
+		}
+        .column-left {
+            height: 300px;
+		    width: 50%;
+		    text-align: center;
+        }
+        .column-right {
+            float: right;
+            width: 50%;
+        }
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
 </head>
 
 <body>
-    <?php session_start(); ?>
-<div class="top_third">
-    <div id="mc" class="menu_container">
-        <h1 class="menu_title_s">SENIOR</h1>
-        <!--
-        <div class="menu_title_s" id="logo">
-            <img src="images/home_banner.png" width="40%">
+<?php require_once "db/dbconn.inc.php" ?>
+    <div class="top_third">
+        <div id="mc" class="menu_container">
+            <h1 class="menu_title_s"><a href="index.php">SENIOR</a></h1>
         </div>
-        -->
-    </div>
         <div class="nav" id="nav_bottom">
             <div class="nav_list">
                 <img src="images/watchlist.png">
-                <a class="nav_links" href="wishlist.php">Wishlist</a>
+                <a class="nav_links" href="wishlist.php">Wishlist<?php echo " (" . $_SESSION["wishcount"] . ")" ?></a>
                 <img src="images/cart.png">
                 <a class="nav_links" href="cart.php">My Cart</a>
                 <img src="images/checkout.png">
@@ -42,28 +67,50 @@
                 <li class="list"><a href="contact.php" id="selected"><span class="media_text">Contact</span></a></li>
             </ul>
         </div>
-</div>
-
-<div class = "title">
-        <h2>Contact Us</h2>
-        <div>
-            <p>
-                <span>Ipsum elit ad sint anim. </span>
-                <span>Velit sint qui ipsum amet ex cupidatat minim non sunt esse enim. </span>
-                <span>Tempor fugiat voluptate eiusmod dolore eu irure elit.</span> 
-                <span>Nostrud adipisicing nulla adipisicing sunt eiusmod occaecat. </span>
-                <span>Consectetur excepteur velit culpa deserunt sit. </span>
-            </p>
-            <p>
-                <span>Reprehenderit ea cillum sit aute fugiat sit minim labore tempor magna amet reprehenderit. </span>
-                <span>Mollit nisi laborum velit pariatur quis aliquip nostrud consectetur pariatur anim amet ipsum sit sit. </span>
-                <span>In eiusmod reprehenderit ipsum fugiat. </span>
-                <span>Laboris elit ut et ullamco esse et voluptate esse eu. </span>
-                <span>Adipisicing deserunt eu id voluptate sint aliqua reprehenderit aliquip aute culpa. </span>
-                <span>Ea aliqua adipisicing aute esse nulla esse cupidatat nostrud pariatur qui ex. </span>
-                <span>Proident sunt dolore non id voluptate. </span>
-                <span>Cillum do in tempor veniam reprehenderit excepteur ipsum pariatur excepteur. </span>
-            </p>    
-        </div>
     </div>
+    <div class="page_wrapper">
+
+        <div class="home_body" id="news" style="width:1500px; height:650px;">
+            <div class="row_contact">
+                <div class="column-left">
+                    <div class="title">
+                        <h2>Contact Us</h2>
+                    </div>
+                    <span style="font-size: 30px; ">Have some queries? Use the form on the side with your inquiry or send a direct email to <a class="nav_links" id="mailtonav" href="mailto:senior@senior.com.au">senior@senior.com.au</a></span>
+                </div>
+
+                <div class="column-right">
+                    <form action="confirm.php" method="GET">
+                        <ul class="item_list" id="contact_items">
+                            <li>
+                                <div class="inner_form_section">
+                                    <div>
+                                        <b>First Name</b>
+                                        <input type="text" placeholder="" id="fname" required style="width:70%"></input>
+                                    </div>
+
+                                    <div>
+                                        <b>Last Name</b>
+                                        <input type="text" placeholder="" id="lname" required style="width:70%"></input>
+                                    </div>
+
+                                </div>
+                            </li>
+
+                            <li class="pname_title"><b>E-mail Address</b></li>
+                            <li><input type="email" placeholder="" id="emailaddr" required style="width:95%"></input></li>
+                            <br />
+                            <li class="pname_title"><b>Message</b></li>
+                            <li><textarea name="text1" id="lname" cols="40" rows="5" style="width:95%" ></textarea></li>
+                            <br />
+                            <li><input type="submit" class="button" id="atc" style="width: 50%;" value="Submit"></input></li>
+                        </ul>
+                    </form>
+                </div>
+            </div>
+
+
+
+        </div>
+
 </body>

@@ -1,30 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<title>About</title>
-<meta charset="UTF-8" />
-<meta name="author" content="TUJ_Rohan" />
-<link rel="stylesheet" href="styles/style.css" />
-<!-- <link rel="stylesheet" href="styles/about.css" /> -->
-<link rel="icon" href="images/favicon.png">
-<script src="scripts/script.js" defer></script>
+    <title>About</title>
+    <meta charset="UTF-8" />
+    <meta name="author" content="TUJ_Rohan" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <!-- <link rel="stylesheet" href="styles/about.css" /> -->
+    <link rel="icon" href="images/favicon.png">
+    <script src="scripts/script.js" defer></script>
+    <style>
+        .row {
+            display: flex;
+            padding-top: 50px;
+        }
+        .column {
+            flex: 50%;
+            padding: 10px;
+        }
+        .about_menu_container {
+            margin: auto;
+            padding-top: 32px;
+            padding-bottom: 2px;
+            background-color: #465343;
+            box-shadow: 0px 1px 8px 0px #222;
+            /* display: inline-flex; */
+            flex-wrap: wrap;
+            flex-direction: row;
+            align-items: center;
+            /* justify-content: space-around; */
+            height: auto;
+            width: 100%;
+        }
+    </style>
 </head>
 
 <body>
-    <?php session_start(); ?>
-<div class="top_third">
-    <div id="mc" class="menu_container">
-        <h1 class="menu_title_s">SENIOR</h1>
-        <!--
-        <div class="menu_title_s" id="logo">
-            <img src="images/home_banner.png" width="40%">
+<?php require_once "db/dbconn.inc.php" ?>
+
+    <div class="top_third">
+        <div id="mc" class="menu_container">
+            <h1 class="menu_title_s"><a href="index.php">SENIOR</a></h1>
         </div>
-        -->
-    </div>
         <div class="nav" id="nav_bottom">
             <div class="nav_list">
                 <img src="images/watchlist.png">
-                <a class="nav_links" href="wishlist.php">Wishlist</a>
+                <a class="nav_links" href="wishlist.php">Wishlist<?php echo " (" . $_SESSION["wishcount"] . ")" ?></a>
                 <img src="images/cart.png">
                 <a class="nav_links" href="cart.php">My Cart</a>
                 <img src="images/checkout.png">
@@ -42,28 +63,46 @@
                 <li class="list"><a href="contact.php"><span class="media_text">Contact</span></a></li>
             </ul>
         </div>
-</div>
+    </div>
 
-    <div class = "title">
-        <h2>About Us</h2>
-        <div>
-            <p>
-                <span>Ipsum elit ad sint anim. </span>
-                <span>Velit sint qui ipsum amet ex cupidatat minim non sunt esse enim. </span>
-                <span>Tempor fugiat voluptate eiusmod dolore eu irure elit.</span> 
-                <span>Nostrud adipisicing nulla adipisicing sunt eiusmod occaecat. </span>
-                <span>Consectetur excepteur velit culpa deserunt sit. </span>
-            </p>
-            <p>
-                <span>Reprehenderit ea cillum sit aute fugiat sit minim labore tempor magna amet reprehenderit. </span>
-                <span>Mollit nisi laborum velit pariatur quis aliquip nostrud consectetur pariatur anim amet ipsum sit sit. </span>
-                <span>In eiusmod reprehenderit ipsum fugiat. </span>
-                <span>Laboris elit ut et ullamco esse et voluptate esse eu. </span>
-                <span>Adipisicing deserunt eu id voluptate sint aliqua reprehenderit aliquip aute culpa. </span>
-                <span>Ea aliqua adipisicing aute esse nulla esse cupidatat nostrud pariatur qui ex. </span>
-                <span>Proident sunt dolore non id voluptate. </span>
-                <span>Cillum do in tempor veniam reprehenderit excepteur ipsum pariatur excepteur. </span>
-            </p>    
+    <div class="page_wrapper">
+        <div class="home_body" id="news" style="width:1500px; height:1200px;">
+            <div class="about_menu_container">
+                <h1 style="text-align:center; font-size:55px; color:white;">About Us</h1>
+            </div>
+            <div class="row">
+                <div class="column">
+                    <div class="sub_heading">
+                        <h2 style="font-size: 40px; text-align:center">WHO WE ARE</h2>
+                    </div>
+                    <p>
+                        <span style="font-size: 20px;">SENIOR is an online marketplace launched in 2022 dedicated to offer recreational equipments to seniors.</span>
+                    </p>
+                </div>
+
+                <div class="column">
+                    <div class='block_1'>
+                        <img src='images/greeting_2.png' style="display:block; margin-left:auto; margin-right:auto; width:70%;" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column">
+                    <div class='block_1'>
+                        <img src='images/greeting_2.png' style="display:block; margin-left:auto; margin-right:auto; width:70%; " />
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="sub_heading">
+                        <h2 style="font-size: 40px; text-align:center; padding-top:30px">OUR GOALS</h2>
+                    </div>
+                    <p>
+                        <span style="font-size: 20px;">Our goal is to provide a easy method of buying, selling and trading equipments with seniors, acting as the method of encouraging outdoor recreation for grey nomads.</span>
+                    </p>
+                </div>
+
+            </div>
+
         </div>
     </div>
 </body>

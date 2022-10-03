@@ -24,7 +24,7 @@ session_start();
         <div class="nav" id="nav_bottom">
             <div class="nav_list">
                 <img src="images/watchlist.png" />
-                <a class="nav_links" href="wishlist.php"></a>
+                <a class="nav_links" href="wishlist.php">Wishlist<?php echo " (" . $_SESSION["wishcount"] . ")"?></a>
                 <img src="images/cart.png" />
                 <?php
                 if (isset($_SESSION["active"]) && $_SESSION["active"] === true) {
