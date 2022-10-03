@@ -91,7 +91,6 @@ if($w = mysqli_query($conn, $wishc)){
         <div class="title" id="wtcm"><h4 style="margin: 0px; font-size: 40px;">Welcome to the Community Marketplace</h4>
         <div class="desc" style="font-size: 16px; width: 580px; margin: auto; padding-top: 12px; color: #fffacd">You can browse the marketplace to find items that community members are selling or you can upload your own items for sale</div>
 		</div>
-        </div>
         <div class="grid" id="comlandgrid">
             <a href="community.php">
             <div class="item_list_wrapper" id="cardA">
