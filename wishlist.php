@@ -73,7 +73,7 @@ session_start();
         <div class="nav" id="nav_top">
             <ul class="main_menu">
                 <li class="list"><a href="index.php"><span class="media_text">Home</span></a></li>
-                <li class="list"><a href="community-landing.php" id="selected"><span class="media_text">Community Marketplace</span></a></li>
+                <li class="list"><a href="community-landing.php"><span class="media_text">Community Marketplace</span></a></li>
                 <li class="list"><a href="shopping.php"><span class="media_text">Shopping</span></a></li>
                 <li class="list"><a href="about.php"><span class="media_text">About</span></a></li>
                 <li class="list"><a href="contact.php"><span class="media_text">Contact</span></a></li>
@@ -132,7 +132,7 @@ echo "<br/>";
 echo "<a href='index.php'>Home</a>";
 }else{
     echo "<div style='padding-bottom:80px;'>";
-    echo "<h4>empty</h4>";
+    echo "<h4 style=font-size:32px>empty</h4>";
     echo "<a style='color:#fff;' href='index.php'>Home</a>";
     echo "</div>";
 }

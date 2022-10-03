@@ -98,6 +98,7 @@ if($w = mysqli_query($conn, $wishc)){
             </ul>
         </div>
     </div>
+	<div class="overlay"></div>
     <!--beginning of item grid list-->
     <div class="page_wrapper">
         <div class="side_navbar">

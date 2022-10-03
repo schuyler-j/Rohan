@@ -64,6 +64,11 @@
 		$streetaddress = $_POST['streetaddress'];
 		$postcode = $_POST['postcode'];
 		$dob = $_POST['dob'];
+
+		$sql = "INSERT INTO `users` (`UserID`, `FirstName`, `LastName`, `DOB`, `Email`, `Address`, `CreditCard`, `Username`, `Password`, `sessionID`, `postcode`) VALUES (CONNECTION_ID()+CONNECTION_ID(), '$firstname', '$lastname', '$dob', '$emailaddress', '$streetaddress', NULL, '$username', SHA1($password), NULL, '$postcode');";
+		$statement = mysqli_stmt_init($conn);
+		mysqli_stmt_prepare($statement, $sql);
+		mysqli_stmt_execute($statement);
 	}
 
 ?>

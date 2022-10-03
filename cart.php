@@ -16,7 +16,7 @@ require_once "db/dbconn.inc.php";
 session_start();
 */
 ?>
-<body>
+<body class="cart_body">
     <div class="top_third">
         <div id="mc" class="menu_container">
             <h1 class="menu_title_s"><a href="index.php">SENIOR</a></h1>
