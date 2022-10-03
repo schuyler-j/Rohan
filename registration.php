@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="styles/footer.css" />
 <link rel="icon" href="images/favicon.png">
 <script src="scripts/script.js" defer></script>
+<script src="scripts/password.js" defer></script>
 </head>
 
 
@@ -64,17 +65,21 @@
 		$streetaddress = $_POST['streetaddress'];
 		$postcode = $_POST['postcode'];
 		$dob = $_POST['dob'];
+		$passconfirm = $_POST['pass-confirm'];
 
 		$sql = "INSERT INTO `users` (`UserID`, `FirstName`, `LastName`, `DOB`, `Email`, `Address`, `CreditCard`, `Username`, `Password`, `sessionID`, `postcode`) VALUES (CONNECTION_ID()+CONNECTION_ID(), '$firstname', '$lastname', '$dob', '$emailaddress', '$streetaddress', NULL, '$username', SHA1($password), NULL, '$postcode');";
 		$statement = mysqli_stmt_init($conn);
 		mysqli_stmt_prepare($statement, $sql);
-		mysqli_stmt_execute($statement);
+		if($passconfirm == $password){
+			mysqli_stmt_execute($statement);
+		}else{
+		}
 	}
 
 ?>
     <div class="page_wrapper">
         <div class="form_wrapper">
-            <form action="confirm.php" method="POST">
+			<form action=confirm.php method="POST">
                 <ul class="item_list" id="login_form">
                     <li><div class="sub_heading" style="font-size:38px">Create an Account!</div></li>
                     <li><div class="inner_form_section">
@@ -91,6 +96,7 @@
 
                     </div></li>
 
+
                     <li class="pname_title"><b>Username</b></li>
                     <li><div class="desc"><i>Create a username people can recognise you</i></div></li>
                     <li><input name='username' type="text" placeholder="" id="uname" required></input></li>
@@ -98,12 +104,13 @@
                     <li class="pname_title"><b>Create a Password</b></li>
                     <li><div class="desc"><i>Create a strong password to secure your account</i></div></li>
                     <li><div class="password_block">
-                            <input name='password' type="password" placeholder="" id="pword" required></input>
+                            <input name='password' type="password" placeholder="" id="pword" value="" required></input>
                             <button type="button" id="show_password" onclick="ShowPassword()"><img src="images/eye.png"></img></button>
                         </div></li>
                     <li class="pname_title"><b>Confirm Password</b></li>
+                    <li><div class="desc" id="passblock"><b>Passwords Must Match!</b></div></li>
                     <li><div class="password_block">
-                            <input type="password" placeholder="" id="pword" required></input>
+                            <input name='pass-confirm' type="password" placeholder="" id="pmatch" value="" required></input>
                         </div></li>
 
                     <li class="pname_title"><b>E-mail Address</b></li>

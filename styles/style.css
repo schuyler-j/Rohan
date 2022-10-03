@@ -681,7 +681,7 @@ a:hover.nav_links{
 }
 
 
-#uname, #pword, #fname, #lname, #streetaddr, #emailaddr, #postcode, #dob{
+#uname, #pword, #fname, #lname, #streetaddr, #emailaddr, #postcode, #dob, #pmatch{
     padding: 10px;
     min-width: 90%;
     font-size: 28px;
@@ -939,4 +939,10 @@ transition: 0.3s;
 
 .overlay{
 
+}
+
+#passblock{
+	display: none;
+	font-size: 18px;
+	color: #d73838;
 }
