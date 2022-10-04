@@ -85,7 +85,8 @@
                 </div>
 
                 <div class="column-right">
-                    <form action="confirm.php" method="GET">
+                    <form action="#" method="GET"> 
+                        <!-- this may need a new php to display 'Message Sent.' -->
                         <ul class="item_list" id="contact_items">
                             <li>
                                 <div class="inner_form_section">
