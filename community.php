@@ -34,7 +34,7 @@ if($w = mysqli_query($conn, $wishc)){
 */
 ?>
 
-<body >
+<body>
     <div class="top_third">
         <div id="mc" class="menu_container">
             <h1 class="menu_title_s"><a href="index.php">SENIOR</a></h1>
@@ -42,14 +42,14 @@ if($w = mysqli_query($conn, $wishc)){
         <div class="nav" id="nav_bottom">
             <div class="nav_list">
                 <img src="images/watchlist.png" />
-                <a class="nav_links" href="wishlist.php">Wishlist<?php echo " (" . $_SESSION["wishcount"] . ")"?></a>
+                <a class="nav_links" href="wishlist.php">Wishlist<?php echo " (" . $_SESSION["wishcount"] . ")" ?></a>
                 <img src="images/cart.png" />
                 <?php
                 if (isset($_SESSION["active"]) && $_SESSION["active"] === true) {
                     echo "
                         <a class='nav_links' href='cart.php'>My Cart</a>
                     ";
-                }else{
+                } else {
 
                     echo "
                         <a class='nav_links' href='error.php?msg=please%20login%20to%20view%20cart'>My Cart</a>
@@ -98,7 +98,7 @@ if($w = mysqli_query($conn, $wishc)){
             </ul>
         </div>
     </div>
-	<div class="overlay"></div>
+    <div class="overlay"></div>
     <!--beginning of item grid list-->
     <div class="page_wrapper">
         <div class="side_navbar">
@@ -120,9 +120,9 @@ if($w = mysqli_query($conn, $wishc)){
                     mysqli_stmt_execute($statement);
                     mysqli_stmt_execute($update_st);
                 }
-                
-                
-                if(isset($_GET["action"]) && $_GET["action"] == "aw"){
+
+
+                if (isset($_GET["action"]) && $_GET["action"] == "aw") {
                     $_SESSION["productid"] = $_GET["id"];
                     $productid = $_SESSION["productid"];
                     $w = "INSERT INTO `wishlists` (`wishID`, `userID`, `ProductID`) VALUES (CONNECTION_ID(), $userid, $productid);";
@@ -305,7 +305,46 @@ if($w = mysqli_query($conn, $wishc)){
         <a href="community.php">^ Back to Top ^</a>
     </div>
     <div class="footer">
-        <h4>Thomas Hobbs | Udall Liao | Jay Schuyler</h4>
+        <div class="grid" id="footer_grid">
+            <div class="col" id="ft_grid_first">
+                <h4>CONTACT</h4>
+                <div>
+                    <h5>Contact us at the following email.</h5>
+                    <a href="mailto:senior@senior.com.au">senior@senior.com.au</a>
+                </div>
+            </div>
+            <div class="col">
+                <h4>LINKS</h4>
+                <div style="display: grid">
+                    <a href="index.php">HOME</a>
+                    <br />
+                    <a href="community-landing.php">COMMUNITY</a>
+                    <br />
+                    <a href="shopping.php">SHOPPING</a>
+                    <br />
+                    <a href="about.php">ABOUT</a>
+                    <br />
+                    <a href="login.php">LOGIN</a>
+                </div>
+            </div>
+            <div class="col">
+                <h4>SUPPORT</h4>
+                <div><a href="help.php">F.A.Q</a></div>
+            </div>
+            <div class="col" id="ft_grid_last">
+                <h4>DISCLAIMER</h4>
+                <div class="link_box">
+                    <p>This website has been created for UX eval purposes.</p>
+                    <p>Products shown are examples. Credit information is stored temporarily.</p>
+                    <p>Transactions are not final.</p>
+                    <img style="height:80px" src="images/logologo.png" />
+                    <p><b>© 2022</b> SENIOR WEB SYS</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer_bt">
+            <h4>Thomas Hobbs | Udall Liao | Jay Schuyler</h4>
+        </div>
     </div>
 </body>
 
