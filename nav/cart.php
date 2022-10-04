@@ -43,7 +43,7 @@ session_start();
         </div>
         <div class="nav" id="nav_top">
             <ul class="main_menu">
-                <li class="list"><a href="../index/index.php"><span class="media_text">Home</span></a></li>
+                <li class="list"><a href="../home/index.php"><span class="media_text">Home</span></a></li>
                 <li class="list"><a href="../community/community-landing.php"><span class="media_text">Community Marketplace</span></a></li>
                 <li class="list"><a href="../home/shopping.php"><span class="media_text">Shopping</span></a></li>
                 <li class="list"><a href="../home/about.php"><span class="media_text">About</span></a></li>
