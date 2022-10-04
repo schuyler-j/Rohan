@@ -12,26 +12,31 @@
 
     <!-- testing column categories -->
     <style>
-		#contact_btn{
-		}
-		#mailtonav{
-		    margin-top: 12px;
-		}
-		.row_contact{
-			display: inline-flex;
-		}
-		.row_contact h2{
-		    margin-bottom: 2px;
-		}
+        #contact_btn {}
+
+        #mailtonav {
+            margin-top: 12px;
+        }
+
+        .row_contact {
+            display: inline-flex;
+        }
+
+        .row_contact h2 {
+            margin-bottom: 2px;
+        }
+
         .column-left {
             height: 300px;
-		    width: 50%;
-		    text-align: center;
+            width: 50%;
+            text-align: center;
         }
+
         .column-right {
             float: right;
             width: 50%;
         }
+
         .row:after {
             content: "";
             display: table;
@@ -41,7 +46,7 @@
 </head>
 
 <body>
-<?php require_once "db/dbconn.inc.php" ?>
+    <?php require_once "db/dbconn.inc.php" ?>
     <div class="top_third">
         <div id="mc" class="menu_container">
             <h1 class="menu_title_s"><a href="index.php">SENIOR</a></h1>
@@ -101,7 +106,7 @@
                             <li><input type="email" placeholder="" id="emailaddr" required style="width:95%"></input></li>
                             <br />
                             <li class="pname_title"><b>Message</b></li>
-                            <li><textarea name="text1" id="lname" cols="40" rows="5" style="width:95%" ></textarea></li>
+                            <li><textarea name="text1" id="lname" cols="40" rows="5" style="width:95%"></textarea></li>
                             <br />
                             <li><input type="submit" class="button" id="atc" style="width: 50%;" value="Submit"></input></li>
                         </ul>
@@ -112,31 +117,32 @@
 
 
         </div>
- <div class="footer">
+        <div class="footer">
         <div class="grid" id="footer_grid">
             <div class="col" id="ft_grid_first">
                 <h4>CONTACT</h4>
-                <div><h5>Contact us at the following email.</h5>
+                <div>
+                    <h5>Contact us at the following email.</h5>
                     <a href="mailto:senior@senior.com.au">senior@senior.com.au</a>
                 </div>
             </div>
             <div class="col">
                 <h4>LINKS</h4>
                 <div style="display: grid">
-                    <a href="#">HOME</a>
-                    <br/>
-                    <a href="#">COMMUNITY</a>
-                    <br/>
-                    <a href="#">SHOPPING</a>
-                    <br/>
-                    <a href="#">ABOUT</a>
-                    <br/>
-                    <a href="#">LOGIN</a>
+                    <a href="index.php">HOME</a>
+                    <br />
+                    <a href="community-landing.php">COMMUNITY</a>
+                    <br />
+                    <a href="shopping.php">SHOPPING</a>
+                    <br />
+                    <a href="about.php">ABOUT</a>
+                    <br />
+                    <a href="login.php">LOGIN</a>
                 </div>
             </div>
             <div class="col">
                 <h4>SUPPORT</h4>
-                <div><a href="#">F.A.Q</a></div>
+                <div><a href="help.php">F.A.Q</a></div>
             </div>
             <div class="col" id="ft_grid_last">
                 <h4>DISCLAIMER</h4>
@@ -144,7 +150,7 @@
                     <p>This website has been created for UX eval purposes.</p>
                     <p>Products shown are examples. Credit information is stored temporarily.</p>
                     <p>Transactions are not final.</p>
-                    <img style="height:80px" src="images/logologo.png"/>
+                    <img style="height:80px" src="images/logologo.png" />
                     <p><b>© 2022</b> SENIOR WEB SYS</p>
                 </div>
             </div>
@@ -154,3 +160,4 @@
         </div>
     </div>
 </body>
+</html>
