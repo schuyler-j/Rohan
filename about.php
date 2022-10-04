@@ -32,12 +32,20 @@
 </head>
 
 <body>
+<<<<<<< HEAD
 <?php require_once "db/dbconn.inc.php" ?>
 
     <div class="top_third">
         <div class="menu_container">
             <h1 class="menu_title_s"><a href="index.php">SENIOR</a></h1>
             <!--
+=======
+    <?php session_start(); ?>
+<div class="top_third">
+    <div id="mc" class="menu_container">
+        <h1 class="menu_title_s">SENIOR</h1>
+        <!--
+>>>>>>> main
         <div class="menu_title_s" id="logo">
             <img src="images/home_banner.png" width="40%">
         </div>
