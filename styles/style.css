@@ -818,6 +818,8 @@ input[type = submit]{
     color: beige;
 }
 
+input[type = file]{
+}
 
 input[type = submit]:hover{
     text-shadow: none;
@@ -986,7 +988,6 @@ transition: 0.3s;
 	border-top: 2px solid #222;
 	border-left: 2px solid #222;
 }
-
 
 
 
