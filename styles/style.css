@@ -946,3 +946,10 @@ transition: 0.3s;
 	font-size: 18px;
 	color: #d73838;
 }
+
+#faq_list{
+		margin: auto;
+		width: fit-content;
+		border-bott: 1px solid #333;
+
+}
