@@ -4,13 +4,13 @@
 <title>Home</title>
 <meta charset="UTF-8" />
 <meta name="author" content="TUJ_Rohan" />
-<link rel="stylesheet" href="styles/style.css" />
-<link rel="stylesheet" href="styles/footer.css" />
-<link rel="icon" href="images/favicon.png">
-<script src="scripts/script.js" defer></script>
+<link rel="stylesheet" href="../styles/style.css" />
+<link rel="stylesheet" href="../styles/footer.css" />
+<link rel="icon" href="../images/favicon.png">
+<script src="../scripts/script.js" defer></script>
 </head>
 <?php 
-require_once "db/dbconn.inc.php"; 
+require_once "../db/dbconn.inc.php"; 
 
 /*
 session_start();
@@ -21,33 +21,33 @@ session_start();
 <body>
     <div class="top_third">
         <div id="mc" class="menu_container">
-            <h1 class="menu_title_s"><a href="index.php">SENIOR</a></h1>
+            <h1 class="menu_title_s"><a href="../index.php">SENIOR</a></h1>
         </div>
         <div class="nav" id="nav_bottom">
             <div class="nav_list">
-                <img src="images/watchlist.png"/>
-                <a class="nav_links" href="wishlist.php">Wishlist<?php echo " (" . $_SESSION["wishcount"] . ")"?></a>
-                <img src="images/cart.png"/>
+                <img src="../images/watchlist.png"/>
+                <a class="nav_links" href="../nav/wishlist.php">Wishlist<?php echo " (" . $_SESSION["wishcount"] . ")"?></a>
+                <img src="../images/cart.png"/>
                 <?php
                 if (isset($_SESSION["active"]) && $_SESSION["active"] === true) {
                     echo "
-                        <a class='nav_links' href='cart.php'>My Cart</a>
+                        <a class='nav_links' href='../nav/cart.php'>My Cart</a>
                     ";
                 }else{
 
                     echo "
-                        <a class='nav_links' href='error.php?msg=please%20login%20to%20view%20cart'>My Cart</a>
+                        <a class='nav_links' href='../home/error.php?msg=please%20login%20to%20view%20cart'>My Cart</a>
                     ";
                 } ?>
-                <img src="images/checkout.png"/>
-                <a class="nav_links" href="checkout.php">Checkout</a>
-                <img src="images/login.png"/>
+                <img src="../images/checkout.png"/>
+                <a class="nav_links" href="../nav/checkout.php">Checkout</a>
+                <img src="../images/login.png"/>
                 <?php 
                 if(isset($_SESSION["active"]) && $_SESSION["active"] === true){
-                    echo "<a class = 'nav_links' href='logout.php'>Logout</a>";
+                    echo "<a class = 'nav_links' href='../home/logout.php'>Logout</a>";
                 }else{
                     echo 
-                    "<a class = 'nav_links' href='login.php'>Login</a>
+                    "<a class = 'nav_links' href='../nav/login.php'>Login</a>
                     ";
                 }
                 ?>
@@ -56,10 +56,10 @@ session_start();
         <div class="nav" id="nav_top">
             <ul class="main_menu">
                 <li class="list"><a href="#" id="selected"><span class="media_text">Home</span></a></li>
-                <li class="list"><a href="community/community.php"><span class="media_text">Community Marketplace</span></a></li>
-                <li class="list"><a href="shopping.php"><span class="media_text">Shopping</span></a></li>
-                <li class="list"><a href="about.php"><span class="media_text">About</span></a></li>
-                <li class="list"><a href="contact.php"><span class="media_text">Contact</span></a></li>
+                <li class="list"><a href="../community/community-landing.php"><span class="media_text">Community Marketplace</span></a></li>
+                <li class="list"><a href="../home/shopping.php"><span class="media_text">Shopping</span></a></li>
+                <li class="list"><a href="../home/about.php"><span class="media_text">About</span></a></li>
+                <li class="list"><a href="../home/contact.php"><span class="media_text">Contact</span></a></li>
             </ul>
         </div>
     </div>
@@ -93,10 +93,10 @@ session_start();
                 </div>
                 <div class='grid'>
                     <div class='block_1'>
-                        <img src='images/greeting_2.png'/>
-                        <a class='button' type='submit'  href='registration.php' style='width: 370px'>JOIN NOW</a>
+                        <img src='../images/greeting_2.png'/>
+                        <a class='button' type='submit'  href='../home/registration.php' style='width: 370px'>JOIN NOW</a>
                     </div>
-                        <img id='cursor' src='images/cursor.png'/>
+                        <img id='cursor' src='../images/cursor.png'/>
                 </div>
                 <div class='about'>
                     <div class='sub_heading'>
@@ -145,7 +145,7 @@ session_start();
                         echo "<h3 class='item_list_title'>$title</h3>";
                         echo "<div class='item_list_wrapper'>";
                         echo "<div class='content'>";
-                        echo "<img src='images/$img'/>";
+                        echo "<img src='../images/$img'/>";
                         echo "<div class='block1'>";
                         echo "<p>$content</p>";
                         echo "<div class='date'>$date</div>";
@@ -201,7 +201,7 @@ session_start();
                     <p>This website has been created for UX eval purposes.</p>
                     <p>Products shown are examples. Credit information is stored temporarily.</p>
                     <p>Transactions are not final.</p>
-                    <img style="height:80px" src="images/logologo.png"/>
+                    <img style="height:80px" src="../images/logologo.png"/>
                     <p><b>© 2022</b> SENIOR WEB SYS</p>
                 </div>
             </div>

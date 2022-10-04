@@ -4,13 +4,13 @@
 <title>Cart</title>
 <meta charset="UTF-8" />
 <meta name="author" content="TUJ_Rohan" />
-<link rel="stylesheet" href="styles/style.css" />
-<link rel="stylesheet" href="styles/footer.css" />
-<link rel="icon" href="images/favicon.png">
-<script src="scripts/script.js" defer></script>
+<link rel="stylesheet" href="../styles/style.css" />
+<link rel="stylesheet" href="../styles/footer.css" />
+<link rel="icon" href="../images/favicon.png">
+<script src="../scripts/script.js" defer></script>
 </head>
 <?php 
-require_once "db/dbconn.inc.php"; 
+require_once "../db/dbconn.inc.php"; 
 
 /*
 session_start();
@@ -19,23 +19,23 @@ session_start();
 <body>
     <div class="top_third">
         <div id="mc" class="menu_container">
-            <h1 class="menu_title_s"><a href="index.php">SENIOR</a></h1>
+            <h1 class="menu_title_s"><a href="../home/index.php">SENIOR</a></h1>
         </div>
         <div class="nav" id="nav_bottom">
             <div class="nav_list">
-                <img src="images/watchlist.png"/>
-                <a class="nav_links" href="wishlist.php">Wishlist</a>
+                <img src="../images/watchlist.png"/>
+                <a class="nav_links" href="../nav/wishlist.php">Wishlist</a>
                 <img src="images/cart.png"/>
-                <a class="nav_links" href="cart.php">Cart</a>
+                <a class="nav_links" href="../nav/cart.php">Cart</a>
                 <img src="images/checkout.png"/>
-                <a class="nav_links" href="checkout.php">Checkout</a>
-                <img src='images/login.png'/>                
+                <a class="nav_links" href="../nav/checkout.php">Checkout</a>
+                <img src='../images/login.png'/>                
                 <?php 
                 if(isset($_SESSION["active"]) && $_SESSION["active"] === true){
-                    echo "<a class = 'nav_links' href='logout.php'>Logout</a>";
+                    echo "<a class = 'nav_links' href='../home/logout.php'>Logout</a>";
                 }else{
                     echo 
-                    "<a class = 'nav_links' href='login.php'>Login</a>
+                    "<a class = 'nav_links' href='../nav/login.php'>Login</a>
                     ";
                 }
                 ?>
@@ -43,11 +43,11 @@ session_start();
         </div>
         <div class="nav" id="nav_top">
             <ul class="main_menu">
-                <li class="list"><a href="index.php"><span class="media_text">Home</span></a></li>
-                <li class="list"><a href="community-landing.php"><span class="media_text">Community Marketplace</span></a></li>
-                <li class="list"><a href="shopping.php"><span class="media_text">Shopping</span></a></li>
-                <li class="list"><a href="about.php"><span class="media_text">About</span></a></li>
-                <li class="list"><a href="contact.php"><span class="media_text">Contact</span></a></li>
+                <li class="list"><a href="../home/index.php"><span class="media_text">Home</span></a></li>
+                <li class="list"><a href="../community/community-landing.php"><span class="media_text">Community Marketplace</span></a></li>
+                <li class="list"><a href="../home/shopping.php"><span class="media_text">Shopping</span></a></li>
+                <li class="list"><a href="../home/about.php"><span class="media_text">About</span></a></li>
+                <li class="list"><a href="../home/contact.php"><span class="media_text">Contact</span></a></li>
             </ul>
         </div>
         </div>
@@ -106,7 +106,7 @@ session_start();
                 <ul class="item_list" id="cart_total">
                     <li><div class="sub_heading" style="font-size:25px">Details</div></li>
                     <li class="seller_profile">
-                        <img src='images/profile.png'/><b>Nick</b>
+                        <img src='../images/profile.png'/><b>Nick</b>
                     </li>
                     <li id="estimate">SENIOR member since 2022. 10 Ads.</li>
                         <li><div class="list_of_items"> 
@@ -114,13 +114,13 @@ session_start();
             </div>
             </li>
             <li style="font-size:18px"><b>Location: </b></li>
-            <li id="estimate"><img src='images/location.png'/>Adelaide, South Australia, 5000</li>
+            <li id="estimate"><img src='../images/location.png'/>Adelaide, South Australia, 5000</li>
                     <li id="total" style="font-size:35px"><b>$$$ Negotiable</b></li>
             </br>
-            <li><img src="images/phone.png"/>
+            <li><img src="../images/phone.png"/>
                 <a class="nav_links" href="#">Contact Seller</a></li>
-            <li><img src="images/help.png"/>
-                <a class="nav_links" href="help.php">Help / Report an Issue</a></li>
+            <li><img src="../images/help.png"/>
+                <a class="nav_links" href="../home/help.php">Help / Report an Issue</a></li>
             <li><input class='button' value='Add To Cart' id='atc_input' type='submit'>
             </br>
             </input></li>     
