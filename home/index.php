@@ -10,7 +10,7 @@
 <script src="scripts/script.js" defer></script>
 </head>
 <?php 
-require_once "../db/dbconn.inc.php"; 
+require_once "db/dbconn.inc.php"; 
 
 /*
 session_start();
@@ -44,10 +44,10 @@ session_start();
                 <img src="images/login.png"/>
                 <?php 
                 if(isset($_SESSION["active"]) && $_SESSION["active"] === true){
-                    echo "<a class = 'nav_links' href='../home/logout.php'>Logout</a>";
+                    echo "<a class = 'nav_links' href='logout.php'>Logout</a>";
                 }else{
                     echo 
-                    "<a class = 'nav_links' href='../home/login.php'>Login</a>
+                    "<a class = 'nav_links' href='login.php'>Login</a>
                     ";
                 }
                 ?>

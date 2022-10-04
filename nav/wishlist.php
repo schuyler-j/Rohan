@@ -4,15 +4,15 @@
 <title>Wishlist</title>
 <meta charset="UTF-8" />
 <meta name="author" content="TUJ_Rohan" />
-<link rel="stylesheet" href="styles/style.css" />
-<link rel="stylesheet" href="styles/footer.css" />
-<link rel="icon" href="images/favicon.png">
-<script src="scripts/script.js" defer></script>
+<link rel="stylesheet" href="../styles/style.css" />
+<link rel="stylesheet" href="../styles/footer.css" />
+<link rel="icon" href="../images/favicon.png">
+<script src="../scripts/script.js" defer></script>
 </head>
 
 <body>
 <?php
-require_once "db/dbconn.inc.php";
+require_once "../db/dbconn.inc.php";
 /*
 session_start();
 */
@@ -23,9 +23,9 @@ session_start();
         </div>
         <div class="nav" id="nav_bottom">
             <div class="nav_list">
-                <img src="images/watchlist.png" />
+                <img src="../images/watchlist.png" />
                 <a class="nav_links" href="wishlist.php">Wishlist<?php echo " (" . $_SESSION["wishcount"] . ")"?></a>
-                <img src="images/cart.png" />
+                <img src="../images/cart.png" />
                 <?php
                 if (isset($_SESSION["active"]) && $_SESSION["active"] === true) {
                     echo "
@@ -37,9 +37,9 @@ session_start();
                         <a class='nav_links' href='error.php?msg=please%20login%20to%20view%20cart'>My Cart</a>
                     ";
                 } ?>
-                <img src="images/checkout.png" />
+                <img src="../images/checkout.png" />
                 <a class="nav_links" href="checkout.php">Checkout</a>
-                <img src="images/login.png" />
+                <img src="../images/login.png" />
                 <?php
                 if (isset($_SESSION["active"]) && $_SESSION["active"] === true) {
                     echo "<a class = 'nav_links' href='logout.php'>Logout</a>";
@@ -72,11 +72,11 @@ session_start();
         </div>
         <div class="nav" id="nav_top">
             <ul class="main_menu">
-                <li class="list"><a href="index.php"><span class="media_text">Home</span></a></li>
-                <li class="list"><a href="community-landing.php"><span class="media_text">Community Marketplace</span></a></li>
-                <li class="list"><a href="shopping.php"><span class="media_text">Shopping</span></a></li>
-                <li class="list"><a href="about.php"><span class="media_text">About</span></a></li>
-                <li class="list"><a href="contact.php"><span class="media_text">Contact</span></a></li>
+                <li class="list"><a href="../index.php"><span class="media_text">Home</span></a></li>
+                <li class="list"><a href="../community/community-landing.php"><span class="media_text">Community Marketplace</span></a></li>
+                <li class="list"><a href="../shopping.php"><span class="media_text">Shopping</span></a></li>
+                <li class="list"><a href="../about.php"><span class="media_text">About</span></a></li>
+                <li class="list"><a href="../contact.php"><span class="media_text">Contact</span></a></li>
             </ul>
         </div>
     </div>
@@ -87,7 +87,7 @@ session_start();
 
 <?php
 $total = 0;
-require_once "db/dbconn.inc.php";
+require_once "../db/dbconn.inc.php";
 if(isset($_SESSION["active"]) && $_SESSION["active"] === true){
     $userid = $_SESSION["id"];
     $sql = "SELECT * FROM `wishlists` WHERE userID = $userid;";
