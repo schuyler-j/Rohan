@@ -6,13 +6,13 @@
     <title>Community</title>
     <meta charset="UTF-8" />
     <meta name="author" content="Team_Rohan" />
-    <link rel="stylesheet" href="styles/style.css" />
-    <link rel="stylesheet" href="styles/community.css" />
-    <link rel="icon" href="images/favicon.png">
-    <script src="scripts/script.js" defer></script>
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="../styles/community.css" />
+    <link rel="icon" href="../images/favicon.png">
+    <script src="../scripts/script.js" defer></script>
 </head>
 <?php
-require_once "db/dbconn.inc.php";
+require_once "../db/dbconn.inc.php";
 /*
 session_start();
 */
@@ -39,20 +39,20 @@ if($w = mysqli_query($conn, $wishc)){
 <body >
     <div class="top_third">
         <div id="mc" class="menu_container">
-            <h1 class="menu_title_s"><a href="index.php">SENIOR</a></h1>
+            <h1 class="menu_title_s"><a href="../home/index.php">SENIOR</a></h1>
         </div>
         <div class="nav" id="nav_bottom">
             <div class="nav_list">
-                <img src="images/watchlist.png" />
-                <a class="nav_links" href="wishlist.php">Wishlist<?php echo " (" . $_SESSION["wishcount"] . ")"?></a>
-                <img src="images/cart.png" />
-                <a class="nav_links" href="cart.php">My Cart</a>
-                <img src="images/checkout.png" />
-                <a class="nav_links" href="checkout.php">Checkout</a>
-                <img src="images/login.png" />
+                <img src="../images/watchlist.png" />
+                <a class="nav_links" href="../nav/wishlist.php">Wishlist<?php echo " (" . $_SESSION["wishcount"] . ")"?></a>
+                <img src="../images/cart.png" />
+                <a class="nav_links" href="../nav/cart.php">My Cart</a>
+                <img src="../images/checkout.png" />
+                <a class="nav_links" href="../nav/checkout.php">Checkout</a>
+                <img src="../images/login.png" />
                 <?php
                 if (isset($_SESSION["active"]) && $_SESSION["active"] === true) {
-                    echo "<a class = 'nav_links' href='logout.php'>Logout</a>";
+                    echo "<a class = 'nav_links' href='../home/logout.php'>Logout</a>";
 
                     $product_sql = "SELECT * FROM `products`;";
                     $psql = mysqli_query($conn, $product_sql);
@@ -66,10 +66,10 @@ if($w = mysqli_query($conn, $wishc)){
                     $productid = 0;
                 } else {
                     echo
-                    "<a class = 'nav_links' href='login.php'>Login</a>";
+                    "<a class = 'nav_links' href='../nav/login.php'>Login</a>";
 
-                    $addcart = 'error.php';
-                    $addwish = 'error.php';
+                    $addcart = '../home/error.php';
+                    $addwish = '../home/error.php';
                     $msg = "?msg=Please%20login%20or%20create%20an%20account.";
                 }
                 ?>
@@ -77,11 +77,11 @@ if($w = mysqli_query($conn, $wishc)){
         </div>
         <div class="nav" id="nav_top">
             <ul class="main_menu">
-                <li class="list"><a href="index.php"><span class="media_text">Home</span></a></li>
-                <li class="list"><a href="community-landing.php" id="selected"><span class="media_text">Community Marketplace</span></a></li>
-                <li class="list"><a href="shopping.php"><span class="media_text">Shopping</span></a></li>
-                <li class="list"><a href="about.php"><span class="media_text">About</span></a></li>
-                <li class="list"><a href="contact.php"><span class="media_text">Contact</span></a></li>
+                <li class="list"><a href="../home/index.php"><span class="media_text">Home</span></a></li>
+                <li class="list"><a href="../community/community-landing.php" id="selected"><span class="media_text">Community Marketplace</span></a></li>
+                <li class="list"><a href="../home/shopping.php"><span class="media_text">Shopping</span></a></li>
+                <li class="list"><a href="../home/about.php"><span class="media_text">About</span></a></li>
+                <li class="list"><a href="../home/contact.php"><span class="media_text">Contact</span></a></li>
             </ul>
         </div>
     </div>
@@ -92,22 +92,22 @@ if($w = mysqli_query($conn, $wishc)){
         <div class="desc" style="font-size: 16px; width: 580px; margin: auto; padding-top: 12px; color: #fffacd">You can browse the marketplace to find items that community members are selling or you can upload your own items for sale</div>
 		</div>
         <div class="grid" id="comlandgrid">
-            <a href="community.php">
+            <a href="../community/community.php">
             <div class="item_list_wrapper" id="cardA">
-                <div class="grid_img"><img id="buypng" src="images/buy.png"/></div>
+                <div class="grid_img"><img id="buypng" src="../images/buy.png"/></div>
                 <div class="card_title"><h2>BUY</h2></div>
             </div></a>
             <div class="h_spacer"></div>
-            <a href="community-upload.php">
+            <a href="../community/community-upload.php">
             <div class="item_list_wrapper" id="cardB">
-                <div class="grid_img"><img id="sellpng" src="images/sell.png"/></div>
+                <div class="grid_img"><img id="sellpng" src="../images/sell.png"/></div>
                 <div class="card_title"><h2>SELL</h2></div>
             </div></a>
 
         </div>
     </div>
     <div class="pages" style="text-align: center;">
-        <a href="community.php">^ Back to Top ^</a>
+        <a href="../community/community-landing.php">^ Back to Top ^</a>
     </div>
     <div class="footer">
         <h4>Thomas Hobbs | Udall Liao | Jay Schuyler</h4>

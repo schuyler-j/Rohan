@@ -60,11 +60,11 @@ session_start();
                     $productid = 0;
                 } else {
                     echo
-                    "<a class = 'nav_links' href='login.php'>Login</a>
+                    "<a class = 'nav_links' href='../nav/login.php'>Login</a>
                     ";
 
-                    $addcart = 'error.php';
-                    $addwish = 'error.php';
+                    $addcart = '../home/error.php';
+                    $addwish = '../home/error.php';
                     $msg = "?msg=Please%20login%20or%20create%20an%20account.";
                 }
                 ?>
@@ -129,11 +129,11 @@ $msg = "None";
 echo "<i>" .$msg. "</i>";
 echo "<br/>";
 echo "<br/>";
-echo "<a href='index.php'>Home</a>";
+echo "<a href='../home/index.php'>Home</a>";
 }else{
     echo "<div style='padding-bottom:80px;'>";
     echo "<h4 style=font-size:32px>empty</h4>";
-    echo "<a style='color:#fff;' href='index.php'>Home</a>";
+    echo "<a style='color:#fff;' href='../home/index.php'>Home</a>";
     echo "</div>";
 }
 
@@ -142,7 +142,5 @@ echo "</div>";
 
 ?>
 </div>
-
 </body>
-  
 </html>

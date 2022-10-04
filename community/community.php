@@ -5,13 +5,13 @@
     <title>Community</title>
     <meta charset="UTF-8" />
     <meta name="author" content="Team_Rohan" />
-    <link rel="stylesheet" href="styles/style.css" />
-    <link rel="stylesheet" href="styles/community.css" />
-    <link rel="icon" href="images/favicon.png">
-    <script src="scripts/script.js" defer></script>
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="../styles/community.css" />
+    <link rel="icon" href="../images/favicon.png">
+    <script src="../scripts/script.js" defer></script>
 </head>
 <?php
-require_once "db/dbconn.inc.php";
+require_once "../db/dbconn.inc.php";
 /*
 session_start();
 $_SESSION["wishcount"] = 0;
@@ -37,17 +37,17 @@ if($w = mysqli_query($conn, $wishc)){
 <body >
     <div class="top_third">
         <div id="mc" class="menu_container">
-            <h1 class="menu_title_s"><a href="index.php">SENIOR</a></h1>
+            <h1 class="menu_title_s"><a href="../home/index.php">SENIOR</a></h1>
         </div>
         <div class="nav" id="nav_bottom">
             <div class="nav_list">
-                <img src="images/watchlist.png" />
-                <a class="nav_links" href="wishlist.php">Wishlist<?php echo " (" . $_SESSION["wishcount"] . ")"?></a>
-                <img src="images/cart.png" />
+                <img src="../images/watchlist.png" />
+                <a class="nav_links" href="../nav/wishlist.php">Wishlist<?php echo " (" . $_SESSION["wishcount"] . ")"?></a>
+                <img src="../images/cart.png" />
                 <?php
                 if (isset($_SESSION["active"]) && $_SESSION["active"] === true) {
                     echo "
-                        <a class='nav_links' href='cart.php'>My Cart</a>
+                        <a class='nav_links' href='../nav/cart.php'>My Cart</a>
                     ";
                 }else{
 
@@ -55,12 +55,12 @@ if($w = mysqli_query($conn, $wishc)){
                         <a class='nav_links' href='error.php?msg=please%20login%20to%20view%20cart'>My Cart</a>
                     ";
                 } ?>
-                <img src="images/checkout.png" />
-                <a class="nav_links" href="checkout.php">Checkout</a>
-                <img src="images/login.png" />
+                <img src="../images/checkout.png" />
+                <a class="nav_links" href="../nav/checkout.php">Checkout</a>
+                <img src="../images/login.png" />
                 <?php
                 if (isset($_SESSION["active"]) && $_SESSION["active"] === true) {
-                    echo "<a class = 'nav_links' href='logout.php'>Logout</a>";
+                    echo "<a class = 'nav_links' href='../home/logout.php'>Logout</a>";
 
                     $product_sql = "SELECT * FROM `products`;";
                     $psql = mysqli_query($conn, $product_sql);
@@ -78,11 +78,11 @@ if($w = mysqli_query($conn, $wishc)){
                     $productid = 0;
                 } else {
                     echo
-                    "<a class = 'nav_links' href='login.php'>Login</a>
+                    "<a class = 'nav_links' href='../nav/login.php'>Login</a>
                     ";
 
-                    $addcart = 'error.php';
-                    $addwish = 'error.php';
+                    $addcart = '../home/error.php';
+                    $addwish = '../home/error.php';
                     $msg = "?msg=Please%20login%20or%20create%20an%20account.";
                 }
                 ?>
@@ -90,11 +90,11 @@ if($w = mysqli_query($conn, $wishc)){
         </div>
         <div class="nav" id="nav_top">
             <ul class="main_menu">
-                <li class="list"><a href="index.php"><span class="media_text">Home</span></a></li>
-                <li class="list"><a href="community.php" id="selected"><span class="media_text">Community Marketplace</span></a></li>
-                <li class="list"><a href="shopping.php"><span class="media_text">Shopping</span></a></li>
-                <li class="list"><a href="about.php"><span class="media_text">About</span></a></li>
-                <li class="list"><a href="contact.php"><span class="media_text">Contact</span></a></li>
+                <li class="list"><a href="../home/index.php"><span class="media_text">Home</span></a></li>
+                <li class="list"><a href="../community/community.php" id="selected"><span class="media_text">Community Marketplace</span></a></li>
+                <li class="list"><a href="../home/shopping.php"><span class="media_text">Shopping</span></a></li>
+                <li class="list"><a href="../home/about.php"><span class="media_text">About</span></a></li>
+                <li class="list"><a href="../home/contact.php"><span class="media_text">Contact</span></a></li>
             </ul>
         </div>
     </div>
@@ -153,9 +153,9 @@ if($w = mysqli_query($conn, $wishc)){
                                 <h4>" . $title . "</h4>
                             </div>
                         </div>
-                        <div class='img_container'><a href='landing.php'><img src='images/$img'/></a></div>
+                        <div class='img_container'><a href='../home/landing.php'><img src='images/$img'/></a></div>
                         <div class='item_list_wrapper' id='subtext_total'>
-                            <a href='landing.php'>
+                            <a href='../home/landing.php'>
                                 <div id='item_description'>
                                     <h3 id='price'>$$price</h3>
                                 </div>
@@ -209,9 +209,9 @@ if($w = mysqli_query($conn, $wishc)){
                                 <h4>" . $title . "</h4>
                             </div>
                         </div>
-                        <div class='img_container'><a href='landing.php'><img src='images/$img'/></a></div>
+                        <div class='img_container'><a href='../home/landing.php'><img src='images/$img'/></a></div>
                         <div class='item_list_wrapper' id='subtext_total'>
-                            <a href='landing.php'>
+                            <a href='../home/landing.php'>
                                 <div id='item_description'>
                                 "/*
                                     <span class='desc'>
@@ -272,9 +272,9 @@ if($w = mysqli_query($conn, $wishc)){
                                 <h4>" . $title . "</h4>
                             </div>
                         </div>
-                        <div class='img_container' id='featured'><a href='landing.php'><img src='images/$img'/></a></div>
+                        <div class='img_container' id='featured'><a href='../home/landing.php'><img src='images/$img'/></a></div>
                         <div class='item_list_wrapper' id='subtext_total'>
-                            <a href='landing.php'>
+                            <a href='../home/landing.php'>
                                 <div id='item_description'>
                                     <h3 class='featured_price' id='fprice'>$$price</h3>
                                 </div>
