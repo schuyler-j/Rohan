@@ -25,10 +25,30 @@ session_start();
             <div class="nav_list">
                 <img src="../images/watchlist.png"/>
                 <a class="nav_links" href="../nav/wishlist.php">Wishlist</a>
-                <img src="images/cart.png"/>
-                <a class="nav_links" href="../nav/cart.php">Cart</a>
-                <img src="images/checkout.png"/>
-                <a class="nav_links" href="../nav/checkout.php">Checkout</a>
+                <img src="../images/cart.png"/>
+                <?php
+                if (isset($_SESSION["active"]) && $_SESSION["active"] === true) {
+                    echo "
+                        <a class='nav_links' href='../nav/cart.php'>My Cart</a>
+                    ";
+                } else {
+
+                    echo "
+                        <a class='nav_links' href='../home/error.php?msg=please%20login%20to%20view%20cart'>My Cart</a>
+                    ";
+                } ?>
+                <img src="../images/checkout.png"/>
+                <?php
+                if (isset($_SESSION["active"]) && $_SESSION["active"] === true) {
+                    echo "
+                        <a class='nav_links' href='../nav/checkout.php'>Checkout</a>
+                    ";
+                }else{
+
+                    echo "
+                        <a class='nav_links' href='../home/error.php?msg=please%20login%20to%20checkout'>Checkout</a>
+                    ";
+                } ?>
                 <img src='../images/login.png'/>                
                 <?php 
                 if(isset($_SESSION["active"]) && $_SESSION["active"] === true){
