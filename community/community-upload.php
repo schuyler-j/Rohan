@@ -36,7 +36,7 @@ if($w = mysqli_query($conn, $wishc)){
 
 <body >
     <div class="top_third">
-        <div class="menu_container">
+        <div id="mc" class="menu_container">
             <h1 class="menu_title_s"><a href="../home/index.php">SENIOR</a></h1>
         </div>
         <div class="nav" id="nav_bottom">
@@ -88,7 +88,77 @@ if($w = mysqli_query($conn, $wishc)){
     </div>
     <!--beginning of item grid list-->
     <div class="page_wrapper">
+        <div class="form_wrapper">
+        <div class="top_third">
+        </div>
+        </div>
+        <div class="home_body" id="news">
+                <?php 
+                $count = 0;
+                $total = 0;
+                echo "
+            <ul class='item_list' id='cart_form'>
+                    <li><div class='sub_heading' style='font-size:38px'>Item Details</div></li>";
+                    if(isset($_SESSION["active"]) && $_SESSION["active"]){
+						echo "<li><form>
+                    <li class='pname_title'><b>Item Name</b></li>
+                    <li><input name='pname' type='text' placeholder='' id='uname' required></input></li>
 
+                    <li class='pname_title'><b>Item Description</b></li>
+                    <li><div class='password_block'>
+                            <textarea name='desc' type='text' placeholder='' id='item_desc' required></textarea>
+                        </div></li>
+                    <li class='pname_title'><b>Price</b></li>
+                    <li><div class='password_block'>
+                            <input name='price' type='text' placeholder='' id='pmatch' value='' required></input>
+                        </div></li>
+                    <li class='pname_title'><b>Amount</b></li>
+                    <li><input name='stockAmt' type='number' placeholder='' id='emailaddr' required></input></li>
+
+                    <li class='pname_title'><b>Address</b></li>
+                    <li><input name='address' type='text' placeholder='' id='emailaddr' required></input></li>
+                    <li class='pname_title'><b>State</b></li>
+					<li><select name='location' id='state_upload'>
+						<option
+						value='act'>Australian Capital Territory</option>
+						<option
+						value='nsw'>New South Wales</option>
+						<option
+						value='nt'>Northern Territoty</option>
+						<option
+						value='qld'>Queensland</option>
+						<option
+						value='sa'>South Australia</option>
+						<option
+						value='tas'>Tasmania</option>
+						<option
+						value='vic'>Victoria</option>
+						<option
+						value='wa'>Western Australia</option>
+					</select></li>
+
+					<br/>
+					<li><input class='button' type='submit' value='SUBMIT' id='upload_submit'/></li>
+
+";
+
+                            }else{
+							echo "Please Login.";
+						}
+                                    
+                                    
+                        echo "
+					</div>        
+					<ul class='item_list' id='image_upload'>
+                    <li><div class='sub_heading' style='font-size:38px'>Upload Image</div></li>
+					<li><div class='img_container'></div></li>
+					<li><input class='button' type='submit' value='UPLOAD' id='upload_upload'></input></li>
+                    </ul>"; 
+
+                ?>
+        </div>
+    </div>
+</body>
 
     </div>
     <div class="footer">

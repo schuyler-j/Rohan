@@ -23,11 +23,11 @@ session_start();
 		</div>
 		<div class="nav" id="nav_bottom">
 			<div class="nav_list">
-				<img src="images/watchlist.png"/>
+				<img src="../images/watchlist.png"/>
 				<a class="nav_links" href="../nav/wishlist.php">Wishlist</a>
 				<img src="../images/cart.png"/>
 				<a class="nav_links" href="../nav/cart.php">Cart</a>
-				<img src="images/checkout.png"/>
+				<img src="../images/checkout.png"/>
 				<a class="nav_links" href="../nav/checkout.php">Checkout</a>
 				<img src='../images/login.png'/>                
 <?php 
