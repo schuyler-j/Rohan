@@ -1,8 +1,9 @@
+@import "styles/style.css";
+
 .shopping_filters{
     background-color: #8AA899;
-    padding: 5px;
     padding-bottom: 10px;
-    max-width: 1630px;
+    max-width: var(--content-size);
     margin: auto;
 }
 input[type="submit"] {
@@ -174,6 +175,8 @@ p{
 }
 
 .search_container *{
+    padding-top: 8px;
     margin-top: 4px;
+    padding-bottom: 8px;
     margin-bottom: 4px;
 }

@@ -12,40 +12,38 @@
 
     <!-- testing column categories -->
     <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        .column {
-            float: left;
-            padding: 10px;
+		#contact_btn{
+		}
+		#mailtonav{
+		    margin-top: 12px;
+		}
+		.row_contact{
+			display: inline-flex;
+		}
+		.row_contact h2{
+		    margin-bottom: 2px;
+		}
+        .column-left {
             height: 300px;
+		    width: 50%;
+		    text-align: center;
         }
-
-        .left {
-            float: left;
-            width: 40%;
-        }
-
-        .right {
+        .column-right {
             float: right;
             width: 50%;
         }
-
-
         .row:after {
             content: "";
             display: table;
             clear: both;
         }
     </style>
-
 </head>
 
 <body>
 <?php require_once "db/dbconn.inc.php" ?>
     <div class="top_third">
-        <div class="menu_container">
+        <div id="mc" class="menu_container">
             <h1 class="menu_title_s"><a href="index.php">SENIOR</a></h1>
         </div>
         <div class="nav" id="nav_bottom">
@@ -73,17 +71,17 @@
     <div class="page_wrapper">
 
         <div class="home_body" id="news" style="width:1500px; height:650px;">
-            <div class="row">
-                <div class="column left" style="text-align:center; padding-top:100px; padding-left:100px">
+            <div class="row_contact">
+                <div class="column-left">
                     <div class="title">
                         <h2>Contact Us</h2>
                     </div>
-                    <span style="font-size: 30px; ">Have some queries? Use the form on the side with your inquiry or send a direct email to <a href="mailto:senior@senior.com.au">senior@senior.com.au</a></span>
+                    <span style="font-size: 30px; ">Have some queries? Use the form on the side with your inquiry or send a direct email to <a class="nav_links" id="mailtonav" href="mailto:senior@senior.com.au">senior@senior.com.au</a></span>
                 </div>
 
-                <div class="column right">
+                <div class="column-right">
                     <form action="confirm.php" method="GET">
-                        <ul class="item_list">
+                        <ul class="item_list" id="contact_items">
                             <li>
                                 <div class="inner_form_section">
                                     <div>
@@ -101,15 +99,11 @@
 
                             <li class="pname_title"><b>E-mail Address</b></li>
                             <li><input type="email" placeholder="" id="emailaddr" required style="width:95%"></input></li>
-
                             <br />
-
                             <li class="pname_title"><b>Message</b></li>
                             <li><textarea name="text1" id="lname" cols="40" rows="5" style="width:95%" ></textarea></li>
-                            <!-- <li><input type="text" placeholder="" id="lname" style="width:95%; height:200px"></input></li> -->
-
                             <br />
-                            <li><input type="submit" class="button" id="create_btn" value="Submit" style="float:left"></input></li>
+                            <li><input type="submit" class="button" id="atc" style="width: 50%;" value="Submit"></input></li>
                         </ul>
                     </form>
                 </div>

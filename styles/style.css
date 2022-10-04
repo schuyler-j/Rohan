@@ -1,3 +1,6 @@
+:root{
+		--content-size: 1620px;
+}
 
 *{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -54,7 +57,7 @@ h4:hover{
 .top_third{
     min-height: -moz-fit-content;
     min-height: fit-content;
-    max-width: 1630px;
+    max-width: var(--content-size);
     justify-content: center;
     margin: auto;
     z-index: -9999;
@@ -175,7 +178,7 @@ h4:hover{
     text-align: center;
     text-shadow: 4px 1px 1px black;
     /*border-bottom: 4px solid black;*/
-    letter-spacing: 0.4em;
+    letter-spacing: 2rem;
     background-color: #1f2b2355;
     min-width: -webkit-fill-available;
 }
@@ -250,7 +253,7 @@ h4:hover{
     margin: auto;
     justify-content: center;
     background-color: #465343;
-    max-width: 1630px;
+    max-width: var(--content-size);
 
     align-items: stretch;
     align-content: center;
@@ -258,6 +261,12 @@ h4:hover{
     flex-wrap: wrap;
 
     box-shadow: inset 0px -20px 20px 20px #203620;
+}
+
+#pwcl{
+    box-shadow: none;
+    background-color: #465343 !important;
+
 }
 
 
@@ -397,6 +406,8 @@ button {
 }
 
 .footer{
+    max-width: var(--content-size);
+		margin: auto;
     text-align: center;
     border-top: 1px solid #728a6d;
     background-color: #353d33;
@@ -468,8 +479,9 @@ button {
 }
 
 a:hover.nav_links{
-    text-shadow:1px -2px 2px #000;
+    text-shadow:1px -1px 4px #000 !important;
 }
+
 .item_list_title{
     color:#222;
     text-transform: uppercase;
@@ -623,6 +635,9 @@ a:hover.nav_links{
     display: inline-flex;
 }
 
+.search_container{
+    display: grid;
+}
 
 @media only screen and (min-width: 1500px) {.h_spacer{
     min-width: 30px;
@@ -632,11 +647,16 @@ a:hover.nav_links{
     flex-wrap: wrap;
 }
 
+.search_container{
+    display: inline;
+}
+
 #login_form{
     padding: 250px !important;
     padding-top: 42px !important;
-}}
-
+}
+}
+/*end of media*/
 .nav_title{
     background-color: #71856d;
 }
@@ -661,7 +681,7 @@ a:hover.nav_links{
 }
 
 
-#uname, #pword, #fname, #lname, #streetaddr, #emailaddr, #postcode, #dob, #message{
+#uname, #pword, #fname, #lname, #streetaddr, #emailaddr, #postcode, #dob, #message, #pmatch{
     padding: 10px;
     min-width: 90%;
     font-size: 28px;
@@ -908,4 +928,21 @@ transition: 0.3s;
     padding-bottom: 20px;
 }
 
+#wtcm{
+    padding-bottom: 8px !important;
+		padding-top: 12px;
+}
 
+#wtcm h4{
+		text-shadow: -1px 2px 2px #222;
+}
+
+.overlay{
+
+}
+
+#passblock{
+	display: none;
+	font-size: 18px;
+	color: #d73838;
+}
