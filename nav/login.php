@@ -4,21 +4,20 @@
 <title>Home</title>
 <meta charset="UTF-8" />
 <meta name="author" content="TUJ_Rohan" />
-<link rel="stylesheet" href="styles/style.css" />
-<link rel="stylesheet" href="styles/footer.css" />
-<link rel="icon" href="images/favicon.png">
-<script src="scripts/script.js" defer></script>
+<link rel="stylesheet" href="../styles/style.css" />
+<link rel="stylesheet" href="../styles/footer.css" />
+<link rel="icon" href="../images/favicon.png">
+<script src="../scripts/script.js" defer></script>
 </head>
 
 <?php 
-require_once "db/dbconn.inc.php"; 
-require_once "session.php";
+require_once "../db/dbconn.inc.php"; 
 /*
 session_start();
 */
 
 if(isset($_SESSION["active"]) && $_SESSION["active"] === true){
-    header("location: index.php");
+    header("location: ../home/index.php");
     exit;
 }else{
 }
@@ -26,13 +25,13 @@ if(isset($_SESSION["active"]) && $_SESSION["active"] === true){
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     if(empty(trim($_POST["username"]))){
-        header("location: error.php");
+        header("location: ../home/error.php");
     }else{
         $user = trim($_POST["username"]);
     }
 
     if(empty(trim($_POST["password"]))){
-        header("location: error.php");
+        header("location: ../home/error.php");
     }else{
         $pass = SHA1($_POST["password"]);
     }
@@ -74,13 +73,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         $_SESSION["creditcard"] = $rname_["CreditCard"];
                         $_SESSION["addr"] = $rname_["Address"];
 
-                        header("location: index.php");
+                        header("location: ../home/index.php");
                     }else{
-                        header("location: error.php?msg=Bad%20Password.%20Try%20Again.");
+                        header("location: ../home/error.php?msg=Bad%20Password.%20Try%20Again.");
                     }
                 }
             }else{
-                        header("location: error.php?msg=No%20account%20matches%20those%20credentials.");
+                        header("location: ../home/error.php?msg=No%20account%20matches%20those%20credentials.");
             }
         }else{
             echo "error";
@@ -95,13 +94,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <body>
     <div class="top_third">
         <div id="mc" class="menu_container">
-            <h1 class="menu_title_s"><a href="index.php">SENIOR</a></h1>
+            <h1 class="menu_title_s"><a href="../home/index.php">SENIOR</a></h1>
         </div>
         <div class="nav" id="nav_bottom">
             <div class="nav_list">
-                <img src="images/watchlist.png"/>
-                <a class="nav_links" href="wishlist.php">Wishlist</a>
-                <img src="images/cart.png"/>
+                <img src="../images/watchlist.png"/>
+                <a class="nav_links" href="../nav/wishlist.php">Wishlist</a>
+                <img src="../images/cart.png"/>
                 <?php
                 if (isset($_SESSION["active"]) && $_SESSION["active"] === true) {
                     echo "
@@ -110,22 +109,22 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 }else{
 
                     echo "
-                        <a class='nav_links' href='error.php?msg=please%20login%20to%20view%20cart'>My Cart</a>
+                        <a class='nav_links' href='../home/error.php?msg=please%20login%20to%20view%20cart'>My Cart</a>
                     ";
                 } ?>
-                <img src="images/checkout.png"/>
-                <a class="nav_links" href="checkout.php">Checkout</a>
-                <img src='images/login.png'/>
-                <a class = 'nav_links' href="login.php">Login</a>
+                <img src="../images/checkout.png"/>
+                <a class="nav_links" href="../nav/checkout.php">Checkout</a>
+                <img src='../images/login.png'/>
+                <a class = 'nav_links' href="../nav/login.php">Login</a>
             </div>
         </div>
         <div class="nav" id="nav_top">
             <ul class="main_menu">
-                <li class="list"><a href="index.php"><span class="media_text">Home</span></a></li>
-                <li class="list"><a href="community-landing.php"><span class="media_text">Community Marketplace</span></a></li>
-                <li class="list"><a href="shopping.php"><span class="media_text">Shopping</span></a></li>
-                <li class="list"><a href="about.php"><span class="media_text">About</span></a></li>
-                <li class="list"><a href="contact.php"><span class="media_text">Contact</span></a></li>
+                <li class="list"><a href="../home/index.php"><span class="media_text">Home</span></a></li>
+                <li class="list"><a href="../community/community-landing.php"><span class="media_text">Community Marketplace</span></a></li>
+                <li class="list"><a href="../home/shopping.php"><span class="media_text">Shopping</span></a></li>
+                <li class="list"><a href="../home/about.php"><span class="media_text">About</span></a></li>
+                <li class="list"><a href="../home/contact.php"><span class="media_text">Contact</span></a></li>
             </ul>
         </div>
     </div>
@@ -146,9 +145,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     <li id="pname_title"><b>Password</b></li>
                     <li><div class="password_block">
                             <input type="password" placeholder="" id="pword" name="password" required></input>
-                            <button type="button" id="show_password" onclick="ShowPassword()"><img src="images/eye.png"></img></button>
+                            <button type="button" id="show_password" onclick="ShowPassword()"><img src="../images/eye.png"></img></button>
                         </div></li>
-                    <li><a href="registration.php"><h4>Don't have an account? Sign Up Here!</h4></a></li>
+                    <li><a href="../home/registration.php"><h4>Don't have an account? Sign Up Here!</h4></a></li>
                     <br/>
                     <li><input type="submit" class="button" value="LOGIN" name="login" id="login_btn"></input></li>
                 </ul>
