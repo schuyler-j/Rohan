@@ -266,7 +266,7 @@ h4:hover{
 #pwcl{
     box-shadow: none;
     background-color: #465343 !important;
-
+	display: block;
 }
 
 
@@ -831,6 +831,7 @@ input[type = submit]:active, input[type = submit]:focus{
 #comlandgrid{
     display: flex;
     margin: 40px;
+	justify-content: center;
 }
 
 .card_title h2{
