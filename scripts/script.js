@@ -11,7 +11,7 @@ function ShowPassword() {
 
 }
 
-var bg = ['images/home_banner.png', 'images/home_banner_2.png', 'images/home_banner_3.png', 'images/home_banner_4.png'];
+var bg = ['../images/home_banner.png', '../images/home_banner_2.png', '../images/home_banner_3.png', '../images/home_banner_4.png'];
 function BackgroundRefresh() {
     num = Math.floor(Math.random()*bg.length);
     const menu_cont = document.getElementById("mc");
