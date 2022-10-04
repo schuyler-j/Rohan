@@ -95,7 +95,7 @@ if($w = mysqli_query($conn, $wishc)){
 
     </div>
     <div class="pages" style="text-align: center;">
-        <a href="community.php">^ Back to Top ^</a>
+        <a href="#top">^ Back to Top ^</a>
     </div>
     <div class="footer">
         <div class="grid" id="footer_grid">

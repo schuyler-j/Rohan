@@ -122,7 +122,7 @@ session_start();
             <img src="images/shopping-bag.png"><a class="nav_links" href="shopping.php" id="main">Main Shopping Page</a>
             <img src="images/recently-viewed.png"><a class="nav_links" href="#">Recently Viewed</a>
             <img src="images/watchlist.png"><a class="nav_links" href="wishlist.php">Wishlist</a>
-            <img src="images/help.png"><a class="nav_links" href="#">Help</a>
+            <img src="images/help.png"><a class="nav_links" href="help.php">Help</a>
             <img src="images/clear-search.png"><a class="nav_links" href="shopping.php" id="reset_search">Clear Search</a>
         </div>    
         </div>

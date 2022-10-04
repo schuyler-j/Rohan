@@ -91,7 +91,7 @@ if($w = mysqli_query($conn, $wishc)){
         <div class="nav" id="nav_top">
             <ul class="main_menu">
                 <li class="list"><a href="index.php"><span class="media_text">Home</span></a></li>
-                <li class="list"><a href="community.php" id="selected"><span class="media_text">Community Marketplace</span></a></li>
+                <li class="list"><a href="community-landing.php" id="selected"><span class="media_text">Community Marketplace</span></a></li>
                 <li class="list"><a href="shopping.php"><span class="media_text">Shopping</span></a></li>
                 <li class="list"><a href="about.php"><span class="media_text">About</span></a></li>
                 <li class="list"><a href="contact.php"><span class="media_text">Contact</span></a></li>
@@ -302,7 +302,7 @@ if($w = mysqli_query($conn, $wishc)){
         </div>
     </div>
     <div class="pages" style="text-align: center;">
-        <a href="community.php">^ Back to Top ^</a>
+        <a href="#top">^ Back to Top ^</a>
     </div>
     <div class="footer">
         <div class="grid" id="footer_grid">
