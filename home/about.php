@@ -81,14 +81,14 @@
 
                 <div class="column">
                     <div class='block_1'>
-                        <img src='images/greeting_2.png' style="display:block; margin-left:auto; margin-right:auto; width:70%;" />
+                        <img src='../images/greeting_2.png' style="display:block; margin-left:auto; margin-right:auto; width:70%;" />
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="column">
                     <div class='block_1'>
-                        <img src='images/greeting_2.png' style="display:block; margin-left:auto; margin-right:auto; width:70%; " />
+                        <img src='../images/greeting_2.png' style="display:block; margin-left:auto; margin-right:auto; width:70%; " />
                     </div>
                 </div>
                 <div class="column">

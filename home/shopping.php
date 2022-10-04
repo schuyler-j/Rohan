@@ -22,11 +22,6 @@ session_start();
 <div class="top_third">
     <div id="mc" class="menu_container">
         <h1 class="menu_title_s"><a href="../home/index.php">SENIOR</a></h1>
-        <!--
-        <div class="menu_title_s" id="logo">
-            <img src="images/home_banner.png" width="40%">
-        </div>
-        -->
     </div>
         <div class="nav" id="nav_bottom">
             <div class="nav_list">
@@ -119,11 +114,11 @@ session_start();
             </select>
             <input type="submit" value="Search" /><br>
         <div class ="shopping_links">    
-            <img src="images/shopping-bag.png"><a class="nav_links" href="shopping.php" id="main">Main Shopping Page</a>
-            <img src="images/recently-viewed.png"><a class="nav_links" href="#">Recently Viewed</a>
-            <img src="images/watchlist.png"><a class="nav_links" href="wishlist.php">Wishlist</a>
-            <img src="images/help.png"><a class="nav_links" href="#">Help</a>
-            <img src="images/clear-search.png"><a class="nav_links" href="shopping.php" id="reset_search">Clear Search</a>
+            <img src="../images/shopping-bag.png"><a class="nav_links" href="shopping.php" id="main">Main Shopping Page</a>
+            <img src="../images/recently-viewed.png"><a class="nav_links" href="#">Recently Viewed</a>
+            <img src="../images/watchlist.png"><a class="nav_links" href="wishlist.php">Wishlist</a>
+            <img src="../images/help.png"><a class="nav_links" href="#">Help</a>
+            <img src="../images/clear-search.png"><a class="nav_links" href="shopping.php" id="reset_search">Clear Search</a>
         </div>    
         </div>
       </form>
@@ -136,7 +131,7 @@ session_start();
                     Item 1
                 </div>
             </div>
-            <div class="img_container"><a href="#"><img src="images/gear1.png"></a></div>
+            <div class="img_container"><a href="#"><img src="../images/gear1.png"></a></div>
             <div class="item_list_wrapper" id="subtext_total">
                 <a href="#">
                     <div id="item_description">
