@@ -12,26 +12,30 @@
 
     <!-- testing column categories -->
     <style>
-        * {
-            box-sizing: border-box;
+        #contact_btn {}
+
+        #mailtonav {
+            margin-top: 12px;
         }
 
-        .column {
-            float: left;
-            padding: 10px;
+        .row_contact {
+            display: inline-flex;
+        }
+
+        .row_contact h2 {
+            margin-bottom: 2px;
+        }
+
+        .column-left {
             height: 300px;
+            width: 50%;
+            text-align: center;
         }
 
-        .left {
-            float: left;
-            width: 40%;
-        }
-
-        .right {
+        .column-right {
             float: right;
             width: 50%;
         }
-
 
         .row:after {
             content: "";
@@ -39,15 +43,19 @@
             clear: both;
         }
     </style>
-
 </head>
 
 <body>
+<<<<<<< HEAD
     <?php session_start(); ?>
 <<<<<<< HEAD
+=======
+    <?php require_once "db/dbconn.inc.php" ?>
+>>>>>>> 39582eff0630dd1a0704e25bbd86cbb4586f7808
     <div class="top_third">
-        <div class="menu_container">
+        <div id="mc" class="menu_container">
             <h1 class="menu_title_s"><a href="index.php">SENIOR</a></h1>
+<<<<<<< HEAD
             <!--
 =======
 <div class="top_third">
@@ -59,13 +67,25 @@
             <img src="images/home_banner.png" width="40%">
         </div>
         -->
+=======
+>>>>>>> 39582eff0630dd1a0704e25bbd86cbb4586f7808
         </div>
         <div class="nav" id="nav_bottom">
             <div class="nav_list">
                 <img src="images/watchlist.png">
                 <a class="nav_links" href="wishlist.php">Wishlist<?php echo " (" . $_SESSION["wishcount"] . ")" ?></a>
                 <img src="images/cart.png">
-                <a class="nav_links" href="cart.php">My Cart</a>
+                <?php
+                if (isset($_SESSION["active"]) && $_SESSION["active"] === true) {
+                    echo "
+                        <a class='nav_links' href='cart.php'>My Cart</a>
+                    ";
+                } else {
+
+                    echo "
+                        <a class='nav_links' href='error.php?msg=please%20login%20to%20view%20cart'>My Cart</a>
+                    ";
+                } ?>
                 <img src="images/checkout.png">
                 <a class="nav_links" href="checkout.php">Checkout</a>
                 <img src="images/login.png">
@@ -85,17 +105,18 @@
     <div class="page_wrapper">
 
         <div class="home_body" id="news" style="width:1500px; height:650px;">
-            <div class="row">
-                <div class="column left" style="text-align:center">
+            <div class="row_contact">
+                <div class="column-left">
                     <div class="title">
                         <h2>Contact Us</h2>
                     </div>
-                    <span style="font-size: 30px; ">Have some queries? Use the form on the side with your inquiry or send a direct email to <a href="mailto:senior@senior.com.au">senior@senior.com.au</a></span>
+                    <span style="font-size: 30px; ">Have some queries? Use the form on the side with your inquiry or send a direct email to <a class="nav_links" id="mailtonav" href="mailto:senior@senior.com.au">senior@senior.com.au</a></span>
                 </div>
 
-                <div class="column right">
-                    <form action="confirm.php" method="GET">
-                        <ul class="item_list">
+                <div class="column-right">
+                    <form action="#" method="GET"> 
+                        <!-- this may need a new php to display 'Message Sent.' -->
+                        <ul class="item_list" id="contact_items">
                             <li>
                                 <div class="inner_form_section">
                                     <div>
@@ -113,14 +134,11 @@
 
                             <li class="pname_title"><b>E-mail Address</b></li>
                             <li><input type="email" placeholder="" id="emailaddr" required style="width:95%"></input></li>
-
                             <br />
-
                             <li class="pname_title"><b>Message</b></li>
-                            <li><input type="text" placeholder="" id="lname" style="width:95%; height:200px"></input></li>
-
+                            <li><textarea name="text1" id="lname" cols="40" rows="5" style="width:95%"></textarea></li>
                             <br />
-                            <li><input type="submit" class="button" id="create_btn" value="Submit" style="float:left"></input></li>
+                            <li><input type="submit" class="button" id="atc" style="width: 50%;" value="Submit"></input></li>
                         </ul>
                     </form>
                 </div>
@@ -129,5 +147,47 @@
 
 
         </div>
-
+        <div class="footer">
+        <div class="grid" id="footer_grid">
+            <div class="col" id="ft_grid_first">
+                <h4>CONTACT</h4>
+                <div>
+                    <h5>Contact us at the following email.</h5>
+                    <a href="mailto:senior@senior.com.au">senior@senior.com.au</a>
+                </div>
+            </div>
+            <div class="col">
+                <h4>LINKS</h4>
+                <div style="display: grid">
+                    <a href="index.php">HOME</a>
+                    <br />
+                    <a href="community-landing.php">COMMUNITY</a>
+                    <br />
+                    <a href="shopping.php">SHOPPING</a>
+                    <br />
+                    <a href="about.php">ABOUT</a>
+                    <br />
+                    <a href="login.php">LOGIN</a>
+                </div>
+            </div>
+            <div class="col">
+                <h4>SUPPORT</h4>
+                <div><a href="help.php">F.A.Q</a></div>
+            </div>
+            <div class="col" id="ft_grid_last">
+                <h4>DISCLAIMER</h4>
+                <div class="link_box">
+                    <p>This website has been created for UX eval purposes.</p>
+                    <p>Products shown are examples. Credit information is stored temporarily.</p>
+                    <p>Transactions are not final.</p>
+                    <img style="height:80px" src="images/logologo.png" />
+                    <p><b>© 2022</b> SENIOR WEB SYS</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer_bt">
+            <h4>Thomas Hobbs | Udall Liao | Jay Schuyler</h4>
+        </div>
+    </div>
 </body>
+</html>

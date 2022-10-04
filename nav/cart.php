@@ -24,21 +24,9 @@ session_start();
         <div class="nav" id="nav_bottom">
             <div class="nav_list">
                 <img src="images/watchlist.png"/>
-<<<<<<< HEAD
-<<<<<<< HEAD
-                <a class="nav_links" href="wishlist.php">Wishlist<?php echo " (" . $_SESSION["wishcount"] . ")"?></a>
-                <img src="images/cart.png"/>
-                <a class="nav_links" href="cart.php">My Cart</a>
-=======
-                <a class="nav_links" href="wishlist.php">Wishlist</a>
-                <img src="images/cart.png"/>
-                <a class="nav_links" ><div style="text-decoration:underline; color:#222;">My Cart</div></a>
->>>>>>> main
-=======
                 <a class="nav_links" href="wishlist.php">Wishlist<?php echo " (" . $_SESSION["wishcount"] . ")"?></a>
                 <img src="images/cart.png"/>
                 <a class="nav_links" ><div style="text-decoration:underline; color:#222;">My Cart</div></a>
->>>>>>> 39582eff0630dd1a0704e25bbd86cbb4586f7808
                 <img src="images/checkout.png"/>
                 <a class="nav_links" href="checkout.php">Checkout</a>
                 <img src='images/login.png'/>                
