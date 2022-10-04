@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="styles/footer.css" />
 <link rel="icon" href="images/favicon.png">
 <script src="scripts/script.js" defer></script>
+<script src="scripts/password.js" defer></script>
 </head>
 
 
@@ -16,22 +17,19 @@
     <?php /*session_start();*/
     require_once "db/dbconn.inc.php";
     
-    
-    
+	$firstname;
+	$lastname;
+	$username;
+	$password;
+	$emailaddress;
+	$streetaddress;
+	$postcode;
+	$dob;
     
     ?>
     <div class="top_third">
         <div id="mc" class="menu_container">
-                <h1 class="menu_title_s"><a href="index.php">SENIOR</a></h1>
-            <!--test for logo-->
-            <!--<div class="menu_title_s" id="logo">
-                <img src="images/home_banner.png" width="40%">
-            </div>
-
-            <a class="menu_title_s" id="title_img">
-                <img src="images/logo.png" width=20% height=20%>
-            </a>
-            -->
+			<h1 class="menu_title_s"><a href="index.php">SENIOR</a></h1>
         </div>
         <div class="nav" id="nav_bottom">
             <div class="nav_list">
@@ -56,59 +54,84 @@
         </div>
     </div>
 
+<?php 
+	if(isset($_POST['username'])){
+
+		$firstname = $_POST['firstname'];
+		$lastname = $_POST['lastname'];
+		$username = $_POST['username'];
+		$password = $_POST['password'];
+		$emailaddress = $_POST['emailaddress'];
+		$streetaddress = $_POST['streetaddress'];
+		$postcode = $_POST['postcode'];
+		$dob = $_POST['dob'];
+		$passconfirm = $_POST['pass-confirm'];
+
+		$sql = "INSERT INTO `users` (`UserID`, `FirstName`, `LastName`, `DOB`, `Email`, `Address`, `CreditCard`, `Username`, `Password`, `sessionID`, `postcode`) VALUES (CONNECTION_ID()+CONNECTION_ID(), '$firstname', '$lastname', '$dob', '$emailaddress', '$streetaddress', NULL, '$username', SHA1($password), NULL, '$postcode');";
+		$statement = mysqli_stmt_init($conn);
+		mysqli_stmt_prepare($statement, $sql);
+		if($passconfirm == $password){
+			mysqli_stmt_execute($statement);
+		}else{
+		}
+	}
+
+?>
     <div class="page_wrapper">
         <div class="form_wrapper">
-            <form action="confirm.php" method="GET">
+            <form action="confirm.php" method="POST">
                 <ul class="item_list" id="login_form">
                     <li><div class="sub_heading" style="font-size:38px">Create an Account!</div></li>
                     <li><div class="inner_form_section">
                         <div>
                             <b>First Name</b>
-                            <input type="text" placeholder="" id="fname" required></input>
+                            <input name='firstname' type="text" placeholder="" id="fname" required></input>
                         </div>
 
                         <div>
                             <b>Last Name</b>
-                            <input type="text" placeholder="" id="lname" required></input>
+                            <input name='lastname' type="text" placeholder="" id="lname" required></input>
                         </div>
 
 
                     </div></li>
 
+
                     <li class="pname_title"><b>Username</b></li>
                     <li><div class="desc"><i>Create a username people can recognise you</i></div></li>
-                    <li><input type="text" placeholder="" id="uname" required></input></li>
+                    <li><input name='username' type="text" placeholder="" id="uname" required></input></li>
 
                     <li class="pname_title"><b>Create a Password</b></li>
                     <li><div class="desc"><i>Create a strong password to secure your account</i></div></li>
                     <li><div class="password_block">
-                            <input type="password" placeholder="" id="pword" required></input>
+                            <input name='password' type="password" placeholder="" id="pword" required></input>
                             <button type="button" id="show_password" onclick="ShowPassword()"><img src="images/eye.png"></img></button>
                         </div></li>
                     <li class="pname_title"><b>Confirm Password</b></li>
+                    <li><div class="desc" id="passblock"><b>Passwords Must Match!</b></div></li>
                     <li><div class="password_block">
-                            <input type="password" placeholder="" id="pword" required></input>
+                            <input name='pass-confirm' type="password" placeholder="" id="pmatch" value="" required></input>
                         </div></li>
 
                     <li class="pname_title"><b>E-mail Address</b></li>
                     <li><div class="desc"><i>This is the e-mail address we will contact you through</i></div></li>
-                    <li><input type="email" placeholder="" id="emailaddr" required></input></li>
+                    <li><input name='emailaddress' type="email" placeholder="" id="emailaddr" required></input></li>
 
                     <li><div class="inner_form_section">
 
                     <div>
                         <b>Street Address</b>
-                        <input type="text" placeholder="" id="streetaddr" required></input>
+                        <input name='streetaddress' type="text" placeholder="" id="streetaddr" required></input>
                     </div>
 
                     <div class="inner_form_section_sub">
                         <b>Postcode</b>
-                        <input type="text" placeholder="" id="postcode" required></input>
+                        <input name='postcode' type="text" placeholder="" id="postcode" required></input>
                     </div>
                     </div></li>
 
                     <li class="pname_title"><b>Date of Birth</b></li>
-                    <li><input type="date" id="dob"></input></li>
+                    <li><input name='dob' type="date" id="dob"></input></li>
 
                     <br/>
 

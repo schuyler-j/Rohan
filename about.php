@@ -9,29 +9,18 @@
     <!-- <link rel="stylesheet" href="styles/about.css" /> -->
     <link rel="icon" href="images/favicon.png">
     <script src="scripts/script.js" defer></script>
-
-    <!-- testing column categories -->
     <style>
-        * {
-            box-sizing: border-box;
-        }
-
         .row {
             display: flex;
             padding-top: 50px;
-            padding-bottom: 50px;
         }
-
-
         .column {
             flex: 50%;
             padding: 10px;
-            height: 300px;
         }
-
         .about_menu_container {
             margin: auto;
-            padding-top: 80px;
+            padding-top: 32px;
             padding-bottom: 2px;
             background-color: #465343;
             box-shadow: 0px 1px 8px 0px #222;
@@ -40,22 +29,17 @@
             flex-direction: row;
             align-items: center;
             /* justify-content: space-around; */
-            max-width: 100%;
             height: auto;
             width: 100%;
-            background-image: url("../images/about-us-hiking.jpg");
-
         }
     </style>
-
-
 </head>
 
 <body>
 <?php require_once "db/dbconn.inc.php" ?>
 
     <div class="top_third">
-        <div class="menu_container">
+        <div id="mc" class="menu_container">
             <h1 class="menu_title_s"><a href="index.php">SENIOR</a></h1>
         </div>
         <div class="nav" id="nav_bottom">
@@ -82,10 +66,9 @@
     </div>
 
     <div class="page_wrapper">
-
         <div class="home_body" id="news" style="width:1500px; height:1200px;">
             <div class="about_menu_container">
-                <h1 style="text-align:center; font-size:55px; color:white">About Us</h1>
+                <h1 style="text-align:center; font-size:55px; color:white;">About Us</h1>
             </div>
             <div class="row">
                 <div class="column">
@@ -93,32 +76,22 @@
                         <h2 style="font-size: 40px; text-align:center">WHO WE ARE</h2>
                     </div>
                     <p>
-                        <span style="font-size: 20px;">SENIOR is an online marketplace launched in 20XX dedicated to offer recreational equipments to seniors.</span>
+                        <span style="font-size: 20px;">SENIOR is an online marketplace launched in 2022 dedicated to offer recreational equipments to seniors.</span>
                     </p>
                 </div>
 
                 <div class="column">
-                    <!-- <div class="sub_heading">
-                        <h2 style="font-size: 40px; text-align:center">IMAGE HERE </h2>
-                    </div> -->
                     <div class='block_1'>
-                        <img src='images/greeting_2.png' style="display:block; margin-left:auto; margin-right:auto; width:70%; padding-top:60px" />
+                        <img src='images/greeting_2.png' style="display:block; margin-left:auto; margin-right:auto; width:70%;" />
                     </div>
-
                 </div>
-
             </div>
-
             <div class="row">
                 <div class="column">
-                    <!-- <div class="sub_heading">
-                        <h2 style="font-size: 40px; text-align:center">IMAGE HERE</h2>
-                    </div> -->
                     <div class='block_1'>
-                        <img src='images/greeting_2.png' style="display:block; margin-left:auto; margin-right:auto; width:70%; padding-top:100px" />
+                        <img src='images/greeting_2.png' style="display:block; margin-left:auto; margin-right:auto; width:70%; " />
                     </div>
                 </div>
-
                 <div class="column">
                     <div class="sub_heading">
                         <h2 style="font-size: 40px; text-align:center; padding-top:30px">OUR GOALS</h2>

@@ -19,4 +19,6 @@ function BackgroundRefresh() {
     menu_cont.setAttribute('style', 'background-image: url('+(bg[num])+')');
 }
 
+
+
 BackgroundRefresh();
