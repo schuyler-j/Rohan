@@ -159,9 +159,9 @@ if($w = mysqli_query($conn, $wishc)){
             <input type="submit" value="Search" /><br>
         <div class ="shopping_links">    
             <img src="../images/shopping-bag.png"><a class="nav_links" href="shopping.php" id="main">Main Shopping Page</a>
-            <img src="../images/recently-viewed.png"><a class="nav_links" href="#">Recently Viewed</a>
+            <img src="../images/cart.png"><a class="nav_links" href="cart.php">My Cart</a>
             <img src="../images/watchlist.png"><a class="nav_links" href="wishlist.php">Wishlist</a>
-            <img src="../images/help.png"><a class="nav_links" href="#">Help</a>
+            <img src="../images/help.png"><a class="nav_links" href="help.php">Help</a>
             <img src="../images/clear-search.png"><a class="nav_links" href="shopping.php" id="reset_search">Clear Search</a>
         </div>    
         </div>
@@ -242,28 +242,28 @@ if($w = mysqli_query($conn, $wishc)){
         }
 
         ?>
-    <div class="h_spacer"></div>
-    <div class="side_navbar">
-        <div class="nav_title">
-            <h2>Today's Trends</h2>
-        </div>
-        <div class="link_box">
+            <div class="h_spacer"></div>
+            <div class="side_navbar">
+            <div class="nav_title">
+                <h2>Today's Trends</h2>
+            </div>
+            <div class="link_box">
             <?php
 
-$product_sql = "SELECT * FROM `products` WHERE cItem = 1 AND onSale = 1 AND stockAmt > 0;";
-if ($prod_result = mysqli_query($conn, $product_sql)) {
-    if (mysqli_num_rows($prod_result) > 0) {
-        while ($row = mysqli_fetch_assoc($prod_result)) {
-            $title = $row["pName"];
-            $img = $row["imgSrc"];
-            $desc = $row["Description"];
-            $price = $row["Price"];
-            $salePrice = $row["salePrice"];
+                $product_sql = "SELECT * FROM `products` WHERE cItem = 1 AND onSale = 1 AND stockAmt > 0;";
+                if ($prod_result = mysqli_query($conn, $product_sql)) {
+                if (mysqli_num_rows($prod_result) > 0) {
+                    while ($row = mysqli_fetch_assoc($prod_result)) {
+                    $title = $row["pName"];
+                    $img = $row["imgSrc"];
+                    $desc = $row["Description"];
+                    $price = $row["Price"];
+                    $salePrice = $row["salePrice"];
 
-            if (isset($_SESSION["active"]) && $_SESSION["active"] === true) {
-                $addcart = 'community.php?action=ac&id=' . $row["ProductID"];
-                $addwish = 'community.php?action=aw&id=' . $row["ProductID"];
-            }
+                if (isset($_SESSION["active"]) && $_SESSION["active"] === true) {
+                    $addcart = 'community.php?action=ac&id=' . $row["ProductID"];
+                    $addwish = 'community.php?action=aw&id=' . $row["ProductID"];
+                }
 
                 echo "
             <div>
