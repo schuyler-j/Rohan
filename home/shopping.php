@@ -73,12 +73,28 @@ if($w = mysqli_query($conn, $wishc)){
                 <?php 
                 if(isset($_SESSION["active"]) && $_SESSION["active"] === true){
                     echo "<a class = 'nav_links' href='../home/logout.php'>Logout</a>";
+                    $product_sql = "SELECT * FROM `products`;";
+                    $psql = mysqli_query($conn, $product_sql);
+                    $row = mysqli_fetch_assoc($psql);
+
+
+                    $msg = "";
+
+
+                    $total = 0;
+                    $creditcard = $_SESSION["creditcard"];
+                    $addr = $_SESSION["addr"];
+                    $userid = $_SESSION["id"];
+
+                    $productid = 0;
 
                 }else{
                     echo 
                     "<a class = 'nav_links' href='../nav/login.php'>Login</a>
                     ";
-
+                    $addcart = '../home/error.php';
+                    $addwish = '../home/error.php';
+                    $msg = "?msg=Please%20login%20or%20create%20an%20account.";
                 }
                 ?>
             </div>
@@ -150,10 +166,52 @@ if($w = mysqli_query($conn, $wishc)){
         </div>    
         </div>
       </form>
+      <!--beginning of main shopping page-->
       <div class="page_wrapper">
     <div class="side_navbar">
         <div class="nav_title"><h2>Most Searched Items</h2></div>
         <div class="link_box">
+                <?php
+                //check if user added to cart or wishlist
+                if (isset($_GET["action"]) && $_GET["action"] == "ac") {
+                    $_SESSION["productid"] = $_GET["id"];
+                    $productid = $_SESSION["productid"];
+                    $cart_sql = "INSERT INTO `cart` (`CartID`, `TotalPrice`, `Shipping`, `Payment`, `DoP`, `UserID`, `ProductID`, `CreditCard`) VALUES (CONNECTION_ID(), $total, '$addr', 'credit', CURRENT_DATE(), $userid, $productid, $creditcard);";
+                    $update_stock = "UPDATE `products` SET `stockAmt` = (stockAmt - 1) WHERE `products`.`ProductID` = $productid;";
+                    $statement = mysqli_stmt_init($conn);
+                    $update_st = mysqli_stmt_init($conn);
+                    mysqli_stmt_prepare($statement, $cart_sql);
+                    mysqli_stmt_prepare($update_st, $update_stock);
+                    mysqli_stmt_execute($statement);
+                    mysqli_stmt_execute($update_st);
+                }
+                
+                
+                if(isset($_GET["action"]) && $_GET["action"] == "aw"){
+                    $_SESSION["productid"] = $_GET["id"];
+                    $productid = $_SESSION["productid"];
+                    $w = "INSERT INTO `wishlists` (`wishID`, `userID`, `ProductID`) VALUES (CONNECTION_ID(), $userid, $productid);";
+                    $wst = mysqli_stmt_init($conn);
+                    mysqli_stmt_prepare($wst, $w);
+                    mysqli_stmt_execute($wst);
+                }
+
+                $product_sql = "SELECT * FROM `products` WHERE cItem = 1 AND stockAmt > 0 AND onSale = 0 AND featured = 0;";
+                if ($prod_result = mysqli_query($conn, $product_sql)) {
+                    if (mysqli_num_rows($prod_result) > 0) {
+                        while ($row = mysqli_fetch_assoc($prod_result)) {
+                            $title = $row["pName"];
+                            $img = $row["imgSrc"];
+                            $desc = $row["Description"];
+                            $price = $row["Price"];
+
+
+                            if (isset($_SESSION["active"]) && $_SESSION["active"] === true) {
+                                $addcart = 'community.php?action=ac&id=' . $row["ProductID"];
+                                $addwish = 'community.php?action=aw&id=' . $row["ProductID"];
+                                $added = 'Added To Wishlist';
+                            }
+
             <div>
                 <div class="sub_heading">
                     Item 1
