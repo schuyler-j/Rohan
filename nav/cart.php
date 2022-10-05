@@ -68,7 +68,7 @@ session_start();
             <ul class='item_list' id='cart_form'>
                     <li><div class='sub_heading' style='font-size:38px'>My Cart</div></li>";
                     if(isset($_SESSION["active"]) && $_SESSION["active"]){
-                    $sql = "SELECT * FROM `cart` WHERE `UserID` = $_SESSION[id];";
+                    $sql = "SELECT * FROM `carts` WHERE `UserID` = $_SESSION[id];";
                     if ($result = mysqli_query($conn, $sql)) {
                         if (mysqli_num_rows($result) > 0) {
 							$hasItems = 1;
@@ -85,7 +85,7 @@ session_start();
 
 								if(isset($_GET['action']) && $_GET['action'] == 'del'){
 									$id_to_remove = $_GET['id'];
-									$removes = "DELETE FROM `cart` WHERE ProductID = $id_to_remove";
+									$removes = "DELETE FROM `carts` WHERE ProductID = $id_to_remove";
 									$updates = "UPDATE `products` SET `stockAmt` = (stockAmt + 1) WHERE `products`.`ProductID` = $id_to_remove;";
 									$prep = mysqli_stmt_init($conn);
 									$upda = mysqli_stmt_init($conn);
@@ -134,7 +134,7 @@ session_start();
                     <li><div class='sub_heading' style='font-size:38px'>Cart Totals</div></li>
                     <li id='item_total'><b>Total Number of Items: $count</b></li>
                     "; 
-                    $sqld = "SELECT * FROM `cart` WHERE UserID = $_SESSION[id];";
+                    $sqld = "SELECT * FROM `carts` WHERE UserID = $_SESSION[id];";
                     $resultd = mysqli_query($conn, $sqld);
                     if($resultd){while($rowi = mysqli_fetch_array($resultd)){
                         $sqli = "SELECT * FROM `products` WHERE ProductID = $rowi[ProductID];";

@@ -110,7 +110,7 @@ $msg = "None";
                 echo " <i>$" . $prod["Price"] . "</i>";
                 echo "<br/>";
                 if (isset($_SESSION["active"]) && $_SESSION["active"] === true) {
-                    $addcart = 'community.php?action=ac&id=' . $row["ProductID"];
+                    $addcart = '../community/community.php?action=ac&id=' . $row["ProductID"];
                 }
                 echo "
                 <form method='POST' action=$addcart>

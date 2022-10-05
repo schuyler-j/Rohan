@@ -87,7 +87,7 @@
 		$dob = $_POST['dob'];
 		$passconfirm = $_POST['pass-confirm'];
 
-		$sql = "INSERT INTO `users` (`UserID`, `FirstName`, `LastName`, `DOB`, `Email`, `Address`, `CreditCard`, `Username`, `Password`, `sessionID`, `postcode`) VALUES (CONNECTION_ID()+CONNECTION_ID(), '$firstname', '$lastname', '$dob', '$emailaddress', '$streetaddress', NULL, '$username', SHA1($password), NULL, '$postcode');";
+		$sql = "INSERT INTO `users` (`UserID`, `FirstName`, `LastName`, `DOB`, `Email`, `Address`, `CreditCard`, `Username`, `Password`, `sessionID`, `postcode`) VALUES (CONNECTION_ID(), '$firstname', '$lastname', '$dob', '$emailaddress', '$streetaddress', NULL, '$username', SHA1('$username'+'$password'), NULL, '$postcode');";
 		$statement = mysqli_stmt_init($conn);
 		mysqli_stmt_prepare($statement, $sql);
 		if($passconfirm == $password){
@@ -99,7 +99,7 @@
 ?>
     <div class="page_wrapper">
         <div class="form_wrapper">
-            <form action="../home/confirm.php" method="POST">
+            <form action="../home/registration.php" method="POST">
                 <ul class="item_list" id="login_form">
                     <li><div class="sub_heading" style="font-size:38px">Create an Account!</div></li>
                     <li><div class="inner_form_section">

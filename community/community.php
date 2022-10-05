@@ -101,7 +101,7 @@ require_once "../db/dbconn.inc.php";
                 if (isset($_GET["action"]) && $_GET["action"] == "ac") {
                     $_SESSION["productid"] = $_GET["id"];
                     $productid = $_SESSION["productid"];
-                    $cart_sql = "INSERT INTO `cart` (`CartID`, `TotalPrice`, `Shipping`, `Payment`, `DoP`, `UserID`, `ProductID`, `CreditCard`) VALUES (CONNECTION_ID(), $total, '$addr', 'credit', CURRENT_DATE(), $userid, $productid, $creditcard);";
+                    $cart_sql = "INSERT INTO `carts` (`CartID`, `TotalPrice`, `Shipping`, `Payment`, `DoP`, `UserID`, `ProductID`) VALUES (CONNECTION_ID(), $total, '$addr', 'credit', CURRENT_DATE(), $userid, $productid);";
                     $update_stock = "UPDATE `products` SET `stockAmt` = (stockAmt - 1) WHERE `products`.`ProductID` = $productid;";
                     $statement = mysqli_stmt_init($conn);
                     $update_st = mysqli_stmt_init($conn);
