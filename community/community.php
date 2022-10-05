@@ -32,7 +32,7 @@ require_once "../db/dbconn.inc.php";
                 }else{
 
                     echo "
-                        <a class='nav_links' href='error.php?msg=please%20login%20to%20view%20cart'>My Cart</a>
+                        <a class='nav_links' href='../home/error.php?msg=please%20login%20to%20view%20cart'>My Cart</a>
                     ";
                 } ?>
                 <img src="../images/checkout.png" />
