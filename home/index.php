@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<title>Home</title>
-<meta charset="UTF-8" />
-<meta name="author" content="TUJ_Rohan" />
-<link rel="stylesheet" href="../styles/style.css" />
-<link rel="stylesheet" href="../styles/footer.css" />
-<link rel="icon" href="../images/favicon.png">
-<script src="../scripts/script.js" defer></script>
+    <title>Home</title>
+    <meta charset="UTF-8" />
+    <meta name="author" content="TUJ_Rohan" />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="../styles/footer.css" />
+    <link rel="icon" href="../images/favicon.png">
+    <script src="../scripts/script.js" defer></script>
 </head>
-<?php 
-require_once "../db/dbconn.inc.php"; 
+<?php
+require_once "../db/dbconn.inc.php";
 
 /*
 session_start();
@@ -25,28 +26,38 @@ session_start();
         </div>
         <div class="nav" id="nav_bottom">
             <div class="nav_list">
-                <img src="../images/watchlist.png"/>
-                <a class="nav_links" href="../nav/wishlist.php">Wishlist<?php echo " (" . $_SESSION["wishcount"] . ")"?></a>
-                <img src="../images/cart.png"/>
+                <img src="../images/watchlist.png" />
+                <a class="nav_links" href="../nav/wishlist.php">Wishlist<?php echo " (" . $_SESSION["wishcount"] . ")" ?></a>
+                <img src="../images/cart.png" />
                 <?php
                 if (isset($_SESSION["active"]) && $_SESSION["active"] === true) {
                     echo "
                         <a class='nav_links' href='../nav/cart.php'>My Cart</a>
                     ";
-                }else{
+                } else {
 
                     echo "
                         <a class='nav_links' href='../home/error.php?msg=please%20login%20to%20view%20cart'>My Cart</a>
                     ";
                 } ?>
-                <img src="../images/checkout.png"/>
-                <a class="nav_links" href="../nav/checkout.php">Checkout</a>
-                <img src="../images/login.png"/>
-                <?php 
-                if(isset($_SESSION["active"]) && $_SESSION["active"] === true){
-                    echo "<a class = 'nav_links' href='../home/logout.php'>Logout</a>";
+                <img src="../images/checkout.png" />
+                <?php
+                if (isset($_SESSION["active"]) && $_SESSION["active"] === true) {
+                    echo "
+                        <a class='nav_links' href='../nav/checkout.php'>Checkout</a>
+                    ";
                 }else{
-                    echo 
+
+                    echo "
+                        <a class='nav_links' href='error.php?msg=please%20login%20to%20checkout'>Checkout</a>
+                    ";
+                } ?>
+                <img src="../images/login.png" />
+                <?php
+                if (isset($_SESSION["active"]) && $_SESSION["active"] === true) {
+                    echo "<a class = 'nav_links' href='../home/logout.php'>Logout</a>";
+                } else {
+                    echo
                     "<a class = 'nav_links' href='../nav/login.php'>Login</a>
                     ";
                 }
@@ -64,18 +75,18 @@ session_start();
         </div>
     </div>
     <div class="footer_wrapper">
-    <div class="page_wrapper">
-        <?php if(isset($_SESSION["active"]) && $_SESSION["active"]){
+        <div class="page_wrapper">
+            <?php if (isset($_SESSION["active"]) && $_SESSION["active"]) {
 
-            echo "
+                echo "
             
             <div class='block1' id='home'>
                 </div>
             ";
 
                 //<div class='title' id='welcome'><h4>Welcome back," . $_SESSION["username"] . $_SESSION["id"] . "</h4></div>
-        }else{
-            echo "
+            } else {
+                echo "
             
             <div class='home_body' id='join'>
                 <div class='title' id='shopping'>
@@ -117,54 +128,53 @@ session_start();
             </div>
 
             ";
-        }
-
-        ?>
-        <div class="home_body" id="news">
-                <?php if(isset($_SESSION["active"]) && $_SESSION["active"]){
-                        echo "<h1 id='welcome_title'>Welcome back, " . $_SESSION["name"] . "</h1>";
-                }
-                ?>
-            <div class="sub_heading">
-                <h2>NEWS & EVENTS</h2>
-            </div>
-            <!-- code to handle the display/update of the news list -->
-            <?php 
-            echo "<div class='item_list'>";
-            echo "<ul>";
-            $news_sql = "SELECT * FROM `news` WHERE (CURRENT_DATE() - postdate) < 7 ORDER BY postdate DESC;";
-            if($news_result = mysqli_query($conn, $news_sql)){
-                if(mysqli_num_rows($news_result) > 0){
-
-                    while($row = mysqli_fetch_assoc($news_result)){
-                        $title = $row["title"];
-                        $img = $row["img"];
-                        $content = $row["content"];
-                        $date = $row["postdate"];
-                        echo "<li class='list'>";
-                        echo "<h3 class='item_list_title'>$title</h3>";
-                        echo "<div class='item_list_wrapper'>";
-                        echo "<div class='content'>";
-                        echo "<img src='../images/$img'/>";
-                        echo "<div class='block1'>";
-                        echo "<p>$content</p>";
-                        echo "<div class='date'>$date</div>";
-                        echo "</div>";
-                        echo "</div>";
-                        echo "</div>";
-                        echo "</li>";
-                    }
-
-                }
             }
 
-            echo "</ul";
-            echo "</div>";
             ?>
+            <div class="home_body" id="news">
+                <?php if (isset($_SESSION["active"]) && $_SESSION["active"]) {
+                    echo "<h1 id='welcome_title'>Welcome back, " . $_SESSION["name"] . "</h1>";
+                }
+                ?>
+                <div class="sub_heading">
+                    <h2>NEWS & EVENTS</h2>
+                </div>
+                <!-- code to handle the display/update of the news list -->
+                <?php
+                echo "<div class='item_list'>";
+                echo "<ul>";
+                $news_sql = "SELECT * FROM `news` WHERE (CURRENT_DATE() - postdate) < 7 ORDER BY postdate DESC;";
+                if ($news_result = mysqli_query($conn, $news_sql)) {
+                    if (mysqli_num_rows($news_result) > 0) {
+
+                        while ($row = mysqli_fetch_assoc($news_result)) {
+                            $title = $row["title"];
+                            $img = $row["img"];
+                            $content = $row["content"];
+                            $date = $row["postdate"];
+                            echo "<li class='list'>";
+                            echo "<h3 class='item_list_title'>$title</h3>";
+                            echo "<div class='item_list_wrapper'>";
+                            echo "<div class='content'>";
+                            echo "<img src='../images/$img'/>";
+                            echo "<div class='block1'>";
+                            echo "<p>$content</p>";
+                            echo "<div class='date'>$date</div>";
+                            echo "</div>";
+                            echo "</div>";
+                            echo "</div>";
+                            echo "</li>";
+                        }
+                    }
+                }
+
+                echo "</ul";
+                echo "</div>";
+                ?>
+            </div>
         </div>
-    </div>
-    <!-- fix footer to be located at the bottom of the page -->
-    <!-- then update on all pages -->
+        <!-- fix footer to be located at the bottom of the page -->
+        <!-- then update on all pages -->
 
 
 
@@ -173,27 +183,28 @@ session_start();
         <div class="grid" id="footer_grid">
             <div class="col" id="ft_grid_first">
                 <h4>CONTACT</h4>
-                <div><h5>Contact us at the following email.</h5>
+                <div>
+                    <h5>Contact us at the following email.</h5>
                     <a href="mailto:senior@senior.com.au">senior@senior.com.au</a>
                 </div>
             </div>
             <div class="col">
                 <h4>LINKS</h4>
                 <div style="display: grid">
-                    <a href="#">HOME</a>
-                    <br/>
-                    <a href="#">COMMUNITY</a>
-                    <br/>
-                    <a href="#">SHOPPING</a>
-                    <br/>
-                    <a href="#">ABOUT</a>
-                    <br/>
-                    <a href="#">LOGIN</a>
+                    <a href="../home/index.php">HOME</a>
+                    <br />
+                    <a href="../community/community-landing.php">COMMUNITY</a>
+                    <br />
+                    <a href="../home/shopping.php">SHOPPING</a>
+                    <br />
+                    <a href="../home/about.php">ABOUT</a>
+                    <br />
+                    <a href="../nav/login.php">LOGIN</a>
                 </div>
             </div>
             <div class="col">
                 <h4>SUPPORT</h4>
-                <div><a href="help.php">F.A.Q</a></div>
+                <div><a href="../home/help.php">F.A.Q</a></div>
             </div>
             <div class="col" id="ft_grid_last">
                 <h4>DISCLAIMER</h4>
@@ -201,7 +212,7 @@ session_start();
                     <p>This website has been created for UX eval purposes.</p>
                     <p>Products shown are examples. Credit information is stored temporarily.</p>
                     <p>Transactions are not final.</p>
-                    <img style="height:80px" src="../images/logologo.png"/>
+                    <img style="height:80px" src="../images/logologo.png" />
                     <p><b>© 2022</b> SENIOR WEB SYS</p>
                 </div>
             </div>
@@ -211,4 +222,5 @@ session_start();
         </div>
     </div>
 </body>
+
 </html>
