@@ -297,68 +297,63 @@ if ($prod_result = mysqli_query($conn, $product_sql)) {
 }
 
 ?>
+
+        </div>
+    </div>
     <div class="h_spacer"></div>
     <div class="side_navbar">
-        <div class="nav_title"><h2>Almost Gone!</h2></div>
-        <div class="link_box">
-            <div>
-                <div class="sub_heading">
-                    Item 1
-                </div>
-            </div>
-            <div class="img_container"><a href="#"><img src="images/tent1.png"></a></div>
-            <div class="item_list_wrapper" id="subtext_total">
-                <a href="#">
-                    <div id="item_description">
-                        <span class="desc">
-                            Cupidatat ad ea consequat et ullamco laboris ipsum proident consequat nostrud proident in consectetur.
-                        </span>
-                        <h3 id="price">$$$</h3>
-                    </div>
-                </a>
-                <div class="button_wrapper">
-                    <a href="#">
-                        <div class="button" id="atc">
-                            Add To Cart
-                        </div><br>
-                    </a>
-                    <a href="#">
-                        <div class="button" id="atc">
-                            Add To Wishlist
-                        </div>
-                    </a>
-                </div>
-            </div>
+        <div class="nav_title">
+            <h2>Almost Gone!</h2>
         </div>
         <div class="link_box">
-            <div>
-                <div class="sub_heading">
-                    Item 1
-                </div>
-            </div>
-            <div class="img_container"><a href="#"><img src="../images/chair1.png"></a></div>
-            <div class="item_list_wrapper" id="subtext_total">
-                <a href="#">
-                    <div id="item_description">
-                        <span class="desc">
-                            Cupidatat ad ea consequat et ullamco laboris ipsum proident consequat nostrud proident in consectetur.
-                        </span>
-                        <h3 id="price">$$$</h3>
-                    </div>
-                </a>
-                <div class="button_wrapper">
-                    <a href="#">
-                        <div class="button" id="atc">
-                            Add To Cart
-                        </div><br>
-                    </a>
-                    <a href="#">
-                        <div class="button" id="atc">
-                            Add To Wishlist
+            <?php
+            
+            $product_sql = "SELECT * FROM `products` WHERE cItem = 1 AND featured = 1 AND stockAmt > 0;";
+            if ($prod_result = mysqli_query($conn, $product_sql)) {
+                if (mysqli_num_rows($prod_result) > 0) {
+                    while ($row = mysqli_fetch_assoc($prod_result)) {
+                        $title = $row["pName"];
+                        $img = $row["imgSrc"];
+                        $desc = $row["Description"];
+                        $price = $row["Price"];
+
+                        if (isset($_SESSION["active"]) && $_SESSION["active"] === true) {
+                            $addcart = 'community.php?action=ac&id=' . $row["ProductID"];
+                            $addwish = 'community.php?action=aw&id=' . $row["ProductID"];
+                        }
+
+                        echo "
+                    <div>
+                        <div class='sub_heading'>
+                            <h4>" . $title . "</h4>
                         </div>
-                    </a>
-                </div>
-            </div>
+                    </div>
+                    <div class='img_container' id='featured'><a href='../home/landing.php'><img src='images/$img'/></a></div>
+                    <div class='item_list_wrapper' id='subtext_total'>
+                        <a href='../home/landing.php'>
+                            <div id='item_description'>
+                                <h3 class='featured_price' id='fprice'>$$price</h3>
+                            </div>
+                        </a>
+                        <div class='button_wrapper'>
+                            <form method='POST' action=$addcart$msg>
+                                <input class='button' value='Add To Cart' id='atc_input' type='submit'>
+                                </input>
+                            </form>
+                            <form method='POST' action=$addwish$msg>
+                                <input class='button' value='Add To Wishlist' id='atc' type='submit'>
+                                </input>
+                            </form>
+                        </div>
+                    </div>
+
+                    ";
+                    }
+                }
+            }
+
+            ?>
+
         </div>
     </div>
 </div>
