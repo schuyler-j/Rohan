@@ -52,26 +52,10 @@ if($w = mysqli_query($conn, $wishc)){
                 if (isset($_SESSION["active"]) && $_SESSION["active"] === true) {
                     echo "<a class = 'nav_links' href='../home/logout.php'>Logout</a>";
 
-                    $product_sql = "SELECT * FROM `products`;";
-                    $psql = mysqli_query($conn, $product_sql);
-                    $row = mysqli_fetch_assoc($psql);
-
-                    $msg = "";
-
-                    $total = 0;
-                    $creditcard = $_SESSION["creditcard"];
-                    $addr = $_SESSION["addr"];
-                    $userid = $_SESSION["id"];
-
-                    $productid = 0;
                 } else {
                     echo
                     "<a class = 'nav_links' href='../nav/login.php'>Login</a>
                     ";
-
-                    $addcart = '../home/error.php';
-                    $addwish = '../home/error.php';
-                    $msg = "?msg=Please%20login%20or%20create%20an%20account.";
                 }
                 ?>
             </div>
@@ -88,33 +72,40 @@ if($w = mysqli_query($conn, $wishc)){
     </div>
     <!--beginning of item grid list-->
     <div class="page_wrapper">
-        <div class="form_wrapper">
-        <div class="top_third">
-        </div>
-        </div>
         <div class="home_body" id="news">
                 <?php 
-                $count = 0;
-                $total = 0;
                 echo "
 				<ul class='item_list' id='cart_form'>
                     <li><div class='sub_heading' style='font-size:38px'>Item Details</div></li>";
                     if(isset($_SESSION["active"]) && $_SESSION["active"]){
+
 						echo "<li><form>
+
+				<!--ItemName-->
                     <li class='pname_title'><b>Item Name</b></li>
                     <li><input name='pname' type='text' placeholder='' id='uname' required></input></li>
+
+				<!--ItemDesc-->
                     <li class='pname_title'><b>Item Description</b></li>
                     <li><div class='password_block'>
                             <textarea name='desc' type='text' placeholder='' id='item_desc' required></textarea>
                         </div></li>
-                    <li class='pname_title'><b>Price</b></li>
+
+				<!--ItemPrice-->
+                    <li class='pname_title'><b>Price $(AUD)</b></li>
                     <li><div class='password_block'>
                             <input name='price' type='text' placeholder='' id='pmatch' value='' required></input>
                         </div></li>
+
+				<!--ItemAmount-->
                     <li class='pname_title'><b>Amount</b></li>
                     <li><input name='stockAmt' type='number' placeholder='' id='emailaddr' required></input></li>
+
+				<!--ItemAddress-->
                     <li class='pname_title'><b>Address</b></li>
                     <li><input name='address' type='text' placeholder='' id='emailaddr' required></input></li>
+
+				<!--ItemState-->
                     <li class='pname_title'><b>State</b></li>
 					<li><select name='location' id='state_upload'>
 						<option
@@ -141,6 +132,8 @@ if($w = mysqli_query($conn, $wishc)){
 					}
                     echo "
 					</div>
+
+				<!--ItemUploadForm-->
 					<ul class='item_list' id='image_upload'>
 					<li><form action='community-upload.php' method='POST' enctype='multipart/form-data'></li>
                     <li><div class='sub_heading' style='font-size:38px'>Upload Image</div></li>
@@ -148,16 +141,12 @@ if($w = mysqli_query($conn, $wishc)){
 					<li><input id='file_upload_btn' type='file' name='fileupload'/></li>
 					<li><input class='button' type='submit' value='UPLOAD' id='upload_upload'></input></li>
 					<li></form></li>
-                    </ul>"; 
+                    </ul>";
                 ?>
         </div>
-    </div>
-</body>
-
     </div>
     <div class="footer">
         <h4>Thomas Hobbs | Udall Liao | Jay Schuyler</h4>
     </div>
 </body>
-
 </html>
