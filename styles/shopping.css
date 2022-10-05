@@ -100,10 +100,13 @@ img{
     background-color: #364133;
     color: #f2d349;
     text-align: center;
-    border-left: 4px solid #f2d349;
-    border-right: 4px solid #f2d349;
-    border-top: 12px solid #f2d349;
+    border-left: 4px solid #e08549;
+    border-right: 4px solid #e08549;
+    border-top: 12px solid #e08549;
+    border-bottom: 4px solid #232b21;
     margin-top: 12px;
+    margin-bottom: 12px;
+    padding-bottom: 18px;
 }
 
 .nav_title h2{
@@ -111,7 +114,6 @@ img{
     text-shadow: 2px 2px #364133;
 
 }
-
 
 .link_box{
     margin-top: 6px;
