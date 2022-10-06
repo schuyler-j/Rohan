@@ -165,12 +165,14 @@ if($w = mysqli_query($conn, $wishc)){
             <img src="../images/clear-search.png"><a class="nav_links" href="shopping.php" id="reset_search">Clear Search</a>
         </div>    
         </div>
-      </form>
-      <!--beginning of main shopping page-->
-      <div class="page_wrapper">
-    <div class="side_navbar">
-        <div class="nav_title"><h2>Most Searched Items</h2></div>
-        <div class="link_box">
+        <div class="overlay"></div>
+    <!--beginning of item grid list-->
+    <div class="page_wrapper">
+        <div class="side_navbar">
+            <div class="nav_title">
+                <h2>Most Searched Items</h2>
+            </div>
+            <div class="link_box">
                 <?php
                 //check if user added to cart or wishlist
                 if (isset($_GET["action"]) && $_GET["action"] == "ac") {
@@ -211,152 +213,161 @@ if($w = mysqli_query($conn, $wishc)){
                                 $addwish = 'community.php?action=aw&id=' . $row["ProductID"];
                                 $added = 'Added To Wishlist';
                             }
-                            echo "
-                            <div>
-                                <div class='sub_heading'>
-                                    <h4>" . $title . "</h4>
-                                </div>
-                            </div>
-                            <div class='img_container'><a href='../home/landing.php'><img src='images/$img'/></a></div>
-                            <div class='item_list_wrapper' id='subtext_total'>
-                                <a href='../home/landing.php'>
-                                <div id='item_description'>
-                                <h3 id='price'>$$price</h3>
-                            </div>
-                        </a>
-                        <div class='button_wrapper'>
-                            <form method='POST' action=$addcart$msg>
-                                <input class='button' value='Add To Cart' id='atc_input' type='submit'>
-                                </input>
-                            </form>
-                            <form method='POST' action=$addwish$msg>
-                                <input class='button' value='Add To Wishlist' id='atc' type='submit'>
-                                </input>
-                            </form>
-                        </div>
-                    </div>
-        
-                    ";
-                }
-            }
-        }
 
-        ?>
-            <div class="h_spacer"></div>
-            <div class="side_navbar">
+                            echo "
+                        <div>
+                            <div class='sub_heading'>
+                                <h4>" . $title . "</h4>
+                            </div>
+                        </div>
+                        <div class='img_container'><a href='../home/landing.php'><img src='images/$img'/></a></div>
+                        <div class='item_list_wrapper' id='subtext_total'>
+                            <a href='../home/landing.php'>
+                                <div id='item_description'>
+                                    <h3 id='price'>$$price</h3>
+                                </div>
+                            </a>
+                            <div class='button_wrapper'>
+                                <form method='POST' action=$addcart$msg>
+                                    <input class='button' value='Add To Cart' id='atc_input' type='submit'>
+                                    </input>
+                                </form>
+                                <form method='POST' action=$addwish$msg>
+                                    <input class='button' value='Add To Wishlist' id='atc' type='submit'>
+                                    </input>
+                                </form>
+                            </div>
+                        </div>
+
+                        ";
+                        }
+                    }
+                }
+
+                ?>
+            </div>
+        </div>
+        <div class="h_spacer"></div>
+        <div class="side_navbar">
             <div class="nav_title">
-                <h2>Today's Trends</h2>
+                <h2>Today's Trend</h2>
             </div>
             <div class="link_box">
-            <?php
+                <?php
 
                 $product_sql = "SELECT * FROM `products` WHERE cItem = 1 AND onSale = 1 AND stockAmt > 0;";
                 if ($prod_result = mysqli_query($conn, $product_sql)) {
-                if (mysqli_num_rows($prod_result) > 0) {
-                    while ($row = mysqli_fetch_assoc($prod_result)) {
-                    $title = $row["pName"];
-                    $img = $row["imgSrc"];
-                    $desc = $row["Description"];
-                    $price = $row["Price"];
-                    $salePrice = $row["salePrice"];
+                    if (mysqli_num_rows($prod_result) > 0) {
+                        while ($row = mysqli_fetch_assoc($prod_result)) {
+                            $title = $row["pName"];
+                            $img = $row["imgSrc"];
+                            $desc = $row["Description"];
+                            $price = $row["Price"];
+                            $salePrice = $row["salePrice"];
 
-                if (isset($_SESSION["active"]) && $_SESSION["active"] === true) {
-                    $addcart = 'community.php?action=ac&id=' . $row["ProductID"];
-                    $addwish = 'community.php?action=aw&id=' . $row["ProductID"];
-                }
+                            if (isset($_SESSION["active"]) && $_SESSION["active"] === true) {
+                                $addcart = 'community.php?action=ac&id=' . $row["ProductID"];
+                                $addwish = 'community.php?action=aw&id=' . $row["ProductID"];
+                            }
 
-                echo "
-            <div>
-                <div class='sub_heading'>
-                    <h4>" . $title . "</h4>
-                </div>
-            </div>
-            <div class='img_container'><a href='../home/landing.php'><img src='images/$img'/></a></div>
-            <div class='item_list_wrapper' id='subtext_total'>
+                            echo "
+                        <div>
+                            <div class='sub_heading'>
+                                <h4>" . $title . "</h4>
+                            </div>
+                        </div>
+                        <div class='img_container'><a href='../home/landing.php'><img src='images/$img'/></a></div>
+                        <div class='item_list_wrapper' id='subtext_total'>
                             <a href='../home/landing.php'>
                                 <div id='item_description'>
-                                <h3 id='oldprice'>$$price</h3>
-                                <h3 id='saleprice'>$$salePrice</h3>
+                                "/*
+                                    <span class='desc'>
+                                    $desc
+                                    </span>
+                                    */ . " 
+                                    <h3 id='oldprice'>$$price</h3>
+                                    <h3 id='saleprice'>$$salePrice</h3>
+                                </div>
+                            </a>
+                            <div class='button_wrapper'>
+                                <form method='POST' action=$addcart$msg>
+                                    <input class='button' value='Add To Cart' id='atc_input' type='submit'>
+                                    </input>
+                                </form>
+                                <form method='POST' action=$addwish$msg>
+                                    <input class='button' value='Add To Wishlist' id='atc' type='submit'>
+                                    </input>
+                                </form>
                             </div>
-                        </a>
-                        <div class='button_wrapper'>
-                        <form method='POST' action=$addcart$msg>
-                            <input class='button' value='Add To Cart' id='atc_input' type='submit'>
-                            </input>
-                        </form>
-                        <form method='POST' action=$addwish$msg>
-                            <input class='button' value='Add To Wishlist' id='atc' type='submit'>
-                            </input>
-                        </form>
-            </div>
-        </div>
+                        </div>
 
-        ";
-        }
-    }
-}
-
-?>
-
-        </div>
-    </div>
-    <div class="h_spacer"></div>
-    <div class="side_navbar">
-        <div class="nav_title">
-            <h2>Almost Gone!</h2>
-        </div>
-        <div class="link_box">
-            <?php
-            
-            $product_sql = "SELECT * FROM `products` WHERE cItem = 1 AND featured = 1 AND stockAmt > 0;";
-            if ($prod_result = mysqli_query($conn, $product_sql)) {
-                if (mysqli_num_rows($prod_result) > 0) {
-                    while ($row = mysqli_fetch_assoc($prod_result)) {
-                        $title = $row["pName"];
-                        $img = $row["imgSrc"];
-                        $desc = $row["Description"];
-                        $price = $row["Price"];
-
-                        if (isset($_SESSION["active"]) && $_SESSION["active"] === true) {
-                            $addcart = 'community.php?action=ac&id=' . $row["ProductID"];
-                            $addwish = 'community.php?action=aw&id=' . $row["ProductID"];
+                        ";
                         }
-
-                        echo "
-                    <div>
-                        <div class='sub_heading'>
-                            <h4>" . $title . "</h4>
-                        </div>
-                    </div>
-                    <div class='img_container' id='featured'><a href='../home/landing.php'><img src='images/$img'/></a></div>
-                    <div class='item_list_wrapper' id='subtext_total'>
-                        <a href='../home/landing.php'>
-                            <div id='item_description'>
-                                <h3 class='featured_price' id='fprice'>$$price</h3>
-                            </div>
-                        </a>
-                        <div class='button_wrapper'>
-                            <form method='POST' action=$addcart$msg>
-                                <input class='button' value='Add To Cart' id='atc_input' type='submit'>
-                                </input>
-                            </form>
-                            <form method='POST' action=$addwish$msg>
-                                <input class='button' value='Add To Wishlist' id='atc' type='submit'>
-                                </input>
-                            </form>
-                        </div>
-                    </div>
-
-                    ";
                     }
                 }
-            }
 
-            ?>
+                ?>
 
+
+            </div>
+        </div>
+        <div class="h_spacer"></div>
+        <div class="side_navbar">
+            <div class="nav_title">
+                <h2>Almost Gone!</h2>
+            </div>
+            <div class="link_box">
+                <?php
+
+                $product_sql = "SELECT * FROM `products` WHERE cItem = 1 AND featured = 1 AND stockAmt > 0;";
+                if ($prod_result = mysqli_query($conn, $product_sql)) {
+                    if (mysqli_num_rows($prod_result) > 0) {
+                        while ($row = mysqli_fetch_assoc($prod_result)) {
+                            $title = $row["pName"];
+                            $img = $row["imgSrc"];
+                            $desc = $row["Description"];
+                            $price = $row["Price"];
+
+                            if (isset($_SESSION["active"]) && $_SESSION["active"] === true) {
+                                $addcart = 'community.php?action=ac&id=' . $row["ProductID"];
+                                $addwish = 'community.php?action=aw&id=' . $row["ProductID"];
+                            }
+
+                            echo "
+                        <div>
+                            <div class='sub_heading'>
+                                <h4>" . $title . "</h4>
+                            </div>
+                        </div>
+                        <div class='img_container' id='featured'><a href='../home/landing.php'><img src='images/$img'/></a></div>
+                        <div class='item_list_wrapper' id='subtext_total'>
+                            <a href='../home/landing.php'>
+                                <div id='item_description'>
+                                    <h3 class='featured_price' id='fprice'>$$price</h3>
+                                </div>
+                            </a>
+                            <div class='button_wrapper'>
+                                <form method='POST' action=$addcart$msg>
+                                    <input class='button' value='Add To Cart' id='atc_input' type='submit'>
+                                    </input>
+                                </form>
+                                <form method='POST' action=$addwish$msg>
+                                    <input class='button' value='Add To Wishlist' id='atc' type='submit'>
+                                    </input>
+                                </form>
+                            </div>
+                        </div>
+
+                        ";
+                        }
+                    }
+                }
+
+                ?>
+
+            </div>
         </div>
     </div>
-</div>
 <div class="pages">
     <p id="number">1</p>
     <button id="back" onclick="back()"><< Back</button>
