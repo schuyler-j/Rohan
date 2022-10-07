@@ -113,7 +113,7 @@ if($w = mysqli_query($conn, $wishc)){
 <form action="shopping.php" method="get">
         <div class="nav_title" id="search_title"><h2 class="title">Ready to find your next item? <br> Start searching here</h2></div>  
             
-        <div class="search_container">
+        <div class="search_container" action="../home/search.php" method="GET">
             <label>Search: </label>
             <input type="text" name="search" placeholder="What would you like to look for?"/>
 
