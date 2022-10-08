@@ -113,7 +113,7 @@ if($w = mysqli_query($conn, $wishc)){
 <form action="shopping.php" method="get">
         <div class="nav_title" id="search_title"><h2 class="title">Ready to find your next item? <br> Start searching here</h2></div>  
             
-        <div class="search_container" action="../home/search.php" method="GET">
+        <div class="search_container" method="POST">
             <label>Search: </label>
             <input type="text" name="search" placeholder="What would you like to look for?"/>
 
@@ -187,7 +187,20 @@ if($w = mysqli_query($conn, $wishc)){
                     mysqli_stmt_execute($statement);
                     mysqli_stmt_execute($update_st);
                 }
-                
+                if(isset($_POST["submit"])) {
+                    $str = $_POST["search"];
+                    $location = $_POST["search"];
+                    $category = $_POST["search"];
+                    $sth = $conn -> prepare("SELECT * FROM `products` WHERE `pName` = '$str', `State`= '$location', `Category` ='$category'");
+                    $sth->setFetchMode(PDO :: FETCH_OBJ);
+                    $sth -> execute();
+
+                    if($row = $sth->fetch()){
+                        ?>
+                        <br><br><br>
+                        <?php
+                    }
+                }
                 
                 if(isset($_GET["action"]) && $_GET["action"] == "aw"){
                     $_SESSION["productid"] = $_GET["id"];
