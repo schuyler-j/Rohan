@@ -32,7 +32,6 @@ session_start();
                         <a class='nav_links' href='cart.php'>My Cart</a>
                     ";
                 }else{
-
                     echo "
                         <a class='nav_links' href='error.php?msg=please%20login%20to%20view%20cart'>My Cart</a>
                     ";
@@ -72,11 +71,11 @@ session_start();
         </div>
         <div class="nav" id="nav_top">
             <ul class="main_menu">
-                <li class="list"><a href="../index.php"><span class="media_text">Home</span></a></li>
+                <li class="list"><a href="../home/index.php"><span class="media_text">Home</span></a></li>
                 <li class="list"><a href="../community/community-landing.php"><span class="media_text">Community Marketplace</span></a></li>
-                <li class="list"><a href="../shopping.php"><span class="media_text">Shopping</span></a></li>
-                <li class="list"><a href="../about.php"><span class="media_text">About</span></a></li>
-                <li class="list"><a href="../contact.php"><span class="media_text">Contact</span></a></li>
+                <li class="list"><a href="../home/shopping.php"><span class="media_text">Shopping</span></a></li>
+                <li class="list"><a href="../home/about.php"><span class="media_text">About</span></a></li>
+                <li class="list"><a href="../home/contact.php"><span class="media_text">Contact</span></a></li>
             </ul>
         </div>
     </div>
@@ -111,7 +110,7 @@ $msg = "None";
                 echo " <i>$" . $prod["Price"] . "</i>";
                 echo "<br/>";
                 if (isset($_SESSION["active"]) && $_SESSION["active"] === true) {
-                    $addcart = 'community.php?action=ac&id=' . $row["ProductID"];
+                    $addcart = '../community/community.php?action=ac&id=' . $row["ProductID"];
                 }
                 echo "
                 <form method='POST' action=$addcart>

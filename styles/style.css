@@ -681,7 +681,7 @@ a:hover.nav_links{
 }
 
 
-#uname, #pword, #fname, #lname, #streetaddr, #emailaddr, #postcode, #dob, #message, #pmatch{
+#uname, #pword, #fname, #lname, #streetaddr, #emailaddr, #postcode, #dob, #message, #pmatch, #state_upload{
     padding: 10px;
     min-width: 90%;
     font-size: 28px;
@@ -804,8 +804,21 @@ input:focus {
     height: auto;
     border-radius: 4px;
 }
+
+#image_upload{
+    margin: 10px;
+    padding: 50px;
+    font-size: 22px;
+    background-color: #fffbe9;
+    border-radius: 4px;
+	height: fit-content;
+}
+
 input[type = submit]{
     color: beige;
+}
+
+input[type = file]{
 }
 
 input[type = submit]:hover{
@@ -958,7 +971,28 @@ transition: 0.3s;
 #cardA:hover, #cardB:hover{
 	box-shadow: 0px 0px 20px 4px #465343;
 }
+
+
+#upload_submit:hover, #upload_upload:hover{
+	text-shadow: 1px 1px 3px #333 !important;
+}
+
+
+#item_desc{
+    padding: 10px;
+    min-width: 90%;
+    font-size: 28px;
+    margin-right: 12px;
+    box-sizing: border-box;
+    color: #f2d349;
+    background-color: #677762;
+	border-top: 2px solid #222;
+	border-left: 2px solid #222;
+}
+
+
 #report{
     text-align: center;
     font-size: 25px;
 }
+

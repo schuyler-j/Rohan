@@ -12,26 +12,6 @@
 </head>
 <?php
 require_once "../db/dbconn.inc.php";
-/*
-session_start();
-$_SESSION["wishcount"] = 0;
-$added = 'Add To Wishlist';
-if(isset($_SESSION["active"]) && $_SESSION["active"]){
-    $userid = $_SESSION["id"];
-}else{
-    $userid = "";
-}
-$wishc = "SELECT * FROM `wishlists` WHERE userID = $userid;";
-if($w = mysqli_query($conn, $wishc)){
-    if(mysqli_num_rows($w) > 0){
-        while($rw = mysqli_fetch_assoc($w)){
-                $_SESSION["wishcount"] = $_SESSION["wishcount"] + 1;
-        }
-    }
-}else{
-    $_SESSION["wishcount"] = 0;
-}
-*/
 ?>
 
 <body >
@@ -121,7 +101,7 @@ if($w = mysqli_query($conn, $wishc)){
                 if (isset($_GET["action"]) && $_GET["action"] == "ac") {
                     $_SESSION["productid"] = $_GET["id"];
                     $productid = $_SESSION["productid"];
-                    $cart_sql = "INSERT INTO `cart` (`CartID`, `TotalPrice`, `Shipping`, `Payment`, `DoP`, `UserID`, `ProductID`, `CreditCard`) VALUES (CONNECTION_ID(), $total, '$addr', 'credit', CURRENT_DATE(), $userid, $productid, $creditcard);";
+                    $cart_sql = "INSERT INTO `carts` (`CartID`, `TotalPrice`, `Shipping`, `Payment`, `DoP`, `UserID`, `ProductID`) VALUES (CONNECTION_ID(), $total, '$addr', 'credit', CURRENT_DATE(), $userid, $productid);";
                     $update_stock = "UPDATE `products` SET `stockAmt` = (stockAmt - 1) WHERE `products`.`ProductID` = $productid;";
                     $statement = mysqli_stmt_init($conn);
                     $update_st = mysqli_stmt_init($conn);
@@ -163,7 +143,7 @@ if($w = mysqli_query($conn, $wishc)){
                                 <h4>" . $title . "</h4>
                             </div>
                         </div>
-                        <div class='img_container'><a href='../home/landing.php'><img src='images/$img'/></a></div>
+                        <div class='img_container'><a href='../home/landing.php'><img src='../images/$img'/></a></div>
                         <div class='item_list_wrapper' id='subtext_total'>
                             <a href='../home/landing.php'>
                                 <div id='item_description'>
@@ -219,7 +199,7 @@ if($w = mysqli_query($conn, $wishc)){
                                 <h4>" . $title . "</h4>
                             </div>
                         </div>
-                        <div class='img_container'><a href='../home/landing.php'><img src='images/$img'/></a></div>
+                        <div class='img_container'><a href='../home/landing.php'><img src='../images/$img'/></a></div>
                         <div class='item_list_wrapper' id='subtext_total'>
                             <a href='../home/landing.php'>
                                 <div id='item_description'>
@@ -282,7 +262,7 @@ if($w = mysqli_query($conn, $wishc)){
                                 <h4>" . $title . "</h4>
                             </div>
                         </div>
-                        <div class='img_container' id='featured'><a href='../home/landing.php'><img src='images/$img'/></a></div>
+                        <div class='img_container' id='featured'><a href='../home/landing.php'><img src='../images/$img'/></a></div>
                         <div class='item_list_wrapper' id='subtext_total'>
                             <a href='../home/landing.php'>
                                 <div id='item_description'>
