@@ -958,3 +958,7 @@ transition: 0.3s;
 #cardA:hover, #cardB:hover{
 	box-shadow: 0px 0px 20px 4px #465343;
 }
+#report{
+    text-align: center;
+    font-size: 25px;
+}

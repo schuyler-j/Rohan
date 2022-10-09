@@ -15,6 +15,24 @@ require_once "../db/dbconn.inc.php";
 
 /*
 session_start();
+
+$_SESSION["wishcount"] = 0;
+$added = 'Add To Wishlist';
+if(isset($_SESSION["active"]) && $_SESSION["active"]){
+    $userid = $_SESSION["id"];
+}else{
+    $userid = "";
+}
+$wishc = "SELECT * FROM `wishlists` WHERE userID = $userid;";
+if($w = mysqli_query($conn, $wishc)){
+    if(mysqli_num_rows($w) > 0){
+        while($rw = mysqli_fetch_assoc($w)){
+                $_SESSION["wishcount"] = $_SESSION["wishcount"] + 1;
+        }
+    }
+}else{
+    $_SESSION["wishcount"] = 0;
+} 
 */
 ?>
 
@@ -55,12 +73,28 @@ session_start();
                 <?php 
                 if(isset($_SESSION["active"]) && $_SESSION["active"] === true){
                     echo "<a class = 'nav_links' href='../home/logout.php'>Logout</a>";
+                    $product_sql = "SELECT * FROM `products`;";
+                    $psql = mysqli_query($conn, $product_sql);
+                    $row = mysqli_fetch_assoc($psql);
+
+
+                    $msg = "";
+
+
+                    $total = 0;
+                    $creditcard = $_SESSION["creditcard"];
+                    $addr = $_SESSION["addr"];
+                    $userid = $_SESSION["id"];
+
+                    $productid = 0;
 
                 }else{
                     echo 
                     "<a class = 'nav_links' href='../nav/login.php'>Login</a>
                     ";
-
+                    $addcart = '../home/error.php';
+                    $addwish = '../home/error.php';
+                    $msg = "?msg=Please%20login%20or%20create%20an%20account.";
                 }
                 ?>
             </div>
@@ -79,7 +113,7 @@ session_start();
 <form action="shopping.php" method="get">
         <div class="nav_title" id="search_title"><h2 class="title">Ready to find your next item? <br> Start searching here</h2></div>  
             
-        <div class="search_container">
+        <div class="search_container" method="POST">
             <label>Search: </label>
             <input type="text" name="search" placeholder="What would you like to look for?"/>
 
@@ -125,206 +159,234 @@ session_start();
             <input type="submit" value="Search" /><br>
         <div class ="shopping_links">    
             <img src="../images/shopping-bag.png"><a class="nav_links" href="shopping.php" id="main">Main Shopping Page</a>
-            <img src="../images/recently-viewed.png"><a class="nav_links" href="#">Recently Viewed</a>
-            <img src="../images/watchlist.png"><a class="nav_links" href="wishlist.php">Wishlist</a>
-            <img src="../images/help.png"><a class="nav_links" href="#">Help</a>
+            <img src="../images/cart.png"><a class="nav_links" href="../nav/cart.php">My Cart</a>
+            <img src="../images/watchlist.png"><a class="nav_links" href="../nav/wishlist.php">Wishlist</a>
+            <img src="../images/help.png"><a class="nav_links" href="help.php">Help</a>
             <img src="../images/clear-search.png"><a class="nav_links" href="shopping.php" id="reset_search">Clear Search</a>
         </div>    
         </div>
-      </form>
-      <div class="page_wrapper">
-    <div class="side_navbar">
-        <div class="nav_title"><h2>Most Searched Items</h2></div>
-        <div class="link_box">
-            <div>
-                <div class="sub_heading">
-                    Item 1
-                </div>
+        <div class="overlay"></div>
+    <!--beginning of item grid list-->
+    <div class="page_wrapper">
+        <div class="side_navbar">
+            <div class="nav_title">
+                <h2>Most Searched Items</h2>
             </div>
-            <div class="img_container"><a href="#"><img src="../images/gear1.png"></a></div>
-            <div class="item_list_wrapper" id="subtext_total">
-                <a href="#">
-                    <div id="item_description">
-                        <span class="desc">
-                            Cupidatat ad ea consequat et ullamco laboris ipsum proident consequat nostrud proident in consectetur.
-                        </span>
-                        <h3 id="price">$$$</h3>
-                    </div>
-                </a>
-                <div class="button_wrapper">
-                    <a href="#">
-                        <div class="button" id="atc">
-                            Add To Cart
-                        </div><br>
-                    </a>
-                    <a href="#">
-                        <div class="button" id="atc">
-                            Add To Wishlist
+            <div class="link_box">
+                <?php
+                //check if user added to cart or wishlist
+                if (isset($_GET["action"]) && $_GET["action"] == "ac") {
+                    $_SESSION["productid"] = $_GET["id"];
+                    $productid = $_SESSION["productid"];
+                    $cart_sql = "INSERT INTO `cart` (`CartID`, `TotalPrice`, `Shipping`, `Payment`, `DoP`, `UserID`, `ProductID`, `CreditCard`) VALUES (CONNECTION_ID(), $total, '$addr', 'credit', CURRENT_DATE(), $userid, $productid, $creditcard);";
+                    $update_stock = "UPDATE `products` SET `stockAmt` = (stockAmt - 1) WHERE `products`.`ProductID` = $productid;";
+                    $statement = mysqli_stmt_init($conn);
+                    $update_st = mysqli_stmt_init($conn);
+                    mysqli_stmt_prepare($statement, $cart_sql);
+                    mysqli_stmt_prepare($update_st, $update_stock);
+                    mysqli_stmt_execute($statement);
+                    mysqli_stmt_execute($update_st);
+                }
+                if(isset($_POST["submit"])) {
+                    $str = $_POST["search"];
+                    $location = $_POST["search"];
+                    $category = $_POST["search"];
+                    $sth = $conn -> prepare("SELECT * FROM `products` WHERE `pName` = '$str', `State`= '$location', `Category` ='$category'");
+                    $sth->setFetchMode(PDO :: FETCH_OBJ);
+                    $sth -> execute();
+
+                    if($row = $sth->fetch()){
+                        ?>
+                        <br><br><br>
+                        <?php
+                    }
+                }
+                
+                if(isset($_GET["action"]) && $_GET["action"] == "aw"){
+                    $_SESSION["productid"] = $_GET["id"];
+                    $productid = $_SESSION["productid"];
+                    $w = "INSERT INTO `wishlists` (`wishID`, `userID`, `ProductID`) VALUES (CONNECTION_ID(), $userid, $productid);";
+                    $wst = mysqli_stmt_init($conn);
+                    mysqli_stmt_prepare($wst, $w);
+                    mysqli_stmt_execute($wst);
+                }
+
+                $product_sql = "SELECT * FROM `products` WHERE cItem = 0 AND stockAmt > 0 AND onSale = 0 AND featured = 0;";
+                if ($prod_result = mysqli_query($conn, $product_sql)) {
+                    if (mysqli_num_rows($prod_result) > 0) {
+                        while ($row = mysqli_fetch_assoc($prod_result)) {
+                            $title = $row["pName"];
+                            $img = $row["imgSrc"];
+                            $desc = $row["Description"];
+                            $price = $row["Price"];
+
+
+                            if (isset($_SESSION["active"]) && $_SESSION["active"] === true) {
+                                $addcart = 'shopping.php?action=ac&id=' . $row["ProductID"];
+                                $addwish = 'shopping.php?action=aw&id=' . $row["ProductID"];
+                                $added = 'Added To Wishlist';
+                            }
+
+                            echo "
+                        <div>
+                            <div class='sub_heading'>
+                                <h4>" . $title . "</h4>
+                            </div>
                         </div>
-                    </a>
-                </div>
+                        <div class='img_container'><a href='../home/landing.php'><img src='../images/$img'/></a></div>
+                        <div class='item_list_wrapper' id='subtext_total'>
+                            <a href='../home/landing.php'>
+                                <div id='item_description'>
+                                "/*
+                                    <span class='desc'>
+                                    $desc
+                                    </span>
+                                    */ . " 
+                                    <h3 id='price'>$$price</h3>
+                                </div>
+                            </a>
+                            <div class='button_wrapper'>
+                                <form method='POST' action=$addcart$msg>
+                                    <input class='button' value='Add To Cart' id='atc_input' type='submit'>
+                                    </input>
+                                </form>
+                                <form method='POST' action=$addwish$msg>
+                                    <input class='button' value='Add To Wishlist' id='atc' type='submit'>
+                                    </input>
+                                </form>
+                            </div>
+                        </div>
+
+
+                        ";
+                        }
+                    }
+                }
+
+                ?>
             </div>
         </div>
-        <div class="link_box">
-            <div>
-                <div class="sub_heading">
-                    Item 1
-                </div>
+        <div class="h_spacer"></div>
+        <div class="side_navbar">
+            <div class="nav_title">
+                <h2>Today's Trend</h2>
             </div>
-            <div class="img_container"><a href="#"><img src="images/foam1.png"><div class="hidden"></div></a></div>
-            <div class="item_list_wrapper" id="subtext_total">
-                <a href="#">
-                    <div id="item_description">
-                        <span class="desc">
-                            Cupidatat ad ea consequat et ullamco laboris ipsum proident consequat nostrud proident in consectetur.
-                        </span>
-                        <h3 id="price">$$$</h3>
-                    </div>
-                </a>
-                <div class="button_wrapper">
-                    <a href="#">
-                        <div class="button" id="atc">
-                            Add To Cart
-                        </div><br>
-                    </a>
-                    <a href="#">
-                        <div class="button" id="atc">
-                            Add To Wishlist
+            <div class="link_box">
+                <?php
+
+                $product_sql = "SELECT * FROM `products` WHERE cItem = 0 AND onSale = 1 AND stockAmt > 0;";
+                if ($prod_result = mysqli_query($conn, $product_sql)) {
+                    if (mysqli_num_rows($prod_result) > 0) {
+                        while ($row = mysqli_fetch_assoc($prod_result)) {
+                            $title = $row["pName"];
+                            $img = $row["imgSrc"];
+                            $desc = $row["Description"];
+                            $price = $row["Price"];
+                            $salePrice = $row["salePrice"];
+
+                            if (isset($_SESSION["active"]) && $_SESSION["active"] === true) {
+                                $addcart = 'shopping.php?action=ac&id=' . $row["ProductID"];
+                                $addwish = 'shopping.php?action=aw&id=' . $row["ProductID"];
+                            }
+
+                            echo "
+                        <div>
+                            <div class='sub_heading'>
+                                <h4>" . $title . "</h4>
+                            </div>
                         </div>
-                    </a>
-                </div>
+                        <div class='img_container'><a href='../home/landing.php'><img src='../images/$img'/></a></div>
+                        <div class='item_list_wrapper' id='subtext_total'>
+                            <a href='../home/landing.php'>
+                                <div id='item_description'>
+                                "/*
+                                    <span class='desc'>
+                                    $desc
+                                    </span>
+                                    */ . " 
+                                    <h3 id='oldprice'>$$price</h3>
+                                    <h3 id='saleprice'>$$salePrice</h3>
+                                </div>
+                            </a>
+                            <div class='button_wrapper'>
+                                <form method='POST' action=$addcart$msg>
+                                    <input class='button' value='Add To Cart' id='atc_input' type='submit'>
+                                    </input>
+                                </form>
+                                <form method='POST' action=$addwish$msg>
+                                    <input class='button' value='Add To Wishlist' id='atc' type='submit'>
+                                    </input>
+                                </form>
+                            </div>
+                        </div>
+
+                        ";
+                        }
+                    }
+                }
+
+                ?>
+
+
+            </div>
+        </div>
+        <div class="h_spacer"></div>
+        <div class="side_navbar">
+            <div class="nav_title">
+                <h2>Almost Gone!</h2>
+            </div>
+            <div class="link_box">
+                <?php
+
+                $product_sql = "SELECT * FROM `products` WHERE cItem = 0 AND featured = 1 AND stockAmt > 0;";
+                if ($prod_result = mysqli_query($conn, $product_sql)) {
+                    if (mysqli_num_rows($prod_result) > 0) {
+                        while ($row = mysqli_fetch_assoc($prod_result)) {
+                            $title = $row["pName"];
+                            $img = $row["imgSrc"];
+                            $desc = $row["Description"];
+                            $price = $row["Price"];
+
+                            if (isset($_SESSION["active"]) && $_SESSION["active"] === true) {
+                                $addcart = 'shopping.php?action=ac&id=' . $row["ProductID"];
+                                $addwish = 'shopping.php?action=aw&id=' . $row["ProductID"];
+                            }
+
+                            echo "
+                        <div>
+                            <div class='sub_heading'>
+                                <h4>" . $title . "</h4>
+                            </div>
+                        </div>
+                        <div class='img_container' id='featured'><a href='../home/landing.php'><img src='../images/$img'/></a></div>
+                        <div class='item_list_wrapper' id='subtext_total'>
+                            <a href='../home/landing.php'>
+                                <div id='item_description'>
+                                    <h3 class='featured_price' id='fprice'>$$price</h3>
+                                </div>
+                            </a>
+                            <div class='button_wrapper'>
+                                <form method='POST' action=$addcart$msg>
+                                    <input class='button' value='Add To Cart' id='atc_input' type='submit'>
+                                    </input>
+                                </form>
+                                <form method='POST' action=$addwish$msg>
+                                    <input class='button' value='Add To Wishlist' id='atc' type='submit'>
+                                    </input>
+                                </form>
+                            </div>
+                        </div>
+
+                        ";
+                        }
+                    }
+                }
+
+                ?>
+
             </div>
         </div>
     </div>
-    <div class="h_spacer"></div>
-    <div class="side_navbar">
-        <div class="nav_title"><h2>Today's Trends</h2></div>
-        <div class="link_box">
-            <div>
-                <div class="sub_heading">
-                    Item 1
-                </div>
-            </div>
-            <div class="img_container"><a href="#"><img src="images/tent1.png"></a></div>
-            <div class="item_list_wrapper" id="subtext_total">
-                <a href="#">
-                    <div id="item_description">
-                        <span class="desc">
-                            Cupidatat ad ea consequat et ullamco laboris ipsum proident consequat nostrud proident in consectetur.
-                        </span>
-                        <h3 id="price">$$$</h3>
-                    </div>
-                </a>
-                <div class="button_wrapper">
-                    <a href="#">
-                        <div class="button" id="atc">
-                            Add To Cart
-                        </div><br>
-                    </a>
-                    <a href="#">
-                        <div class="button" id="atc">
-                            Add To Wishlist
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="link_box">
-            <div>
-                <div class="sub_heading">
-                    Item 1
-                </div>
-            </div>
-            <div class="img_container"><a href="#"><img src="images/chair1.png"></a></div>
-            <div class="item_list_wrapper" id="subtext_total">
-                <a href="#">
-                    <div id="item_description">
-                        <span class="desc">
-                            Cupidatat ad ea consequat et ullamco laboris ipsum proident consequat nostrud proident in consectetur.
-                        </span>
-                        <h3 id="price">$$$</h3>
-                    </div>
-                </a>
-                <div class="button_wrapper">
-                    <a href="#">
-                        <div class="button" id="atc">
-                            Add To Cart
-                        </div><br>
-                    </a>
-                    <a href="#">
-                        <div class="button" id="atc">
-                            Add To Wishlist
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="h_spacer"></div>
-    <div class="side_navbar">
-        <div class="nav_title"><h2>Almost Gone!</h2></div>
-        <div class="link_box">
-            <div>
-                <div class="sub_heading">
-                    Item 1
-                </div>
-            </div>
-            <div class="img_container"><a href="#"><img src="images/tent1.png"></a></div>
-            <div class="item_list_wrapper" id="subtext_total">
-                <a href="#">
-                    <div id="item_description">
-                        <span class="desc">
-                            Cupidatat ad ea consequat et ullamco laboris ipsum proident consequat nostrud proident in consectetur.
-                        </span>
-                        <h3 id="price">$$$</h3>
-                    </div>
-                </a>
-                <div class="button_wrapper">
-                    <a href="#">
-                        <div class="button" id="atc">
-                            Add To Cart
-                        </div><br>
-                    </a>
-                    <a href="#">
-                        <div class="button" id="atc">
-                            Add To Wishlist
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="link_box">
-            <div>
-                <div class="sub_heading">
-                    Item 1
-                </div>
-            </div>
-            <div class="img_container"><a href="#"><img src="../images/chair1.png"></a></div>
-            <div class="item_list_wrapper" id="subtext_total">
-                <a href="#">
-                    <div id="item_description">
-                        <span class="desc">
-                            Cupidatat ad ea consequat et ullamco laboris ipsum proident consequat nostrud proident in consectetur.
-                        </span>
-                        <h3 id="price">$$$</h3>
-                    </div>
-                </a>
-                <div class="button_wrapper">
-                    <a href="#">
-                        <div class="button" id="atc">
-                            Add To Cart
-                        </div><br>
-                    </a>
-                    <a href="#">
-                        <div class="button" id="atc">
-                            Add To Wishlist
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 <div class="pages">
     <p id="number">1</p>
     <button id="back" onclick="back()"><< Back</button>
