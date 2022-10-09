@@ -11,7 +11,7 @@
 </head>
 <?php
 require_once "../db/dbconn.inc.php";
-require_once "../upload.php";
+
 /*
 session_start();
 */
