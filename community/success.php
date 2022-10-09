@@ -94,69 +94,8 @@ if($w = mysqli_query($conn, $wishc)){
     <!--beginning of item grid list-->
     <div class="page_wrapper">
         <div class="home_body" id="news">
-                <?php 
-                echo "
-				<ul class='item_list' id='cart_form'>
-                    <li><div class='sub_heading' style='font-size:38px'>Item Details</div></li>";
-                    if(isset($_SESSION["active"]) && $_SESSION["active"]){
-						echo "<li><form action='image.php' method='POST'>
-				<!--ItemName-->
-                    <li class='pname_title'><b>Item Name</b></li>
-                    <li><input name='pname' type='text' placeholder='' id='uname' required></input></li>
-
-				<!--ItemDesc-->
-                    <li class='pname_title'><b>Item Description</b></li>
-                    <li><div class='password_block'>
-                            <textarea name='desc' type='text' placeholder='' id='item_desc' required></textarea>
-                        </div></li>
-
-				<!--ItemPrice-->
-                    <li class='pname_title'><b>Price $(AUD)</b></li>
-                    <li><div class='password_block'>
-                            <input name='price' type='text' placeholder='' id='pmatch' value='' required></input>
-                        </div></li>
-
-				<!--ItemAmount-->
-                    <li class='pname_title'><b>Amount</b></li>
-                    <li><input name='stockAmt' type='number' placeholder='' id='emailaddr' required></input></li>
-
-				<!--ItemAddress-->
-                    <li class='pname_title'><b>Address</b></li>
-                    <li><input name='address' type='text' placeholder='' id='emailaddr' required></input></li>
-
-				<!--ItemState-->
-                    <li class='pname_title'><b>State</b></li>
-					<li><select name='location' id='state_upload'>
-						<option
-						value='act'>Australian Capital Territory</option>
-						<option
-						value='nsw'>New South Wales</option>
-						<option
-						value='nt'>Northern Territoty</option>
-						<option
-						value='qld'>Queensland</option>
-						<option
-						value='sa'>South Australia</option>
-						<option
-						value='tas'>Tasmania</option>
-						<option
-						value='vic'>Victoria</option>
-						<option
-						value='wa'>Western Australia</option>
-					</select></li>
-					<br/>
-					<li><input class='button' type='submit' value='SUBMIT' id='upload_submit'/>
-
-					</form>
-					</li>
-
-
-
-";
-					}else{
-					echo "Please Login.";
-					}
-                ?>
+		<h3>Item Uploaded!</h3>
+		<span>Check the home page to view your items.</span>
         </div>
     </div>
     <div class="footer">

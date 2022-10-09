@@ -94,69 +94,48 @@ if($w = mysqli_query($conn, $wishc)){
     <!--beginning of item grid list-->
     <div class="page_wrapper">
         <div class="home_body" id="news">
-                <?php 
-                echo "
-				<ul class='item_list' id='cart_form'>
-                    <li><div class='sub_heading' style='font-size:38px'>Item Details</div></li>";
-                    if(isset($_SESSION["active"]) && $_SESSION["active"]){
-						echo "<li><form action='image.php' method='POST'>
-				<!--ItemName-->
-                    <li class='pname_title'><b>Item Name</b></li>
-                    <li><input name='pname' type='text' placeholder='' id='uname' required></input></li>
+<?php
+					$action = "image.php";
+					$filename = "hello";
+					$button = "UPLOAD";
 
-				<!--ItemDesc-->
-                    <li class='pname_title'><b>Item Description</b></li>
-                    <li><div class='password_block'>
-                            <textarea name='desc' type='text' placeholder='' id='item_desc' required></textarea>
-                        </div></li>
+                    echo "
 
-				<!--ItemPrice-->
-                    <li class='pname_title'><b>Price $(AUD)</b></li>
-                    <li><div class='password_block'>
-                            <input name='price' type='text' placeholder='' id='pmatch' value='' required></input>
-                        </div></li>
+				<!--ItemUploadForm-->
+"; 
+					
+					if($_SERVER["REQUEST_METHOD"] == "POST") {
 
-				<!--ItemAmount-->
-                    <li class='pname_title'><b>Amount</b></li>
-                    <li><input name='stockAmt' type='number' placeholder='' id='emailaddr' required></input></li>
+						if(isset($_FILES['fileupload'])) {
+							$tar_file = $_FILES['fileupload']['name'];
+							$tar_dir = '../images/';
+							$filename = $tar_dir . $tar_file;
 
-				<!--ItemAddress-->
-                    <li class='pname_title'><b>Address</b></li>
-                    <li><input name='address' type='text' placeholder='' id='emailaddr' required></input></li>
+							if(move_uploaded_file($_FILES['fileupload']['tmp_name'], "../images/" . $tar_file)){
+								$action = "success.php";
+								$button = "CONFIRM";
 
-				<!--ItemState-->
-                    <li class='pname_title'><b>State</b></li>
-					<li><select name='location' id='state_upload'>
-						<option
-						value='act'>Australian Capital Territory</option>
-						<option
-						value='nsw'>New South Wales</option>
-						<option
-						value='nt'>Northern Territoty</option>
-						<option
-						value='qld'>Queensland</option>
-						<option
-						value='sa'>South Australia</option>
-						<option
-						value='tas'>Tasmania</option>
-						<option
-						value='vic'>Victoria</option>
-						<option
-						value='wa'>Western Australia</option>
-					</select></li>
-					<br/>
-					<li><input class='button' type='submit' value='SUBMIT' id='upload_submit'/>
+							}else{
+								echo "ERROR";
+							}
 
-					</form>
-					</li>
+							echo "$filename";
+						}
 
-
-
-";
-					}else{
-					echo "Please Login.";
 					}
-                ?>
+					
+					echo "
+					<ul class='item_list' id='image_upload'>
+					<li><form action='$action' method='POST' enctype='multipart/form-data'>
+";
+					echo "
+                    <li><div class='sub_heading' style='font-size:38px'>Upload an image of your item.</div></li>
+					<li><div class='img_container'><img src=$filename /></div></li>
+					<li><input id='file_upload_btn' type='file' name='fileupload'/></li>
+					<li><input class='button' type='submit' value='$button' id='upload_upload'></input></li>
+					</form></li>
+                    </ul>";
+?>
         </div>
     </div>
     <div class="footer">
