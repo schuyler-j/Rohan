@@ -11,6 +11,7 @@
 </head>
 <?php
 require_once "../db/dbconn.inc.php";
+require_once "../upload.php";
 /*
 session_start();
 */
@@ -98,9 +99,8 @@ if($w = mysqli_query($conn, $wishc)){
 				<ul class='item_list' id='cart_form'>
                     <li><div class='sub_heading' style='font-size:38px'>Item Details</div></li>";
                     if(isset($_SESSION["active"]) && $_SESSION["active"]){
-
+						/*
 						echo "<li><form>
-
 				<!--ItemName-->
                     <li class='pname_title'><b>Item Name</b></li>
                     <li><input name='pname' type='text' placeholder='' id='uname' required></input></li>
@@ -145,8 +145,8 @@ if($w = mysqli_query($conn, $wishc)){
 						<option
 						value='wa'>Western Australia</option>
 					</select></li>
-					<br/>
-					<li><input class='button' type='submit' value='SUBMIT' id='upload_submit'/></li>";
+					<br/>";
+					/*<li><input class='button' type='submit' value='SUBMIT' id='upload_submit'/></li>*/
 					}else{
 					echo "Please Login.";
 					}
@@ -154,13 +154,40 @@ if($w = mysqli_query($conn, $wishc)){
 					</div>
 
 				<!--ItemUploadForm-->
+"; 
+					
+					
+					echo "
 					<ul class='item_list' id='image_upload'>
-					<li><form action='community-upload.php' method='POST' enctype='multipart/form-data'></li>
+					<li><form action='community-upload.php' method='POST' enctype='multipart/form-data'>
+";
+					$filename = "hello";
+					if($_SERVER["REQUEST_METHOD"] == "POST") {
+
+						if(isset($_FILES['fileupload'])) {
+							$tar_file = $_FILES['fileupload']['name'];
+							$tar_dir = '../images/';
+							$filename = $tar_dir . $tar_file;
+
+							if(move_uploaded_file($_FILES['fileupload']['tmp_name'], "../images/" . $tar_file)){
+
+							}else{
+								echo "ERROR";
+							}
+
+							echo "$filename";
+						}
+
+
+
+
+					}
+					echo "
                     <li><div class='sub_heading' style='font-size:38px'>Upload Image</div></li>
-					<li><div class='img_container'></div></li>
+					<li><div class='img_container'><img src=$filename /></div></li>
 					<li><input id='file_upload_btn' type='file' name='fileupload'/></li>
 					<li><input class='button' type='submit' value='UPLOAD' id='upload_upload'></input></li>
-					<li></form></li>
+					</form></li>
                     </ul>";
                 ?>
         </div>
