@@ -972,6 +972,7 @@ transition: 0.3s;
 	box-shadow: 0px 0px 20px 4px #465343;
 }
 
+
 #upload_submit:hover, #upload_upload:hover{
 	text-shadow: 1px 1px 3px #333 !important;
 }
@@ -990,6 +991,8 @@ transition: 0.3s;
 }
 
 
-
-
+#report{
+    text-align: center;
+    font-size: 25px;
+}
 

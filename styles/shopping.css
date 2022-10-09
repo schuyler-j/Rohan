@@ -8,10 +8,7 @@
 }
 input[type="submit"] {
     font-weight: bold;
-    text-transform: Uppercase;
     text-align: center;
-    color: rgb(34, 33, 33);
-    background-color: #f2d349;
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 15px;
@@ -22,9 +19,8 @@ input[type="submit"] {
 }
 input[type="submit"]:hover {
     font-weight: bold;
-    text-transform: uppercase;
     text-align: center;
-    color: rgb(34, 33, 33);
+    color: beige !important;
     background-color: #e4d8ac;
     padding-left: 10px;
     padding-right: 10px;
@@ -100,10 +96,13 @@ img{
     background-color: #364133;
     color: #f2d349;
     text-align: center;
-    border-left: 4px solid #f2d349;
-    border-right: 4px solid #f2d349;
-    border-top: 12px solid #f2d349;
+    border-left: 4px solid #e08549;
+    border-right: 4px solid #e08549;
+    border-top: 12px solid #e08549;
+    border-bottom: 4px solid #232b21;
     margin-top: 12px;
+    margin-bottom: 12px;
+    padding-bottom: 18px;
 }
 
 .nav_title h2{
@@ -111,7 +110,6 @@ img{
     text-shadow: 2px 2px #364133;
 
 }
-
 
 .link_box{
     margin-top: 6px;

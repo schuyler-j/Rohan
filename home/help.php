@@ -84,6 +84,14 @@ if(isset($_SESSION["active"]) && $_SESSION["active"] === true){
 			</span></li><br/>
 			<ul>
 	</div>
+    <div class="help">
+    <div class="title"><h2>Report an Issue</h2></div>
+    <ul id='faq_list'>
+    <li><span><b>To report an issue use our contact us form link bellow and specify your issue.</b></span></li><br/>
+    <span id="report"><img src="../images/phone.png"/>
+    <a class="nav_links" href="../home/contact.php">Contact Us Form</a></span>
+    <ul>
+    </div>
 	<div class="footer">
         <div class="grid" id="footer_grid">
             <div class="col" id="ft_grid_first">
