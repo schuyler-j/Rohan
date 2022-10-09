@@ -159,8 +159,8 @@ if($w = mysqli_query($conn, $wishc)){
             <input type="submit" value="Search" /><br>
         <div class ="shopping_links">    
             <img src="../images/shopping-bag.png"><a class="nav_links" href="shopping.php" id="main">Main Shopping Page</a>
-            <img src="../images/cart.png"><a class="nav_links" href="cart.php">My Cart</a>
-            <img src="../images/watchlist.png"><a class="nav_links" href="wishlist.php">Wishlist</a>
+            <img src="../images/cart.png"><a class="nav_links" href="../nav/cart.php">My Cart</a>
+            <img src="../images/watchlist.png"><a class="nav_links" href="../nav/wishlist.php">Wishlist</a>
             <img src="../images/help.png"><a class="nav_links" href="help.php">Help</a>
             <img src="../images/clear-search.png"><a class="nav_links" href="shopping.php" id="reset_search">Clear Search</a>
         </div>    
@@ -211,7 +211,7 @@ if($w = mysqli_query($conn, $wishc)){
                     mysqli_stmt_execute($wst);
                 }
 
-                $product_sql = "SELECT * FROM `products` WHERE cItem = 1 AND stockAmt > 0 AND onSale = 0 AND featured = 0;";
+                $product_sql = "SELECT * FROM `products` WHERE cItem = 0 AND stockAmt > 0 AND onSale = 0 AND featured = 0;";
                 if ($prod_result = mysqli_query($conn, $product_sql)) {
                     if (mysqli_num_rows($prod_result) > 0) {
                         while ($row = mysqli_fetch_assoc($prod_result)) {
@@ -222,8 +222,8 @@ if($w = mysqli_query($conn, $wishc)){
 
 
                             if (isset($_SESSION["active"]) && $_SESSION["active"] === true) {
-                                $addcart = 'community.php?action=ac&id=' . $row["ProductID"];
-                                $addwish = 'community.php?action=aw&id=' . $row["ProductID"];
+                                $addcart = 'shopping.php?action=ac&id=' . $row["ProductID"];
+                                $addwish = 'shopping.php?action=aw&id=' . $row["ProductID"];
                                 $added = 'Added To Wishlist';
                             }
 
@@ -233,10 +233,15 @@ if($w = mysqli_query($conn, $wishc)){
                                 <h4>" . $title . "</h4>
                             </div>
                         </div>
-                        <div class='img_container'><a href='../home/landing.php'><img src='images/$img'/></a></div>
+                        <div class='img_container'><a href='../home/landing.php'><img src='../images/$img'/></a></div>
                         <div class='item_list_wrapper' id='subtext_total'>
                             <a href='../home/landing.php'>
                                 <div id='item_description'>
+                                "/*
+                                    <span class='desc'>
+                                    $desc
+                                    </span>
+                                    */ . " 
                                     <h3 id='price'>$$price</h3>
                                 </div>
                             </a>
@@ -251,6 +256,7 @@ if($w = mysqli_query($conn, $wishc)){
                                 </form>
                             </div>
                         </div>
+
 
                         ";
                         }
@@ -268,7 +274,7 @@ if($w = mysqli_query($conn, $wishc)){
             <div class="link_box">
                 <?php
 
-                $product_sql = "SELECT * FROM `products` WHERE cItem = 1 AND onSale = 1 AND stockAmt > 0;";
+                $product_sql = "SELECT * FROM `products` WHERE cItem = 0 AND onSale = 1 AND stockAmt > 0;";
                 if ($prod_result = mysqli_query($conn, $product_sql)) {
                     if (mysqli_num_rows($prod_result) > 0) {
                         while ($row = mysqli_fetch_assoc($prod_result)) {
@@ -279,8 +285,8 @@ if($w = mysqli_query($conn, $wishc)){
                             $salePrice = $row["salePrice"];
 
                             if (isset($_SESSION["active"]) && $_SESSION["active"] === true) {
-                                $addcart = 'community.php?action=ac&id=' . $row["ProductID"];
-                                $addwish = 'community.php?action=aw&id=' . $row["ProductID"];
+                                $addcart = 'shopping.php?action=ac&id=' . $row["ProductID"];
+                                $addwish = 'shopping.php?action=aw&id=' . $row["ProductID"];
                             }
 
                             echo "
@@ -289,7 +295,7 @@ if($w = mysqli_query($conn, $wishc)){
                                 <h4>" . $title . "</h4>
                             </div>
                         </div>
-                        <div class='img_container'><a href='../home/landing.php'><img src='images/$img'/></a></div>
+                        <div class='img_container'><a href='../home/landing.php'><img src='../images/$img'/></a></div>
                         <div class='item_list_wrapper' id='subtext_total'>
                             <a href='../home/landing.php'>
                                 <div id='item_description'>
@@ -332,7 +338,7 @@ if($w = mysqli_query($conn, $wishc)){
             <div class="link_box">
                 <?php
 
-                $product_sql = "SELECT * FROM `products` WHERE cItem = 1 AND featured = 1 AND stockAmt > 0;";
+                $product_sql = "SELECT * FROM `products` WHERE cItem = 0 AND featured = 1 AND stockAmt > 0;";
                 if ($prod_result = mysqli_query($conn, $product_sql)) {
                     if (mysqli_num_rows($prod_result) > 0) {
                         while ($row = mysqli_fetch_assoc($prod_result)) {
@@ -342,8 +348,8 @@ if($w = mysqli_query($conn, $wishc)){
                             $price = $row["Price"];
 
                             if (isset($_SESSION["active"]) && $_SESSION["active"] === true) {
-                                $addcart = 'community.php?action=ac&id=' . $row["ProductID"];
-                                $addwish = 'community.php?action=aw&id=' . $row["ProductID"];
+                                $addcart = 'shopping.php?action=ac&id=' . $row["ProductID"];
+                                $addwish = 'shopping.php?action=aw&id=' . $row["ProductID"];
                             }
 
                             echo "
@@ -352,7 +358,7 @@ if($w = mysqli_query($conn, $wishc)){
                                 <h4>" . $title . "</h4>
                             </div>
                         </div>
-                        <div class='img_container' id='featured'><a href='../home/landing.php'><img src='images/$img'/></a></div>
+                        <div class='img_container' id='featured'><a href='../home/landing.php'><img src='../images/$img'/></a></div>
                         <div class='item_list_wrapper' id='subtext_total'>
                             <a href='../home/landing.php'>
                                 <div id='item_description'>
