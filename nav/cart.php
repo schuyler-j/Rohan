@@ -117,7 +117,9 @@ session_start();
 
 
                                 $count = $count + 1;
+								$_SESSION['item_in_cart_count'] = $count;
                                 $total = $total + floatval($iprice);
+								$_SESSION['cart_total'] = $total;
 
                             }
 						}else{

@@ -75,7 +75,6 @@
 
         <div class="home_body" id="news">
 
-
             <ul class='item_list' id='cart_form'>
                 <li><div class='sub_heading' style='font-size:38px'>Billing Details</div></li>
                 <li class="pname_title"><b>Cardholder's Name</b></li>
@@ -96,29 +95,57 @@
                     </div>
                 </li>
 			<div class='button_wrapper'>
-				<form>
+				<form action="../checkout/shipping.php" method="POST">
 					<input type='submit' class='button' id='atc' value='Continue' style="width:30%; float:left">
 					</input>
 				</form>
 			</div>
         </div>
-        <ul class='item_list' id='cart_total'>
-            <li>
-                <div class='sub_heading' style='font-size:38px'>Cart</div>
-            </li>
-            <li id='item_total'><b>Total Number of Items: 1</b></li>
-            <li>
-                <div class='list_of_items'>
-                    Item 1: $$$</br>
-                </div>
-            </li>
-            <li id='total'><b>Estimated Total: $$$</b></li>
-            <br />
-        </ul>
-    </div>
+<?php 
+				$hasItems = 1;
+				$count = $_SESSION['item_in_cart_count'];
+				$total = $_SESSION['cart_total'];
 
+				echo "
+        <ul class='item_list' id='cart_total'>
+                <ul class='item_list' id='cart_total'>
+                    <li><div class='sub_heading' style='font-size:38px'>Cart</div></li>
+                    <li id='item_total'><b>Total Number of Items: $count</b></li>
+                    "; 
+
+                    $sqld = "SELECT * FROM `carts` WHERE UserID = $_SESSION[id];";
+                    $resultd = mysqli_query($conn, $sqld);
+                    if($resultd){while($rowi = mysqli_fetch_array($resultd)){
+                        $sqli = "SELECT * FROM `products` WHERE ProductID = $rowi[ProductID];";
+                        $ss = $conn->query($sqli);
+                        $pro = $ss->fetch_assoc();
+
+                        echo "
+                            <li><div class='list_of_items'>$pro[pName]</br>                     
+                        ";
+
+					}}
+						if($hasItems == 0){
+							echo "
+						</div>
+						</li>
+						<li id='total'><b></b></li>
+						</ul>
+						";
+						}else{
+							echo "
+						</div>
+						</li>
+						<li id='total'><b>Estimated Total: $$total</b></li>
+						<br/>
+						</ul>
+						
+					</div>";
+
+						}
+
+?>
 
     </div>
 </body>
-
 </html>
