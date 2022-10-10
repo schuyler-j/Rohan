@@ -69,12 +69,87 @@
 
     <div class="page_wrapper">
 		<div class="home_body">
-				<h2>Shipping Details</h2>
 
+            <ul class='item_list' id='cart_form'>
+			<form action="confirm.php" method="POST">
+                <li><div class='sub_heading' style='font-size:38px'>Shipping Details</div></li>
+				<div class='button_wrapper'>
+                    <li><div class="inner_form_section">
+                    <div>
+                        <b>First Name</b>
+                        <input name='fname' type="text" placeholder="" id="streetaddr" required></input>
+					</div>
+                    <div>
+                        <b>Last Name</b>
+                        <input name='lname' type="text" placeholder="" id="streetaddr" required></input>
+                    </div>
+					</li>
 
+                    <li><div class="inner_form_section">
+                    <div>
+                        <b>Street Address</b>
+                        <input name='streetaddress' type="text" placeholder="" id="streetaddr" required></input>
+                    </div>
+                    <div class="inner_form_section_sub">
+                        <b>Postcode</b>
+                        <input name='postcode' type="text" placeholder="" id="postcode" required></input>
+                    </div>
+					</li>
 
+                    <div class="inner_form_section_sub">
+                    <li class='pname_title'><b>State</b></li>
+					<li><select name='location' id='state_upload'>
+						<option
+						value='act'>Australian Capital Territory</option>
+						<option
+						value='nsw'>New South Wales</option>
+						<option
+						value='nt'>Northern Territoty</option>
+						<option
+						value='qld'>Queensland</option>
+						<option
+						value='sa'>South Australia</option>
+						<option
+						value='tas'>Tasmania</option>
+						<option
+						value='vic'>Victoria</option>
+						<option
+						value='wa'>Western Australia</option>
+					</select></li>
+                    </div>
+					</li>
+                    <li><div class="inner_form_section">
+                    <div>
+                        <b>City</b>
+                        <input name='city' type="text" placeholder="" id="streetaddr" required></input>
+                    </div>
+					<li><div class='sub_heading' style='font-size:28px'>Order Details</div></li>
+					<li><div class='desc'>
+					<h3>Shipping Cost: 15%</h3>
+					<?php $total_shipping = $_SESSION['cart_total']; $shipping = 0.15; ?>
+					<h3>Total Amount Due:<?php echo " $";echo $total_shipping+$total_shipping*$shipping;?></h3>
+
+					<h2>Billing Details</h2>
+					<?php 
+					echo "
+					<b>Name on Card:</b> $_SESSION[cardname]
+						<br/>
+					<b>Card Number:</b> $_SESSION[cardnum]
+						<br/>
+					<b>Exp:</b> $_SESSION[validto]
+						<br/>
+					<b>CVC:</b> $_SESSION[cvc]
+					";
+					?>
+					</div></li>
+
+					<input type='submit' class='button' id='atc' value='Place Order' style="font-size: 32px; width:30%; float:left; margin-left:12px; color: #222;"></input>
+					</li>
+					</form>
+</ul>
+					<form action="../nav/checkout.php"><input type='submit' class='button' id='atc' value='Back' style="font-size: 32px; width:inherit; float: left; margin-left: 72px; margin-top: 12px;"></input></form>
 		</div>
-    </div>
+	</div>
 </body>
 
 </html>

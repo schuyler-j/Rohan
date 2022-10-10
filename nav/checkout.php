@@ -73,29 +73,82 @@
             </div>
         </div>
 
+
         <div class="home_body" id="news">
+<?php 
+
+
+
+				/*
+					$_SESSION['cardname'] = $_POST['cardname'];
+					$_SESSION['cardnum'] = $_POST['cardnum'];
+					$_SESSION['validto'] = $_POST['validto'];
+					$_SESSION['cvc'] = $_POST['cvc'];
+				if($_SERVER['REQUEST_METHOD']=='POST'){
+
+<?php echo '../checkout/shipping.php?cn='.$cardname.'&cnn='.$cardnum.'&vt='.$validto.'&cvc='.$cvc; ?>
+				header("Location: ../checkout/shipping.php?cn=$cardname&cnn=$cardnum&vt=$validto&cvc=$cvc");
+				 */
+				$cardname = '';
+				$cardnum = '';
+				$validto = '';
+				$cvc = '';
+
+
+				if(isset($_POST['cardname'])){
+				$cardname = $_POST['cardname'];
+				$cardnum = $_POST['cardnum'];
+				$validto = $_POST['validto'];
+				$cvc = $_POST['cvc'];
+				$_SESSION['cardname'] = $_POST['cardname'];
+				$_SESSION['cardnum'] = $_POST['cardnum'];
+				$_SESSION['validto'] = $_POST['validto'];
+				$_SESSION['cvc'] = $_POST['cvc'];
+
+				$cardnum = intval($cardnum);
+				$cvc = intval($cvc);
+
+				$sql = "INSERT INTO `creditcard` (`CreditCard`, `ccName`, `expDate`, `cvc`) VALUES ($cardnum, '$cardname', '$validto', $cvc);";
+				$update = "UPDATE `users` SET `CreditCard` = $cardnum WHERE `users`.`UserID` = $_SESSION[id];";
+
+				$update_init = mysqli_stmt_init($conn);
+				$sql_init = mysqli_stmt_init($conn);
+				mysqli_stmt_prepare($sql_init, $sql);
+				mysqli_stmt_prepare($update_init, $update);
+				mysqli_stmt_execute($sql_init);
+				mysqli_stmt_execute($update_init);
+
+				$cardname = SHA1($_POST['cardname']);
+				$cardnum = SHA1($_POST['cardnum']);
+				$cvc = SHA1($_POST['cvc']);
+
+				header("Location: ../checkout/shipping.php?cn=$cardname&cnn=$cardnum&vt=$validto&cvc=$cvc");
+
+				}
+
+?>
 
             <ul class='item_list' id='cart_form'>
+			<form action="checkout.php" method="POST">
                 <li><div class='sub_heading' style='font-size:38px'>Billing Details</div></li>
                 <li class="pname_title"><b>Cardholder's Name</b></li>
-                <li><input type="text" placeholder="" id="fname" required></input><br></li>
+                <li><input name="cardname" type="text" placeholder="" id="fname" required></input><br></li>
                 <li class="pname_title"><b>Card Number</b></li>
-                <li><input id="emailaddr" type="text" maxlength="16" placeholder="xxxx xxxx xxxx xxxx"></li>
+                <li><input name="cardnum" id="emailaddr" type="text" maxlength="16" placeholder="xxxx xxxx xxxx xxxx" required></li>
                 <li>
                     <div class="inner_form_section">
                         <div>
                             <b>Valid Through</b>
-                            <input type="month" id="emailaddr" required></input>
+                            <input type="date" name="validto" id="emailaddr" required></input>
                         </div>
 
                         <div class="inner_form_section_sub">
                             <b>CVV / CVC</b>
-                            <input type="text" placeholder="" id="postcode" maxlength="3" required></input>
+                            <input type="text" name="cvc" placeholder="" id="postcode" maxlength="3" required></input>
                         </div>
                     </div>
                 </li>
 			<div class='button_wrapper'>
-				<form action="../checkout/shipping.php" method="POST">
 					<input type='submit' class='button' id='atc' value='Continue' style="width:30%; float:left">
 					</input>
 				</form>
@@ -108,7 +161,7 @@
 
 				echo "
         <ul class='item_list' id='cart_total'>
-                <ul class='item_list' id='cart_total'>
+                <ul class='item_list' id='cart_total' style:'max-height: fit-content;'>
                     <li><div class='sub_heading' style='font-size:38px'>Cart</div></li>
                     <li id='item_total'><b>Total Number of Items: $count</b></li>
                     "; 
