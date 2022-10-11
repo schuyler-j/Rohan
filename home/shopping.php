@@ -191,7 +191,7 @@ if($w = mysqli_query($conn, $wishc)){
                     $str = $_POST["search"];
                     $location = $_POST["search"];
                     $category = $_POST["search"];
-                    $sth = $conn -> prepare("SELECT * FROM `products` WHERE `pName` = '$str', `State`= '$location', `Category` ='$category'");
+                    $sth = $conn -> prepare("SELECT * FROM `products` WHERE `pName` = $str AND `State`= $location AND `Category` =$category");
                     $sth->setFetchMode(PDO :: FETCH_OBJ);
                     $sth -> execute();
 
@@ -388,10 +388,7 @@ if($w = mysqli_query($conn, $wishc)){
         </div>
     </div>
 <div class="pages">
-    <p id="number">1</p>
-    <button id="back" onclick="back()"><< Back</button>
-    <a href="#top">^ Back to Top ^</a>
-    <button id="next" onclick="next()">Next >></button>    
+    <a href="#top">^ Back to Top ^</a>  
 </div>
 <div class="footer">
         <div class="grid" id="footer_grid">
