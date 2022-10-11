@@ -106,17 +106,21 @@ if($w = mysqli_query($conn, $wishc)){
 							$price=$_POST['price'];
 							$state=$_POST['state'];
 							$location=$_POST['address'];
-							$category=$_POST['categories'];
+							$category=$_POST['category'];
 							$quantity=$_POST['stockAmt'];
 							$imagesrc="../images/temp.png";
+							$cid = rand(1020, 9999);
+							$_SESSION['cid'] = $cid;
 
 							$sql = "INSERT INTO `products` (`ProductID`, `Description`, `pName`, `Price`, `cItem`, `State`, `Location`, 
 									`Category`, `stockAmt`, `imgSrc`, `sellerID`, `onSale`, `salePrice`, `featured`) VALUES 
-									(CONNECTION_ID(), '$productdesc', '$productname', $price, '1', $state, $location, $category, 
+									($cid, '$productdesc', '$productname', '$price', '1', '$state', '$location', '$category', 
 								    $quantity, '$imagesrc', NULL, '0', NULL, '0');";
 						    $sql_init = mysqli_stmt_init($conn);
 						    mysqli_stmt_prepare($sql_init, $sql);
 						    mysqli_stmt_execute($sql_init);
+
+							header("Location: image.php");
 
 							}
 				echo "<li><form action='community-upload.php' method='POST'>
@@ -149,40 +153,38 @@ if($w = mysqli_query($conn, $wishc)){
                     <li class='pname_title'><b>State</b></li>
 					<li><select name='state' id='state_upload'>
 						<option
-						value='act'>Australian Capital Territory</option>
+						name='state' value='Australian Capital Territory'>Australian Capital Territory</option>
 						<option
-						value='nsw'>New South Wales</option>
+						name='state' value='New South Wales'>New South Wales</option>
 						<option
-						value='nt'>Northern Territoty</option>
+						name='state' value='Northern Territoty'>Northern Territoty</option>
 						<option
-						value='qld'>Queensland</option>
+						name='state' value='Queensland'>Queensland</option>
 						<option
-						value='sa'>South Australia</option>
+						name='state' value='South Australia'>South Australia</option>
 						<option
-						value='tas'>Tasmania</option>
+						name='state' value='Tasmania'>Tasmania</option>
 						<option
-						value='vic'>Victoria</option>
+						name='state' value='Victoria'>Victoria</option>
 						<option
-						value='wa'>Western Australia</option>
+						name='state' value='Western Australia'>Western Australia</option>
 					</select></li>
-<li class='pname_title'><b>Categories:</b></li>
-					<li><select name='categories' id='state_upload'>
-					<option
-						value='all'>All Categories</option>    
-					<option
-						value='caravans-campervans'>Caravans and Campervans</option>
+					<li class='pname_title'><b>Category:</b></li>
+					<li><select name='category' id='state_upload'>
 						<option
-						value='motorhomes'>Motorhomes</option>
+						name='category' value='Caravans and Campervans'>Caravans and Campervans</option>
 						<option
-						value='camping-gear'>Camping Gear</option>
+						name='category' value='Motorhomes'>Motorhomes</option>
 						<option
-						value='vehicles'>Vehicles</option>
+						name='category' value='Camping Gear'>Camping Gear</option>
 						<option
-						value='trailers'>Trailers</option>
+						name='category' value='Vehicles'>Vehicles</option>
 						<option
-						value='hobby-sports'>Hobby/Sporting Equipment</option>
+						name='category' value='Trailers'>Trailers</option>
+						<option
+						name='category' value='Hobby/Sporting Equipment'>Hobby/Sporting Equipment</option>
 					</select>
-</li>
+					</li>
 
                     <li class='pname_title'><b>City</b></li>
                     <li><input name='city' type='text' placeholder='' id='emailaddr' required></input></li>

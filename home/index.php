@@ -134,6 +134,14 @@ session_start();
             <div class="home_body" id="news">
                 <?php if (isset($_SESSION["active"]) && $_SESSION["active"]) {
                     echo "<h1 id='welcome_title'>Welcome back, " . $_SESSION["name"] . "</h1>";
+					echo "<div class=text><div class=sub_heading><h2>Selling</h2></div>
+						<h3>Item 1</h3></div>";
+					echo "<div class=text><div class=sub_heading><h2>Sold</h2></div>
+						<h3>Item 1</h3></div>";
+					echo "<div class=text><div class=sub_heading><h2>Pending Items</h2></div>
+						<h3>Item 1</h3></div>";
+					echo "<div class=text><div class=sub_heading><h2>Purchase History</h2></div>
+						<h3>Item 1</h3></div>";
                 }
                 ?>
                 <div class="sub_heading">

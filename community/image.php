@@ -110,16 +110,26 @@ if($w = mysqli_query($conn, $wishc)){
 							$tar_file = $_FILES['fileupload']['name'];
 							$tar_dir = '../images/';
 							$filename = $tar_dir . $tar_file;
+							$randname = rand(10000, 99999);
+							$randname = $randname . '.png';
+							$filename = $tar_dir . $randname;
 
-							if(move_uploaded_file($_FILES['fileupload']['tmp_name'], "../images/" . $tar_file)){
+							if($_FILES['fileupload']['type'] == 'image/png'){
+							if(move_uploaded_file($_FILES['fileupload']['tmp_name'], "../images/" . $randname)){
 								$action = "success.php";
 								$button = "CONFIRM";
 
+								/*sql to update image src*/
+
+								$sql = "UPDATE `products` SET `imgSrc` = '$filename' WHERE `products`.`ProductID` = $_SESSION[cid];";
+								$sql_init = mysqli_stmt_init($conn);
+								mysqli_stmt_prepare($sql_init, $sql);
+								mysqli_stmt_execute($sql_init);
+
 							}else{
 								echo "ERROR";
-							}
+							}}else{echo "ERROR: Wrong file type";}
 
-							echo "$filename";
 						}
 
 					}
@@ -132,6 +142,7 @@ if($w = mysqli_query($conn, $wishc)){
                     <li><div class='sub_heading' style='font-size:38px'>Upload an image of your item.</div></li>
 					<li><div class='img_container'><img src=$filename /></div></li>
 					<li><input id='file_upload_btn' type='file' name='fileupload'/></li>
+					<li><div class='desc'><b>Accepted file type:</b> png</div></li>
 					<li><input class='button' type='submit' value='$button' id='upload_upload'></input></li>
 					</form></li>
                     </ul>";

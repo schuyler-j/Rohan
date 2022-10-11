@@ -159,7 +159,7 @@ if($w = mysqli_query($conn, $wishc)){
             <input type="submit" value="Search" /><br>
         <div class ="shopping_links">    
             <img src="../images/shopping-bag.png"><a class="nav_links" href="shopping.php" id="main">Main Shopping Page</a>
-            <img src="../images/cart.png"><a class="nav_links" href="../nav/cart.php">My Cart</a>
+			<img src="../images/cart.png"><a class="nav_links" href=<?php if(isset($_SESSION['active']) && $_SESSION['active']==true){echo '../nav/cart.php';}else{echo '../nav/login.php';}?>>My Cart</a>
             <img src="../images/watchlist.png"><a class="nav_links" href="../nav/wishlist.php">Wishlist</a>
             <img src="../images/help.png"><a class="nav_links" href="help.php">Help</a>
             <img src="../images/clear-search.png"><a class="nav_links" href="shopping.php" id="reset_search">Clear Search</a>
@@ -178,7 +178,7 @@ if($w = mysqli_query($conn, $wishc)){
                 if (isset($_GET["action"]) && $_GET["action"] == "ac") {
                     $_SESSION["productid"] = $_GET["id"];
                     $productid = $_SESSION["productid"];
-                    $cart_sql = "INSERT INTO `cart` (`CartID`, `TotalPrice`, `Shipping`, `Payment`, `DoP`, `UserID`, `ProductID`, `CreditCard`) VALUES (CONNECTION_ID(), $total, '$addr', 'credit', CURRENT_DATE(), $userid, $productid, $creditcard);";
+                    $cart_sql = "INSERT INTO `carts` (`CartID`, `TotalPrice`, `Shipping`, `Payment`, `DoP`, `UserID`, `ProductID`, `CreditCard`) VALUES (CONNECTION_ID(), $total, '$addr', 'credit', CURRENT_DATE(), $userid, $productid, $creditcard);";
                     $update_stock = "UPDATE `products` SET `stockAmt` = (stockAmt - 1) WHERE `products`.`ProductID` = $productid;";
                     $statement = mysqli_stmt_init($conn);
                     $update_st = mysqli_stmt_init($conn);

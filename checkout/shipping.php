@@ -68,10 +68,10 @@
     </div>
 
     <div class="page_wrapper">
-		<div class="home_body">
+		<div class="home_body" id="shipping_details_body">
 
             <ul class='item_list' id='cart_form'>
-			<form action="confirm.php" method="POST">
+			<form action="shipping.php" method="POST">
                 <li><div class='sub_heading' style='font-size:38px'>Shipping Details</div></li>
 				<div class='button_wrapper'>
                     <li><div class="inner_form_section">
@@ -98,23 +98,23 @@
 
                     <div class="inner_form_section_sub">
                     <li class='pname_title'><b>State</b></li>
-					<li><select name='location' id='state_upload'>
+					<li><select name='state' id='state_upload'>
 						<option
-						value='act'>Australian Capital Territory</option>
+						name='state' value='Australian Capital Territory'>Australian Capital Territory</option>
 						<option
-						value='nsw'>New South Wales</option>
+						name='state' value='New South Wales'>New South Wales</option>
 						<option
-						value='nt'>Northern Territoty</option>
+						name='state' value='Northern Territoty'>Northern Territoty</option>
 						<option
-						value='qld'>Queensland</option>
+						name='state' value='Queensland'>Queensland</option>
 						<option
-						value='sa'>South Australia</option>
+						name='state' value='South Australia'>South Australia</option>
 						<option
-						value='tas'>Tasmania</option>
+						name='state' value='Tasmania'>Tasmania</option>
 						<option
-						value='vic'>Victoria</option>
+						name='state' value='Victoria'>Victoria</option>
 						<option
-						value='wa'>Western Australia</option>
+						name='state' value='Western Australia'>Western Australia</option>
 					</select></li>
                     </div>
 					</li>
@@ -127,7 +127,7 @@
 					<li><div class='desc'>
 					<h3>Shipping Cost: 15%</h3>
 				    <!--shipping flat rate 15%-->
-					<?php $total_shipping = $_SESSION['cart_total']; $shipping = 0.15; ?>
+					<?php $total_shipping = $_SESSION['cart_total']; $shipping = 0.15;?>
 					<h3>Total Amount Due:<?php echo " $";echo $total_shipping+$total_shipping*$shipping;?></h3>
 
 					<h2>Billing Details</h2>
@@ -148,7 +148,51 @@
 					</li>
 					</form>
 				</ul>
-					<form action="../nav/checkout.php"><input type='submit' class='button' id='atc' value='Back' style="font-size: 32px; width:inherit; float: left; margin-left: 72px; margin-top: 12px;"></input></form>
+					<form action="../nav/checkout.php"><input type='submit' class='button' id='atcc' value='Back' style="color: #111; font-size: 32px; width:inherit; float: left; margin-left: 72px; margin-top: 12px;"></input></form>
+				<?php 
+
+				$userID = $_SESSION['id'];
+
+				$cart_sql = "SELECT * FROM `carts` WHERE userID = $userID;";
+				$csql = mysqli_query($conn, $cart_sql);
+				$row = mysqli_fetch_assoc($csql);
+
+				$orderID = rand(0, 9999).rand(0, 999);
+				$cartID = $row['CartID'];
+				$shippingAddr = $row['Shipping'];
+				$amountDue = $total_shipping+$total_shipping*$shipping;
+
+				
+				if(isset($_POST['state'])){
+					$state = $_POST['state'];
+					$city = $_POST['city'];
+
+					$order_sql = "INSERT INTO `orders` (`orderID`, `userID`, `orderDate`, `cartID`, `complete`, `shippingAddr`, `state`, `city`, `amountDue`) VALUES ('$orderID', '$userID', CURRENT_DATE(), NULL, '0', 
+						'$shippingAddr', '$state', '$city', '$amountDue');";
+					$order_init = mysqli_stmt_init($conn);
+					mysqli_stmt_prepare($order_init, $order_sql);
+					mysqli_stmt_execute($order_init);
+
+					$dfc_sql = "DELETE FROM `carts` WHERE `userID` = $userID;";
+					$dfc_init = mysqli_stmt_init($conn);
+					mysqli_stmt_prepare($dfc_init, $dfc_sql);
+					mysqli_stmt_execute($dfc_init);
+
+
+
+					echo "<script>
+						var sdb = document.getElementById('cart_form');
+						sdb.setAttribute('style', 'display: none');
+
+						var atbc = document.getElementById('atcc');
+						atbc.setAttribute('style', 'display: none');
+
+						</script>";
+					echo "<div class=title><h3>Order Confirmed!</h3></div>";
+
+				}
+
+				?>
 		</div>
 	</div>
 </body>
