@@ -165,21 +165,8 @@ session_start();
                         </div>
                         <li><div class='sub_heading' style='font-size:25px'>Description</div></li>
                         </li>                        
-                        <li class='landing_desc'><p>Ipsum elit ad sint anim. </span>
-                <span>Velit sint qui ipsum amet ex cupidatat minim non sunt esse enim. </span>
-                <span>Tempor fugiat voluptate eiusmod dolore eu irure elit.</span> 
-                <span>Nostrud adipisicing nulla adipisicing sunt eiusmod occaecat. </span>
-                <span>Consectetur excepteur velit culpa deserunt sit. </span>
-            </p>
-            <p>
-                <span>Reprehenderit ea cillum sit aute fugiat sit minim labore tempor magna amet reprehenderit. </span>
-                <span>Mollit nisi laborum velit pariatur quis aliquip nostrud consectetur pariatur anim amet ipsum sit sit. </span>
-                <span>In eiusmod reprehenderit ipsum fugiat. </span>
-                <span>Laboris elit ut et ullamco esse et voluptate esse eu. </span>
-                <span>Adipisicing deserunt eu id voluptate sint aliqua reprehenderit aliquip aute culpa. </span>
-                <span>Ea aliqua adipisicing aute esse nulla esse cupidatat nostrud pariatur qui ex. </span>
-                <span>Proident sunt dolore non id voluptate. </span>
-                <span>Cillum do in tempor veniam reprehenderit excepteur ipsum pariatur excepteur.   
+                        <li class='landing_desc'>
+                        $description
                         </li>
             </div>        
                 <ul class='item_list' id='cart_total'>
@@ -197,7 +184,7 @@ session_start();
                     <li id='total' style='font-size:35px'><b>$$$ Negotiable</b></li>
             </br>
             <li><img src='../images/phone.png'/>
-                <a class='nav_links' href='#'>Contact Seller</a></li>
+                <a class='nav_links' href='seller.php'>Contact Seller</a></li>
             <li><img src='../images/help.png'/>
                 <a class='nav_links' href='../home/help.php'>Help / Report an Issue</a></li>
             <li><input class='button' value='Add To Cart' id='atc_input' type='submit'>
