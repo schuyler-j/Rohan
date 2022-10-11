@@ -188,7 +188,7 @@ if($w = mysqli_query($conn, $wishc)){
                     mysqli_stmt_execute($update_st);
                 }
                 if(isset($_POST["submit"])) {
-                    $str = $_POST["search"];
+                    $search = $_POST["search"];
                     $location = $_POST["search"];
                     $category = $_POST["search"];
                     $sth = $conn -> prepare("SELECT * FROM `products` WHERE `pName` = $str AND `State`= $location AND `Category` =$category");
