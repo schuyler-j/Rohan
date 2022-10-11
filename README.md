@@ -14,7 +14,7 @@
 A community based ecommerce web app with a marketplace where users can buy, sell and trade items. 
 
 - [x] File Upload
-- [ ] Creditcard Transaction
+- [x] Creditcard Transaction
 - [ ] Contact Update Ticket Table
 - [ ] Product Landing
 
