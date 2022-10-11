@@ -110,7 +110,7 @@
                 {
                     $fname = $_POST['firstname'];
                     $lname = $_POST['lastname'];
-                    $email = $_POST['email'];
+                    $email = $_POST['emailaddress'];
                     $message = $_POST['message'];
                     $ticket = "INSERT INTO `tickets` (`ticketID`, `firstname`, `lastname`, `email`, `message`) VALUES (CONNECTION_ID, '$fname', '$lname', '$email', '$message');";
                     mysqli_stmt_prepare($statement, $ticket);
@@ -128,25 +128,25 @@
                             <div class='inner_form_section'>
                                 <div>
                                     <b>First Name</b>
-                                    <input type='text' placeholder='' id='fname' required style='width:70%'></input>
+                                    <input name ='firstname' type='text' placeholder='' id='fname' required style='width:70%'></input>
                                 </div>
 
                                 <div>
                                     <b>Last Name</b>
-                                    <input type='text' placeholder='' id='lname' required style='width:70%'></input>
+                                    <input name ='lastname' type='text' placeholder='' id='lname' required style='width:70%'></input>
                                 </div>
 
                             </div>
                         </li>
 
                         <li class='pname_title'><b>E-mail Address</b></li>
-                        <li><input type='email' placeholder='' id='emailaddr' required style='width:95%'></input></li>
+                        <li><input name ='emailaddress' type='email' placeholder='' id='emailaddr' required style='width:95%'></input></li>
                         <br />
                         <li class='pname_title'><b>Message</b></li>
                         <li><textarea name='text1' id='lname' cols='40' rows='5' style='width:95%'></textarea></li>
                         <br />
                         <li>
-                            <input type='submit' class='button' id='atc' style='width: 50%; float:left' value='Submit'></input>
+                            <input name ='message' type='submit' class='button' id='atc' style='width: 50%; float:left' value='Submit'></input>
                         </li>
                     </ul>
                 </form>
