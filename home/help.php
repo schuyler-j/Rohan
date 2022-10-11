@@ -23,7 +23,7 @@ session_start();
 		</div>
 		<div class="nav" id="nav_bottom">
 			<div class="nav_list">
-				<img src="images/watchlist.png"/>
+				<img src="../images/watchlist.png"/>
 				<a class="nav_links" href="../nav/wishlist.php">Wishlist</a>
 				<img src="../images/cart.png"/>
 				<?php

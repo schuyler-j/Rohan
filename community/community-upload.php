@@ -11,6 +11,7 @@
 </head>
 <?php
 require_once "../db/dbconn.inc.php";
+
 /*
 session_start();
 */
@@ -36,7 +37,7 @@ if($w = mysqli_query($conn, $wishc)){
 
 <body >
     <div class="top_third">
-        <div class="menu_container">
+        <div id="mc" class="menu_container">
             <h1 class="menu_title_s"><a href="../home/index.php">SENIOR</a></h1>
         </div>
         <div class="nav" id="nav_bottom">
@@ -72,26 +73,10 @@ if($w = mysqli_query($conn, $wishc)){
                 if (isset($_SESSION["active"]) && $_SESSION["active"] === true) {
                     echo "<a class = 'nav_links' href='../home/logout.php'>Logout</a>";
 
-                    $product_sql = "SELECT * FROM `products`;";
-                    $psql = mysqli_query($conn, $product_sql);
-                    $row = mysqli_fetch_assoc($psql);
-
-                    $msg = "";
-
-                    $total = 0;
-                    $creditcard = $_SESSION["creditcard"];
-                    $addr = $_SESSION["addr"];
-                    $userid = $_SESSION["id"];
-
-                    $productid = 0;
                 } else {
                     echo
                     "<a class = 'nav_links' href='../nav/login.php'>Login</a>
                     ";
-
-                    $addcart = '../home/error.php';
-                    $addwish = '../home/error.php';
-                    $msg = "?msg=Please%20login%20or%20create%20an%20account.";
                 }
                 ?>
             </div>
@@ -108,8 +93,104 @@ if($w = mysqli_query($conn, $wishc)){
     </div>
     <!--beginning of item grid list-->
     <div class="page_wrapper">
+        <div class="home_body" id="news">
+                <?php 
+                echo "
+				<ul class='item_list' id='cart_form'>
+                    <li><div class='sub_heading' style='font-size:38px'>Item Details</div></li>";
+                    if(isset($_SESSION["active"]) && $_SESSION["active"]){
+						/*
+						echo "<li><form>
+				<!--ItemName-->
+                    <li class='pname_title'><b>Item Name</b></li>
+                    <li><input name='pname' type='text' placeholder='' id='uname' required></input></li>
+
+				<!--ItemDesc-->
+                    <li class='pname_title'><b>Item Description</b></li>
+                    <li><div class='password_block'>
+                            <textarea name='desc' type='text' placeholder='' id='item_desc' required></textarea>
+                        </div></li>
+
+				<!--ItemPrice-->
+                    <li class='pname_title'><b>Price $(AUD)</b></li>
+                    <li><div class='password_block'>
+                            <input name='price' type='text' placeholder='' id='pmatch' value='' required></input>
+                        </div></li>
+
+				<!--ItemAmount-->
+                    <li class='pname_title'><b>Amount</b></li>
+                    <li><input name='stockAmt' type='number' placeholder='' id='emailaddr' required></input></li>
+
+				<!--ItemAddress-->
+                    <li class='pname_title'><b>Address</b></li>
+                    <li><input name='address' type='text' placeholder='' id='emailaddr' required></input></li>
+
+				<!--ItemState-->
+                    <li class='pname_title'><b>State</b></li>
+					<li><select name='location' id='state_upload'>
+						<option
+						value='act'>Australian Capital Territory</option>
+						<option
+						value='nsw'>New South Wales</option>
+						<option
+						value='nt'>Northern Territoty</option>
+						<option
+						value='qld'>Queensland</option>
+						<option
+						value='sa'>South Australia</option>
+						<option
+						value='tas'>Tasmania</option>
+						<option
+						value='vic'>Victoria</option>
+						<option
+						value='wa'>Western Australia</option>
+					</select></li>
+					<br/>";
+					/*<li><input class='button' type='submit' value='SUBMIT' id='upload_submit'/></li>*/
+					}else{
+					echo "Please Login.";
+					}
+                    echo "
+					</div>
+
+				<!--ItemUploadForm-->
+"; 
+					
+					
+					echo "
+					<ul class='item_list' id='image_upload'>
+					<li><form action='community-upload.php' method='POST' enctype='multipart/form-data'>
+";
+					$filename = "hello";
+					if($_SERVER["REQUEST_METHOD"] == "POST") {
+
+						if(isset($_FILES['fileupload'])) {
+							$tar_file = $_FILES['fileupload']['name'];
+							$tar_dir = '../images/';
+							$filename = $tar_dir . $tar_file;
+
+							if(move_uploaded_file($_FILES['fileupload']['tmp_name'], "../images/" . $tar_file)){
+
+							}else{
+								echo "ERROR";
+							}
+
+							echo "$filename";
+						}
 
 
+
+
+					}
+					echo "
+                    <li><div class='sub_heading' style='font-size:38px'>Upload Image</div></li>
+					<li><div class='img_container'><img src=$filename /></div></li>
+					<li><input id='file_upload_btn' type='file' name='fileupload'/></li>
+					<li><input class='button' type='submit' value='UPLOAD' id='upload_upload'></input></li>
+					</form></li>
+                    </ul>";
+                ?>
+        </div>
     </div>
     <div class="footer">
         <div class="grid" id="footer_grid">
@@ -154,5 +235,4 @@ if($w = mysqli_query($conn, $wishc)){
         </div>
     </div>
 </body>
-
 </html>

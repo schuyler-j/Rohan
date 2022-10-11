@@ -26,7 +26,34 @@
                 <img src="../images/checkout.png" />
                 <a class="nav_links" href="../nav/checkout.php">Checkout</a>
                 <img src='../images/login.png' />
-                <a class='nav_links' href="../nav/login.php">Login</a>
+                <?php
+                if (isset($_SESSION["active"]) && $_SESSION["active"] === true) {
+                    echo "<a class = 'nav_links' href='../home/logout.php'>Logout</a>";
+
+                    $product_sql = "SELECT * FROM `products`;";
+                    $psql = mysqli_query($conn, $product_sql);
+                    $row = mysqli_fetch_assoc($psql);
+
+
+                    $msg = "";
+
+
+                    $total = 0;
+                    $creditcard = $_SESSION["creditcard"];
+                    $addr = $_SESSION["addr"];
+                    $userid = $_SESSION["id"];
+
+                    $productid = 0;
+                } else {
+                    echo
+                    "<a class = 'nav_links' href='../nav/login.php'>Login</a>
+                    ";
+
+                    $addcart = '../home/error.php';
+                    $addwish = '../home/error.php';
+                    $msg = "?msg=Please%20login%20or%20create%20an%20account.";
+                }
+                ?>
             </div>
         </div>
         <div class="nav" id="nav_top">
@@ -47,38 +74,14 @@
         </div>
 
         <div class="home_body" id="news">
-            <!-- <div class="sub_heading">
-                <h2>Checkout</h2>
-            </div>
-            
-            <div>
-                1. Delivery Option
-                Delivery or Pick-up
-            </div>
-            <div>
-                2. Billing Details
-                First name
-                Last name
-                Country
-                Street address
-                town/city
-                Postcode
-            </div>
-            <div>
-                3. Payment
-            </div> -->
 
 
             <ul class='item_list' id='cart_form'>
-                <li>
-                    <div class='sub_heading' style='font-size:38px'>Billing Details</div>
-                </li>
-                <li class='list'>
+                <li><div class='sub_heading' style='font-size:38px'>Billing Details</div></li>
                 <li class="pname_title"><b>Cardholder's Name</b></li>
-                <input type="text" placeholder="" id="fname" required></input><br>
+                <li><input type="text" placeholder="" id="fname" required></input><br></li>
                 <li class="pname_title"><b>Card Number</b></li>
                 <li><input id="emailaddr" type="text" maxlength="16" placeholder="xxxx xxxx xxxx xxxx"></li>
-
                 <li>
                     <div class="inner_form_section">
                         <div>
@@ -92,14 +95,12 @@
                         </div>
                     </div>
                 </li>
-
-                </li>
-                <div class='button_wrapper'>
-                    <form>
-                        <input type='submit' class='button' id='atc' value='Continue' style="width:30%; float:left">
-                        </input>
-                    </form>
-                </div>
+			<div class='button_wrapper'>
+				<form>
+					<input type='submit' class='button' id='atc' value='Continue' style="width:30%; float:left">
+					</input>
+				</form>
+			</div>
         </div>
         <ul class='item_list' id='cart_total'>
             <li>
@@ -114,7 +115,6 @@
             <li id='total'><b>Estimated Total: $$$</b></li>
             <br />
         </ul>
-
     </div>
 
 

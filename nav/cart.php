@@ -52,6 +52,7 @@ session_start();
         </div>
     </div>
 
+
     <div class="page_wrapper">
         <div class="form_wrapper">
         <div class="top_third">
@@ -61,14 +62,16 @@ session_start();
                 <?php 
                 $count = 0;
                 $total = 0;
+				$hasItems = 0;
 
                 echo "
             <ul class='item_list' id='cart_form'>
                     <li><div class='sub_heading' style='font-size:38px'>My Cart</div></li>";
                     if(isset($_SESSION["active"]) && $_SESSION["active"]){
-                    $sql = "SELECT * FROM `cart` WHERE `UserID` = $_SESSION[id];";
+                    $sql = "SELECT * FROM `carts` WHERE `UserID` = $_SESSION[id];";
                     if ($result = mysqli_query($conn, $sql)) {
                         if (mysqli_num_rows($result) > 0) {
+							$hasItems = 1;
                             while ($row = mysqli_fetch_assoc($result)) {
                                 $new_sql = "SELECT * FROM `products` WHERE ProductID = $row[ProductID];";
                                 $s = $conn->query($new_sql);
@@ -79,9 +82,23 @@ session_start();
                                 }else{
                                     $iprice = $cart["Price"];
                                 }
+
+								if(isset($_GET['action']) && $_GET['action'] == 'del'){
+									$id_to_remove = $_GET['id'];
+									$removes = "DELETE FROM `carts` WHERE ProductID = $id_to_remove";
+									$updates = "UPDATE `products` SET `stockAmt` = (stockAmt + 1) WHERE `products`.`ProductID` = $id_to_remove;";
+									$prep = mysqli_stmt_init($conn);
+									$upda = mysqli_stmt_init($conn);
+									mysqli_stmt_prepare($prep, $removes);
+									mysqli_stmt_prepare($upda, $updates);
+									mysqli_stmt_execute($upda);
+									mysqli_stmt_execute($prep);
+									header("location: cart.php");
+
+								}
                                 echo "<li class=list><div class=item_list_wrapper id=cart_item_list>"; 
                                 echo "<div class=top-right>
-                                <form>
+                                <form method='POST' action='cart.php?action=del&id=$row[ProductID]'>
                                 <input type=submit class=button id=atc value='Remove From Cart'>
                                 </input>
                                 <form>
@@ -93,7 +110,7 @@ session_start();
                                 </div>";
                                 echo "<h3 class=item_list_title>$cart[pName]</h3>";
                                 echo "<div>
-                                <h3 id=cart_price>$iprice</h3>
+                                <h3 id=cart_price>$$iprice</h3>
                                 </div>";
                                 echo "</div>";
                                 echo "</li>";
@@ -103,7 +120,10 @@ session_start();
                                 $total = $total + floatval($iprice);
 
                             }
-                        }
+						}else{
+								echo "<p>Cart is empty.</p>";
+								$hasItems = 0;
+						}
                     }
                 } 
                                     
@@ -114,7 +134,7 @@ session_start();
                     <li><div class='sub_heading' style='font-size:38px'>Cart Totals</div></li>
                     <li id='item_total'><b>Total Number of Items: $count</b></li>
                     "; 
-                    $sqld = "SELECT * FROM `cart` WHERE UserID = $_SESSION[id];";
+                    $sqld = "SELECT * FROM `carts` WHERE UserID = $_SESSION[id];";
                     $resultd = mysqli_query($conn, $sqld);
                     if($resultd){while($rowi = mysqli_fetch_array($resultd)){
                         $sqli = "SELECT * FROM `products` WHERE ProductID = $rowi[ProductID];";
@@ -124,18 +144,25 @@ session_start();
                             <li><div class='list_of_items'>$pro[pName]</br>                     
                         ";
 
-                    }}
-                    echo "
-            </div>
-            </li>
-                    <li id='total'><b>Estimated Total: $total</b></li>
-                    <li id='estimate'>NOTE: This is not the final total, this is an estimate.</li>
-                    <br/>
-                    <li><a href='../nav/checkout.php'><div class='button' id='checkout'>CHECKOUT</div></li>
-                </ul>
-                
-
-                ";
+					}}
+						if($hasItems == 0){
+							echo "
+						</div>
+						</li>
+						<li id='total'><b></b></li>
+						</ul>
+						";
+						}else{
+							echo "
+						</div>
+						</li>
+						<li id='total'><b>Estimated Total: $$total</b></li>
+						<li id='estimate'>NOTE: This is not the final total, this is an estimate.</li>
+						<br/>
+						<li><a href='../nav/checkout.php'><div class='button' id='checkout'>CHECKOUT</div></li>
+						</ul>
+						";
+						}
                 ?>
         </div>
     </div>

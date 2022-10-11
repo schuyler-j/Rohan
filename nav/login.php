@@ -33,7 +33,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(empty(trim($_POST["password"]))){
         header("location: ../home/error.php");
     }else{
-        $pass = SHA1($_POST["password"]);
+        $pass = SHA1($_POST["username"]+$_POST["password"]);
     }
 
 
