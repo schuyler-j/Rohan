@@ -14,9 +14,9 @@
 A community based ecommerce web app with a marketplace where users can buy, sell and trade items. 
 
 - [x] File Upload
-- [] Creditcard Transaction
-- [] Contact Update Ticket Table
-- [] Product Landing
+- [ ] Creditcard Transaction
+- [ ] Contact Update Ticket Table
+- [ ] Product Landing
 
 ### **Created by:**
         Thomas Hobbs | Udall Liao | Jay Schuyler 
