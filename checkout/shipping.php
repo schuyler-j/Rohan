@@ -126,6 +126,7 @@
 					<li><div class='sub_heading' style='font-size:28px'>Order Details</div></li>
 					<li><div class='desc'>
 					<h3>Shipping Cost: 15%</h3>
+				    <!--shipping flat rate 15%-->
 					<?php $total_shipping = $_SESSION['cart_total']; $shipping = 0.15; ?>
 					<h3>Total Amount Due:<?php echo " $";echo $total_shipping+$total_shipping*$shipping;?></h3>
 
@@ -146,7 +147,7 @@
 					<input type='submit' class='button' id='atc' value='Place Order' style="font-size: 32px; width:30%; float:left; margin-left:12px; color: #222;"></input>
 					</li>
 					</form>
-</ul>
+				</ul>
 					<form action="../nav/checkout.php"><input type='submit' class='button' id='atc' value='Back' style="font-size: 32px; width:inherit; float: left; margin-left: 72px; margin-top: 12px;"></input></form>
 		</div>
 	</div>

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <title>Cart</title>
     <meta charset="UTF-8" />
@@ -34,9 +33,7 @@
                     $psql = mysqli_query($conn, $product_sql);
                     $row = mysqli_fetch_assoc($psql);
 
-
                     $msg = "";
-
 
                     $total = 0;
                     $creditcard = $_SESSION["creditcard"];
@@ -74,21 +71,9 @@
         </div>
 
 
-        <div class="home_body" id="news">
-<?php 
-
-
-
-				/*
-					$_SESSION['cardname'] = $_POST['cardname'];
-					$_SESSION['cardnum'] = $_POST['cardnum'];
-					$_SESSION['validto'] = $_POST['validto'];
-					$_SESSION['cvc'] = $_POST['cvc'];
-				if($_SERVER['REQUEST_METHOD']=='POST'){
-
-<?php echo '../checkout/shipping.php?cn='.$cardname.'&cnn='.$cardnum.'&vt='.$validto.'&cvc='.$cvc; ?>
-				header("Location: ../checkout/shipping.php?cn=$cardname&cnn=$cardnum&vt=$validto&cvc=$cvc");
-				 */
+        <div class="" id="">
+		<?php 
+                if (isset($_SESSION["active"]) && $_SESSION["active"] === true) {
 				$cardname = '';
 				$cardnum = '';
 				$validto = '';
@@ -125,8 +110,9 @@
 				header("Location: ../checkout/shipping.php?cn=$cardname&cnn=$cardnum&vt=$validto&cvc=$cvc");
 
 				}
+				}else{echo "<h3>Please Login</h3>";}
 
-?>
+				?>
 
             <ul class='item_list' id='cart_form'>
 			<form action="checkout.php" method="POST">
@@ -154,15 +140,18 @@
 				</form>
 			</div>
         </div>
-<?php 
+		<?php 
+                if (isset($_SESSION["active"]) && $_SESSION["active"] === true) {
 				$hasItems = 1;
+				if(isset($_SESSION['item_in_cart_count']) && isset($_SESSION['cart_total'])){
 				$count = $_SESSION['item_in_cart_count'];
 				$total = $_SESSION['cart_total'];
+				}else{header('Location: ../nav/cart.php');}
 
 				echo "
-        <ul class='item_list' id='cart_total'>
+				<ul class='item_list' id='cart_total'>
                 <ul class='item_list' id='cart_total' style:'max-height: fit-content;'>
-                    <li><div class='sub_heading' style='font-size:38px'>Cart</div></li>
+                    <li><div class='sub_heading' style='font-size:38px'>Review Cart</div></li>
                     <li id='item_total'><b>Total Number of Items: $count</b></li>
                     "; 
 
@@ -191,13 +180,14 @@
 						</li>
 						<li id='total'><b>Estimated Total: $$total</b></li>
 						<br/>
+							<li><img src='../images/visa.png' height=180px width=auto/></li>
 						</ul>
 						
 					</div>";
 
 						}
-
-?>
+						}else{header("Location: ../nav/login.php");}
+						?>
 
     </div>
 </body>

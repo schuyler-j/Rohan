@@ -130,7 +130,8 @@ session_start();
                 } 
                                     
                                     
-                        echo "
+	if(isset($_SESSION["active"]) && $_SESSION["active"]){
+		echo "
             </div>        
                 <ul class='item_list' id='cart_total'>
                     <li><div class='sub_heading' style='font-size:38px'>Cart Totals</div></li>
@@ -165,11 +166,9 @@ session_start();
 						</ul>
 						";
 						}
+					}else{echo "Please Login";}
                 ?>
         </div>
     </div>
 </body>
-</html>
-
-  
 </html>

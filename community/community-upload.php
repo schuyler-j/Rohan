@@ -99,7 +99,27 @@ if($w = mysqli_query($conn, $wishc)){
 				<ul class='item_list' id='cart_form'>
                     <li><div class='sub_heading' style='font-size:38px'>Item Details</div></li>";
                     if(isset($_SESSION["active"]) && $_SESSION["active"]){
-						echo "<li><form action='image.php' method='POST'>
+							/*Build SQL query for inserting a product*/
+							if(isset($_POST['pname'])){
+							$productdesc=$_POST['desc'];
+							$productname=$_POST['pname'];
+							$price=$_POST['price'];
+							$state=$_POST['state'];
+							$location=$_POST['address'];
+							$category=$_POST['categories'];
+							$quantity=$_POST['stockAmt'];
+							$imagesrc="../images/temp.png";
+
+							$sql = "INSERT INTO `products` (`ProductID`, `Description`, `pName`, `Price`, `cItem`, `State`, `Location`, 
+									`Category`, `stockAmt`, `imgSrc`, `sellerID`, `onSale`, `salePrice`, `featured`) VALUES 
+									(CONNECTION_ID(), '$productdesc', '$productname', $price, '1', $state, $location, $category, 
+								    $quantity, '$imagesrc', NULL, '0', NULL, '0');";
+						    $sql_init = mysqli_stmt_init($conn);
+						    mysqli_stmt_prepare($sql_init, $sql);
+						    mysqli_stmt_execute($sql_init);
+
+							}
+				echo "<li><form action='community-upload.php' method='POST'>
 				<!--ItemName-->
                     <li class='pname_title'><b>Item Name</b></li>
                     <li><input name='pname' type='text' placeholder='' id='uname' required></input></li>
@@ -111,22 +131,23 @@ if($w = mysqli_query($conn, $wishc)){
                         </div></li>
 
 				<!--ItemPrice-->
-                    <li class='pname_title'><b>Price $(AUD)</b></li>
+                    <li class='pname_title'><b>Price Per Item $(AUD)</b></li>
                     <li><div class='password_block'>
                             <input name='price' type='text' placeholder='' id='pmatch' value='' required></input>
                         </div></li>
 
 				<!--ItemAmount-->
-                    <li class='pname_title'><b>Amount</b></li>
+                    <li class='pname_title'><b>Quantity you wish to sell</b></li>
                     <li><input name='stockAmt' type='number' placeholder='' id='emailaddr' required></input></li>
 
 				<!--ItemAddress-->
                     <li class='pname_title'><b>Address</b></li>
                     <li><input name='address' type='text' placeholder='' id='emailaddr' required></input></li>
 
+
 				<!--ItemState-->
                     <li class='pname_title'><b>State</b></li>
-					<li><select name='location' id='state_upload'>
+					<li><select name='state' id='state_upload'>
 						<option
 						value='act'>Australian Capital Territory</option>
 						<option
@@ -144,15 +165,35 @@ if($w = mysqli_query($conn, $wishc)){
 						<option
 						value='wa'>Western Australia</option>
 					</select></li>
+<li class='pname_title'><b>Categories:</b></li>
+					<li><select name='categories' id='state_upload'>
+					<option
+						value='all'>All Categories</option>    
+					<option
+						value='caravans-campervans'>Caravans and Campervans</option>
+						<option
+						value='motorhomes'>Motorhomes</option>
+						<option
+						value='camping-gear'>Camping Gear</option>
+						<option
+						value='vehicles'>Vehicles</option>
+						<option
+						value='trailers'>Trailers</option>
+						<option
+						value='hobby-sports'>Hobby/Sporting Equipment</option>
+					</select>
+</li>
+
+                    <li class='pname_title'><b>City</b></li>
+                    <li><input name='city' type='text' placeholder='' id='emailaddr' required></input></li>
+
 					<br/>
 					<li><input class='button' type='submit' value='SUBMIT' id='upload_submit'/>
 
 					</form>
 					</li>
+						";
 
-
-
-";
 					}else{
 					echo "Please Login.";
 					}
