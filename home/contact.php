@@ -113,14 +113,14 @@
                     $email = $_POST['emailaddress'];
                     $message = $_POST['message'];
                     $ticket = "INSERT INTO `tickets` (`ticketID`, `firstname`, `lastname`, `email`, `message`) VALUES (CONNECTION_ID, '$fname', '$lname', '$email', '$message');";
-                    mysqli_stmt_prepare($statement, $ticket);
                     $statement = mysqli_stmt_init($conn);
+                    mysqli_stmt_prepare($statement, $ticket);                    
                     mysqli_stmt_execute($statement);
                 }
                 
                 echo "
                 <div class='column-right'>
-                <form action='../home/contactsupport.php' method='GET'>
+                <form action='../home/contactsupport.php' method='POST'>
                     <ul class='item_list' id='contact_items'>
 
 
