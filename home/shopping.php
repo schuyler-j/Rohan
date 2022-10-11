@@ -159,7 +159,17 @@ if($w = mysqli_query($conn, $wishc)){
             <input type="submit" value="Search" /><br>
         <div class ="shopping_links">    
             <img src="../images/shopping-bag.png"><a class="nav_links" href="shopping.php" id="main">Main Shopping Page</a>
-            <img src="../images/cart.png"><a class="nav_links" href="../nav/cart.php">My Cart</a>
+            <img src="../images/cart.png">                <?php
+                if (isset($_SESSION["active"]) && $_SESSION["active"] === true) {
+                    echo "
+                        <a class='nav_links' href='../nav/cart.php'>My Cart</a>
+                    ";
+                }else{
+
+                    echo "
+                        <a class='nav_links' href='../home/error.php?msg=please%20login%20to%20view%20cart'>My Cart</a>
+                    ";
+                } ?>
             <img src="../images/watchlist.png"><a class="nav_links" href="../nav/wishlist.php">Wishlist</a>
             <img src="../images/help.png"><a class="nav_links" href="help.php">Help</a>
             <img src="../images/clear-search.png"><a class="nav_links" href="shopping.php" id="reset_search">Clear Search</a>
