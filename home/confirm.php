@@ -12,3 +12,4 @@
 
 
 <body>Account Created!</body>
+<!--Add gif with timed redirect-->

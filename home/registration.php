@@ -87,7 +87,7 @@
 		$dob = $_POST['dob'];
 		$passconfirm = $_POST['pass-confirm'];
 
-		$sql = "INSERT INTO `users` (`UserID`, `FirstName`, `LastName`, `DOB`, `Email`, `Address`, `CreditCard`, `Username`, `Password`, `sessionID`, `postcode`) VALUES (CONNECTION_ID()+CONNECTION_ID(), '$firstname', '$lastname', '$dob', '$emailaddress', '$streetaddress', NULL, '$username', SHA1($password), NULL, '$postcode');";
+		$sql = "INSERT INTO `users` (`UserID`, `FirstName`, `LastName`, `DOB`, `Email`, `Address`, `CreditCard`, `Username`, `Password`, `sessionID`, `postcode`) VALUES (CONNECTION_ID(), '$firstname', '$lastname', '$dob', '$emailaddress', '$streetaddress', NULL, '$username', SHA1('$username'+'$password'), NULL, '$postcode');";
 		$statement = mysqli_stmt_init($conn);
 		mysqli_stmt_prepare($statement, $sql);
 		if($passconfirm == $password){
@@ -99,7 +99,7 @@
 ?>
     <div class="page_wrapper">
         <div class="form_wrapper">
-            <form action="../home/confirm.php" method="POST">
+            <form action="../home/registration.php" method="POST">
                 <ul class="item_list" id="login_form">
                     <li><div class="sub_heading" style="font-size:38px">Create an Account!</div></li>
                     <li><div class="inner_form_section">
@@ -118,11 +118,11 @@
 
 
                     <li class="pname_title"><b>Username</b></li>
-                    <li><div class="desc"><i>Create a username people can recognise you</i></div></li>
+                    <li><div class="desc"><i>Create a unique username to identify your account.</i></div></li>
                     <li><input name='username' type="text" placeholder="" id="uname" required></input></li>
 
                     <li class="pname_title"><b>Create a Password</b></li>
-                    <li><div class="desc"><i>Create a strong password to secure your account</i></div></li>
+                    <li><div class="desc"><i>Create a strong password to secure your account: 8-16 characters of numbers, letters and symbols (@#$%^&)</i></div></li>
                     <li><div class="password_block">
                             <input name='password' type="password" placeholder="" id="pword" required></input>
                             <button type="button" id="show_password" onclick="ShowPassword()"><img src="../images/eye.png"></img></button>
@@ -134,7 +134,7 @@
                         </div></li>
 
                     <li class="pname_title"><b>E-mail Address</b></li>
-                    <li><div class="desc"><i>This is the e-mail address we will contact you through</i></div></li>
+                    <li><div class="desc"><i>This is the e-mail address we will use to stay in contact.</i></div></li>
                     <li><input name='emailaddress' type="email" placeholder="" id="emailaddr" required></input></li>
 
                     <li><div class="inner_form_section">
