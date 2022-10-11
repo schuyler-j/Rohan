@@ -9,6 +9,9 @@
 <link rel="icon" href="../images/favicon.png">
 <script src="../scripts/script.js" defer></script>
 <style>
+    .error_layout{
+        padding-top: 250px;
+    }
     #error{
         color: #f2d349;
     }
@@ -23,6 +26,7 @@
 
 
 <body>
+    <div class="error_layout">
     <div class="page_wrapper">
         <div>
             <h4 class="nav_title" id="title">
@@ -35,6 +39,7 @@
             <br/>
             <br/>
         </div>
+</div>
     </div>
 </body>
 </html>
