@@ -166,7 +166,7 @@ session_start();
                         <li><div class='sub_heading' style='font-size:25px'>Description</div></li>
                         </li>                        
                         <li class='landing_desc'>
-                        $description
+                        $Description
                         </li>
             </div>        
                 <ul class='item_list' id='cart_total'>
@@ -174,14 +174,14 @@ session_start();
                     <li class='seller_profile'>
                         <img src='../images/profile.png'/><b>$sellerName</b>
                     </li>
-                    <li id='estimate'>SENIOR member since 2022. 10 Ads.</li>
+                    <li id='estimate'>SENIOR member since 2022. $itemCount Ads.</li>
                         <li><div class='list_of_items'> 
                         $title</br>                                            
             </div>
             </li>
             <li style='font-size:18px'><b>Location: </b></li>
             <li id='estimate'><img src='../images/location.png'/>$Location $State</li>
-                    <li id='total' style='font-size:35px'><b>$$$ Negotiable</b></li>
+                    <li id='total' style='font-size:35px'><b>$ $price</b></li>
             </br>
             <li><img src='../images/phone.png'/>
                 <a class='nav_links' href='seller.php'>Contact Seller</a></li>

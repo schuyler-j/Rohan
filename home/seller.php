@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>About</title>
+    <title>Seller</title>
     <meta charset="UTF-8" />
     <meta name="author" content="TUJ_Rohan" />
     <link rel="stylesheet" href="../styles/style.css" />
