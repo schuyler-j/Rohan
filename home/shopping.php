@@ -8,7 +8,6 @@
 <link rel="stylesheet" href="../styles/shopping.css" />
 <link rel="icon" href="../images/favicon.png">
 <script src="../scripts/script.js" defer></script>
-<script src="../scripts/buttons.js" defer></script>
 </head>
 <?php 
 require_once "../db/dbconn.inc.php"; 
@@ -36,7 +35,7 @@ if($w = mysqli_query($conn, $wishc)){
 */
 ?>
 
-<body onload="ready()">
+<body>
 <div class="top_third">
     <div id="mc" class="menu_container">
         <h1 class="menu_title_s"><a href="../home/index.php">SENIOR</a></h1>
