@@ -142,10 +142,10 @@ session_start();
                 <li class='list'>
                     <div class='main_landing'>
                     <div class ='content'>    
-                    <a id='landing_photo' href='images/$img.png'><img src='images/$img.png'/></a>
+                    <a id='landing_photo' href='images/$img'><img src='images/$img'/></a>
                     <ul class='landing_detail'>
                     <li class='no_of_photos'>
-                        <img src='images/photos.png'/>14 photos </li>
+                        <img src=''/>14 photos </li>
                         <li>Date listed: $date</li>
                         <li>Last Edited: 30/09/2002</li>
                         <li>Condition: New</li>
@@ -156,10 +156,10 @@ session_start();
             </div>
                     <div class='item_list_wrapper'>
                         <div class='content'>
-                        <div class='more_photos'><a href='images/$img.png'><img src='images/$img.png'/></a></div>
-                        <div class='more_photos'><a href='images/$img.png'><img src='images/$img.png'/></a></div>
-                        <div class='more_photos'><a href='images/$img.png'><img src='images/$img.png'/></a></div>
-                        <div class='more_photos'><a href='images/$img.png'><img src='images/$img.png'/></a></div>
+                        <div class='more_photos'><a href='images/$img'><img src='images/$img'/></a></div>
+                        <div class='more_photos'><a href='images/$img'><img src='images/$img'/></a></div>
+                        <div class='more_photos'><a href='images/$img'><img src='images/$img'/></a></div>
+                        <div class='more_photos'><a href='images/$img'><img src='images/$img'/></a></div>
                         <div class='additional_photos'>+ 8</div>
                             </div>
                         </div>
