@@ -37,7 +37,7 @@ session_start();
                         <a class='nav_links' href='../home/error.php?msg=please%20login%20to%20view%20cart'>My Cart</a>
                     ";
                 } ?>
-				<img src="images/checkout.png"/>
+				<img src="../images/checkout.png"/>
 				<?php
                 if (isset($_SESSION["active"]) && $_SESSION["active"] === true) {
                     echo "
