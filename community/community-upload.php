@@ -109,13 +109,41 @@ if($w = mysqli_query($conn, $wishc)){
 							$category=$_POST['category'];
 							$quantity=$_POST['stockAmt'];
 							$imagesrc="../images/temp.png";
-							$cid = rand(1020, 9999);
-							$_SESSION['cid'] = $cid;
+							$cid=rand(1020, 9999);
+							$_SESSION['cid']=$cid;
+							$postcode=$_POST['postcode'];
+
+							$query = "SELECT * FROM `seller` WHERE userID = $_SESSION[id];";
+							$isql = mysqli_query($conn, $query);
+							$row = mysqli_fetch_assoc($isql);
+
+							if($row){
+									/*update seller item count*/
+									$itemcount = $row['itemCount'];
+									$sellerID = $row['sellerID'];
+									$seller = "UPDATE `seller` SET `itemCount` = $itemcount+$quantity WHERE `seller`.`sellerID` = $sellerID;";
+									$sql_init_seller = mysqli_stmt_init($conn);
+									mysqli_stmt_prepare($sql_init_seller, $seller);
+									mysqli_stmt_execute($sql_init_seller);
+							}else{
+									/*insert if null ie no seller found yet*/
+									$seller = "INSERT INTO `seller` (`sellerID`, `userID`, `itemCount`, `itemsSold`, `shippingAddr`, `postCode`, `sellerName`) VALUES (CONNECTION_ID(), $_SESSION[id], $quantity, '0', '$location', '$postcode', '$_SESSION[name]');";
+									$sql_init_seller = mysqli_stmt_init($conn);
+									mysqli_stmt_prepare($sql_init_seller, $seller);
+									mysqli_stmt_execute($sql_init_seller);
+
+									$query = "SELECT * FROM `seller` WHERE userID = $_SESSION[id];";
+									$isql = mysqli_query($conn, $query);
+									$row = mysqli_fetch_assoc($isql);
+									$sellerID = $row['sellerID'];
+							}
+
 
 							$sql = "INSERT INTO `products` (`ProductID`, `Description`, `pName`, `Price`, `cItem`, `State`, `Location`, 
 									`Category`, `stockAmt`, `imgSrc`, `sellerID`, `onSale`, `salePrice`, `featured`) VALUES 
 									($cid, '$productdesc', '$productname', '$price', '1', '$state', '$location', '$category', 
-								    $quantity, '$imagesrc', NULL, '0', NULL, '0');";
+								    $quantity, '$imagesrc', $sellerID, '0', NULL, '0');";
+
 						    $sql_init = mysqli_stmt_init($conn);
 						    mysqli_stmt_prepare($sql_init, $sql);
 						    mysqli_stmt_execute($sql_init);
@@ -147,6 +175,10 @@ if($w = mysqli_query($conn, $wishc)){
 				<!--ItemAddress-->
                     <li class='pname_title'><b>Address</b></li>
                     <li><input name='address' type='text' placeholder='' id='emailaddr' required></input></li>
+
+				<!--ItemPostcode-->
+                    <li class='pname_title'><b>Postcode</b></li>
+                    <li><input name='postcode' type='text' placeholder='' id='emailaddr' required></input></li>
 
 
 				<!--ItemState-->
