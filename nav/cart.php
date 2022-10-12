@@ -99,9 +99,9 @@ session_start();
                                 echo "<li class=list><div class=item_list_wrapper id=cart_item_list>"; 
                                 echo "<div class=top-right>
                                 <form method='POST' action='cart.php?action=del&id=$row[ProductID]'>
-                                <input type=submit class=button id=atc value='Remove From Cart'>
+                                <input type=submit class=button id=atc value='X'>
                                 </input>
-                                <form>
+                                </form>
                                 </div>";
                                 echo "<div class=><img id=img_cart src=../images/$cart[imgSrc] />
                                 

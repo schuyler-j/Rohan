@@ -86,6 +86,8 @@
 		mysqli_stmt_prepare($statement, $sql);
 		if(mysqli_stmt_execute($statement)){
 				echo "<h1>Account Created</h1>";
+				echo "<h2>Redirecting to Login</h2>";
+				header( "refresh:1;url=../nav/login.php" );
 		}else{echo "<h2>Error</h2>";}
 
 	}
