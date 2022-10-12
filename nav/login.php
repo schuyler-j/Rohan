@@ -73,6 +73,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         $_SESSION["creditcard"] = $rname_["CreditCard"];
                         $_SESSION["addr"] = $rname_["Address"];
 
+
                         header("location: ../home/index.php");
                     }else{
                         header("location: ../home/error.php?msg=Bad%20Password.%20Try%20Again.");
