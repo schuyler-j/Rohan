@@ -178,6 +178,9 @@
 					mysqli_stmt_prepare($dfc_init, $dfc_sql);
 					mysqli_stmt_execute($dfc_init);
 
+					$_SESSION['cart_total'] = 0;
+					$_SESSION['item_in_cart_count'] = 0;
+
 
 
 					echo "<script>
