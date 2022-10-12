@@ -17,14 +17,6 @@
     <?php /*session_start();*/
     require_once "../db/dbconn.inc.php";
     
-	$firstname;
-	$lastname;
-	$username;
-	$password;
-	$emailaddress;
-	$streetaddress;
-	$postcode;
-	$dob;
     
     ?>
     <div class="top_third">
@@ -87,13 +79,15 @@
 		$dob = $_POST['dob'];
 		$passconfirm = $_POST['pass-confirm'];
 
-		$sql = "INSERT INTO `users` (`UserID`, `FirstName`, `LastName`, `DOB`, `Email`, `Address`, `CreditCard`, `Username`, `Password`, `sessionID`, `postcode`) VALUES (CONNECTION_ID(), '$firstname', '$lastname', '$dob', '$emailaddress', '$streetaddress', NULL, '$username', SHA1('$username'+'$password'), NULL, '$postcode');";
+		$newpass = SHA1($username.$password);
+
+		$sql = "INSERT INTO `users` (`UserID`, `FirstName`, `LastName`, `DOB`, `Email`, `Address`, `CreditCard`, `Username`, `Password`, `sessionID`, `postcode`) VALUES (CONNECTION_ID(), '$firstname', '$lastname', '$dob', '$emailaddress', '$streetaddress', NULL, '$username', '$newpass', NULL, '$postcode');";
 		$statement = mysqli_stmt_init($conn);
 		mysqli_stmt_prepare($statement, $sql);
-		if($passconfirm == $password){
-			mysqli_stmt_execute($statement);
-		}else{
-		}
+		if(mysqli_stmt_execute($statement)){
+				echo "<h1>Account Created</h1>";
+		}else{echo "<h2>Error</h2>";}
+
 	}
 
 ?>
