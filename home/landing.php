@@ -184,7 +184,7 @@ session_start();
                     <li id='total' style='font-size:35px'><b>$ $price</b></li>
             </br>
             <li><img src='../images/phone.png'/>
-                <a class='nav_links' href='seller.php'>Contact Seller</a></li>
+                <a class='nav_links' href='mailto:$email'>Contact Seller via: $email</a></li>
             <li><img src='../images/help.png'/>
                 <a class='nav_links' href='../home/help.php'>Help / Report an Issue</a></li>
             <li><input class='button' value='Add To Cart' id='atc_input' type='submit'>
@@ -199,10 +199,51 @@ session_start();
  ?>        
         </div>
     </div>
-</body>
-</html>
-
-<body>
+    <div class="pages">
+    <a href="#top">^ Back to Top ^</a>  
+</div>
+<div class="footer">
+        <div class="grid" id="footer_grid">
+            <div class="col" id="ft_grid_first">
+                <h4>CONTACT</h4>
+                <div>
+                    <h5>Contact us at the following email.</h5>
+                    <a href="mailto:senior@senior.com.au">senior@senior.com.au</a>
+                </div>
+            </div>
+            <div class="col">
+                <h4>LINKS</h4>
+                <div style="display: grid">
+                    <a href="../home/index.php">HOME</a>
+                    <br />
+                    <a href="../community/community-landing.php">COMMUNITY</a>
+                    <br />
+                    <a href="../home/shopping.php">SHOPPING</a>
+                    <br />
+                    <a href="../home/about.php">ABOUT</a>
+                    <br />
+                    <a href="../nav/login.php">LOGIN</a>
+                </div>
+            </div>
+            <div class="col">
+                <h4>SUPPORT</h4>
+                <div><a href="../home/help.php">F.A.Q</a></div>
+            </div>
+            <div class="col" id="ft_grid_last">
+                <h4>DISCLAIMER</h4>
+                <div class="link_box">
+                    <p>This website has been created for UX eval purposes.</p>
+                    <p>Products shown are examples. Credit information is stored temporarily.</p>
+                    <p>Transactions are not final.</p>
+                    <img style="height:80px" src="../images/logologo.png" />
+                    <p><b>© 2022</b> SENIOR WEB SYS</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer_bt">
+            <h4>Thomas Hobbs | Udall Liao | Jay Schuyler</h4>
+        </div>
+    </div>
 </body>
   
 </html>
