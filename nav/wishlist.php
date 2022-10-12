@@ -37,7 +37,17 @@ session_start();
                     ";
                 } ?>
                 <img src="../images/checkout.png" />
-                <a class="nav_links" href="checkout.php">Checkout</a>
+                <?php
+                if (isset($_SESSION["active"]) && $_SESSION["active"] === true) {
+                    echo "
+                        <a class='nav_links' href='../nav/checkout.php'>Checkout</a>
+                    ";
+                }else{
+
+                    echo "
+                        <a class='nav_links' href='../home/error.php?msg=please%20login%20to%20checkout'>Checkout</a>
+                    ";
+                } ?>
                 <img src="../images/login.png" />
                 <?php
                 if (isset($_SESSION["active"]) && $_SESSION["active"] === true) {
