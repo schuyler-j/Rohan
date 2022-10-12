@@ -37,7 +37,17 @@ session_start();
                     ";
                 } ?>
                 <img src="../images/checkout.png" />
-                <a class="nav_links" href="checkout.php">Checkout</a>
+                <?php
+                if (isset($_SESSION["active"]) && $_SESSION["active"] === true) {
+                    echo "
+                        <a class='nav_links' href='../nav/checkout.php'>Checkout</a>
+                    ";
+                }else{
+
+                    echo "
+                        <a class='nav_links' href='../home/error.php?msg=please%20login%20to%20checkout'>Checkout</a>
+                    ";
+                } ?>
                 <img src="../images/login.png" />
                 <?php
                 if (isset($_SESSION["active"]) && $_SESSION["active"] === true) {
@@ -117,6 +127,24 @@ $msg = "None";
                     <input class='button' value='Add To Cart' id='atc_input' type='submit'>
                     </input>
                 </form>";
+                if(isset($_GET['action']) && $_GET['action'] == 'del'){
+                    $id_to_remove = $_GET['id'];
+                    $removes = "DELETE FROM `wishlists` WHERE ProductID = $id_to_remove";
+                    $updates = "UPDATE `products` SET `stockAmt` = (stockAmt + 1) WHERE `products`.`ProductID` = $id_to_remove;";
+                    $prep = mysqli_stmt_init($conn);
+                    $upda = mysqli_stmt_init($conn);
+                    mysqli_stmt_prepare($prep, $removes);
+                    mysqli_stmt_prepare($upda, $updates);
+                    mysqli_stmt_execute($upda);
+                    mysqli_stmt_execute($prep);
+                    header("location: wishlist.php");
+
+                }
+                echo"
+                <form method='POST' action='wishlist.php?action=del&id=$row[ProductID]'>
+                                <input type=submit class='button' id='atc' value='Remove From Wishlist'>
+                                </input>
+                                <form>";
                 echo "<br/>";
                 $total = $total + floatval($prod["Price"]);
                 $msg = "";

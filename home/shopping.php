@@ -8,7 +8,6 @@
 <link rel="stylesheet" href="../styles/shopping.css" />
 <link rel="icon" href="../images/favicon.png">
 <script src="../scripts/script.js" defer></script>
-<script src="../scripts/buttons.js" defer></script>
 </head>
 <?php 
 require_once "../db/dbconn.inc.php"; 
@@ -36,7 +35,7 @@ if($w = mysqli_query($conn, $wishc)){
 */
 ?>
 
-<body onload="ready()">
+<body>
 <div class="top_third">
     <div id="mc" class="menu_container">
         <h1 class="menu_title_s"><a href="../home/index.php">SENIOR</a></h1>
@@ -159,7 +158,7 @@ if($w = mysqli_query($conn, $wishc)){
             <input type="submit" value="Search" /><br>
         <div class ="shopping_links">    
             <img src="../images/shopping-bag.png"><a class="nav_links" href="shopping.php" id="main">Main Shopping Page</a>
-			<img src="../images/cart.png"><a class="nav_links" href=<?php if(isset($_SESSION['active']) && $_SESSION['active']==true){echo '../nav/cart.php';}else{echo '../nav/login.php';}?>>My Cart</a>
+			      <img src="../images/cart.png"><a class="nav_links" href=<?php if(isset($_SESSION['active']) && $_SESSION['active']==true){echo '../nav/cart.php';}else{echo '../nav/login.php';}?>>My Cart</a>
             <img src="../images/watchlist.png"><a class="nav_links" href="../nav/wishlist.php">Wishlist</a>
             <img src="../images/help.png"><a class="nav_links" href="help.php">Help</a>
             <img src="../images/clear-search.png"><a class="nav_links" href="shopping.php" id="reset_search">Clear Search</a>
@@ -188,10 +187,10 @@ if($w = mysqli_query($conn, $wishc)){
                     mysqli_stmt_execute($update_st);
                 }
                 if(isset($_POST["submit"])) {
-                    $str = $_POST["search"];
+                    $search = $_POST["search"];
                     $location = $_POST["search"];
                     $category = $_POST["search"];
-                    $sth = $conn -> prepare("SELECT * FROM `products` WHERE `pName` = '$str', `State`= '$location', `Category` ='$category'");
+                    $sth = $conn -> prepare("SELECT * FROM `products` WHERE `pName` = $str AND `State`= $location AND `Category` =$category");
                     $sth->setFetchMode(PDO :: FETCH_OBJ);
                     $sth -> execute();
 
@@ -388,10 +387,7 @@ if($w = mysqli_query($conn, $wishc)){
         </div>
     </div>
 <div class="pages">
-    <p id="number">1</p>
-    <button id="back" onclick="back()"><< Back</button>
-    <a href="#top">^ Back to Top ^</a>
-    <button id="next" onclick="next()">Next >></button>    
+    <a href="#top">^ Back to Top ^</a>  
 </div>
 <div class="footer">
         <div class="grid" id="footer_grid">

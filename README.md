@@ -13,6 +13,11 @@
 ## **Web Systems: html/js/php** [^footnote]
 A community based ecommerce web app with a marketplace where users can buy, sell and trade items. 
 
+- [x] File Upload
+- [x] Creditcard Transaction
+- [ ] Contact Update Ticket Table
+- [ ] Product Landing
+
 ### **Created by:**
         Thomas Hobbs | Udall Liao | Jay Schuyler 
 
