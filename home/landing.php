@@ -98,7 +98,7 @@ session_start();
                 if (isset($_GET["action"]) && $_GET["action"] == "ac") {
                     $_SESSION["productid"] = $_GET["id"];
                     $productid = $_SESSION["productid"];
-                    $cart_sql = "INSERT INTO `cart` (`CartID`, `TotalPrice`, `Shipping`, `Payment`, `DoP`, `UserID`, `ProductID`, `CreditCard`) VALUES (CONNECTION_ID(), $total, '$addr', 'credit', CURRENT_DATE(), $userid, $productid, $creditcard);";
+                    $cart_sql = "INSERT INTO `carts` (`CartID`, `TotalPrice`, `Shipping`, `Payment`, `DoP`, `UserID`, `ProductID`) VALUES (CONNECTION_ID(), $total, '$addr', 'credit', CURRENT_DATE(), $userid, $productid);";
                     $update_stock = "UPDATE `products` SET `stockAmt` = (stockAmt - 1) WHERE `products`.`ProductID` = $productid;";
                     $statement = mysqli_stmt_init($conn);
                     $update_st = mysqli_stmt_init($conn);
@@ -128,12 +128,10 @@ session_start();
 						$price = $row["Price"];
 
 						if (isset($_SESSION["active"]) && $_SESSION["active"] === true) {
-							$addcart = 'community.php?action=ac&id=' . $row["ProductID"];
+							$addcart = 'landing.php?action=ac&id=' . $row["ProductID"];
 							$addwish = 'community.php?action=aw&id=' . $row["ProductID"];
 							$added = 'Added To Wishlist';
 						} 
-
-
 
 						$sql = "SELECT * FROM `seller` WHERE sellerID = $row[sellerID];";
 						$seller_query = mysqli_query($conn, $sql);
@@ -183,7 +181,9 @@ session_start();
 					<a class='nav_links' href='mailto:$email'>Contact Seller via: $email</a></li>
 				<li><img src='../images/help.png'/>
 					<a class='nav_links' href='../home/help.php'>Help / Report an Issue</a></li>
-				<li><input class='button' value='Add To Cart' id='atc_input' type='submit'>
+				<li><form method='POST' action=$addcart$msg>
+				<input class='button' value='Add To Cart' id='atc_input' type='submit'>
+				</form>
 				</br>
 				</input></li>     
 					</ul>

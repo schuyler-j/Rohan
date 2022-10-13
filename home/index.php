@@ -79,12 +79,10 @@ session_start();
             <?php if (isset($_SESSION["active"]) && $_SESSION["active"]) {
 
                 echo "
-            
-            <div class='block1' id='home'>
-                </div>
-            ";
-
-                //<div class='title' id='welcome'><h4>Welcome back," . $_SESSION["username"] . $_SESSION["id"] . "</h4></div>
+				
+				<div class='block1' id='home'>
+					</div>
+				";
             } else {
                 echo "
             
@@ -144,7 +142,7 @@ session_start();
 							}
 						}else{
 								echo "<div class=text><div class=sub_heading><h2>Selling</h2></div>
-									<h3>None</h3></div>";
+									<h3>None</h3>";
 						}
 					}
 
@@ -158,7 +156,7 @@ session_start();
 							}
 						}else{
 								echo "<div class=text><div class=sub_heading><h2>Selling</h2></div>
-									<h3>None</h3></div>";
+									<h3>None</h3>";
 						}
 					}
 
@@ -172,10 +170,11 @@ session_start();
 							}
 						}else{
 								echo "<div class=text><div class=sub_heading><h2>Purchase History</h2></div>
-									<h3>None</h3></div>";
+									<h3>None</h3>";
 						}
 					}
 
+					echo "</div";
 
                 }
                 ?>
@@ -210,7 +209,6 @@ session_start();
                         }
                     }
                 }
-
                 echo "</ul";
                 echo "</div>";
                 ?>
@@ -218,9 +216,6 @@ session_start();
         </div>
         <!-- fix footer to be located at the bottom of the page -->
         <!-- then update on all pages -->
-
-
-
     </div>
     <div class="footer">
         <div class="grid" id="footer_grid">
@@ -265,5 +260,4 @@ session_start();
         </div>
     </div>
 </body>
-
 </html>
