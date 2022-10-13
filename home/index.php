@@ -79,12 +79,10 @@ session_start();
             <?php if (isset($_SESSION["active"]) && $_SESSION["active"]) {
 
                 echo "
-            
-            <div class='block1' id='home'>
-                </div>
-            ";
-
-                //<div class='title' id='welcome'><h4>Welcome back," . $_SESSION["username"] . $_SESSION["id"] . "</h4></div>
+				
+				<div class='block1' id='home'>
+					</div>
+				";
             } else {
                 echo "
             
@@ -134,14 +132,50 @@ session_start();
             <div class="home_body" id="news">
                 <?php if (isset($_SESSION["active"]) && $_SESSION["active"]) {
                     echo "<h1 id='welcome_title'>Welcome back, " . $_SESSION["name"] . "</h1>";
-					echo "<div class=text><div class=sub_heading><h2>Selling</h2></div>
-						<h3>Item 1</h3></div>";
-					echo "<div class=text><div class=sub_heading><h2>Sold</h2></div>
-						<h3>Item 1</h3></div>";
-					echo "<div class=text><div class=sub_heading><h2>Pending Items</h2></div>
-						<h3>Item 1</h3></div>";
-					echo "<div class=text><div class=sub_heading><h2>Purchase History</h2></div>
-						<h3>Item 1</h3></div>";
+
+					$sell_sql = "SELECT * FROM `products` WHERE sellerID = $_SESSION[seller_id];";
+					if ($result_selling = mysqli_query($conn, $sell_sql)){
+						if (mysqli_num_rows($result_selling) > 0){
+							echo "<div class=text><div class=sub_heading><h2>Selling</h2></div>";
+							while ($selling_row = mysqli_fetch_assoc($result_selling)){
+									echo "<h3>$selling_row[pName]</h3>";
+							}
+						}else{
+								echo "<div class=text><div class=sub_heading><h2>Selling</h2></div>
+									<h3>None</h3>";
+						}
+					}
+
+					/*
+					$sell_sql = "SELECT * FROM `products` WHERE sellerID = $_SESSION[seller_id];";
+					if ($result_selling = mysqli_query($conn, $sell_sql)){
+						if (mysqli_num_rows($result_selling) > 0){
+							echo "<div class=text><div class=sub_heading><h2>Selling</h2></div>";
+							while ($selling_row = mysqli_fetch_assoc($result_selling)){
+									echo "<h3>$selling_row[pName]</h3>";
+							}
+						}else{
+								echo "<div class=text><div class=sub_heading><h2>Selling</h2></div>
+									<h3>None</h3>";
+						}
+					}
+
+					 */
+					$sell_sql = "SELECT * FROM `orders` WHERE userID = $_SESSION[id];";
+					if ($result_selling = mysqli_query($conn, $sell_sql)){
+						if (mysqli_num_rows($result_selling) > 0){
+							echo "<div class=text><div class=sub_heading><h2>Purchase History</h2></div>";
+							while ($selling_row = mysqli_fetch_assoc($result_selling)){
+									echo "<h3>$selling_row[orderDate]</h3>";
+							}
+						}else{
+								echo "<div class=text><div class=sub_heading><h2>Purchase History</h2></div>
+									<h3>None</h3>";
+						}
+					}
+
+					echo "</div";
+
                 }
                 ?>
                 <div class="sub_heading">
@@ -175,7 +209,6 @@ session_start();
                         }
                     }
                 }
-
                 echo "</ul";
                 echo "</div>";
                 ?>
@@ -183,9 +216,6 @@ session_start();
         </div>
         <!-- fix footer to be located at the bottom of the page -->
         <!-- then update on all pages -->
-
-
-
     </div>
     <div class="footer">
         <div class="grid" id="footer_grid">
@@ -230,5 +260,4 @@ session_start();
         </div>
     </div>
 </body>
-
 </html>

@@ -44,7 +44,6 @@ session_start();
                         <a class='nav_links' href='../nav/checkout.php'>Checkout</a>
                     ";
                 }else{
-
                     echo "
                         <a class='nav_links' href='../home/error.php?msg=please%20login%20to%20checkout'>Checkout</a>
                     ";
@@ -99,7 +98,7 @@ session_start();
                 if (isset($_GET["action"]) && $_GET["action"] == "ac") {
                     $_SESSION["productid"] = $_GET["id"];
                     $productid = $_SESSION["productid"];
-                    $cart_sql = "INSERT INTO `cart` (`CartID`, `TotalPrice`, `Shipping`, `Payment`, `DoP`, `UserID`, `ProductID`, `CreditCard`) VALUES (CONNECTION_ID(), $total, '$addr', 'credit', CURRENT_DATE(), $userid, $productid, $creditcard);";
+                    $cart_sql = "INSERT INTO `carts` (`CartID`, `TotalPrice`, `Shipping`, `Payment`, `DoP`, `UserID`, `ProductID`) VALUES (CONNECTION_ID(), $total, '$addr', 'credit', CURRENT_DATE(), $userid, $productid);";
                     $update_stock = "UPDATE `products` SET `stockAmt` = (stockAmt - 1) WHERE `products`.`ProductID` = $productid;";
                     $statement = mysqli_stmt_init($conn);
                     $update_st = mysqli_stmt_init($conn);
@@ -108,7 +107,6 @@ session_start();
                     mysqli_stmt_execute($statement);
                     mysqli_stmt_execute($update_st);
                 }
-                
                 
                 if(isset($_GET["action"]) && $_GET["action"] == "aw"){
                     $_SESSION["productid"] = $_GET["id"];
@@ -119,88 +117,85 @@ session_start();
                     mysqli_stmt_execute($wst);
                 }
 
-                $product_sql = "SELECT * FROM `products` WHERE cItem = 1 AND stockAmt > 0 AND onSale = 0 AND featured = 0;";
-                if ($prod_result = mysqli_query($conn, $product_sql)) {
-                    if (mysqli_num_rows($prod_result) > 0) {
-                        while ($row = mysqli_fetch_assoc($prod_result)) {
-                            $title = $row["pName"];
-                            $img = $row["imgSrc"];
-                            $desc = $row["Description"];
-                            $price = $row["Price"];
+			$pid = $_GET['id'];
+			$product_sql = "SELECT * FROM `products` WHERE productID = $pid;";
+			if ($prod_result = mysqli_query($conn, $product_sql)) {
+				if (mysqli_num_rows($prod_result) > 0) {
+					while ($row = mysqli_fetch_assoc($prod_result)) {
+						$title = $row["pName"];
+						$img = $row["imgSrc"];
+						$desc = $row["Description"];
+						$price = $row["Price"];
+
+						if (isset($_SESSION["active"]) && $_SESSION["active"] === true) {
+							$addcart = 'landing.php?action=ac&id=' . $row["ProductID"];
+							$addwish = 'community.php?action=aw&id=' . $row["ProductID"];
+							$added = 'Added To Wishlist';
+						} 
+
+						$sql = "SELECT * FROM `seller` WHERE sellerID = $row[sellerID];";
+						$seller_query = mysqli_query($conn, $sql);
+						$seller_row = mysqli_fetch_assoc($seller_query);
+
+			$sellerName = $seller_row['sellerName'];
+			$Location = $seller_row['shippingAddr'];
+
+			$emsql = "SELECT * FROM `users` WHERE sellerID = $row[sellerID];";
+			$es = mysqli_query($conn, $emsql);
+			$erow = mysqli_fetch_assoc($es);
+			$email = $erow['Email'];
 
 
-                            if (isset($_SESSION["active"]) && $_SESSION["active"] === true) {
-                                $addcart = 'community.php?action=ac&id=' . $row["ProductID"];
-                                $addwish = 'community.php?action=aw&id=' . $row["ProductID"];
-                                $added = 'Added To Wishlist';
-                            } 
-        echo "
-        <div class='home_body' id='news'>    
-        <ul class='item_list' id='cart_form'>
-        <a id='back_to' href='community.php'><< Back to Search</a>
-                    <li><div class='sub_heading' style='font-size:38px'>$title</div></li>
-                <li class='list'>
-                    <div class='main_landing'>
-                    <div class ='content'>    
-                    <a id='landing_photo' href='images/$img'><img src='images/$img'/></a>
-                    <ul class='landing_detail'>
-                    <li class='no_of_photos'>
-                        <img src=''/>14 photos </li>
-                        <li>Date listed: $date</li>
-                        <li>Last Edited: 30/09/2002</li>
-                        <li>Condition: New</li>
-                        <input class='button' value='Add To Wishlist' id='atc' type='submit'>
-                        </input>
-                    <ul>    
-            </div>       
-            </div>
-                    <div class='item_list_wrapper'>
-                        <div class='content'>
-                        <div class='more_photos'><a href='images/$img'><img src='images/$img'/></a></div>
-                        <div class='more_photos'><a href='images/$img'><img src='images/$img'/></a></div>
-                        <div class='more_photos'><a href='images/$img'><img src='images/$img'/></a></div>
-                        <div class='more_photos'><a href='images/$img'><img src='images/$img'/></a></div>
-                        <div class='additional_photos'>+ 8</div>
-                            </div>
-                        </div>
-                        <li><div class='sub_heading' style='font-size:25px'>Description</div></li>
-                        </li>                        
-                        <li class='landing_desc'>
-                        $Description
-                        </li>
-            </div>        
-                <ul class='item_list' id='cart_total'>
-                    <li><div class='sub_heading' style='font-size:25px'>Details</div></li>
-                    <li class='seller_profile'>
-                        <img src='../images/profile.png'/><b>$sellerName</b>
-                    </li>
-                    <li id='estimate'>SENIOR member since 2022. $itemCount Ads.</li>
-                        <li><div class='list_of_items'> 
-                        $title</br>                                            
-            </div>
-            </li>
-            <li style='font-size:18px'><b>Location: </b></li>
-            <li id='estimate'><img src='../images/location.png'/>$Location $State</li>
-                    <li id='total' style='font-size:35px'><b>$ $price</b></li>
-            </br>
-            <li><img src='../images/phone.png'/>
-                <a class='nav_links' href='mailto:$email'>Contact Seller via: $email</a></li>
-            <li><img src='../images/help.png'/>
-                <a class='nav_links' href='../home/help.php'>Help / Report an Issue</a></li>
-            <li><input class='button' value='Add To Cart' id='atc_input' type='submit'>
-            </br>
-            </input></li>     
-                </ul>
-                ";
-            }
-        }
-    }
+			echo "
+			<div class='home_body' id='news'>    
+			<ul class='item_list' id='cart_form'>
+			<a id='back_to' href='../community/community.php'><< Back to Search</a>
+						<li><div class='sub_heading' style='font-size:38px'>$title</div></li>
+						<li class='list'>
+						<div class='main_landing'>
+						<div class ='content'>    
+						<a id='landing_photo' href='../images/$img'><img src='../images/$img'/></a>
+					</div>       
+					</div>
+						<li><div class='sub_heading' style='font-size:25px'>Description</div></li>
+						</li>                        
+						<li class='landing_desc'>
+						$desc
+						</li>
+					</div>        
+					<ul class='item_list' id='cart_total'>
+						<li><div class='sub_heading' style='font-size:25px'>Details</div></li>
+						<li class='seller_profile'>
+							<img src='../images/profile.png'/><b>$sellerName</b>
+						</li>
+						<li id='estimate'>SENIOR member since 2022. - Trusted Seller</li>
+							<li><div class='list_of_items'> 
+							$title</br>                                            
+				</div>
+				</li>
+				<li style='font-size:18px'><b>Location: </b></li>
+				<li id='estimate'><img src='../images/location.png'/>$Location</li>
+						<li id='total' style='font-size:35px'><b>$ $price</b></li>
+				</br>
+				<li><img src='../images/phone.png'/>
+					<a class='nav_links' href='mailto:$email'>Contact Seller via: $email</a></li>
+				<li><img src='../images/help.png'/>
+					<a class='nav_links' href='../home/help.php'>Help / Report an Issue</a></li>
+				<li><form method='POST' action=$addcart$msg>
+				<input class='button' value='Add To Cart' id='atc_input' type='submit'>
+				</form>
+				</br>
+				</input></li>     
+					</ul>
+					";
+				}
+			}
+		}
 
  ?>        
-        </div>
+	</div>
     </div>
     <div class="pages">
-    <a href="#top">^ Back to Top ^</a>  
 </div>
 <div class="footer">
         <div class="grid" id="footer_grid">
