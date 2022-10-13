@@ -81,7 +81,7 @@
 
 		$newpass = SHA1($username.$password);
 
-		$sql = "INSERT INTO `users` (`UserID`, `FirstName`, `LastName`, `DOB`, `Email`, `Address`, `CreditCard`, `Username`, `Password`, `sessionID`, `postcode`) VALUES (CONNECTION_ID(), '$firstname', '$lastname', '$dob', '$emailaddress', '$streetaddress', NULL, '$username', '$newpass', NULL, '$postcode');";
+		$sql = "INSERT INTO `users` (`UserID`, `FirstName`, `LastName`, `DOB`, `Email`, `Address`, `CreditCard`, `Username`, `Password`, `sessionID`, `postcode`, `sellerID`) VALUES (CONNECTION_ID(), '$firstname', '$lastname', '$dob', '$emailaddress', '$streetaddress', NULL, '$username', '$newpass', NULL, '$postcode', NULL);";
 		$statement = mysqli_stmt_init($conn);
 		mysqli_stmt_prepare($statement, $sql);
 		if(mysqli_stmt_execute($statement)){

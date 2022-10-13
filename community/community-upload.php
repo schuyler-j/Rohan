@@ -125,6 +125,12 @@ if($w = mysqli_query($conn, $wishc)){
 									$sql_init_seller = mysqli_stmt_init($conn);
 									mysqli_stmt_prepare($sql_init_seller, $seller);
 									mysqli_stmt_execute($sql_init_seller);
+
+
+									$seller = "UPDATE `users` SET `sellerID` = $sellerID WHERE `users`.`userID` = $_SESSION[id];";
+									$sql_init_seller = mysqli_stmt_init($conn);
+									mysqli_stmt_prepare($sql_init_seller, $seller);
+									mysqli_stmt_execute($sql_init_seller);
 							}else{
 									/*insert if null ie no seller found yet*/
 									$seller = "INSERT INTO `seller` (`sellerID`, `userID`, `itemCount`, `itemsSold`, `shippingAddr`, `postCode`, `sellerName`) VALUES (CONNECTION_ID(), $_SESSION[id], $quantity, '0', '$location', '$postcode', '$_SESSION[name]');";
@@ -136,6 +142,11 @@ if($w = mysqli_query($conn, $wishc)){
 									$isql = mysqli_query($conn, $query);
 									$row = mysqli_fetch_assoc($isql);
 									$sellerID = $row['sellerID'];
+
+									$seller = "UPDATE `users` SET `sellerID` = $sellerID WHERE `users`.`userID` = $_SESSION[id];";
+									$sql_init_seller = mysqli_stmt_init($conn);
+									mysqli_stmt_prepare($sql_init_seller, $seller);
+									mysqli_stmt_execute($sql_init_seller);
 							}
 
 

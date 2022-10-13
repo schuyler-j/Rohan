@@ -143,9 +143,9 @@ require_once "../db/dbconn.inc.php";
                                 <h4>" . $title . "</h4>
                             </div>
                         </div>
-                        <div class='img_container'><a href='../home/landing.php'><img src='../images/$img'/></a></div>
+                        <div class='img_container'><a href='../home/landing.php?id=$row[ProductID]'><img src='../images/$img'/></a></div>
                         <div class='item_list_wrapper' id='subtext_total'>
-                            <a href='../home/landing.php'>
+                            <a href='../home/landing.php?id=$row[ProductID]'>
                                 <div id='item_description'>
                                     <h3 id='price'>$$price</h3>
                                 </div>
@@ -199,9 +199,9 @@ require_once "../db/dbconn.inc.php";
                                 <h4>" . $title . "</h4>
                             </div>
                         </div>
-                        <div class='img_container'><a href='../home/landing.php'><img src='../images/$img'/></a></div>
+                        <div class='img_container'><a href='../home/landing.php?id=$row[ProductID]'><img src='../images/$img'/></a></div>
                         <div class='item_list_wrapper' id='subtext_total'>
-                            <a href='../home/landing.php'>
+                            <a href='../home/landing.php?id=$row[ProductID]'>
                                 <div id='item_description'>
                                 "/*
                                     <span class='desc'>
@@ -262,9 +262,9 @@ require_once "../db/dbconn.inc.php";
                                 <h4>" . $title . "</h4>
                             </div>
                         </div>
-                        <div class='img_container' id='featured'><a href='../home/landing.php'><img src='../images/$img'/></a></div>
+                        <div class='img_container' id='featured'><a href='../home/landing.php?id=$row[ProductID]'><img src='../images/$img'/></a></div>
                         <div class='item_list_wrapper' id='subtext_total'>
-                            <a href='../home/landing.php'>
+                            <a href='../home/landing.php?id=$row[ProductID]'>
                                 <div id='item_description'>
                                     <h3 class='featured_price' id='fprice'>$$price</h3>
                                 </div>

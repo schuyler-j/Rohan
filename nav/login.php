@@ -72,6 +72,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         $_SESSION["name"] = $rname_["FirstName"];
                         $_SESSION["creditcard"] = $rname_["CreditCard"];
                         $_SESSION["addr"] = $rname_["Address"];
+                        $_SESSION["seller_id"] = $rname_["sellerID"];
 
 
                         header("location: ../home/index.php");
